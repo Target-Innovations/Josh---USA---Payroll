@@ -1,0 +1,12 @@
+﻿{
+  "Info": {
+    "Class": "clsDbSharedImage",
+    "Description": "Shared Image Gallery Item"
+  },
+  "Items": {
+    "Name": "usericon",
+    "FileName": "usericon.jpeg",
+    "Extension": "jpeg",
+    "ContentHash": "81c089e"
+  }
+}

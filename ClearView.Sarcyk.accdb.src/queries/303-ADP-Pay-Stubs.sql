@@ -1,0 +1,2 @@
+﻿SELECT PayrollEntries.CheckDate AS DateRange, PayrollEntries.CheckDate, PayrollEntries.PayPeriodStart, PayrollEntries.PayPeriodEnd, PayrollEntries.EmployeeId, Format([CheckDate],"yyyy/mmm") AS PayPeriod, PayrollEntries.GrossPay, PayrollEntries.FWT, PayrollEntries.SocSec, PayrollEntries.Medicaid, PayrollEntries.Ohio, PayrollEntries.Cleveland, PayrollEntries.NetPay, Year([checkdate]) AS YTD
+FROM PayrollEntries;

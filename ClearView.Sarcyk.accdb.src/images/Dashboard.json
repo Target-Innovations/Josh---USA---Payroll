@@ -1,0 +1,12 @@
+﻿{
+  "Info": {
+    "Class": "clsDbSharedImage",
+    "Description": "Shared Image Gallery Item"
+  },
+  "Items": {
+    "Name": "Dashboard",
+    "FileName": "Dashboard.png",
+    "Extension": "png",
+    "ContentHash": "0afcbde"
+  }
+}

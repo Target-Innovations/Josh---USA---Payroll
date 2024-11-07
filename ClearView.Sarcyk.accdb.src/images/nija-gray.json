@@ -1,0 +1,12 @@
+﻿{
+  "Info": {
+    "Class": "clsDbSharedImage",
+    "Description": "Shared Image Gallery Item"
+  },
+  "Items": {
+    "Name": "nija-gray",
+    "FileName": "nija-gray.png",
+    "Extension": "png",
+    "ContentHash": "f0534fb"
+  }
+}

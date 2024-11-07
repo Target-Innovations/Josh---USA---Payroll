@@ -1,0 +1,18 @@
+﻿{
+  "Info": {
+    "Class": "clsDbRelation",
+    "Description": "Database relationship"
+  },
+  "Items": {
+    "Name": "PayrollEntriesPayrollSplittedEntries",
+    "Attributes": 4096,
+    "Table": "PayrollEntries",
+    "ForeignTable": "PayrollSplittedEntries",
+    "Fields": [
+      {
+        "Name": "id",
+        "ForeignName": "PayrollId"
+      }
+    ]
+  }
+}

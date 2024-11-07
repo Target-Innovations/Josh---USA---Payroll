@@ -1,0 +1,18 @@
+﻿{
+  "Info": {
+    "Class": "clsDbRelation",
+    "Description": "Database relationship"
+  },
+  "Items": {
+    "Name": "CollectionsCollections-Splitted",
+    "Attributes": 4096,
+    "Table": "Collections",
+    "ForeignTable": "Collections-Splitted",
+    "Fields": [
+      {
+        "Name": "Id",
+        "ForeignName": "CollectionId"
+      }
+    ]
+  }
+}

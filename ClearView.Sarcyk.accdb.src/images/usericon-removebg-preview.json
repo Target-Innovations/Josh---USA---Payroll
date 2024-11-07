@@ -1,0 +1,12 @@
+﻿{
+  "Info": {
+    "Class": "clsDbSharedImage",
+    "Description": "Shared Image Gallery Item"
+  },
+  "Items": {
+    "Name": "usericon-removebg-preview",
+    "FileName": "usericon-removebg-preview.png",
+    "Extension": "png",
+    "ContentHash": "78a7529"
+  }
+}

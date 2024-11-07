@@ -1,0 +1,14 @@
+﻿CREATE TABLE [Temp-Payroll-Detail-for] (
+  [ID] AUTOINCREMENT CONSTRAINT [ID] PRIMARY KEY UNIQUE NOT NULL,
+  [F1] VARCHAR (255),
+  [f2] VARCHAR (255),
+  [f3] VARCHAR (255),
+  [f4] VARCHAR (255),
+  [f5] VARCHAR (255),
+  [f6] VARCHAR (255),
+  [f7] VARCHAR (255),
+  [f8] VARCHAR (255),
+  [f9] VARCHAR (255),
+  [f10] VARCHAR (255),
+  [f11] VARCHAR (255)
+)

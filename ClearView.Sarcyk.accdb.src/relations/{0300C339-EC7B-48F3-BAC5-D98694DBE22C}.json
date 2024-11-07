@@ -1,0 +1,18 @@
+﻿{
+  "Info": {
+    "Class": "clsDbRelation",
+    "Description": "Database relationship"
+  },
+  "Items": {
+    "Name": "{0300C339-EC7B-48F3-BAC5-D98694DBE22C}",
+    "Attributes": 0,
+    "Table": "SysAttachments",
+    "ForeignTable": "SysAttachmentOwnership",
+    "Fields": [
+      {
+        "Name": "AttachmentID",
+        "ForeignName": "AttachmentId"
+      }
+    ]
+  }
+}

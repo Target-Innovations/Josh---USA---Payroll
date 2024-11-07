@@ -1,0 +1,18 @@
+﻿{
+  "Info": {
+    "Class": "clsDbRelation",
+    "Description": "Database relationship"
+  },
+  "Items": {
+    "Name": "Collections-StubCollections",
+    "Attributes": 4096,
+    "Table": "Collection-Stub",
+    "ForeignTable": "Collections",
+    "Fields": [
+      {
+        "Name": "Id",
+        "ForeignName": "CollectionStubId"
+      }
+    ]
+  }
+}

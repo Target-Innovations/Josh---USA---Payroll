@@ -1,0 +1,12 @@
+﻿{
+  "Info": {
+    "Class": "clsDbSharedImage",
+    "Description": "Shared Image Gallery Item"
+  },
+  "Items": {
+    "Name": "1_1_14-nobg",
+    "FileName": "1_14-nobg.png",
+    "Extension": "png",
+    "ContentHash": "fb58826"
+  }
+}

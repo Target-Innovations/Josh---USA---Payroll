@@ -1,0 +1,12 @@
+﻿{
+  "Info": {
+    "Class": "clsDbSharedImage",
+    "Description": "Shared Image Gallery Item"
+  },
+  "Items": {
+    "Name": "manufacture",
+    "FileName": "manufacture.png",
+    "Extension": "png",
+    "ContentHash": "d63a85f"
+  }
+}

@@ -1,0 +1,12 @@
+﻿{
+  "Info": {
+    "Class": "clsDbSharedImage",
+    "Description": "Shared Image Gallery Item"
+  },
+  "Items": {
+    "Name": "commision",
+    "FileName": "commision.png",
+    "Extension": "png",
+    "ContentHash": "d0d4d1f"
+  }
+}

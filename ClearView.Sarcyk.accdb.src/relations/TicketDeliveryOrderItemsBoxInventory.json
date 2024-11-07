@@ -1,0 +1,18 @@
+﻿{
+  "Info": {
+    "Class": "clsDbRelation",
+    "Description": "Database relationship"
+  },
+  "Items": {
+    "Name": "TicketDeliveryOrderItemsBoxInventory",
+    "Attributes": 2,
+    "Table": "TicketDeliveryOrderItems",
+    "ForeignTable": "BoxInventory",
+    "Fields": [
+      {
+        "Name": "SerialNumber",
+        "ForeignName": "SerialNumber"
+      }
+    ]
+  }
+}

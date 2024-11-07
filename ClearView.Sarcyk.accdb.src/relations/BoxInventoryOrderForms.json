@@ -1,0 +1,18 @@
+﻿{
+  "Info": {
+    "Class": "clsDbRelation",
+    "Description": "Database relationship"
+  },
+  "Items": {
+    "Name": "BoxInventoryOrderForms",
+    "Attributes": 2,
+    "Table": "BoxInventory",
+    "ForeignTable": "OrderForms",
+    "Fields": [
+      {
+        "Name": "OrderFormId",
+        "ForeignName": "Id"
+      }
+    ]
+  }
+}

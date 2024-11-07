@@ -1,0 +1,18 @@
+﻿{
+  "Info": {
+    "Class": "clsDbRelation",
+    "Description": "Database relationship"
+  },
+  "Items": {
+    "Name": "EquipmentsIncomeSplits",
+    "Attributes": 2,
+    "Table": "Equipments",
+    "ForeignTable": "IncomeSplits",
+    "Fields": [
+      {
+        "Name": "ID",
+        "ForeignName": "EquipmentTypeId"
+      }
+    ]
+  }
+}

@@ -1,0 +1,110 @@
+﻿{
+  "Info": {
+    "Class": "clsDbImexSpec",
+    "Description": "Import/Export Specification from MSysIMEXSpecs"
+  },
+  "Items": {
+    "DateDelim": "-",
+    "DateFourDigitYear": false,
+    "DateLeadingZeros": false,
+    "DateOrder": 5,
+    "DecimalPoint": "",
+    "FieldSeparator": "\u0001",
+    "FileType": 0,
+    "SpecName": "",
+    "SpecType": 0,
+    "StartRow": 1,
+    "TextDelim": "\u0002",
+    "TimeDelim": ":",
+    "Columns": {
+      "F1": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 1,
+        "Width": 150
+      },
+      "Field10": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 227,
+        "Width": 15
+      },
+      "Field11": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 242,
+        "Width": 7
+      },
+      "Field2": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 151,
+        "Width": 6
+      },
+      "Field3": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 157,
+        "Width": 5
+      },
+      "Field4": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 162,
+        "Width": 8
+      },
+      "Field5": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 170,
+        "Width": 23
+      },
+      "Field6": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 193,
+        "Width": 8
+      },
+      "Field7": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 201,
+        "Width": 11
+      },
+      "Field8": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 212,
+        "Width": 7
+      },
+      "Field9": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 219,
+        "Width": 8
+      }
+    }
+  }
+}

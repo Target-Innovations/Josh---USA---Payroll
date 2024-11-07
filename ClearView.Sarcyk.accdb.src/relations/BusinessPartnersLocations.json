@@ -1,0 +1,18 @@
+﻿{
+  "Info": {
+    "Class": "clsDbRelation",
+    "Description": "Database relationship"
+  },
+  "Items": {
+    "Name": "BusinessPartnersLocations",
+    "Attributes": 0,
+    "Table": "BusinessPartners",
+    "ForeignTable": "Locations",
+    "Fields": [
+      {
+        "Name": "ID",
+        "ForeignName": "BusinessPartnerId"
+      }
+    ]
+  }
+}

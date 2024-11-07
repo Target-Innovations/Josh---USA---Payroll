@@ -1,0 +1,18 @@
+﻿{
+  "Info": {
+    "Class": "clsDbRelation",
+    "Description": "Database relationship"
+  },
+  "Items": {
+    "Name": "ManufacturerGameStyles",
+    "Attributes": 0,
+    "Table": "Manufacturer",
+    "ForeignTable": "GameStyles",
+    "Fields": [
+      {
+        "Name": "Id",
+        "ForeignName": "ManufacturerId"
+      }
+    ]
+  }
+}

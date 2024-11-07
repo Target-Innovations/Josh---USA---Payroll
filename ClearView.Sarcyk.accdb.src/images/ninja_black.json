@@ -1,0 +1,12 @@
+﻿{
+  "Info": {
+    "Class": "clsDbSharedImage",
+    "Description": "Shared Image Gallery Item"
+  },
+  "Items": {
+    "Name": "ninja_black",
+    "FileName": "ninja_black.png",
+    "Extension": "png",
+    "ContentHash": "93ca3e4"
+  }
+}

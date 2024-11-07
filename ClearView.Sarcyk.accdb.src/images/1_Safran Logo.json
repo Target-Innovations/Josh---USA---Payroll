@@ -1,0 +1,12 @@
+﻿{
+  "Info": {
+    "Class": "clsDbSharedImage",
+    "Description": "Shared Image Gallery Item"
+  },
+  "Items": {
+    "Name": "1_Safran Logo",
+    "FileName": "1_Safran Logo.png",
+    "Extension": "png",
+    "ContentHash": "d547aa8"
+  }
+}

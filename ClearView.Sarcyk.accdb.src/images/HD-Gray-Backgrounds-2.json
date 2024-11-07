@@ -1,0 +1,12 @@
+﻿{
+  "Info": {
+    "Class": "clsDbSharedImage",
+    "Description": "Shared Image Gallery Item"
+  },
+  "Items": {
+    "Name": "HD-Gray-Backgrounds-2",
+    "FileName": "HD-Gray-Backgrounds-2.jpg",
+    "Extension": "jpg",
+    "ContentHash": "c04718a"
+  }
+}

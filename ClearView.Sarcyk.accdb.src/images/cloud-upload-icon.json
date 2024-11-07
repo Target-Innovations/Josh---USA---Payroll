@@ -1,0 +1,12 @@
+﻿{
+  "Info": {
+    "Class": "clsDbSharedImage",
+    "Description": "Shared Image Gallery Item"
+  },
+  "Items": {
+    "Name": "cloud-upload-icon",
+    "FileName": "cloud-upload-icon.png",
+    "Extension": "png",
+    "ContentHash": "8f36466"
+  }
+}

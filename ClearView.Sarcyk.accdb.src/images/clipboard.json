@@ -1,0 +1,12 @@
+﻿{
+  "Info": {
+    "Class": "clsDbSharedImage",
+    "Description": "Shared Image Gallery Item"
+  },
+  "Items": {
+    "Name": "clipboard",
+    "FileName": "clipboard.png",
+    "Extension": "png",
+    "ContentHash": "e02caf5"
+  }
+}

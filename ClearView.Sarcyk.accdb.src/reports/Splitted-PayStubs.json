@@ -1,0 +1,28 @@
+﻿{
+  "Info": {
+    "Class": "clsDbReport",
+    "Description": "Splitted-PayStubs Print Settings"
+  },
+  "Items": {
+    "Printer": {
+      "Orientation": "Landscape",
+      "PaperSize": "Letter"
+    },
+    "Margins": {
+      "LeftMargin": 0.5,
+      "TopMargin": 0.25,
+      "RightMargin": 0.25,
+      "BotMargin": 0.5,
+      "DataOnly": false,
+      "Width": 10.25,
+      "Height": 3.8076,
+      "DefaultSize": true,
+      "Columns": 1,
+      "ColumnSpacing": 0.25,
+      "RowSpacing": 0,
+      "ItemLayout": "Horizontal Columns",
+      "FastPrint": 1,
+      "Datasheet": 1
+    }
+  }
+}

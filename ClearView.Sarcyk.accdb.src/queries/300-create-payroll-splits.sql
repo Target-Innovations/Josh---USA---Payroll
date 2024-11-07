@@ -1,0 +1,4 @@
+﻿INSERT INTO PayrollSplittedEntries ( PayrollId, PayPeriodStart, PayPeriodEnd, EmployeeId, [Total-GrossPay], [Total-NetPay], Split, DivisionId, [Total-ER-SS], [Total-ER-MC], [Total-FUTA], [Total-SUTA], UpdatedAt, UpdatedBy, CheckDate )
+SELECT PayrollEntries.id, PayrollEntries.PayPeriodStart, PayrollEntries.PayPeriodEnd, PayrollEntries.EmployeeId, PayrollEntries.GrossPay, PayrollEntries.NetPay, ChargeSplits.Split, ChargeSplits.DivisionId, PayrollEntries.FED_SOCSEC_ER, PayrollEntries.FED_MEDCARE_ER, PayrollEntries.FED_FUTA, PayrollEntries.SUTA, Now() AS Expr1, [TempVars]![LoggedUser] AS Expr2, PayrollEntries.CheckDate
+FROM PayrollEntries INNER JOIN ChargeSplits ON PayrollEntries.EmployeeId = ChargeSplits.EmployeeId
+WHERE (((PayrollEntries.PayPeriodStart)=TempVars!PayPeriodStart) And ((PayrollEntries.PayPeriodEnd)=TempVars!PayPeriodEnd) And ((PayrollEntries.EmployeeId)=TempVars!EmployeeId) And ((ChargeSplits.Split)>0));

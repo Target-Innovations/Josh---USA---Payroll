@@ -1,0 +1,3 @@
+﻿SELECT Locations.id, Locations.BusinessPartnerId, Locations.LocationName, Locations.LastName, Locations.FirstName, Locations.[E-mail], Locations.JobTitle, Locations.BusinessPhone, Locations.HomePhone, Locations.MobilePhone, Locations.FaxNumber, Locations.Address, Locations.City, Locations.State, Locations.ZIP, Locations.Country, Locations.WebPage, Locations.Notes, Locations.Attachments, Locations.IsActive, Locations.PayeeName, Locations.ContractExpirationDate, Locations.SalesRepId, Locations.MarketingRepId, Locations.Status, Locations.UpdatedAt, Locations.UpdatedBy
+FROM Locations
+WHERE (((Locations.SalesRepId) Is Not Null And (Locations.SalesRepId)>0));

@@ -1,0 +1,12 @@
+﻿{
+  "Info": {
+    "Class": "clsDbSharedImage",
+    "Description": "Shared Image Gallery Item"
+  },
+  "Items": {
+    "Name": "nija-gray_circle",
+    "FileName": "nija-gray_circle.png",
+    "Extension": "png",
+    "ContentHash": "ad401db"
+  }
+}

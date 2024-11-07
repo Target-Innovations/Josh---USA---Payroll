@@ -1,0 +1,12 @@
+﻿{
+  "Info": {
+    "Class": "clsDbSharedImage",
+    "Description": "Shared Image Gallery Item"
+  },
+  "Items": {
+    "Name": "ComissionRates",
+    "FileName": "ComissionRates.png",
+    "Extension": "png",
+    "ContentHash": "247b491"
+  }
+}

@@ -1,0 +1,12 @@
+﻿{
+  "Info": {
+    "Class": "clsDbSharedImage",
+    "Description": "Shared Image Gallery Item"
+  },
+  "Items": {
+    "Name": "Check-green",
+    "FileName": "Check-green.png",
+    "Extension": "png",
+    "ContentHash": "ff83cc0"
+  }
+}
