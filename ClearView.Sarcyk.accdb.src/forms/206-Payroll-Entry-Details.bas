@@ -2663,6 +2663,6 @@ Private Sub Form_Timer()
 On Error Resume Next
 
     Dim dtime As Single
-    Me.txtTime.caption = format(Time, "HH:mm:ss AM/PM")
+    Me.txtTime.Caption = format(Time, "HH:mm:ss AM/PM")
     
 End Sub

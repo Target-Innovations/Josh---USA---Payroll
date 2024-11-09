@@ -139,7 +139,7 @@ Public Sub SetAuthorizationRights(objForm As Form, UserType As Integer)
                                     If Not .EOF Then rs.MoveFirst
                                     While Not .EOF
                                         If Not IsNull(rs("Id")) Then
-                                            CurrentDb.Execute "Insert Into UserRights (UserType, ObjectName, Description, HasAccess, IsVisible) values (" & rs("Id") & ",'" & objForm.Name & ":" & ctl.Name & "', '" & objForm.caption & ":" & ctl.caption & "',  True, True)"
+                                            CurrentDb.Execute "Insert Into UserRights (UserType, ObjectName, Description, HasAccess, IsVisible) values (" & rs("Id") & ",'" & objForm.Name & ":" & ctl.Name & "', '" & objForm.Caption & ":" & ctl.Caption & "',  True, True)"
                                         End If
                                         rs.MoveNext
                                     Wend

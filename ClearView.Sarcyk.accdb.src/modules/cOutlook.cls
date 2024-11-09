@@ -59,7 +59,7 @@ Dim i           As Integer
     Set onsp = oapp.GetNamespace("MAPI")
     Set ofdr = onsp.GetDefaultFolder(olFolderContacts)
     Set oItems = ofdr.Items
-    dblCnt = oItems.count
+    dblCnt = oItems.Count
     If dblCnt <> 0 Then
         For i = 1 To dblCnt
             If TypeName(oItems(i)) = "ContactItem" Then
@@ -129,8 +129,8 @@ Dim i           As Double
     Set oItems = ofdr.Items
     oItems.Sort "[Start]" 'must use this for reoccurring events
     oItems.IncludeRecurrences = True 'must use this for reoccurring events
-    If oItems.count <> 0 Then 'check to see if there are any events
-        For i = 1 To oItems.count 'loop through all events
+    If oItems.Count <> 0 Then 'check to see if there are any events
+        For i = 1 To oItems.Count 'loop through all events
             If TypeName(oItems(i)) = "AppointmentItem" Then   'get only events from calendar
                 Set oItem = oItems(i)
                 If oItem.GetRecurrencePattern.NoEndDate = False Then 'there is an end date

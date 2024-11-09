@@ -26,6 +26,7 @@ Public SalesOrderNumber As String
 Public SerialNumber As String
 Public SerialNumberList As String
 Public ItemNumber As String
+Public OrderFormId As Integer
 Public GameName As String
 Public GamePrice As Double
 Public TicketCount As Integer
@@ -101,35 +102,36 @@ End Property
 
 Public Sub ClearFields()
 
-    Id = vbNull
+    Id = 0
     AcquiredDate = vbNull
     DistributedDate = vbNull
-    SameMonthSold = vbNull
-    Status = vbNull
-    Purchaser = vbNull
-    Supplier = vbNull
-    InvoiceNumber = vbNull
-    SalesOrderNumber = vbNull
-    SerialNumber = vbNull
-    SerialNumberList = vbNull
-    ItemNumber = vbNull
-    GameName = vbNull
-    GamePrice = vbNull
-    TicketCount = vbNull
-    TicketValue = vbNull
-    Revenue = vbNull
-    IdealProfit = vbNull
-    PrizesPaid = vbNull
-    LocationRent = vbNull
-    LastSale = vbNull
-    InitialSupplyStockOwnerID = vbNull
-    InitialSupplyStockOwner = vbNull
+    SameMonthSold = 0
+    Status = vbNullString
+    Purchaser = 0
+    Supplier = 0
+    InvoiceNumber = vbNullString
+    SalesOrderNumber = vbNullString
+    SerialNumber = vbNullString
+    SerialNumberList = vbNullString
+    OrderFormId = 0
+    ItemNumber = 0
+    GameName = vbNullString
+    GamePrice = 0
+    TicketCount = 0
+    TicketValue = 0
+    Revenue = 0
+    IdealProfit = 0
+    PrizesPaid = 0
+    LocationRent = 0
+    LastSale = 0
+    InitialSupplyStockOwnerID = 0
+    InitialSupplyStockOwner = 0
     TransferDate = vbNull
-    CharityDistributedFor = vbNull
-    SMACSaleInvoiceNumber = vbNull
+    CharityDistributedFor = 0
+    SMACSaleInvoiceNumber = 0
     SaleDate = vbNull
-    NewSupplyStockOwnerID = vbNull
-    NewSupplyStockOwner = vbNull
+    NewSupplyStockOwnerID = 0
+    NewSupplyStockOwner = 0
     
     RunTimeMode = "DEV"
     
@@ -192,6 +194,12 @@ Public Function Validate(Optional ByVal Operation As String = DB_UPDATE) As Bool
         Exit Function
     End If
 
+    If IsNullOrEmpty(Me.OrderFormId) Then
+        this.Message = "Item # is a mandatory field."
+        Validate = False
+        Exit Function
+    End If
+    
     If IsNullOrEmpty(Me.SerialNumber) Then
         this.Message = "Serial # is a mandatory field."
         Validate = False
@@ -204,11 +212,11 @@ Public Function Validate(Optional ByVal Operation As String = DB_UPDATE) As Bool
         Exit Function
     End If
     
-    If IsNullOrEmpty(Me.ItemNumber) Then
-        this.Message = "Order Form is a mandatory field."
-        Validate = False
-        Exit Function
-    End If
+'    If IsNullOrEmpty(Me.ItemNumber) Then
+'        this.Message = "Order Form is a mandatory field."
+'        Validate = False
+'        Exit Function
+'    End If
 
     If IsNullOrEmpty(Me.TicketCount) Then
         this.Message = "Ticket Count is a mandatory field."
@@ -272,12 +280,15 @@ On Error GoTo ErrorHandler
             SameMonthSold = Nz(rs("SameMonthSold"))
             Status = Nz(rs("Status"))
             Purchaser = Nz(rs("Purchaser"))
-            ' Supplier = Nz(rs("Supplier")) ' TODO Type Mismatch
+            Supplier = Nz(rs("Supplier")) ' TODO Type Mismatch
             InvoiceNumber = Nz(rs("InvoiceNumber"))
             SalesOrderNumber = Nz(rs("SalesOrderNumber"))
             SerialNumber = Nz(rs("SerialNumber"))
             SerialNumberList = Nz(rs("SerialNumberList"))
+            
             ' ItemNumber = Nz(rs("ItemNumber")) ' TODO Item not find
+            OrderFormId = Nz(rs("OrderFormId"))
+            
             ' GameName = Nz(rs("GameName")) ' TODO Item not found
             GamePrice = Nz(rs("GamePrice"))
             TicketCount = Nz(rs("TicketCount"))
@@ -341,8 +352,11 @@ On Error GoTo ErrorHandler
             !SalesOrderNumber = SalesOrderNumber
             !SerialNumber = SerialNumber
             !SerialNumberList = SerialNumberList
-            !ItemNumber = ItemNumber
-            !GameName = GameName
+            
+            ' !ItemNumber = ItemNumber
+            !OrderFormId = OrderFormId
+            
+            '!GameName = GameName
             !GamePrice = GamePrice
             !TicketCount = TicketCount
             !TicketValue = TicketValue
@@ -352,13 +366,13 @@ On Error GoTo ErrorHandler
             !LocationRent = LocationRent
             !LastSale = LastSale
             !InitialSupplyStockOwnerID = InitialSupplyStockOwnerID
-            !InitialSupplyStockOwner = InitialSupplyStockOwner
+            '!InitialSupplyStockOwner = InitialSupplyStockOwner
             !TransferDate = TransferDate
             !CharityDistributedFor = CharityDistributedFor
             !SMACSaleInvoiceNumber = SMACSaleInvoiceNumber
             !SaleDate = SaleDate
             !NewSupplyStockOwnerID = NewSupplyStockOwnerID
-            !NewSupplyStockOwner = NewSupplyStockOwner
+            '!NewSupplyStockOwner = NewSupplyStockOwner
             
             !UpdatedAt = Now()
             !UpdatedBy = cSysSettings.LoggedUserName
@@ -478,7 +492,7 @@ End Function
 
 Public Function SerialNumberExists(SerialNumber As String) As Boolean
 
-    SerialNumberExists = Nz(DCount("*", "BoxInventory", "SerialNumber = '" & Me.SerialNumber & "'"), 0)
+    SerialNumberExists = Nz(DCount("*", "BoxInventory", "SerialNumber = '" & SerialNumber & "'"), 0)
      
 End Function
 
@@ -687,37 +701,27 @@ Sub CreateVariousBoxes(SerialNumbers As String, FirstBox As DAO.Recordset)
     Dim MyArray() As String
     Dim i As Integer
     
-    MyArray = cArray.SplitedArray(SerialNumbers, ",")
+    Me.PopulateFields FirstBox
+    
+    MyArray = cArray.SplitedArray(SerialNumbers, COMMA)
     
     ' Go from first serial number until the last one
     For i = 1 To UBound(MyArray)
     
-        Debug.Print MyArray(i)
-        ' grab the current serial number and insert a record in
-        ' the database with the same information as the first records
+        Me.SerialNumber = MyArray(i)
+        Me.UpdatedAt = Now()
         
-        Dim sql As String
-        Dim rs As DAO.Recordset
+        If Not SerialNumberExists(SerialNumber) Then
         
-        Set rs = CurrentDb.OpenRecordset("BoxInventory")
-        
-        With rs
-                
-            .AddNew
-                
-                !SerialNumber = MyArray(i)
-                
-                !Status = FirstBox("Status")
-                !UpdatedAt = Now()
-                '!UpdatedBy = cSysSettings.LoggedUserName
             
-            .Update
-        
-            .Close
+            ' grab the current serial number and insert a record in
+            ' the database with the same information as the first records
             
-        End With
+            ' Debug.Print MyArray(i)
+            Me.Add
 
-        
+        End If
+    
     Next i
     
 End Sub

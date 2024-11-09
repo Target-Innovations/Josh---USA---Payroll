@@ -104,24 +104,24 @@ End Function
 Public Function getRSCount(rs As Recordset) As Integer
 
 On Error GoTo handleError
-    Dim count As Integer
+    Dim Count As Integer
     
-    count = 0
+    Count = 0
     
     If Not rs.EOF Then
         
         rs.MoveFirst
         rs.MoveLast
         
-        count = rs.RecordCount
+        Count = rs.RecordCount
         
     End If
     
-    getRSCount = count
+    getRSCount = Count
     Exit Function
     
 handleError:
-    getRSCount = count
+    getRSCount = Count
     Exit Function
 
 End Function

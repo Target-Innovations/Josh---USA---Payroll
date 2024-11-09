@@ -243,7 +243,7 @@
             </xsd:restriction>
           </xsd:simpleType>
         </xsd:element>
-        <xsd:element name="SerialNumberList" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+        <xsd:element name="SerialNumberList" minOccurs="0" od:jetType="memo" od:sqlSType="ntext">
           <xsd:annotation>
             <xsd:appinfo>
               <od:fieldProperty name="ColumnWidth" type="3" value="-1"/>
@@ -251,11 +251,12 @@
               <od:fieldProperty name="ColumnHidden" type="1" value="0"/>
               <od:fieldProperty name="Required" type="1" value="0"/>
               <od:fieldProperty name="AllowZeroLength" type="1" value="1"/>
-              <od:fieldProperty name="DisplayControl" type="3" value="109"/>
               <od:fieldProperty name="IMEMode" type="2" value="0"/>
               <od:fieldProperty name="IMESentenceMode" type="2" value="3"/>
               <od:fieldProperty name="UnicodeCompression" type="1" value="1"/>
+              <od:fieldProperty name="TextFormat" type="2" value="0"/>
               <od:fieldProperty name="TextAlign" type="2" value="0"/>
+              <od:fieldProperty name="AppendOnly" type="1" value="0"/>
               <od:fieldProperty name="AggregateType" type="4" value="-1"/>
               <od:fieldProperty name="ResultType" type="2" value="0"/>
               <od:fieldProperty name="CurrencyLCID" type="4" value="0"/>
@@ -263,7 +264,7 @@
           </xsd:annotation>
           <xsd:simpleType>
             <xsd:restriction base="xsd:string">
-              <xsd:maxLength value="255"/>
+              <xsd:maxLength value="536870910"/>
             </xsd:restriction>
           </xsd:simpleType>
         </xsd:element>

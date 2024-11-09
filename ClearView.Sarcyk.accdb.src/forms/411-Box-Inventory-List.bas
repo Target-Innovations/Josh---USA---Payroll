@@ -16,8 +16,8 @@ Begin Form
     Width =14760
     DatasheetFontHeight =11
     ItemSuffix =1228
-    Right =20985
-    Bottom =9045
+    Right =11925
+    Bottom =10515
     DatasheetGridlinesColor =-1
     Tag ="SplitList"
     OrderBy ="[BoxInventory].[ID]"
@@ -28,6 +28,7 @@ Begin Form
     Caption ="Box Inventory List"
     BeforeUpdate ="[Event Procedure]"
     DatasheetFontName ="Calibri"
+    OnActivate ="[Event Procedure]"
     OnLoad ="[Event Procedure]"
     FilterOnLoad =0
     SplitFormOrientation =1
@@ -683,18 +684,19 @@ Begin Form
                     TextFontCharSet =0
                     TextAlign =1
                     IMESentenceMode =3
-                    ColumnCount =2
-                    ListWidth =2835
+                    ColumnCount =4
+                    ListWidth =5103
                     Left =1726
                     Top =1343
                     Width =1163
                     Height =405
                     TabIndex =2
-                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"510\""
                     Name ="cboGoTo"
                     RowSourceType ="Table/Query"
-                    RowSource ="SELECT BoxInventory.ID, BoxInventory.SerialNumber FROM BoxInventory; "
-                    ColumnWidths ="0;2268"
+                    RowSource ="SELECT BoxInventory.ID, BoxInventory.SerialNumber, BoxInventory.InvoiceNumber, B"
+                        "oxInventory.AcquiredDate FROM BoxInventory; "
+                    ColumnWidths ="0;1701;1701;1701"
                     FontName ="Segoe UI"
                     Tag ="GoToRecord~TableOrQueryName=[Contacts Extended]~SourceID=ID~Column1=Contact Name"
                         "~Column2=Company~Column3=E-mail Address"
@@ -1854,6 +1856,7 @@ Begin Form
                     Top =6225
                     Width =3300
                     Height =293
+                    ColumnWidth =2723
                     TabIndex =20
                     Name ="CharityDistributedFor"
                     ControlSource ="CharityDistributedFor"
@@ -1914,6 +1917,7 @@ Begin Form
                     Top =6525
                     Width =3300
                     Height =293
+                    ColumnWidth =2048
                     TabIndex =21
                     Name ="SMACSaleInvoiceNumber"
                     ControlSource ="SMACSaleInvoiceNumber"
@@ -1973,6 +1977,7 @@ Begin Form
                     Top =6825
                     Width =3300
                     Height =293
+                    ColumnWidth =1253
                     TabIndex =22
                     Name ="SaleDate"
                     ControlSource ="SaleDate"
@@ -2032,6 +2037,7 @@ Begin Form
                     Top =7125
                     Width =3300
                     Height =293
+                    ColumnWidth =2783
                     TabIndex =23
                     Name ="NewSupplyStockOwnerID"
                     ControlSource ="NewSupplyStockOwnerID"
@@ -2091,6 +2097,7 @@ Begin Form
                     Top =7425
                     Width =3300
                     Height =293
+                    ColumnWidth =2213
                     TabIndex =24
                     Name ="UpdatedAt"
                     ControlSource ="UpdatedAt"
@@ -2560,6 +2567,10 @@ Attribute VB_Creatable = True
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
+
+Private Sub Form_Activate()
+    Me.Requery
+End Sub
 
 Private Sub Form_BeforeUpdate(Cancel As Integer)
 

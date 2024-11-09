@@ -516,7 +516,7 @@ On Error GoTo ErrorHandler
     
     ' Generate table headers
     html = html & "<tr>"
-    For i = 0 To rs.Fields.count - 1
+    For i = 0 To rs.Fields.Count - 1
         html = html & "<th>" & rs.Fields(i).Name & "</th>"
         ' Debug.Print "Dim " & rs.Fields(i).Name & " As String"
         Debug.Print rs.Fields(i).Name
@@ -527,7 +527,7 @@ On Error GoTo ErrorHandler
     ' Generate table rows
     Do Until rs.EOF
         html = html & "<tr>"
-        For i = 0 To rs.Fields.count - 1
+        For i = 0 To rs.Fields.Count - 1
             Debug.Print "Dim " & rs.Fields(i).Name & " As String"
             html = html & "<td>" & Nz(rs.Fields(i).Value) & "</td>"
         Next

@@ -48,7 +48,7 @@ Function SplitedArray(fieldList As String, separator As String)
     ' clean up column name since they come with blank spaces sometimes
     For i = LBound(hdnames) To UBound(hdnames)
         hdnames(i) = Trim(hdnames(i))
-        Debug.Print "SplitedArray", hdnames(i)
+        ' Debug.Print "SplitedArray", hdnames(i)
     Next i
 
     SplitedArray = hdnames
@@ -104,3 +104,17 @@ ErrorHandler:
     GetArrayValue = ""
 
 End Function
+
+Function Count(Data As String, separator As String) As Integer
+
+    On Error Resume Next
+    
+    Count = 0
+    
+    Dim tmpArray() As String
+    tmpArray = Me.SplitedArray(Data, separator)
+    
+    Count = UBound(tmpArray) + 1
+    
+End Function
+

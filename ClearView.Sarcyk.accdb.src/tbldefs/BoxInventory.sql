@@ -8,7 +8,7 @@
   [Supplier] VARCHAR (255),
   [InvoiceNumber] VARCHAR (255),
   [SalesOrderNumber] VARCHAR (255),
-  [SerialNumberList] VARCHAR (255),
+  [SerialNumberList] LONGTEXT ,
   [SerialNumber] VARCHAR (255),
   [OrderFormId] LONG ,
   [GamePrice] CURRENCY ,

@@ -17,9 +17,9 @@ Begin Form
     GridY =24
     Width =13913
     DatasheetFontHeight =11
-    ItemSuffix =979
-    Right =16703
-    Bottom =8790
+    ItemSuffix =980
+    Right =11925
+    Bottom =10515
     TimerInterval =125
     AfterInsert ="[Event Procedure]"
     Filter ="[ID]=2"
@@ -1568,7 +1568,7 @@ Begin Form
                                     Top =1530
                                     Width =2303
                                     Height =278
-                                    TabIndex =12
+                                    TabIndex =11
                                     Name ="txtInvoiceNumber"
                                     ControlSource ="InvoiceNumber"
 
@@ -1607,7 +1607,7 @@ Begin Form
                                     Top =3084
                                     Width =2693
                                     Height =278
-                                    TabIndex =13
+                                    TabIndex =12
                                     Name ="txtRevenue"
                                     ControlSource ="Revenue"
                                     Format ="$* #,##0.00;$* (#,##0.00);$* -00"
@@ -1649,7 +1649,7 @@ Begin Form
                                     Top =1530
                                     Width =2303
                                     Height =293
-                                    TabIndex =15
+                                    TabIndex =13
                                     Name ="txtSalesOrderNumber"
                                     ControlSource ="SalesOrderNumber"
 
@@ -1688,7 +1688,7 @@ Begin Form
                                     Top =3131
                                     Width =2693
                                     Height =293
-                                    TabIndex =16
+                                    TabIndex =14
                                     Name ="txtIdealProfit"
                                     ControlSource ="IdealProfit"
                                     Format ="$* #,##0.00;$* (#,##0.00);$* -00"
@@ -1730,7 +1730,7 @@ Begin Form
                                     Top =3816
                                     Width =2303
                                     Height =293
-                                    TabIndex =18
+                                    TabIndex =15
                                     Name ="txtSerialNumber"
                                     ControlSource ="SerialNumber"
 
@@ -1770,8 +1770,10 @@ Begin Form
                                     Top =3485
                                     Width =6217
                                     Height =811
-                                    Name ="SerialNumberList"
+                                    TabIndex =16
+                                    Name ="txtSerialNumberList"
                                     ControlSource ="SerialNumberList"
+                                    OnLostFocus ="[Event Procedure]"
 
                                     LayoutCachedLeft =6926
                                     LayoutCachedTop =3485
@@ -1803,21 +1805,36 @@ Begin Form
                                 End
                                 Begin CommandButton
                                     OverlapFlags =215
-                                    Left =11598
-                                    Top =4370
+                                    Left =11790
+                                    Top =4440
                                     Width =1283
                                     Height =473
-                                    Name ="Command978"
+                                    TabIndex =17
+                                    Name ="cmdAddNewItem"
                                     Caption ="Add Item"
+                                    OnClick ="[Event Procedure]"
 
-                                    LayoutCachedLeft =11598
-                                    LayoutCachedTop =4370
-                                    LayoutCachedWidth =12881
-                                    LayoutCachedHeight =4843
+                                    LayoutCachedLeft =11790
+                                    LayoutCachedTop =4440
+                                    LayoutCachedWidth =13073
+                                    LayoutCachedHeight =4913
                                     WebImagePaddingLeft =4
                                     WebImagePaddingTop =4
                                     WebImagePaddingRight =3
                                     WebImagePaddingBottom =3
+                                End
+                                Begin Label
+                                    OverlapFlags =215
+                                    Left =6945
+                                    Top =4320
+                                    Width =1245
+                                    Height =293
+                                    Name ="lblSerialConunt"
+                                    Caption ="Count: ( 0 )"
+                                    LayoutCachedLeft =6945
+                                    LayoutCachedTop =4320
+                                    LayoutCachedWidth =8190
+                                    LayoutCachedHeight =4613
                                 End
                             End
                         End
@@ -1902,7 +1919,7 @@ Begin Form
                     TextAlign =2
                     IMESentenceMode =3
                     Left =12692
-                    Top =188
+                    Top =165
                     Width =622
                     Height =278
                     TabIndex =1
@@ -1911,9 +1928,9 @@ Begin Form
                     Format ="General Number"
 
                     LayoutCachedLeft =12692
-                    LayoutCachedTop =188
+                    LayoutCachedTop =165
                     LayoutCachedWidth =13314
-                    LayoutCachedHeight =466
+                    LayoutCachedHeight =443
                     Begin
                         Begin Label
                             OverlapFlags =215
@@ -1951,6 +1968,18 @@ Option Compare Database
 
 Dim oBox As New cBoxInventory
 
+Private Sub Form_Load()
+
+On Error Resume Next
+    
+    cLogger.LogIt "Entering [" & Me.Name & "]", EventType.Info
+
+    Set oUser = cSysSettings.oUser
+
+    SetAuthorizationRights Me, cSysSettings.oUser.UserType
+
+End Sub
+
 Private Sub cboOrderFormId_Click()
     
     oBox.GetGameInfo Me.OrderFormId
@@ -1958,6 +1987,7 @@ Private Sub cboOrderFormId_Click()
     ' Me.cboOrderFormId = Nz(rs("GameName"))
     
     ' GamePrice = Nz(rs("GamePrice"))
+    
     Me.txtTicketCount = oBox.TicketCount
     Me.txtTicketValue = oBox.TicketValue
     Me.txtRevenue = oBox.Revenue
@@ -1968,14 +1998,32 @@ Private Sub cboOrderFormId_Click()
     
 End Sub
 
+Private Sub cmdAddNewItem_Click()
+
+    ' Clone currect Record (header and items)
+    
+    ' Clear all item fields
+    
+    ' Form_AfterInsert
+    
+End Sub
+
 Private Sub cmdPrint_Click()
     ' DoCmd.OpenReport "306-Detailed-Receipt", acViewReport, , "CollectionStubId = " & Me.Id, acDialog
 End Sub
 
 Private Sub Form_AfterInsert()
     
+    Me.SerialNumberList = Replace(Me.SerialNumberList, vbCr, COMMA)
+    Me.SerialNumberList = Replace(Me.SerialNumberList, vbLf, COMMA)
+    Me.SerialNumberList = Replace(Me.SerialNumberList, SPACE, COMMA)
+    
+    Me.lblSerialConunt.Caption = "Count: (" & cArray.Count(Nz(Me.txtSerialNumberList), ",") & ")"
+
     oBox.CreateVariousBoxes Me.SerialNumberList, Me.RecordsetClone
     
+    If cUIObjects.IsLoaded("411-Box-Inventory-List") Then Forms("411-Box-Inventory-List").Requery
+
 End Sub
 
 Private Sub Form_BeforeUpdate(Cancel As Integer)
@@ -2031,17 +2079,6 @@ ErrorHandler:
     
 End Sub
 
-Private Sub Form_Load()
-
-On Error Resume Next
-    
-    cLogger.LogIt "Entering [" & Me.Name & "]", EventType.Info
-
-    Set oUser = cSysSettings.oUser
-
-    SetAuthorizationRights Me, cSysSettings.oUser.UserType
-
-End Sub
 
 Public Sub UpdateModel()
 
@@ -2051,12 +2088,12 @@ Public Sub UpdateModel()
     oBox.SameMonthSold = Nz(Me.SameMonthSold)
     oBox.Status = Nz(Me.Status)
     oBox.Purchaser = Nz(Nz(Me.Purchaser))
-    ' oBox.Supplier = Nz(Me.Supplier)
+    oBox.Supplier = Nz(Me.Supplier)
     oBox.InvoiceNumber = Nz(Me.InvoiceNumber)
     oBox.SalesOrderNumber = Nz(Me.SalesOrderNumber)
     oBox.SerialNumber = Nz(Me.SerialNumber)
-    oBox.SerialNumberList = Nz(Me.SerialNumberList)
-    ' oBox.ItemNumber = Nz(Me.ItemNumber)
+    oBox.SerialNumberList = Nz(Me.txtSerialNumberList)
+    oBox.OrderFormId = Nz(Me.OrderFormId)
     ' oBox.GameName = Nz(Me.GameName)
     oBox.GamePrice = Nz(Me.GamePrice)
     oBox.TicketCount = Nz(Me.TicketCount)
@@ -2078,6 +2115,8 @@ Public Sub UpdateModel()
 End Sub
 
 Sub SetFormState()
+            
+    Me.lblSerialConunt.Caption = "Count: (" & cArray.Count(Nz(Me.txtSerialNumberList), ",") & ")"
             
 '    Me.AcquiredDate = oBox.AcquiredDate
 '    Me.DistributedDate = oBox.DistributedDate
@@ -2120,8 +2159,8 @@ Private Sub Form_Current()
         
     End If
     
-    ' SetFormState
-    
+    SetFormState
+
 End Sub
 
 Private Sub cmdDelete_Click()
@@ -2191,5 +2230,15 @@ ErrorHandler:
         ' Before Update was canceld by a business rule
         ' just ignore it
     End If
+    
+End Sub
+
+Private Sub txtSerialNumberList_LostFocus()
+
+    Me.txtSerialNumberList = Replace(Me.txtSerialNumberList, Chr(10), "")
+    Me.txtSerialNumberList = Replace(Me.txtSerialNumberList, Chr(13), "")
+    Me.txtSerialNumberList = Replace(Me.txtSerialNumberList, SPACE, COMMA)
+    
+    Me.lblSerialConunt.Caption = "Count: (" & cArray.Count(Nz(Me.txtSerialNumberList), ",") & ")"
     
 End Sub

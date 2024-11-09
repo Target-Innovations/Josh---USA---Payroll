@@ -58,12 +58,12 @@ Public Sub SetAuthorizationRights(objForm As Form, UserType As Integer)
             ' *****     This is used to populate the rights table with all the buttons in a form     *****
             '
             If cSysSettings.RunTimeMode = "DEV" Then
-                CurrentDb.Execute "Insert Into SysUserRights (UserType, ObjectName, Description, HasAccess, IsVisible) values (1,'" & objForm.Name & ":" & ctl.Name & "', '" & objForm.caption & ":" & ctl.caption & "',  True, True)"
-                CurrentDb.Execute "Insert Into SysUserRights (UserType, ObjectName, Description, HasAccess, IsVisible) values (2,'" & objForm.Name & ":" & ctl.Name & "', '" & objForm.caption & ":" & ctl.caption & "',  True, True)"
-                CurrentDb.Execute "Insert Into SysUserRights (UserType, ObjectName, Description, HasAccess, IsVisible) values (3,'" & objForm.Name & ":" & ctl.Name & "', '" & objForm.caption & ":" & ctl.caption & "',  True, True)"
-                CurrentDb.Execute "Insert Into SysUserRights (UserType, ObjectName, Description, HasAccess, IsVisible) values (4,'" & objForm.Name & ":" & ctl.Name & "', '" & objForm.caption & ":" & ctl.caption & "',  True, True)"
-                CurrentDb.Execute "Insert Into SysUserRights (UserType, ObjectName, Description, HasAccess, IsVisible) values (5,'" & objForm.Name & ":" & ctl.Name & "', '" & objForm.caption & ":" & ctl.caption & "',  True, True)"
-                CurrentDb.Execute "Insert Into SysUserRights (UserType, ObjectName, Description, HasAccess, IsVisible) values (6,'" & objForm.Name & ":" & ctl.Name & "', '" & objForm.caption & ":" & ctl.caption & "',  True, True)"
+                CurrentDb.Execute "Insert Into SysUserRights (UserType, ObjectName, Description, HasAccess, IsVisible) values (1,'" & objForm.Name & ":" & ctl.Name & "', '" & objForm.Caption & ":" & ctl.Caption & "',  True, True)"
+                CurrentDb.Execute "Insert Into SysUserRights (UserType, ObjectName, Description, HasAccess, IsVisible) values (2,'" & objForm.Name & ":" & ctl.Name & "', '" & objForm.Caption & ":" & ctl.Caption & "',  True, True)"
+                CurrentDb.Execute "Insert Into SysUserRights (UserType, ObjectName, Description, HasAccess, IsVisible) values (3,'" & objForm.Name & ":" & ctl.Name & "', '" & objForm.Caption & ":" & ctl.Caption & "',  True, True)"
+                CurrentDb.Execute "Insert Into SysUserRights (UserType, ObjectName, Description, HasAccess, IsVisible) values (4,'" & objForm.Name & ":" & ctl.Name & "', '" & objForm.Caption & ":" & ctl.Caption & "',  True, True)"
+                CurrentDb.Execute "Insert Into SysUserRights (UserType, ObjectName, Description, HasAccess, IsVisible) values (5,'" & objForm.Name & ":" & ctl.Name & "', '" & objForm.Caption & ":" & ctl.Caption & "',  True, True)"
+                CurrentDb.Execute "Insert Into SysUserRights (UserType, ObjectName, Description, HasAccess, IsVisible) values (6,'" & objForm.Name & ":" & ctl.Name & "', '" & objForm.Caption & ":" & ctl.Caption & "',  True, True)"
             End If
             
             ctl.Enabled = IsAuthorized(objForm.Name, ctl.Name, UserType)
@@ -184,16 +184,16 @@ End Function
 
 Function IsValidPassword(Password As String) As Boolean
 
-    Dim regex As Object
-    Set regex = CreateObject("VBScript.RegExp")
+    Dim regEx As Object
+    Set regEx = CreateObject("VBScript.RegExp")
     
-    With regex
+    With regEx
         .Pattern = "^[A-Za-z\d@$!%*?&]{8,}$"
         .IgnoreCase = False
         .Global = True
     End With
     
-    IsValidPassword = regex.test(Password)
+    IsValidPassword = regEx.test(Password)
     
 End Function
 
@@ -281,7 +281,7 @@ Public Sub CloseForms(Except As String)
     
     ' Loop all open forms, from last to first, to avoid problems due to closing forms
     ' (removing them from the Forms collection) in the loop
-    For i = Forms.count - 1 To 0 Step -1
+    For i = Forms.Count - 1 To 0 Step -1
         Set F = Forms(i)
         ' Close all forms except the login form
         If F.Name <> "00-Login" And F.Name <> Except Then

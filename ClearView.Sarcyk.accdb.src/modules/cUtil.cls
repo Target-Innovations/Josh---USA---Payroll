@@ -282,3 +282,24 @@ Public Function SetReportFilterList(Filtro As String) As String
     End If
 
 End Function
+
+
+Sub CheckAsciiCodes(s As String)
+
+    Dim str As String
+    Dim i As Integer
+    Dim asciiCode As Integer
+    
+    ' Set your string here
+    str = s ' "Hello, World!"
+    
+    ' Loop through each character in the string
+    For i = 1 To Len(str)
+        ' Get the ASCII code of the character
+        asciiCode = Asc(Mid(str, i, 1))
+        
+        ' Print the character and its ASCII code
+        Debug.Print "Character: " & Mid(str, i, 1) & " - ASCII Code: " & asciiCode
+    Next i
+    
+End Sub

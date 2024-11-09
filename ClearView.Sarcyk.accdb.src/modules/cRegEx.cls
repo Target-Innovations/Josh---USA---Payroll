@@ -65,16 +65,16 @@ End Function
 
 Function IsValidPassword(Password As String) As Boolean
 
-    Dim regex As Object
-    Set regex = CreateObject("VBScript.RegExp")
+    Dim regEx As Object
+    Set regEx = CreateObject("VBScript.RegExp")
     
-    With regex
+    With regEx
         .Pattern = "^[A-Za-z\d@$!%*?&]{8,}$"
         .IgnoreCase = False
         .Global = True
     End With
     
-    IsValidPassword = regex.test(Password)
+    IsValidPassword = regEx.test(Password)
     
 End Function
 
@@ -104,18 +104,18 @@ End Function
 
 Function IsValidCsvString(str As String) As Boolean
 
-    Dim regex As Object
-    Set regex = CreateObject("VBScript.RegExp")
+    Dim regEx As Object
+    Set regEx = CreateObject("VBScript.RegExp")
     
     ' Define the regular expression pattern for a valid CSV line
-    regex.Pattern = "^[A-Za-z0-9]+(,[A-Za-z0-9]+)*$"
-    regex.IgnoreCase = True
-    regex.Global = False
+    regEx.Pattern = "^[A-Za-z0-9]+(,[A-Za-z0-9]+)*$" ' "^[A-Za-z0-9]+(,[A-Za-z0-9]+)*$" ' "^[A-Za-z0-9]+(,[A-Za-z0-9]+)*$"
+    regEx.IgnoreCase = True
+    regEx.Global = False
     
     ' Test if the string matches the CSV pattern
-    IsValidCsvString = regex.test(str)
+    IsValidCsvString = regEx.test(str)
     
-    Set regex = Nothing
+    Set regEx = Nothing
     
 End Function
 
