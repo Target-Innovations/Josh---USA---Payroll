@@ -15,14 +15,14 @@ Begin Form
     PictureType =2
     GridX =24
     GridY =24
-    Width =13913
+    Width =13978
     DatasheetFontHeight =11
     ItemSuffix =980
-    Right =11925
-    Bottom =10515
+    Right =11085
+    Bottom =10755
     TimerInterval =125
     AfterInsert ="[Event Procedure]"
-    Filter ="[ID]=2"
+    Filter ="Id = 24"
     RecSrcDt = Begin
         0xc5b94ca08842e640
     End
@@ -30,6 +30,7 @@ Begin Form
     Caption ="Inventory Entry Details"
     OnCurrent ="[Event Procedure]"
     BeforeUpdate ="[Event Procedure]"
+    AfterUpdate ="[Event Procedure]"
     OnClose ="[Event Procedure]"
     DatasheetFontName ="Aptos"
     OnLoad ="[Event Procedure]"
@@ -260,14 +261,14 @@ Begin Form
                     BorderWidth =1
                     OverlapFlags =93
                     Top =1650
-                    Width =13648
+                    Width =13978
                     Height =601
                     BorderColor =0
                     Name ="Box238"
                     GridlineColor =0
                     HorizontalAnchor =2
                     LayoutCachedTop =1650
-                    LayoutCachedWidth =13648
+                    LayoutCachedWidth =13978
                     LayoutCachedHeight =2251
                     BackThemeColorIndex =7
                     BorderThemeColorIndex =-1
@@ -513,10 +514,10 @@ Begin Form
                     HoverForeTint =100.0
                     PressedForeColor =0
                     PressedForeTint =100.0
-                    WebImagePaddingLeft =4
-                    WebImagePaddingTop =4
-                    WebImagePaddingRight =3
-                    WebImagePaddingBottom =3
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
                     Overlaps =1
                 End
                 Begin CommandButton
@@ -565,10 +566,10 @@ Begin Form
                     HoverForeTint =100.0
                     PressedForeColor =0
                     PressedForeTint =100.0
-                    WebImagePaddingLeft =4
-                    WebImagePaddingTop =4
-                    WebImagePaddingRight =3
-                    WebImagePaddingBottom =3
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
                     Overlaps =1
                 End
                 Begin CommandButton
@@ -616,10 +617,10 @@ Begin Form
                     HoverForeTint =100.0
                     PressedForeColor =0
                     PressedForeTint =100.0
-                    WebImagePaddingLeft =4
-                    WebImagePaddingTop =4
-                    WebImagePaddingRight =3
-                    WebImagePaddingBottom =3
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
                     Overlaps =1
                 End
                 Begin CommandButton
@@ -698,10 +699,10 @@ Begin Form
                     HoverForeTint =100.0
                     PressedForeColor =0
                     PressedForeTint =100.0
-                    WebImagePaddingLeft =4
-                    WebImagePaddingTop =4
-                    WebImagePaddingRight =3
-                    WebImagePaddingBottom =3
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
                     Overlaps =1
                 End
                 Begin Image
@@ -905,9 +906,8 @@ Begin Form
                     HoverForeTint =100.0
                     PressedForeColor =0
                     PressedForeTint =100.0
-                    WebImagePaddingLeft =4
-                    WebImagePaddingRight =5
-                    WebImagePaddingBottom =1
+                    WebImagePaddingLeft =2
+                    WebImagePaddingRight =2
                     Overlaps =1
                 End
                 Begin CommandButton
@@ -955,23 +955,23 @@ Begin Form
                     HoverForeTint =100.0
                     PressedForeColor =0
                     PressedForeTint =100.0
-                    WebImagePaddingLeft =4
-                    WebImagePaddingTop =4
-                    WebImagePaddingRight =3
-                    WebImagePaddingBottom =3
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
                     Overlaps =1
                 End
                 Begin EmptyCell
                     Left =7605
-                    Top =188
+                    Top =195
                     Width =2603
                     Height =315
                     Name ="EmptyCell620"
                     GroupTable =7
                     LayoutCachedLeft =7605
-                    LayoutCachedTop =188
+                    LayoutCachedTop =195
                     LayoutCachedWidth =10208
-                    LayoutCachedHeight =503
+                    LayoutCachedHeight =510
                     LayoutGroup =1
                     GroupTable =7
                 End
@@ -1016,7 +1016,7 @@ Begin Form
                     Left =98
                     Top =263
                     Width =13447
-                    Height =5760
+                    Height =5767
                     FontSize =10
                     Name ="tabData"
                     FontName ="Segoe UI"
@@ -1025,7 +1025,7 @@ Begin Form
                     LayoutCachedLeft =98
                     LayoutCachedTop =263
                     LayoutCachedWidth =13545
-                    LayoutCachedHeight =6023
+                    LayoutCachedHeight =6030
                     ThemeFontIndex =-1
                     GridlineThemeColorIndex =-1
                     GridlineShade =100.0
@@ -1050,20 +1050,20 @@ Begin Form
                     Begin
                         Begin Page
                             OverlapFlags =87
-                            Left =134
-                            Top =645
-                            Width =13370
-                            Height =5340
+                            Left =180
+                            Top =735
+                            Width =13290
+                            Height =5220
                             Name ="PO_Entries_Page"
                             Caption ="|  Details   |"
-                            LayoutCachedLeft =134
-                            LayoutCachedTop =645
-                            LayoutCachedWidth =13504
-                            LayoutCachedHeight =5985
-                            WebImagePaddingLeft =4
-                            WebImagePaddingTop =4
-                            WebImagePaddingRight =4
-                            WebImagePaddingBottom =4
+                            LayoutCachedLeft =180
+                            LayoutCachedTop =735
+                            LayoutCachedWidth =13470
+                            LayoutCachedHeight =5955
+                            WebImagePaddingLeft =2
+                            WebImagePaddingTop =2
+                            WebImagePaddingRight =2
+                            WebImagePaddingBottom =2
                             Begin
                                 Begin Rectangle
                                     SpecialEffect =0
@@ -1773,6 +1773,7 @@ Begin Form
                                     TabIndex =16
                                     Name ="txtSerialNumberList"
                                     ControlSource ="SerialNumberList"
+                                    OnGotFocus ="[Event Procedure]"
                                     OnLostFocus ="[Event Procedure]"
 
                                     LayoutCachedLeft =6926
@@ -1818,10 +1819,11 @@ Begin Form
                                     LayoutCachedTop =4440
                                     LayoutCachedWidth =13073
                                     LayoutCachedHeight =4913
-                                    WebImagePaddingLeft =4
-                                    WebImagePaddingTop =4
-                                    WebImagePaddingRight =3
-                                    WebImagePaddingBottom =3
+                                    WebImagePaddingLeft =2
+                                    WebImagePaddingTop =2
+                                    WebImagePaddingRight =1
+                                    WebImagePaddingBottom =1
+                                    Overlaps =1
                                 End
                                 Begin Label
                                     OverlapFlags =215
@@ -1830,7 +1832,7 @@ Begin Form
                                     Width =1245
                                     Height =293
                                     Name ="lblSerialConunt"
-                                    Caption ="Count: ( 0 )"
+                                    Caption ="Count: (0)"
                                     LayoutCachedLeft =6945
                                     LayoutCachedTop =4320
                                     LayoutCachedWidth =8190
@@ -1840,20 +1842,20 @@ Begin Form
                         End
                         Begin Page
                             OverlapFlags =247
-                            Left =135
-                            Top =645
-                            Width =13373
-                            Height =5340
+                            Left =180
+                            Top =735
+                            Width =13290
+                            Height =5220
                             Name ="Distribution_page"
                             Caption ="|  Distribution Details  |"
-                            LayoutCachedLeft =135
-                            LayoutCachedTop =645
-                            LayoutCachedWidth =13508
-                            LayoutCachedHeight =5985
-                            WebImagePaddingLeft =4
-                            WebImagePaddingTop =4
-                            WebImagePaddingRight =4
-                            WebImagePaddingBottom =4
+                            LayoutCachedLeft =180
+                            LayoutCachedTop =735
+                            LayoutCachedWidth =13470
+                            LayoutCachedHeight =5955
+                            WebImagePaddingLeft =2
+                            WebImagePaddingTop =2
+                            WebImagePaddingRight =2
+                            WebImagePaddingBottom =2
                             Begin
                                 Begin Subform
                                     OverlapFlags =247
@@ -1876,20 +1878,20 @@ Begin Form
                         End
                         Begin Page
                             OverlapFlags =247
-                            Left =135
-                            Top =645
-                            Width =13373
-                            Height =5340
+                            Left =180
+                            Top =735
+                            Width =13290
+                            Height =5220
                             Name ="Ownership_Page"
                             Caption ="|  Ownership History  |"
-                            LayoutCachedLeft =135
-                            LayoutCachedTop =645
-                            LayoutCachedWidth =13508
-                            LayoutCachedHeight =5985
-                            WebImagePaddingLeft =4
-                            WebImagePaddingTop =4
-                            WebImagePaddingRight =4
-                            WebImagePaddingBottom =4
+                            LayoutCachedLeft =180
+                            LayoutCachedTop =735
+                            LayoutCachedWidth =13470
+                            LayoutCachedHeight =5955
+                            WebImagePaddingLeft =2
+                            WebImagePaddingTop =2
+                            WebImagePaddingRight =2
+                            WebImagePaddingBottom =2
                             Begin
                                 Begin Subform
                                     OverlapFlags =247
@@ -1967,6 +1969,7 @@ Attribute VB_Exposed = False
 Option Compare Database
 
 Dim oBox As New cBoxInventory
+Dim DbOperation As String
 
 Private Sub Form_Load()
 
@@ -2000,16 +2003,32 @@ End Sub
 
 Private Sub cmdAddNewItem_Click()
 
+    Dim oTempBox As New cBoxInventory
+        
     ' Clone currect Record (header and items)
     
-    ' Clear all item fields
+    oTempBox.AcquiredDate = Me.AcquiredDate
+    oTempBox.InvoiceNumber = Me.InvoiceNumber
+    oTempBox.Purchaser = Me.Purchaser
+    oTempBox.SalesOrderNumber = Me.SalesOrderNumber
+    oTempBox.Supplier = Me.Supplier
     
-    ' Form_AfterInsert
+    oTempBox.Add
+    
+    Me.FilterOn = False
+    Me.Filter = "Id = " & DMax("Id", "BoxInventory")
+    Me.FilterOn = True
+        
+    Set oTempBox = Nothing
     
 End Sub
 
 Private Sub cmdPrint_Click()
     ' DoCmd.OpenReport "306-Detailed-Receipt", acViewReport, , "CollectionStubId = " & Me.Id, acDialog
+End Sub
+
+Private Sub Form_AfterUpdate()
+    If DbOperation = "INSERT" Then Form_AfterInsert
 End Sub
 
 Private Sub Form_AfterInsert()
@@ -2020,10 +2039,12 @@ Private Sub Form_AfterInsert()
     
     Me.lblSerialConunt.Caption = "Count: (" & cArray.Count(Nz(Me.txtSerialNumberList), ",") & ")"
 
-    oBox.CreateVariousBoxes Me.SerialNumberList, Me.RecordsetClone
+    oBox.CreateVariousBoxes Me.txtSerialNumberList, Me.RecordsetClone
     
     If cUIObjects.IsLoaded("411-Box-Inventory-List") Then Forms("411-Box-Inventory-List").Requery
-
+       
+    SetFormState
+    
 End Sub
 
 Private Sub Form_BeforeUpdate(Cancel As Integer)
@@ -2034,22 +2055,24 @@ On Error GoTo ErrorHandler
     
     UpdateModel
     
-    If Not oBox.Validate() Then
+    DbOperation = IIf(Me.Status = "New", "INSERT", "UPDATE")
+    
+    If Not oBox.Validate(DbOperation) Then
+    
         MsgBox oBox.Message, vbExclamation
         DoCmd.CancelEvent
+        
     Else
     
-'        If Me.NewRecord Then
-'            Me.SerialNumber = oBox.GetFirstSerialNumber(Me.SerialNumberList)
-'        End If
-'
-        ' oBox.CreateVariousBoxes Me.SerialNumberList, Me.RecordsetClone
-
+        Me.Status = "In-Stock"
         Me.UpdatedAt = Now()
         Me.UpdatedBy = cSysSettings.oUser.Username
         
-        SetFormState
-        
+        If DbOperation = "INSERT" Then
+            Me.SerialNumber = oBox.GetFirstSerialNumber(Me.txtSerialNumberList)
+            ' oBox.CreateVariousBoxes Me.txtSerialNumberList, Me.RecordsetClone ' Transfered to After Update Event
+        End If
+         
     End If
     
     Exit Sub
@@ -2116,8 +2139,6 @@ End Sub
 
 Sub SetFormState()
             
-    Me.lblSerialConunt.Caption = "Count: (" & cArray.Count(Nz(Me.txtSerialNumberList), ",") & ")"
-            
 '    Me.AcquiredDate = oBox.AcquiredDate
 '    Me.DistributedDate = oBox.DistributedDate
 '    Me.SameMonthSold = oBox.SameMonthSold
@@ -2146,13 +2167,15 @@ Sub SetFormState()
 '    Me.NewSupplyStockOwner = oBox.NewSupplyStockOwnerID
 '    Me.NewSupplyStockOwner = oBox.NewSupplyStockOwner
     
+    ResetItemCount
+   
 End Sub
 
 Private Sub Form_Current()
 
     If Me.NewRecord Then
 
-        oBox.PopulateFields oBox.GetInfoById(9999)
+        oBox.PopulateFields oBox.GetInfoById(9999) ' Forcing to be a new box
         
     Else
         oBox.PopulateFields Me.RecordsetClone
@@ -2233,12 +2256,20 @@ ErrorHandler:
     
 End Sub
 
-Private Sub txtSerialNumberList_LostFocus()
+Private Sub txtSerialNumberList_GotFocus()
+    ResetItemCount
+End Sub
 
+Private Sub txtSerialNumberList_LostFocus()
+    ResetItemCount
+End Sub
+
+Private Sub ResetItemCount()
+    
     Me.txtSerialNumberList = Replace(Me.txtSerialNumberList, Chr(10), "")
     Me.txtSerialNumberList = Replace(Me.txtSerialNumberList, Chr(13), "")
     Me.txtSerialNumberList = Replace(Me.txtSerialNumberList, SPACE, COMMA)
     
     Me.lblSerialConunt.Caption = "Count: (" & cArray.Count(Nz(Me.txtSerialNumberList), ",") & ")"
-    
+
 End Sub

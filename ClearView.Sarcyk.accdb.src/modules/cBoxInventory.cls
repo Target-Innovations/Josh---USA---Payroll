@@ -106,7 +106,7 @@ Public Sub ClearFields()
     AcquiredDate = vbNull
     DistributedDate = vbNull
     SameMonthSold = 0
-    Status = vbNullString
+    Status = "New"
     Purchaser = 0
     Supplier = 0
     InvoiceNumber = vbNullString
@@ -144,12 +144,17 @@ Public Function Validate(Optional ByVal Operation As String = DB_UPDATE) As Bool
     ' In case it is a new box registration, check if serial # exist first
     If Operation = DB_INSERT Then
         
-        If SerialNumberExists(Me.SerialNumber) Then
+        If SerialNumberExists(Me.SerialNumber) And Me.SerialNumber <> "" Then
             this.Message = "Serial # already registered in the system."
             Validate = False
             Exit Function
         End If
-
+    Else
+        If IsNullOrEmpty(Me.SerialNumber) Then
+            this.Message = "Serial # is a mandatory field."
+            Validate = False
+            Exit Function
+        End If
     End If
     
     If IsNullOrEmpty(Me.AcquiredDate) Then
@@ -199,13 +204,7 @@ Public Function Validate(Optional ByVal Operation As String = DB_UPDATE) As Bool
         Validate = False
         Exit Function
     End If
-    
-    If IsNullOrEmpty(Me.SerialNumber) Then
-        this.Message = "Serial # is a mandatory field."
-        Validate = False
-        Exit Function
-    End If
-    
+        
     If Not IsValidSerialNumber(Me.SerialNumberList) Then
         this.Message = "This List of Serial Numbers are invalid."
         Validate = False
@@ -709,6 +708,7 @@ Sub CreateVariousBoxes(SerialNumbers As String, FirstBox As DAO.Recordset)
     For i = 1 To UBound(MyArray)
     
         Me.SerialNumber = MyArray(i)
+        Me.Status = "In-Stock"
         Me.UpdatedAt = Now()
         
         If Not SerialNumberExists(SerialNumber) Then
