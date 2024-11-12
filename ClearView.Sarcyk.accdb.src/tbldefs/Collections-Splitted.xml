@@ -11,7 +11,6 @@
     <xsd:annotation>
       <xsd:appinfo>
         <od:index index-name="CollectionId" index-key="CollectionStubId " primary="no" unique="no" clustered="no" order="asc"/>
-        <od:index index-name="CollectionsCollections-Splitted" index-key="CollectionId " primary="no" unique="no" clustered="no" order="asc"/>
         <od:index index-name="CollectionSplittedId" index-key="CollectionId " primary="no" unique="no" clustered="no" order="asc"/>
         <od:index index-name="EmployeeId" index-key="EmployeeId " primary="no" unique="no" clustered="no" order="asc"/>
         <od:index index-name="EquipmentId" index-key="EquipmentId " primary="no" unique="no" clustered="no" order="asc"/>

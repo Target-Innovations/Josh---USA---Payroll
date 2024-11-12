@@ -18,10 +18,10 @@ Begin Form
     Width =16327
     DatasheetFontHeight =11
     ItemSuffix =1325
-    Right =13283
-    Bottom =8790
+    Right =17408
+    Bottom =10515
     TimerInterval =125
-    Filter ="[Id]=100000"
+    Filter ="1=0"
     RecSrcDt = Begin
         0x17dc23fb1043e640
     End
@@ -229,18 +229,18 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =1
-                    Left =1808
-                    Top =331
-                    Width =5505
-                    Height =608
+                    Left =1700
+                    Top =283
+                    Width =5828
+                    Height =803
                     FontSize =24
                     ForeColor =0
                     Name ="Label0"
                     Caption ="Ticket Delivery Order Entry"
-                    LayoutCachedLeft =1808
-                    LayoutCachedTop =331
-                    LayoutCachedWidth =7313
-                    LayoutCachedHeight =939
+                    LayoutCachedLeft =1700
+                    LayoutCachedTop =283
+                    LayoutCachedWidth =7528
+                    LayoutCachedHeight =1086
                     ForeTint =100.0
                 End
                 Begin Rectangle
@@ -462,8 +462,8 @@ Begin Form
                     OverlapFlags =215
                     AccessKey =79
                     TextFontFamily =34
-                    Left =14078
-                    Top =1418
+                    Left =14102
+                    Top =1417
                     Width =1726
                     Height =405
                     FontSize =10
@@ -507,10 +507,10 @@ Begin Form
                     End
 
                     CursorOnHover =1
-                    LayoutCachedLeft =14078
-                    LayoutCachedTop =1418
-                    LayoutCachedWidth =15804
-                    LayoutCachedHeight =1823
+                    LayoutCachedLeft =14102
+                    LayoutCachedTop =1417
+                    LayoutCachedWidth =15828
+                    LayoutCachedHeight =1822
                     PictureCaptionArrangement =1
                     ColumnStart =2
                     ColumnEnd =2
@@ -1801,7 +1801,7 @@ Begin Form
                                     Left =11745
                                     Top =1943
                                     Width =3023
-                                    Height =315
+                                    Height =397
                                     FontSize =16
                                     TabIndex =3
                                     ForeColor =2366701
@@ -1812,7 +1812,7 @@ Begin Form
                                     LayoutCachedLeft =11745
                                     LayoutCachedTop =1943
                                     LayoutCachedWidth =14768
-                                    LayoutCachedHeight =2258
+                                    LayoutCachedHeight =2340
                                     RowStart =2
                                     RowEnd =2
                                     LayoutGroup =1

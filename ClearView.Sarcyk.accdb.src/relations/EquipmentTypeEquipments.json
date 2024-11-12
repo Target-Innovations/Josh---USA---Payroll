@@ -6,8 +6,8 @@
   "Items": {
     "Name": "EquipmentTypeEquipments",
     "Attributes": 0,
-    "Table": "EquipmentType",
-    "ForeignTable": "Equipments",
+    "Table": "EquipmentType-v0",
+    "ForeignTable": "Equipments-v0",
     "Fields": [
       {
         "Name": "Id",

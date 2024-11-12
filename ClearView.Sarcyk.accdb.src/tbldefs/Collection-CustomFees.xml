@@ -10,6 +10,7 @@
   <xsd:element name="Collection-CustomFees">
     <xsd:annotation>
       <xsd:appinfo>
+        <od:index index-name="CollectionId" index-key="CollectionId " primary="no" unique="no" clustered="no" order="asc"/>
         <od:index index-name="Id" index-key="Id " primary="no" unique="no" clustered="no" order="asc"/>
         <od:index index-name="PrimaryKey" index-key="Id " primary="yes" unique="yes" clustered="no" order="asc"/>
         <od:tableProperty name="Orientation" type="2" value="0"/>
@@ -182,10 +183,27 @@
             </xsd:appinfo>
           </xsd:annotation>
         </xsd:element>
-        <xsd:element name="OperatorRemits" minOccurs="0" od:jetType="currency" od:sqlSType="money" od:expression="[ITNet]+[PrizeFund]+[Communication]+[CreditCard]+[SoftwareUpdate]+[HardwareUpdate]+[Taxes]" type="xsd:double">
+        <xsd:element name="RoundingAdjustment" minOccurs="0" od:jetType="currency" od:sqlSType="money" type="xsd:double">
           <xsd:annotation>
             <xsd:appinfo>
-              <od:fieldProperty name="Expression" type="12" value="[ITNet]+[PrizeFund]+[Communication]+[CreditCard]+[SoftwareUpdate]+[HardwareUpdate]+[Taxes]"/>
+              <od:fieldProperty name="ColumnWidth" type="3" value="-1"/>
+              <od:fieldProperty name="ColumnOrder" type="3" value="0"/>
+              <od:fieldProperty name="ColumnHidden" type="1" value="0"/>
+              <od:fieldProperty name="Format" type="10" value="$#,##0.00;-$#,##0.00"/>
+              <od:fieldProperty name="DecimalPlaces" type="2" value="255"/>
+              <od:fieldProperty name="DefaultValue" type="12" value="0"/>
+              <od:fieldProperty name="Required" type="1" value="0"/>
+              <od:fieldProperty name="TextAlign" type="2" value="0"/>
+              <od:fieldProperty name="AggregateType" type="4" value="-1"/>
+              <od:fieldProperty name="ResultType" type="2" value="0"/>
+              <od:fieldProperty name="CurrencyLCID" type="4" value="4105"/>
+            </xsd:appinfo>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="OperatorRemits" minOccurs="0" od:jetType="currency" od:sqlSType="money" od:expression="[ITNet]+[PrizeFund]+[Communication]+[CreditCard]+[SoftwareUpdate]+[HardwareUpdate]+[Taxes]+[RoundingAdjustment]" type="xsd:double">
+          <xsd:annotation>
+            <xsd:appinfo>
+              <od:fieldProperty name="Expression" type="12" value="[ITNet]+[PrizeFund]+[Communication]+[CreditCard]+[SoftwareUpdate]+[HardwareUpdate]+[Taxes]+[RoundingAdjustment]"/>
               <od:fieldProperty name="ResultType" type="2" value="5"/>
               <od:fieldProperty name="ColumnWidth" type="3" value="-1"/>
               <od:fieldProperty name="ColumnOrder" type="3" value="0"/>

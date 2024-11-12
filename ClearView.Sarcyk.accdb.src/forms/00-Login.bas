@@ -19,8 +19,8 @@ Begin Form
     Width =13620
     DatasheetFontHeight =11
     ItemSuffix =34
-    Right =18570
-    Bottom =10785
+    Right =20595
+    Bottom =11040
     OnUnload ="[Event Procedure]"
     Tag ="LoggedUser: Josh"
     Picture ="HD-Gray-Backgrounds-2"

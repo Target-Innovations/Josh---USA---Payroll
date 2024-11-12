@@ -41,7 +41,7 @@
           <xsd:annotation>
             <xsd:appinfo>
               <od:fieldProperty name="ColumnWidth" type="3" value="-1"/>
-              <od:fieldProperty name="ColumnOrder" type="3" value="0"/>
+              <od:fieldProperty name="ColumnOrder" type="3" value="1"/>
               <od:fieldProperty name="ColumnHidden" type="1" value="0"/>
               <od:fieldProperty name="TextAlign" type="2" value="0"/>
               <od:fieldProperty name="AggregateType" type="4" value="-1"/>
@@ -55,7 +55,7 @@
             <xsd:appinfo>
               <od:fieldProperty name="Expression" type="12" value="[FormNumber] &amp; &quot; - &quot; &amp; [GameName]"/>
               <od:fieldProperty name="ResultType" type="2" value="10"/>
-              <od:fieldProperty name="ColumnWidth" type="3" value="3023"/>
+              <od:fieldProperty name="ColumnWidth" type="3" value="3158"/>
               <od:fieldProperty name="ColumnOrder" type="3" value="0"/>
               <od:fieldProperty name="ColumnHidden" type="1" value="0"/>
               <od:fieldProperty name="DisplayControl" type="3" value="109"/>
@@ -123,7 +123,7 @@
         <xsd:element name="GameStyleId" minOccurs="0" od:jetType="longinteger" od:sqlSType="int" type="xsd:int">
           <xsd:annotation>
             <xsd:appinfo>
-              <od:fieldProperty name="ColumnWidth" type="3" value="1928"/>
+              <od:fieldProperty name="ColumnWidth" type="3" value="2783"/>
               <od:fieldProperty name="ColumnOrder" type="3" value="0"/>
               <od:fieldProperty name="ColumnHidden" type="1" value="0"/>
               <od:fieldProperty name="Description" type="10" value="Foreign Key"/>

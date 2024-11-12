@@ -18,7 +18,7 @@ Begin Form
     Width =16459
     DatasheetFontHeight =11
     ItemSuffix =609
-    Right =16058
+    Right =15383
     Bottom =10515
     TimerInterval =125
     Filter ="[ID]=55"
@@ -2427,7 +2427,7 @@ Begin Form
                     TabIndex =6
                     ForeColor =14865828
                     Name ="txtTotalServiceFee"
-                    ControlSource ="=[txtCashToLocation]+[txtCashToUnionVending]"
+                    ControlSource ="=TotalCashAtBar([txtCashToLocation],[txtCashToUnionVending])"
                     Format ="$#,##0.00;-$#,##0.00"
                     GroupTable =7
 
@@ -2642,7 +2642,7 @@ Begin Form
                     TextFontFamily =34
                     Left =188
                     Width =15915
-                    Height =8708
+                    Height =8445
                     FontSize =10
                     Name ="tabData"
                     FontName ="Segoe UI"
@@ -2650,7 +2650,7 @@ Begin Form
 
                     LayoutCachedLeft =188
                     LayoutCachedWidth =16103
-                    LayoutCachedHeight =8708
+                    LayoutCachedHeight =8445
                     ThemeFontIndex =-1
                     GridlineThemeColorIndex =-1
                     GridlineShade =100.0
@@ -2678,13 +2678,13 @@ Begin Form
                             Left =225
                             Top =383
                             Width =15840
-                            Height =8287
+                            Height =8025
                             Name ="Collections_Page"
                             Caption ="|  Collection Stub   |"
                             LayoutCachedLeft =225
                             LayoutCachedTop =383
                             LayoutCachedWidth =16065
-                            LayoutCachedHeight =8670
+                            LayoutCachedHeight =8408
                             WebImagePaddingLeft =4
                             WebImagePaddingTop =4
                             WebImagePaddingRight =4
@@ -2959,7 +2959,7 @@ Begin Form
                                     Height =405
                                     FontSize =10
                                     TabIndex =5
-                                    ForeColor =0
+                                    ForeColor =255
                                     Name ="cmdClearCollection"
                                     Caption ="Clear C&olletion"
                                     OnClick ="[Event Procedure]"
@@ -2979,21 +2979,23 @@ Begin Form
                                     ForeTint =100.0
                                     Shape =0
                                     Gradient =0
-                                    BackColor =16777215
+                                    BackColor =13816815
                                     BackThemeColorIndex =-1
                                     BackTint =100.0
                                     BorderColor =3259885
                                     BorderTint =100.0
                                     ThemeFontIndex =-1
-                                    HoverColor =16777215
+                                    HoverColor =13816815
                                     HoverThemeColorIndex =-1
                                     HoverTint =100.0
-                                    PressedColor =16777215
+                                    PressedColor =13816815
                                     PressedThemeColorIndex =-1
                                     PressedShade =100.0
-                                    HoverForeThemeColorIndex =4
+                                    HoverForeColor =255
+                                    HoverForeThemeColorIndex =-1
                                     HoverForeTint =100.0
-                                    PressedForeColor =0
+                                    PressedForeColor =255
+                                    PressedForeThemeColorIndex =-1
                                     PressedForeTint =100.0
                                     WebImagePaddingLeft =4
                                     WebImagePaddingTop =4
@@ -3007,13 +3009,13 @@ Begin Form
                             Left =225
                             Top =383
                             Width =15840
-                            Height =8287
+                            Height =8025
                             Name ="Executive_page"
                             Caption ="|  Executive Summary  |"
                             LayoutCachedLeft =225
                             LayoutCachedTop =383
                             LayoutCachedWidth =16065
-                            LayoutCachedHeight =8670
+                            LayoutCachedHeight =8408
                             WebImagePaddingLeft =4
                             WebImagePaddingTop =4
                             WebImagePaddingRight =4
@@ -3023,8 +3025,8 @@ Begin Form
                                     OverlapFlags =247
                                     AccessKey =83
                                     TextFontFamily =34
-                                    Left =9990
-                                    Top =1343
+                                    Left =9705
+                                    Top =1365
                                     Height =405
                                     FontSize =10
                                     ForeColor =0
@@ -3036,10 +3038,10 @@ Begin Form
                                     UnicodeAccessKey =83
 
                                     CursorOnHover =1
-                                    LayoutCachedLeft =9990
-                                    LayoutCachedTop =1343
-                                    LayoutCachedWidth =11430
-                                    LayoutCachedHeight =1748
+                                    LayoutCachedLeft =9705
+                                    LayoutCachedTop =1365
+                                    LayoutCachedWidth =11145
+                                    LayoutCachedHeight =1770
                                     PictureCaptionArrangement =1
                                     ColumnStart =2
                                     ColumnEnd =2
@@ -3094,8 +3096,8 @@ Begin Form
                                     OverlapFlags =247
                                     AccessKey =80
                                     TextFontFamily =34
-                                    Left =11549
-                                    Top =1343
+                                    Left =11264
+                                    Top =1365
                                     Height =405
                                     FontSize =10
                                     TabIndex =2
@@ -3108,10 +3110,10 @@ Begin Form
                                     UnicodeAccessKey =80
 
                                     CursorOnHover =1
-                                    LayoutCachedLeft =11549
-                                    LayoutCachedTop =1343
-                                    LayoutCachedWidth =12989
-                                    LayoutCachedHeight =1748
+                                    LayoutCachedLeft =11264
+                                    LayoutCachedTop =1365
+                                    LayoutCachedWidth =12704
+                                    LayoutCachedHeight =1770
                                     PictureCaptionArrangement =1
                                     ColumnStart =2
                                     ColumnEnd =2
@@ -3147,13 +3149,13 @@ Begin Form
                             Left =225
                             Top =383
                             Width =15840
-                            Height =8287
+                            Height =8025
                             Name ="Split_Page"
                             Caption ="|   Splits   |"
                             LayoutCachedLeft =225
                             LayoutCachedTop =383
                             LayoutCachedWidth =16065
-                            LayoutCachedHeight =8670
+                            LayoutCachedHeight =8408
                             WebImagePaddingLeft =4
                             WebImagePaddingTop =4
                             WebImagePaddingRight =4
@@ -3223,7 +3225,7 @@ Begin Form
                                     Height =405
                                     FontSize =10
                                     TabIndex =1
-                                    ForeColor =0
+                                    ForeColor =255
                                     Name ="cmdClearSplit"
                                     Caption ="Cl&ear Split"
                                     OnClick ="[Event Procedure]"
@@ -3243,21 +3245,23 @@ Begin Form
                                     ForeTint =100.0
                                     Shape =0
                                     Gradient =0
-                                    BackColor =16777215
+                                    BackColor =13816815
                                     BackThemeColorIndex =-1
                                     BackTint =100.0
                                     BorderColor =3259885
                                     BorderTint =100.0
                                     ThemeFontIndex =-1
-                                    HoverColor =16777215
+                                    HoverColor =13816815
                                     HoverThemeColorIndex =-1
                                     HoverTint =100.0
-                                    PressedColor =16777215
+                                    PressedColor =13816815
                                     PressedThemeColorIndex =-1
                                     PressedShade =100.0
-                                    HoverForeThemeColorIndex =4
+                                    HoverForeColor =255
+                                    HoverForeThemeColorIndex =-1
                                     HoverForeTint =100.0
-                                    PressedForeColor =0
+                                    PressedForeColor =255
+                                    PressedForeThemeColorIndex =-1
                                     PressedForeTint =100.0
                                     WebImagePaddingLeft =4
                                     WebImagePaddingTop =4
@@ -3271,13 +3275,13 @@ Begin Form
                             Left =225
                             Top =383
                             Width =15840
-                            Height =8287
+                            Height =8026
                             Name ="Executive2_page"
                             Caption ="|   More...   |"
                             LayoutCachedLeft =225
                             LayoutCachedTop =383
                             LayoutCachedWidth =16065
-                            LayoutCachedHeight =8670
+                            LayoutCachedHeight =8409
                             WebImagePaddingLeft =4
                             WebImagePaddingTop =4
                             WebImagePaddingRight =4
@@ -3289,7 +3293,7 @@ Begin Form
                                     Left =2550
                                     Top =781
                                     Width =10478
-                                    Height =7530
+                                    Height =7420
                                     Name ="308-Receipt-v1"
                                     SourceObject ="Form.308-Receipt"
                                     LinkChildFields ="Id"
@@ -3299,7 +3303,7 @@ Begin Form
                                     LayoutCachedLeft =2550
                                     LayoutCachedTop =781
                                     LayoutCachedWidth =13028
-                                    LayoutCachedHeight =8311
+                                    LayoutCachedHeight =8201
                                 End
                             End
                         End
@@ -3408,7 +3412,9 @@ Private Sub cmdClearSplit_Click()
 End Sub
 
 Private Sub cmdPrint_Click()
-    DoCmd.OpenReport "306-Detailed-Receipt", acViewReport, , "CollectionStubId = " & Me.Id, acDialog
+
+    DoCmd.OpenReport "306-Detailed-Receipt", acViewPreview, , "CollectionStubId = " & Me.Id, acDialog
+
 End Sub
 
 Private Sub cmdSendReceipt_Click()
@@ -3630,3 +3636,16 @@ ErrorHandler:
     End If
     
 End Sub
+
+Function TotalCashAtBar(ValueA As Variant, Valueb As Variant) As Variant
+
+On Error Resume Next
+
+    TotalCashAtBar = 0
+
+    Dim Result As Double
+    Result = Nz(ValueA, 0) + Nz(Valueb, 0)
+    
+    TotalCashAtBar = Result
+
+End Function

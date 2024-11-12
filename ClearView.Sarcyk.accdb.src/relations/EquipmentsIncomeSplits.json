@@ -6,7 +6,7 @@
   "Items": {
     "Name": "EquipmentsIncomeSplits",
     "Attributes": 2,
-    "Table": "Equipments",
+    "Table": "Equipments-v0",
     "ForeignTable": "IncomeSplits",
     "Fields": [
       {

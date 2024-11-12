@@ -10,7 +10,6 @@
   <xsd:element name="Collections">
     <xsd:annotation>
       <xsd:appinfo>
-        <od:index index-name="Collections-StubCollections" index-key="CollectionStubId " primary="no" unique="no" clustered="no" order="asc"/>
         <od:index index-name="CollectionStubId" index-key="CollectionStubId " primary="no" unique="no" clustered="no" order="asc"/>
         <od:index index-name="EquipmentId" index-key="EquipmentId " primary="no" unique="no" clustered="no" order="asc"/>
         <od:index index-name="Id" index-key="Id " primary="no" unique="no" clustered="no" order="asc"/>

@@ -8,6 +8,7 @@
   [SoftwareUpdate] CURRENCY ,
   [HardwareUpdate] CURRENCY ,
   [Taxes] CURRENCY ,
+  [RoundingAdjustment] CURRENCY ,
   [OperatorRemits] CURRENCY ,
   [Description] VARCHAR (255),
   [UpdatedAt] DATETIME ,

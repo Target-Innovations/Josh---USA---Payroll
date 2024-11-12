@@ -15,8 +15,8 @@ Begin Form
     Width =18213
     DatasheetFontHeight =11
     ItemSuffix =425
-    Right =18345
-    Bottom =9465
+    Right =11768
+    Bottom =10515
     Tag ="Home"
     RecSrcDt = Begin
         0xc24b21e65336e640
@@ -6137,7 +6137,7 @@ Begin Form
                 Begin CommandButton
                     OverlapFlags =215
                     AccessKey =78
-                    Left =4965
+                    Left =4988
                     Top =1343
                     Width =1818
                     Height =460
@@ -6179,9 +6179,9 @@ Begin Form
                     BackStyle =0
 
                     CursorOnHover =1
-                    LayoutCachedLeft =4965
+                    LayoutCachedLeft =4988
                     LayoutCachedTop =1343
-                    LayoutCachedWidth =6783
+                    LayoutCachedWidth =6806
                     LayoutCachedHeight =1803
                     Alignment =1
                     ColumnStart =2

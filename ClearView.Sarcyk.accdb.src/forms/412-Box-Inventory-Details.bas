@@ -18,11 +18,11 @@ Begin Form
     Width =13978
     DatasheetFontHeight =11
     ItemSuffix =980
-    Right =11085
-    Bottom =10755
+    Right =17408
+    Bottom =10515
     TimerInterval =125
     AfterInsert ="[Event Procedure]"
-    Filter ="Id = 24"
+    Filter ="Id = 6"
     RecSrcDt = Begin
         0xc5b94ca08842e640
     End
@@ -514,10 +514,10 @@ Begin Form
                     HoverForeTint =100.0
                     PressedForeColor =0
                     PressedForeTint =100.0
-                    WebImagePaddingLeft =2
-                    WebImagePaddingTop =2
-                    WebImagePaddingRight =1
-                    WebImagePaddingBottom =1
+                    WebImagePaddingLeft =4
+                    WebImagePaddingTop =4
+                    WebImagePaddingRight =3
+                    WebImagePaddingBottom =3
                     Overlaps =1
                 End
                 Begin CommandButton
@@ -566,10 +566,10 @@ Begin Form
                     HoverForeTint =100.0
                     PressedForeColor =0
                     PressedForeTint =100.0
-                    WebImagePaddingLeft =2
-                    WebImagePaddingTop =2
-                    WebImagePaddingRight =1
-                    WebImagePaddingBottom =1
+                    WebImagePaddingLeft =4
+                    WebImagePaddingTop =4
+                    WebImagePaddingRight =3
+                    WebImagePaddingBottom =3
                     Overlaps =1
                 End
                 Begin CommandButton
@@ -617,10 +617,10 @@ Begin Form
                     HoverForeTint =100.0
                     PressedForeColor =0
                     PressedForeTint =100.0
-                    WebImagePaddingLeft =2
-                    WebImagePaddingTop =2
-                    WebImagePaddingRight =1
-                    WebImagePaddingBottom =1
+                    WebImagePaddingLeft =4
+                    WebImagePaddingTop =4
+                    WebImagePaddingRight =3
+                    WebImagePaddingBottom =3
                     Overlaps =1
                 End
                 Begin CommandButton
@@ -699,10 +699,10 @@ Begin Form
                     HoverForeTint =100.0
                     PressedForeColor =0
                     PressedForeTint =100.0
-                    WebImagePaddingLeft =2
-                    WebImagePaddingTop =2
-                    WebImagePaddingRight =1
-                    WebImagePaddingBottom =1
+                    WebImagePaddingLeft =4
+                    WebImagePaddingTop =4
+                    WebImagePaddingRight =3
+                    WebImagePaddingBottom =3
                     Overlaps =1
                 End
                 Begin Image
@@ -906,8 +906,9 @@ Begin Form
                     HoverForeTint =100.0
                     PressedForeColor =0
                     PressedForeTint =100.0
-                    WebImagePaddingLeft =2
-                    WebImagePaddingRight =2
+                    WebImagePaddingLeft =4
+                    WebImagePaddingRight =5
+                    WebImagePaddingBottom =1
                     Overlaps =1
                 End
                 Begin CommandButton
@@ -955,10 +956,10 @@ Begin Form
                     HoverForeTint =100.0
                     PressedForeColor =0
                     PressedForeTint =100.0
-                    WebImagePaddingLeft =2
-                    WebImagePaddingTop =2
-                    WebImagePaddingRight =1
-                    WebImagePaddingBottom =1
+                    WebImagePaddingLeft =4
+                    WebImagePaddingTop =4
+                    WebImagePaddingRight =3
+                    WebImagePaddingBottom =3
                     Overlaps =1
                 End
                 Begin EmptyCell
@@ -1050,20 +1051,20 @@ Begin Form
                     Begin
                         Begin Page
                             OverlapFlags =87
-                            Left =180
-                            Top =735
-                            Width =13290
-                            Height =5220
+                            Left =135
+                            Top =645
+                            Width =13373
+                            Height =5348
                             Name ="PO_Entries_Page"
                             Caption ="|  Details   |"
-                            LayoutCachedLeft =180
-                            LayoutCachedTop =735
-                            LayoutCachedWidth =13470
-                            LayoutCachedHeight =5955
-                            WebImagePaddingLeft =2
-                            WebImagePaddingTop =2
-                            WebImagePaddingRight =2
-                            WebImagePaddingBottom =2
+                            LayoutCachedLeft =135
+                            LayoutCachedTop =645
+                            LayoutCachedWidth =13508
+                            LayoutCachedHeight =5993
+                            WebImagePaddingLeft =4
+                            WebImagePaddingTop =4
+                            WebImagePaddingRight =4
+                            WebImagePaddingBottom =4
                             Begin
                                 Begin Rectangle
                                     SpecialEffect =0
@@ -1806,23 +1807,23 @@ Begin Form
                                 End
                                 Begin CommandButton
                                     OverlapFlags =215
-                                    Left =11790
-                                    Top =4440
+                                    Left =448
+                                    Top =4700
                                     Width =1283
-                                    Height =473
+                                    Height =293
                                     TabIndex =17
                                     Name ="cmdAddNewItem"
                                     Caption ="Add Item"
                                     OnClick ="[Event Procedure]"
 
-                                    LayoutCachedLeft =11790
-                                    LayoutCachedTop =4440
-                                    LayoutCachedWidth =13073
-                                    LayoutCachedHeight =4913
-                                    WebImagePaddingLeft =2
-                                    WebImagePaddingTop =2
-                                    WebImagePaddingRight =1
-                                    WebImagePaddingBottom =1
+                                    LayoutCachedLeft =448
+                                    LayoutCachedTop =4700
+                                    LayoutCachedWidth =1731
+                                    LayoutCachedHeight =4993
+                                    WebImagePaddingLeft =4
+                                    WebImagePaddingTop =4
+                                    WebImagePaddingRight =3
+                                    WebImagePaddingBottom =3
                                     Overlaps =1
                                 End
                                 Begin Label
@@ -1842,20 +1843,20 @@ Begin Form
                         End
                         Begin Page
                             OverlapFlags =247
-                            Left =180
-                            Top =735
-                            Width =13290
-                            Height =5220
+                            Left =135
+                            Top =645
+                            Width =13373
+                            Height =5348
                             Name ="Distribution_page"
                             Caption ="|  Distribution Details  |"
-                            LayoutCachedLeft =180
-                            LayoutCachedTop =735
-                            LayoutCachedWidth =13470
-                            LayoutCachedHeight =5955
-                            WebImagePaddingLeft =2
-                            WebImagePaddingTop =2
-                            WebImagePaddingRight =2
-                            WebImagePaddingBottom =2
+                            LayoutCachedLeft =135
+                            LayoutCachedTop =645
+                            LayoutCachedWidth =13508
+                            LayoutCachedHeight =5993
+                            WebImagePaddingLeft =4
+                            WebImagePaddingTop =4
+                            WebImagePaddingRight =4
+                            WebImagePaddingBottom =4
                             Begin
                                 Begin Subform
                                     OverlapFlags =247
@@ -1878,20 +1879,20 @@ Begin Form
                         End
                         Begin Page
                             OverlapFlags =247
-                            Left =180
-                            Top =735
-                            Width =13290
-                            Height =5220
+                            Left =135
+                            Top =645
+                            Width =13373
+                            Height =5348
                             Name ="Ownership_Page"
                             Caption ="|  Ownership History  |"
-                            LayoutCachedLeft =180
-                            LayoutCachedTop =735
-                            LayoutCachedWidth =13470
-                            LayoutCachedHeight =5955
-                            WebImagePaddingLeft =2
-                            WebImagePaddingTop =2
-                            WebImagePaddingRight =2
-                            WebImagePaddingBottom =2
+                            LayoutCachedLeft =135
+                            LayoutCachedTop =645
+                            LayoutCachedWidth =13508
+                            LayoutCachedHeight =5993
+                            WebImagePaddingLeft =4
+                            WebImagePaddingTop =4
+                            WebImagePaddingRight =4
+                            WebImagePaddingBottom =4
                             Begin
                                 Begin Subform
                                     OverlapFlags =247
@@ -2024,11 +2025,18 @@ Private Sub cmdAddNewItem_Click()
 End Sub
 
 Private Sub cmdPrint_Click()
-    ' DoCmd.OpenReport "306-Detailed-Receipt", acViewReport, , "CollectionStubId = " & Me.Id, acDialog
+    DoCmd.OpenReport "308-Sales-Order-Details", acViewPreview, , "InvoiceNumber = '" & Nz(Me.txtInvoiceNumber, 0) & "'", acDialog
 End Sub
 
 Private Sub Form_AfterUpdate()
-    If DbOperation = "INSERT" Then Form_AfterInsert
+
+    ' If it was  brand new box, we should create all the box based on
+    ' serial number list
+    
+    If DbOperation = "INSERT" Then
+        Form_AfterInsert
+    End If
+    
 End Sub
 
 Private Sub Form_AfterInsert()
@@ -2069,8 +2077,10 @@ On Error GoTo ErrorHandler
         Me.UpdatedBy = cSysSettings.oUser.Username
         
         If DbOperation = "INSERT" Then
+        
             Me.SerialNumber = oBox.GetFirstSerialNumber(Me.txtSerialNumberList)
             ' oBox.CreateVariousBoxes Me.txtSerialNumberList, Me.RecordsetClone ' Transfered to After Update Event
+            
         End If
          
     End If
@@ -2098,7 +2108,7 @@ Private Sub Form_Close()
     Exit Sub
 
 ErrorHandler:
-    MsgBox Err.Number & " " & Err.Description
+    ' MsgBox Err.Number & " " & Err.Description
     
 End Sub
 
@@ -2173,26 +2183,32 @@ End Sub
 
 Private Sub Form_Current()
 
-    If Me.NewRecord Then
+    If Me.Status.Value = "New" Then
 
         oBox.PopulateFields oBox.GetInfoById(9999) ' Forcing to be a new box
-        
+        Me.txtSerialNumber.Locked = True
     Else
         oBox.PopulateFields Me.RecordsetClone
+        Me.txtSerialNumber.Locked = False
         
     End If
     
+    Me.txtSerialNumberList.Locked = Not Me.txtSerialNumber.Locked
+
     SetFormState
 
 End Sub
 
 Private Sub cmdDelete_Click()
     
-    If MsgBox("Are you sure you want to delete this collection and all its splits?", vbExclamation + vbYesNo) = vbYes Then
+    ' TODO: We need to decide what delete here really means
+    '       is it just box or the invoice with all the boxes?
+    
+    If MsgBox("Are you sure you want to delete this Box?", vbExclamation + vbYesNo) = vbYes Then
         
         DoCmd.SetWarnings False
         
-        DoCmd.RunSQL "Delete * from [Collection-Stub] Where Id = " & Nz(Me.Id, 0)
+        DoCmd.RunSQL "Delete * from [BoxInventory] Where Id = " & Nz(Me.Id, 0)
         
         DoCmd.SetWarnings True
         
@@ -2250,7 +2266,7 @@ On Error GoTo ErrorHandler
 ErrorHandler:
 
     If Err.Number = 2001 Then
-        ' Before Update was canceld by a business rule
+        ' Before Update was canceled by a business rule
         ' just ignore it
     End If
     

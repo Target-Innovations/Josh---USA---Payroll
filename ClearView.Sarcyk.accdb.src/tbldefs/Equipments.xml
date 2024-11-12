@@ -11,10 +11,8 @@
     <xsd:annotation>
       <xsd:appinfo>
         <od:index index-name="AssetTypeId" index-key="EquipmentTypeId " primary="no" unique="no" clustered="no" order="asc"/>
-        <od:index index-name="EquipmentTypeEquipments" index-key="EquipmentTypeId " primary="no" unique="no" clustered="no" order="asc"/>
         <od:index index-name="Item" index-key="SerialNumber " primary="no" unique="no" clustered="no" order="asc"/>
         <od:index index-name="Location" index-key="Location " primary="no" unique="no" clustered="no" order="asc"/>
-        <od:index index-name="LocationsEquipments" index-key="Location " primary="no" unique="no" clustered="no" order="asc"/>
         <od:index index-name="ManufacturerId" index-key="ManufacturerId " primary="no" unique="no" clustered="no" order="asc"/>
         <od:index index-name="PrimaryKey" index-key="ID " primary="yes" unique="yes" clustered="no" order="asc"/>
         <od:tableProperty name="AppendOnly" type="1" value="1"/>

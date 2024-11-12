@@ -7,7 +7,7 @@
     "Name": "LocationsEquipments",
     "Attributes": 0,
     "Table": "Locations",
-    "ForeignTable": "Equipments",
+    "ForeignTable": "Equipments-v0",
     "Fields": [
       {
         "Name": "id",

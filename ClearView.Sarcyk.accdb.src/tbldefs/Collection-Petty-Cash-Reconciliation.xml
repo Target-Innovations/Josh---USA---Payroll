@@ -12,6 +12,7 @@
       <xsd:appinfo>
         <od:index index-name="EmployeeId" index-key="EmployeeId " primary="no" unique="no" clustered="no" order="asc"/>
         <od:index index-name="Id" index-key="Id " primary="no" unique="no" clustered="no" order="asc"/>
+        <od:index index-name="LocationId" index-key="LocationId " primary="no" unique="no" clustered="no" order="asc"/>
         <od:index index-name="PrimaryKey" index-key="Id " primary="yes" unique="yes" clustered="no" order="asc"/>
         <od:tableProperty name="Orientation" type="2" value="0"/>
         <od:tableProperty name="OrderByOn" type="1" value="0"/>
@@ -38,7 +39,7 @@
           <xsd:annotation>
             <xsd:appinfo>
               <od:fieldProperty name="ColumnWidth" type="3" value="-1"/>
-              <od:fieldProperty name="ColumnOrder" type="3" value="1"/>
+              <od:fieldProperty name="ColumnOrder" type="3" value="0"/>
               <od:fieldProperty name="ColumnHidden" type="1" value="0"/>
               <od:fieldProperty name="TextAlign" type="2" value="0"/>
               <od:fieldProperty name="AggregateType" type="4" value="-1"/>

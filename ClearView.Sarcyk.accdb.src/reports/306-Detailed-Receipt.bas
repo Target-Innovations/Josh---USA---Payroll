@@ -3,7 +3,6 @@ VersionRequired =20
 Begin Report
     LayoutForPrint = NotDefault
     DividingLines = NotDefault
-    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     TabularFamily =0
     DateGrouping =1
@@ -13,10 +12,10 @@ Begin Report
     GridY =10
     Width =11520
     DatasheetFontHeight =11
-    ItemSuffix =16
-    Filter ="CollectionStubId = 46"
+    ItemSuffix =32
+    Filter ="CollectionStubId = 55"
     RecSrcDt = Begin
-        0x0cb7f3beea3de640
+        0x09b004c13344e640
     End
     RecordSource ="306-Detailed-Receipt"
     Caption ="306-Detailed-Receipt"
@@ -104,10 +103,6 @@ Begin Report
             GroupHeader = NotDefault
             ControlSource ="EquipmentTypeName"
         End
-        Begin BreakLevel
-            GroupHeader = NotDefault
-            ControlSource ="EquipmentId"
-        End
         Begin FormHeader
             KeepTogether = NotDefault
             CanGrow = NotDefault
@@ -143,7 +138,7 @@ Begin Report
                     Height =330
                     FontSize =16
                     Name ="Text13"
-                    ControlSource ="=\"Date: \" & (Date())"
+                    ControlSource ="=\"Collection Date: \" & [CollectionDate]"
                     Format ="Long Date"
 
                     LayoutCachedLeft =56
@@ -173,7 +168,7 @@ Begin Report
             End
         End
         Begin PageHeader
-            Height =368
+            Height =371
             Name ="SecciónEncabezadoDePágina"
             AutoHeight =1
             AlternateBackThemeColorIndex =1
@@ -182,24 +177,8 @@ Begin Report
             Begin
                 Begin Label
                     TextAlign =2
-                    Left =4212
-                    Top =57
-                    Width =795
-                    Height =293
-                    FontWeight =700
-                    Name ="EquipmentId_Etiqueta"
-                    Caption ="Serial #"
-                    Tag ="DetachedLabel"
-                    GridlineStyleBottom =1
-                    LayoutCachedLeft =4212
-                    LayoutCachedTop =57
-                    LayoutCachedWidth =5007
-                    LayoutCachedHeight =350
-                End
-                Begin Label
-                    TextAlign =2
-                    Left =7800
-                    Top =53
+                    Left =7688
+                    Top =56
                     Width =1843
                     Height =315
                     FontWeight =700
@@ -207,10 +186,10 @@ Begin Report
                     Caption ="Amount"
                     Tag ="DetachedLabel"
                     GridlineStyleBottom =1
-                    LayoutCachedLeft =7800
-                    LayoutCachedTop =53
-                    LayoutCachedWidth =9643
-                    LayoutCachedHeight =368
+                    LayoutCachedLeft =7688
+                    LayoutCachedTop =56
+                    LayoutCachedWidth =9531
+                    LayoutCachedHeight =371
                 End
             End
         End
@@ -218,79 +197,75 @@ Begin Report
             KeepTogether = NotDefault
             CanGrow = NotDefault
             CanShrink = NotDefault
-            Height =623
+            Height =396
             Name ="GroupHeader0"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
             BackThemeColorIndex =1
             BackShade =95.0
             Begin
+                Begin TextBox
+                    OldBorderStyle =0
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =7380
+                    Top =53
+                    Width =1843
+                    Height =293
+                    FontWeight =700
+                    ForeColor =0
+                    Name ="Text15"
+                    ControlSource ="=Sum([Amount])/2"
+                    Format ="$#,##0.00;-$#,##0.00"
+                    StatusBarText ="[Amount]*[Split]"
+                    ControlTipText ="SplittedAmount Total"
+
+                    LayoutCachedLeft =7380
+                    LayoutCachedTop =53
+                    LayoutCachedWidth =9223
+                    LayoutCachedHeight =346
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                    CurrencySymbol ="$"
+                End
                 Begin ComboBox
                     RowSourceTypeInt =1
                     OldBorderStyle =0
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =3044
-                    Top =173
+                    Left =3786
                     Width =1543
                     Height =293
                     ColumnWidth =1965
                     FontWeight =700
+                    TabIndex =1
                     Name ="Combo11"
                     ControlSource ="TransactionType"
                     RowSourceType ="Value List"
                     RowSource ="Cash;Credit Card"
 
-                    LayoutCachedLeft =3044
-                    LayoutCachedTop =173
-                    LayoutCachedWidth =4587
-                    LayoutCachedHeight =466
+                    LayoutCachedLeft =3786
+                    LayoutCachedWidth =5329
+                    LayoutCachedHeight =293
                     Begin
                         Begin Label
                             TextAlign =3
-                            Left =1185
-                            Top =173
-                            Width =1815
+                            Left =1815
+                            Width =1860
                             Height =278
                             Name ="Label12"
                             Caption ="Transaction Type:"
-                            LayoutCachedLeft =1185
-                            LayoutCachedTop =173
-                            LayoutCachedWidth =3000
-                            LayoutCachedHeight =451
+                            LayoutCachedLeft =1815
+                            LayoutCachedWidth =3675
+                            LayoutCachedHeight =278
                         End
                     End
-                End
-                Begin TextBox
-                    OldBorderStyle =0
-                    BackStyle =0
-                    IMESentenceMode =3
-                    Left =7636
-                    Top =226
-                    Width =1843
-                    Height =293
-                    FontWeight =700
-                    TabIndex =1
-                    ForeColor =255
-                    Name ="Text15"
-                    ControlSource ="=Sum([SplittedAmount])"
-                    Format ="$#,##0.00;-$#,##0.00"
-                    StatusBarText ="[Amount]*[Split]"
-                    ControlTipText ="SplittedAmount Total"
-
-                    LayoutCachedLeft =7636
-                    LayoutCachedTop =226
-                    LayoutCachedWidth =9479
-                    LayoutCachedHeight =519
-                    ForeThemeColorIndex =-1
-                    ForeTint =100.0
-                    CurrencySymbol ="$"
                 End
             End
         End
         Begin BreakHeader
             KeepTogether = NotDefault
-            Height =443
+            Height =1077
             BreakLevel =1
             Name ="EncabezadoDelGrupo0"
             AlternateBackThemeColorIndex =1
@@ -299,95 +274,128 @@ Begin Report
                 Begin TextBox
                     DecimalPlaces =0
                     OldBorderStyle =0
+                    TextAlign =1
                     IMESentenceMode =3
-                    Left =1920
-                    Top =113
+                    Left =2550
+                    Top =53
                     Width =2793
                     Height =330
                     ColumnWidth =1470
                     Name ="CollectionId"
                     ControlSource ="EquipmentTypeName"
 
-                    LayoutCachedLeft =1920
-                    LayoutCachedTop =113
-                    LayoutCachedWidth =4713
-                    LayoutCachedHeight =443
+                    LayoutCachedLeft =2550
+                    LayoutCachedTop =53
+                    LayoutCachedWidth =5343
+                    LayoutCachedHeight =383
                 End
                 Begin TextBox
                     OldBorderStyle =0
                     IMESentenceMode =3
-                    Left =7193
-                    Top =113
-                    Width =2286
+                    Left =7374
+                    Top =53
+                    Width =1843
                     Height =293
                     ColumnWidth =1808
                     FontWeight =700
                     TabIndex =1
                     Name ="AccessTotalsSplittedAmount1"
-                    ControlSource ="=Sum([SplittedAmount])"
+                    ControlSource ="=-[txtExpenses]+[TxtIncome]"
                     Format ="$#,##0.00;-$#,##0.00"
                     StatusBarText ="[Amount]*[Split]"
                     ControlTipText ="SplittedAmount Total"
 
-                    LayoutCachedLeft =7193
-                    LayoutCachedTop =113
-                    LayoutCachedWidth =9479
-                    LayoutCachedHeight =406
+                    LayoutCachedLeft =7374
+                    LayoutCachedTop =53
+                    LayoutCachedWidth =9217
+                    LayoutCachedHeight =346
                     CurrencySymbol ="$"
                 End
-            End
-        End
-        Begin BreakHeader
-            KeepTogether = NotDefault
-            CanGrow = NotDefault
-            CanShrink = NotDefault
-            Height =335
-            BreakLevel =2
-            Name ="GroupHeader1"
-            AlternateBackThemeColorIndex =1
-            AlternateBackShade =95.0
-            BackThemeColorIndex =1
-            Begin
                 Begin TextBox
                     OldBorderStyle =0
+                    TextFontFamily =34
                     IMESentenceMode =3
-                    Left =7193
-                    Top =5
-                    Width =2286
-                    Height =330
-                    Name ="AccessTotalsSplittedAmount"
-                    ControlSource ="=Sum([SplittedAmount])"
+                    Left =7374
+                    Top =398
+                    Width =1843
+                    Height =293
+                    TabIndex =2
+                    Name ="txtIncome"
+                    ControlSource ="=[Amount]"
                     Format ="$#,##0.00;-$#,##0.00"
-                    ControlTipText ="SplittedAmount Total"
+                    ControlTipText ="SingedSplittedAmount Total"
+                    ConditionalFormat = Begin
+                        0x0100000066000000010000000000000005000000000000000200000001000000 ,
+                        0xff000000ffffff00000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x300000000000
+                    End
 
-                    LayoutCachedLeft =7193
-                    LayoutCachedTop =5
-                    LayoutCachedWidth =9479
-                    LayoutCachedHeight =335
+                    LayoutCachedLeft =7374
+                    LayoutCachedTop =398
+                    LayoutCachedWidth =9217
+                    LayoutCachedHeight =691
+                    ConditionalFormat14 = Begin
+                        0x010001000000000000000500000001000000ff000000ffffff00010000003000 ,
+                        0x000000000000000000000000000000000000000000
+                    End
+                    CurrencySymbol ="$"
                 End
-                Begin ComboBox
-                    LimitToList = NotDefault
+                Begin TextBox
                     OldBorderStyle =0
+                    TextFontFamily =34
                     IMESentenceMode =3
-                    ColumnCount =3
-                    Left =4140
-                    Width =2793
-                    Height =330
-                    ColumnWidth =2858
-                    TabIndex =1
-                    ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"100\""
-                    Name ="EquipmentId"
-                    ControlSource ="EquipmentId"
-                    RowSourceType ="Table/Query"
-                    RowSource ="SELECT Equipments.ID, Equipments.[SerialNumber] AS Equipment FROM EquipmentType "
-                        "INNER JOIN Equipments ON EquipmentType.Id = Equipments.EquipmentTypeId ORDER BY "
-                        "Equipments.[SerialNumber]; "
-                    ColumnWidths ="0;1134;2268"
-                    AllowValueListEdits =0
+                    Left =7374
+                    Top =739
+                    Width =1843
+                    Height =293
+                    TabIndex =3
+                    ForeColor =255
+                    Name ="txtExpenses"
+                    ControlSource ="=Sum([ExpenseFeesTotal])"
+                    Format ="$#,##0.00;-$#,##0.00"
 
-                    LayoutCachedLeft =4140
-                    LayoutCachedWidth =6933
-                    LayoutCachedHeight =330
+                    LayoutCachedLeft =7374
+                    LayoutCachedTop =739
+                    LayoutCachedWidth =9217
+                    LayoutCachedHeight =1032
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                    CurrencySymbol ="$"
+                End
+                Begin Label
+                    TextAlign =1
+                    TextFontFamily =34
+                    Left =2550
+                    Top =398
+                    Width =2793
+                    Height =293
+                    FontWeight =700
+                    Name ="Label23"
+                    Caption ="Income"
+                    Tag ="DetachedLabel"
+                    GridlineStyleBottom =1
+                    LayoutCachedLeft =2550
+                    LayoutCachedTop =398
+                    LayoutCachedWidth =5343
+                    LayoutCachedHeight =691
+                End
+                Begin Label
+                    TextAlign =1
+                    TextFontFamily =34
+                    Left =2550
+                    Top =739
+                    Width =2793
+                    Height =293
+                    FontWeight =700
+                    Name ="Label24"
+                    Caption ="Expense"
+                    Tag ="DetachedLabel"
+                    GridlineStyleBottom =1
+                    LayoutCachedLeft =2550
+                    LayoutCachedTop =739
+                    LayoutCachedWidth =5343
+                    LayoutCachedHeight =1032
                 End
             End
         End
@@ -395,9 +403,10 @@ Begin Report
             KeepTogether = NotDefault
             Height =0
             Name ="Detalle"
-            AlternateBackThemeColorIndex =1
-            AlternateBackShade =95.0
-            BackThemeColorIndex =1
+            AlternateBackThemeColorIndex =4
+            AlternateBackTint =40.0
+            BackThemeColorIndex =7
+            BackTint =40.0
         End
         Begin PageFooter
             Height =558
@@ -434,7 +443,7 @@ Begin Report
                     Height =330
                     TabIndex =1
                     Name ="Texto10"
-                    ControlSource ="=\"Página \" & [Page] & \" de \" & [Pages]"
+                    ControlSource ="=\"Page \" & [Page] & \" of \" & [Pages]"
 
                     LayoutCachedLeft =6423
                     LayoutCachedTop =228
@@ -445,12 +454,172 @@ Begin Report
         End
         Begin FormFooter
             KeepTogether = NotDefault
-            Height =0
+            Height =2211
             Name ="PieDelInforme"
-            AutoHeight =1
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
             BackThemeColorIndex =1
+            BackShade =95.0
+            Begin
+                Begin Label
+                    Left =2100
+                    Width =758
+                    Height =293
+                    FontWeight =700
+                    Name ="Label19"
+                    Caption ="Totals:"
+                    Tag ="DetachedLabel"
+                    GridlineStyleBottom =1
+                    LayoutCachedLeft =2100
+                    LayoutCachedWidth =2858
+                    LayoutCachedHeight =293
+                End
+                Begin TextBox
+                    IMESentenceMode =3
+                    Left =7321
+                    Top =338
+                    Width =1843
+                    Height =293
+                    ColumnWidth =1710
+                    FontWeight =700
+                    Name ="CashToLocation"
+                    ControlSource ="=Sum([Amount])/2"
+                    Format ="$#,##0.00;-$#,##0.00"
+
+                    LayoutCachedLeft =7321
+                    LayoutCachedTop =338
+                    LayoutCachedWidth =9164
+                    LayoutCachedHeight =631
+                    CurrencySymbol ="$"
+                    Begin
+                        Begin Label
+                            Left =2497
+                            Top =338
+                            Width =2445
+                            Height =293
+                            Name ="Label25"
+                            Caption ="Total Collections:"
+                            LayoutCachedLeft =2497
+                            LayoutCachedTop =338
+                            LayoutCachedWidth =4942
+                            LayoutCachedHeight =631
+                        End
+                    End
+                End
+                Begin TextBox
+                    IMESentenceMode =3
+                    Left =7321
+                    Top =680
+                    Width =1843
+                    Height =293
+                    ColumnWidth =1913
+                    FontWeight =700
+                    TabIndex =1
+                    Name ="CashToUnionVending"
+                    ControlSource ="GrossCashSplit"
+                    Format ="$#,##0.00;-$#,##0.00"
+
+                    LayoutCachedLeft =7321
+                    LayoutCachedTop =680
+                    LayoutCachedWidth =9164
+                    LayoutCachedHeight =973
+                    CurrencySymbol ="$"
+                    Begin
+                        Begin Label
+                            Left =2498
+                            Top =680
+                            Width =2445
+                            Height =293
+                            Name ="Label26"
+                            Caption ="Total Cash at Location:"
+                            LayoutCachedLeft =2498
+                            LayoutCachedTop =680
+                            LayoutCachedWidth =4943
+                            LayoutCachedHeight =973
+                        End
+                    End
+                End
+                Begin TextBox
+                    IMESentenceMode =3
+                    Left =7321
+                    Top =1022
+                    Width =1843
+                    Height =293
+                    ColumnWidth =2138
+                    FontWeight =700
+                    TabIndex =2
+                    Name ="TotalEletronicCollections"
+                    ControlSource ="TotalFeesToBeSplit"
+                    Format ="$#,##0.00;-$#,##0.00"
+
+                    LayoutCachedLeft =7321
+                    LayoutCachedTop =1022
+                    LayoutCachedWidth =9164
+                    LayoutCachedHeight =1315
+                    CurrencySymbol ="$"
+                    Begin
+                        Begin Label
+                            Left =2499
+                            Top =1022
+                            Width =2445
+                            Height =293
+                            Name ="Label27"
+                            Caption ="Total Fees to be Split:"
+                            LayoutCachedLeft =2499
+                            LayoutCachedTop =1022
+                            LayoutCachedWidth =4944
+                            LayoutCachedHeight =1315
+                        End
+                    End
+                End
+                Begin Label
+                    TextFontFamily =34
+                    Left =2100
+                    Top =1418
+                    Width =2378
+                    Height =293
+                    FontWeight =700
+                    Name ="Label28"
+                    Caption ="Union Vending Fees:"
+                    Tag ="DetachedLabel"
+                    GridlineStyleBottom =1
+                    LayoutCachedLeft =2100
+                    LayoutCachedTop =1418
+                    LayoutCachedWidth =4478
+                    LayoutCachedHeight =1711
+                End
+                Begin Label
+                    TextFontFamily =34
+                    Left =2500
+                    Top =1817
+                    Width =3796
+                    Height =293
+                    Name ="Label29"
+                    Caption ="Touch Tunes (Background Music)"
+                    LayoutCachedLeft =2500
+                    LayoutCachedTop =1817
+                    LayoutCachedWidth =6296
+                    LayoutCachedHeight =2110
+                End
+                Begin TextBox
+                    IMESentenceMode =3
+                    Left =7321
+                    Top =1817
+                    Width =1843
+                    Height =293
+                    FontWeight =700
+                    TabIndex =3
+                    Name ="Text30"
+                    ControlSource ="BackGrounMusic"
+                    Format ="$#,##0.00;-$#,##0.00"
+
+                    LayoutCachedLeft =7321
+                    LayoutCachedTop =1817
+                    LayoutCachedWidth =9164
+                    LayoutCachedHeight =2110
+                    CurrencySymbol ="$"
+                End
+            End
         End
     End
 End

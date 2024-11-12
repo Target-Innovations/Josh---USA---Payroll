@@ -383,6 +383,7 @@ Public Sub RunCollectionsUnitTest()
 
 End Sub
 
+
 ' ******************************************************
 '
 '    306-Detailed-Receipt
@@ -391,7 +392,7 @@ End Sub
 
 Public Function GrossCashSplit(CollectionId As Integer, LocationId As Integer) As Double
     oStub.GetStubInfoById Nz(CollectionId)
-    GrossCashSplit = oStub.GrossCashSplit(LocationId)
+    GrossCashSplit = oStub.TotalCash ' (LocationId)
 End Function
 
 Public Function TotalEletronicCollections(CollectionId As Integer, LocationId As Integer) As Double
@@ -417,6 +418,17 @@ Public Function CashToUnionVending(CollectionId As Integer) As Double
     oStub.GetStubInfoById Nz(CollectionId)
     CashToUnionVending = oStub.CashToUnionVending()
 End Function
+
+Public Function TotalFeesToBeSplit(CollectionId As Integer) As Double
+    oStub.GetStubInfoById Nz(CollectionId)
+    TotalFeesToBeSplit = oStub.SplitedServiceFee
+End Function
+
+Public Function BackGrounMusic(CollectionId As Integer) As Double
+    oStub.GetStubInfoById Nz(CollectionId)
+    BackGrounMusic = oStub.FeeChargedToLocation()
+End Function
+
 
 
 Sub FieldWritter(TableName As String)

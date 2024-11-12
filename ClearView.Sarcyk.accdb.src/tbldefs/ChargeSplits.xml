@@ -10,9 +10,10 @@
   <xsd:element name="ChargeSplits">
     <xsd:annotation>
       <xsd:appinfo>
+        <od:index index-name="Id" index-key="Id " primary="no" unique="no" clustered="no" order="asc"/>
         <od:index index-name="PrimaryKey" index-key="DivisionId EmployeeId " primary="yes" unique="yes" clustered="no" order="asc asc"/>
         <od:tableProperty name="Orientation" type="2" value="0"/>
-        <od:tableProperty name="OrderByOn" type="1" value="1"/>
+        <od:tableProperty name="OrderByOn" type="1" value="0"/>
         <od:tableProperty name="DefaultView" type="2" value="2"/>
         <od:tableProperty name="DisplayViewsOnSharePointSite" type="2" value="1"/>
         <od:tableProperty name="TotalsRow" type="1" value="0"/>
@@ -37,7 +38,6 @@
         <od:tableProperty name="TabularFamily" type="2" value="0"/>
         <od:tableProperty name="DatasheetForeColor" type="4" value="0"/>
         <od:tableProperty name="DatasheetForeColor12" type="4" value="0"/>
-        <od:tableProperty name="OrderBy" type="12" value="[Lookup_DivisionId].[Division]"/>
       </xsd:appinfo>
     </xsd:annotation>
     <xsd:complexType>
