@@ -15,7 +15,7 @@ Begin Form
     Width =18213
     DatasheetFontHeight =11
     ItemSuffix =425
-    Right =11768
+    Right =17408
     Bottom =10515
     Tag ="Home"
     RecSrcDt = Begin
@@ -5499,7 +5499,7 @@ Begin Form
                         Begin
                             Action ="Close"
                             Argument ="2"
-                            Argument ="00-Employee-List"
+                            Argument ="400-Home-SMAC"
                             Argument ="0"
                         End
                         Begin
@@ -5510,8 +5510,8 @@ Begin Form
                         End
                         Begin
                             Comment ="_AXL:00-Home-Sarcyk</Argument></Action><Action Name=\"CloseWindow\"><Argument Na"
-                                "me=\"ObjectType\">Form</Argument><Argument Name=\"ObjectName\">00-Employee-List<"
-                                "/Argument></Action></Statements></UserInterfaceMacro>"
+                                "me=\"ObjectType\">Form</Argument><Argument Name=\"ObjectName\">400-Home-SMAC</Ar"
+                                "gument></Action></Statements></UserInterfaceMacro>"
                         End
                     End
                     BackStyle =0

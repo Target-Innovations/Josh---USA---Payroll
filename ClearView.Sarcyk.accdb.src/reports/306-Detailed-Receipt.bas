@@ -3,6 +3,7 @@ VersionRequired =20
 Begin Report
     LayoutForPrint = NotDefault
     DividingLines = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     TabularFamily =0
     DateGrouping =1
@@ -12,10 +13,10 @@ Begin Report
     GridY =10
     Width =11520
     DatasheetFontHeight =11
-    ItemSuffix =32
-    Filter ="CollectionStubId = 55"
+    ItemSuffix =33
+    Filter ="1=1 And LocationId  = 25 And  DateRange  Between #2024-09-01# And #2024-09-30#"
     RecSrcDt = Begin
-        0x09b004c13344e640
+        0x4f8224710145e640
     End
     RecordSource ="306-Detailed-Receipt"
     Caption ="306-Detailed-Receipt"
@@ -106,7 +107,7 @@ Begin Report
         Begin FormHeader
             KeepTogether = NotDefault
             CanGrow = NotDefault
-            Height =5215
+            Height =5408
             Name ="EncabezadoDelInforme"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
@@ -115,42 +116,97 @@ Begin Report
             Begin
                 Begin Label
                     TextAlign =2
-                    Left =4158
-                    Top =170
-                    Width =2993
+                    Left =3120
+                    Top =173
+                    Width =5723
                     Height =1193
                     FontSize =16
                     Name ="Etiqueta8"
                     Caption ="Union Vending\015\01213730 Enterprise Ave\015\012Cleveland, OH 44135"
-                    LayoutCachedLeft =4158
-                    LayoutCachedTop =170
-                    LayoutCachedWidth =7151
-                    LayoutCachedHeight =1363
+                    LayoutCachedLeft =3120
+                    LayoutCachedTop =173
+                    LayoutCachedWidth =8843
+                    LayoutCachedHeight =1366
+                End
+                Begin ComboBox
+                    LimitToList = NotDefault
+                    OldBorderStyle =0
+                    TextAlign =1
+                    TextFontFamily =34
+                    BackStyle =0
+                    IMESentenceMode =3
+                    ColumnCount =3
+                    Left =6030
+                    Top =1418
+                    Width =3719
+                    Height =330
+                    ColumnWidth =2303
+                    FontSize =16
+                    TabIndex =2
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"510\""
+                    Name ="LocationId"
+                    ControlSource ="LocationId"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT Locations.id, Locations.LocationName, BusinessPartners.Company FROM Locat"
+                        "ions INNER JOIN BusinessPartners ON Locations.BusinessPartnerId = BusinessPartne"
+                        "rs.ID ORDER BY Locations.LocationName; "
+                    ColumnWidths ="0;1701;1701"
+                    AllowValueListEdits =0
+
+                    LayoutCachedLeft =6030
+                    LayoutCachedTop =1418
+                    LayoutCachedWidth =9749
+                    LayoutCachedHeight =1748
+                    ForeThemeColorIndex =0
+                    ForeTint =75.0
+                    ForeShade =100.0
+                    Begin
+                        Begin Label
+                            TextAlign =3
+                            TextFontFamily =34
+                            Left =4290
+                            Top =1418
+                            Width =1695
+                            Height =330
+                            FontSize =16
+                            ForeColor =4210752
+                            Name ="Label32"
+                            Caption ="Location:"
+                            LayoutCachedLeft =4290
+                            LayoutCachedTop =1418
+                            LayoutCachedWidth =5985
+                            LayoutCachedHeight =1748
+                            BorderThemeColorIndex =1
+                            BorderTint =100.0
+                            BorderShade =65.0
+                            ForeTint =75.0
+                        End
+                    End
                 End
                 Begin TextBox
                     OldBorderStyle =0
                     TextAlign =2
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =56
-                    Top =1417
+                    Left =53
+                    Top =1815
                     Width =11460
-                    Height =330
+                    Height =398
                     FontSize =16
                     Name ="Text13"
                     ControlSource ="=\"Collection Date: \" & [CollectionDate]"
                     Format ="Long Date"
 
-                    LayoutCachedLeft =56
-                    LayoutCachedTop =1417
-                    LayoutCachedWidth =11516
-                    LayoutCachedHeight =1747
+                    LayoutCachedLeft =53
+                    LayoutCachedTop =1815
+                    LayoutCachedWidth =11513
+                    LayoutCachedHeight =2213
                 End
                 Begin Subform
                     Locked = NotDefault
                     OldBorderStyle =0
                     Left =623
-                    Top =1984
+                    Top =2318
                     Width =10246
                     Height =3090
                     TabIndex =1
@@ -161,9 +217,9 @@ Begin Report
                     EventProcPrefix ="Ctl308_Receipt_v1"
 
                     LayoutCachedLeft =623
-                    LayoutCachedTop =1984
+                    LayoutCachedTop =2318
                     LayoutCachedWidth =10869
-                    LayoutCachedHeight =5074
+                    LayoutCachedHeight =5408
                 End
             End
         End

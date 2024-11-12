@@ -19,10 +19,10 @@ Begin Form
     Width =11385
     DatasheetFontHeight =11
     ItemSuffix =40
-    Left =5288
-    Top =1530
-    Right =15465
-    Bottom =12045
+    Left =5010
+    Top =1793
+    Right =16395
+    Bottom =8565
     Tag ="TR000000096"
     RecSrcDt = Begin
         0x731ade9bbef9e540
@@ -1054,6 +1054,7 @@ Begin Form
                     TextAlign =1
                     TextFontFamily =18
                     IMESentenceMode =3
+                    ColumnCount =2
                     ListWidth =2268
                     Left =7573
                     Top =2978
@@ -1063,13 +1064,14 @@ Begin Form
                     TabIndex =7
                     BorderColor =0
                     ForeColor =0
-                    ColumnInfo ="\"\";\"\";\"10\";\"510\""
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
                     Name ="cboFilter3"
                     RowSourceType ="Table/Query"
-                    RowSource ="SELECT PayrollReconciliation.InvoiceNumber FROM PayrollReconciliation GROUP BY P"
-                        "ayrollReconciliation.InvoiceNumber; "
+                    RowSource ="SELECT Locations.id, Locations.LocationName FROM Locations GROUP BY Locations.id"
+                        ", Locations.LocationName ORDER BY Locations.LocationName; "
+                    ColumnWidths ="0;2268"
                     FontName ="Segoe UI"
-                    Tag ="InvoiceNumber"
+                    Tag ="LocationId"
                     BottomPadding =150
                     AllowValueListEdits =0
                     InheritValueList =0
@@ -1106,7 +1108,7 @@ Begin Form
                             BorderColor =0
                             ForeColor =-2147483615
                             Name ="lblFilter3"
-                            Caption ="Invoice"
+                            Caption ="Location"
                             FontName ="Segoe UI"
                             Tag ="TR000000094"
                             BottomPadding =150
@@ -1385,7 +1387,7 @@ Dim WhereClause As String
     End If
     
     If Nz(Me.cboFilter3) <> "" Then
-        WhereClause = WhereClause & " And " & Me.cboFilter3.Tag & "  = '" & Me.cboFilter3 & "'"
+        WhereClause = WhereClause & " And " & Me.cboFilter3.Tag & "  = " & Me.cboFilter3 & ""
     End If
     
     If Nz(Me.cboFilter2) <> "" Then

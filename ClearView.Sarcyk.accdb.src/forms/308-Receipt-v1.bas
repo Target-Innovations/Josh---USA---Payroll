@@ -5,6 +5,7 @@ Begin Form
     NavigationButtons = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     TabularFamily =0
@@ -14,10 +15,10 @@ Begin Form
     Width =10212
     DatasheetFontHeight =11
     ItemSuffix =189
-    Left =960
-    Top =2610
-    Right =10950
-    Bottom =5445
+    Left =975
+    Top =2565
+    Right =11220
+    Bottom =5663
     RecSrcDt = Begin
         0x4103b0d4f43ce640
     End

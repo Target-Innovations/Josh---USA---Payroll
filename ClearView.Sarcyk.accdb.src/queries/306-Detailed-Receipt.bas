@@ -9,6 +9,8 @@ Begin OutputColumns
     Expression ="[Collections-Splitted].CollectionStubId"
     Expression ="[Collections-Splitted].CollectionId"
     Expression ="[Collections-Splitted].LocationId"
+    Alias ="DateRange"
+    Expression ="[Collections-Splitted].CollectionDate"
     Expression ="[Collections-Splitted].CollectionDate"
     Expression ="[Collections-Splitted].EmployeeId"
     Expression ="EquipmentType.EquipmentTypeName"
@@ -55,6 +57,8 @@ Begin Groups
     Expression ="[Collections-Splitted].CollectionId"
     GroupLevel =0
     Expression ="[Collections-Splitted].LocationId"
+    GroupLevel =0
+    Expression ="[Collections-Splitted].CollectionDate"
     GroupLevel =0
     Expression ="[Collections-Splitted].CollectionDate"
     GroupLevel =0
@@ -223,17 +227,25 @@ Begin
         dbInteger "ColumnWidth" ="2895"
         dbBoolean "ColumnHidden" ="0"
     End
+    Begin
+        dbText "Name" ="Period"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="DateRange"
+        dbLong "AggregateType" ="-1"
+    End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =1507
-    Bottom =1436
+    Right =2798
+    Bottom =1206
     Left =-1
     Top =-1
-    Right =1474
-    Bottom =936
+    Right =1996
+    Bottom =807
     Left =0
     Top =0
     ColumnsShown =543
