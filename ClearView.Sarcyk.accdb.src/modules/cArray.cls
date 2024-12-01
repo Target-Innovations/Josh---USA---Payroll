@@ -105,16 +105,16 @@ ErrorHandler:
 
 End Function
 
-Function Count(Data As String, separator As String) As Integer
+Function count(Data As String, separator As String) As Integer
 
     On Error Resume Next
     
-    Count = 0
+    count = 0
     
     Dim tmpArray() As String
     tmpArray = Me.SplitedArray(Data, separator)
     
-    Count = UBound(tmpArray) + 1
+    count = UBound(tmpArray) + 1
     
 End Function
 

@@ -325,7 +325,7 @@ Public Function Add() As Boolean
 On Error GoTo ErrorHandler
 
     Dim sql As String
-    Dim rs As DAO.Recordset
+    Dim rs As dao.Recordset
     
     If IsNullOrEmpty(Me.EmployeeID) Or Me.EmployeeID = 1 Then Exit Function
     

@@ -1,0 +1,3 @@
+﻿SELECT Equipments.ID, Equipments.SerialNumber, Equipments.EquipmentTypeId, Equipments.Location, Equipments.IsAvaialble, Equipments.DateDown, Equipments.Reason, Equipments.LoanDate, Equipments.LoanedTo, Equipments.Comments, Equipments.Attachments, Equipments.UpdatedAt, Equipments.UpdatedBy, Equipments.CreatedAt, Equipments.SupplierId, Equipments.Make, EquipmentType.DivisionId, Equipments.PurchaseDate, Equipments.InvoiceNumber, Equipments.Price, Equipments.BasePrice, Equipments.ManufactureId, Equipments.OwnerId, Equipments.RentToOwn
+FROM EquipmentType INNER JOIN Equipments ON EquipmentType.Id = Equipments.EquipmentTypeId
+WHERE (((EquipmentType.DivisionId)=8));

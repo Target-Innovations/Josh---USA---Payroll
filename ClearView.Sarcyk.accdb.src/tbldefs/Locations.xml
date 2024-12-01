@@ -39,6 +39,7 @@
         <od:tableProperty name="ReadOnlyWhenDisconnected" type="1" value="0"/>
         <od:tableProperty name="DatasheetGridlinesThemeColorIndex" type="4" value="-1"/>
         <od:tableProperty name="DatasheetForeThemeColorIndex" type="4" value="-1"/>
+        <od:tableProperty name="OrderBy" type="12" value="[Locations].[LocationName]"/>
       </xsd:appinfo>
     </xsd:annotation>
     <xsd:complexType>
@@ -47,7 +48,7 @@
           <xsd:annotation>
             <xsd:appinfo>
               <od:fieldProperty name="ColumnWidth" type="3" value="960"/>
-              <od:fieldProperty name="ColumnOrder" type="3" value="0"/>
+              <od:fieldProperty name="ColumnOrder" type="3" value="1"/>
               <od:fieldProperty name="ColumnHidden" type="1" value="0"/>
               <od:fieldProperty name="WSSFieldID" type="10" value="ID"/>
               <od:fieldProperty name="AggregateType" type="4" value="-1"/>

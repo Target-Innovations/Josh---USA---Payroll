@@ -15,8 +15,8 @@ Begin Form
     Width =18166
     DatasheetFontHeight =11
     ItemSuffix =416
-    Right =17865
-    Bottom =8970
+    Right =11693
+    Bottom =10515
     Tag ="Home"
     Picture ="HD-Gray-Backgrounds-2.jpg"
     RecSrcDt = Begin

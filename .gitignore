@@ -27,3 +27,8 @@ QA/
 /Videos/
 *.mp4
 *.zip
+QA/
+*.mp4/
+Docs/
+Images/
+SysFiles/

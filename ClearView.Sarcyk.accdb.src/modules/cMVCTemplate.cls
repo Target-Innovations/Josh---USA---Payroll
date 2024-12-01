@@ -191,7 +191,7 @@ End Sub
 
 Public Function Add() As Boolean
 
-    this.WorkOrderNumber = format(Date, "yyyy") & "-" & format(Date, "mm") & DMax("WorkOrderID", "WorkOrder_TBL") + 1
+    this.WorkOrderNumber = Format(Date, "yyyy") & "-" & Format(Date, "mm") & DMax("WorkOrderID", "WorkOrder_TBL") + 1
 
     UpdatedAt = Now()
     UpdatedBy = cSysSettings.LoggedUserName

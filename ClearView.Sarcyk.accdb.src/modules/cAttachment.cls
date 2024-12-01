@@ -22,7 +22,7 @@ Public Sub Add(FilePath As String)
 
     On Error GoTo err_handler
     
-    Dim dbs As DAO.Database, qdf As DAO.QueryDef
+    Dim dbs As dao.Database, qdf As dao.QueryDef
     Dim FilePath1 As String, strSql As String
     
     ' open common 'file open' dialogue and get path to selected file
@@ -125,7 +125,7 @@ Public Sub DeleteAttachments(AttachmentList As String)
     
     On Error GoTo err_handler
     
-    Dim dbs As DAO.Database, qdf As DAO.QueryDef
+    Dim dbs As dao.Database, qdf As dao.QueryDef
     Dim strSql As String
     
     ' delete any matching rows from SysAttachment table not used by another
@@ -148,7 +148,7 @@ Public Sub DeleteOwnership(OwnerId As String, AttachmentList As String)
 
     On Error GoTo err_handler
     
-    Dim dbs As DAO.Database, rst As DAO.Recordset
+    Dim dbs As dao.Database, rst As dao.Recordset
     Dim strSql As String
     
     If MsgBox("Are you sure you want to delete this attachment?", vbExclamation + vbYesNo) = vbNo Then

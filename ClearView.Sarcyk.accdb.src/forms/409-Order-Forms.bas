@@ -15,10 +15,11 @@ Begin Form
     Width =14760
     DatasheetFontHeight =11
     ItemSuffix =894
-    Right =15923
-    Bottom =8790
+    Right =20985
+    Bottom =11250
     DatasheetGridlinesColor =-1
     Tag ="SplitList"
+    Filter ="([OrderForms].[FormNumber]=\"UN-ANT6320LSA\")"
     RecSrcDt = Begin
         0x7be57bf35242e640
     End
@@ -661,7 +662,7 @@ Begin Form
                     Top =885
                     Width =3870
                     Height =293
-                    ColumnWidth =1733
+                    ColumnWidth =2925
                     FontSize =10
                     TabIndex =2
                     Name ="GameName"
@@ -734,7 +735,7 @@ Begin Form
                     ColumnWidth =2513
                     TabIndex =3
                     ForeColor =1279872587
-                    ColumnInfo ="\"\";\"\";\"\";\"@\";\"10\";\"510\""
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
                     Name ="GameStyleId"
                     ControlSource ="GameStyleId"
                     RowSourceType ="Table/Query"
@@ -964,7 +965,7 @@ End Sub
 
 Private Sub GameStyleId_Click()
 
-    DoCmd.OpenForm "[422-Game-Style-Details]", acNormal, , "Id = " & Me.GameStyleId, , acDialog
+    ' DoCmd.OpenForm "[422-Game-Style-Details]", acNormal, , "Id = " & Me.GameStyleId, , acDialog
     
     
 End Sub

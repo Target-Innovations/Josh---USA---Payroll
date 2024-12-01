@@ -19,8 +19,8 @@ Begin Form
     Width =13620
     DatasheetFontHeight =11
     ItemSuffix =34
-    Right =20595
-    Bottom =11040
+    Right =11385
+    Bottom =10515
     OnUnload ="[Event Procedure]"
     Tag ="LoggedUser: Josh"
     Picture ="HD-Gray-Backgrounds-2"
@@ -511,10 +511,10 @@ Begin Form
                     Shadow =-1
                     QuickStyle =37
                     QuickStyleMask =-49
-                    WebImagePaddingLeft =-2
-                    WebImagePaddingTop =-2
+                    WebImagePaddingLeft =-3
+                    WebImagePaddingTop =-4
                     WebImagePaddingRight =-2
-                    WebImagePaddingBottom =-1
+                    WebImagePaddingBottom =1
                     Overlaps =1
                 End
                 Begin CommandButton
@@ -559,10 +559,10 @@ Begin Form
                     Shadow =-1
                     QuickStyle =37
                     QuickStyleMask =-49
-                    WebImagePaddingLeft =-2
-                    WebImagePaddingTop =-2
+                    WebImagePaddingLeft =-3
+                    WebImagePaddingTop =-4
                     WebImagePaddingRight =-2
-                    WebImagePaddingBottom =-1
+                    WebImagePaddingBottom =1
                     Overlaps =1
                 End
                 Begin Image
@@ -3747,7 +3747,6 @@ Begin Form
                     Name ="LoginLBL"
                     Caption ="Login"
                     FontName ="Poppins"
-                    OnDblClick ="[Event Procedure]"
                     LayoutCachedLeft =6308
                     LayoutCachedTop =3420
                     LayoutCachedWidth =9465
@@ -3798,7 +3797,7 @@ Begin Form
                 End
                 Begin Line
                     BorderWidth =1
-                    OverlapFlags =95
+                    OverlapFlags =87
                     Left =6661
                     Top =6810
                     Width =2640
@@ -3850,10 +3849,10 @@ Begin Form
                     Shadow =-1
                     QuickStyle =37
                     QuickStyleMask =-49
-                    WebImagePaddingLeft =-2
-                    WebImagePaddingTop =-2
+                    WebImagePaddingLeft =-3
+                    WebImagePaddingTop =-4
                     WebImagePaddingRight =-2
-                    WebImagePaddingBottom =-1
+                    WebImagePaddingBottom =1
                     Overlaps =1
                 End
                 Begin CommandButton
@@ -3897,10 +3896,10 @@ Begin Form
                     Shadow =-1
                     QuickStyle =37
                     QuickStyleMask =-49
-                    WebImagePaddingLeft =-2
-                    WebImagePaddingTop =-2
+                    WebImagePaddingLeft =-3
+                    WebImagePaddingTop =-4
                     WebImagePaddingRight =-2
-                    WebImagePaddingBottom =-1
+                    WebImagePaddingBottom =1
                     Overlaps =1
                 End
                 Begin CommandButton
@@ -3942,10 +3941,10 @@ Begin Form
                     Shadow =-1
                     QuickStyle =37
                     QuickStyleMask =-49
-                    WebImagePaddingLeft =-2
-                    WebImagePaddingTop =-2
+                    WebImagePaddingLeft =-3
+                    WebImagePaddingTop =-4
                     WebImagePaddingRight =-2
-                    WebImagePaddingBottom =-1
+                    WebImagePaddingBottom =1
                     Overlaps =1
                 End
                 Begin CommandButton
@@ -3986,10 +3985,10 @@ Begin Form
                     Shadow =-1
                     QuickStyle =37
                     QuickStyleMask =-49
-                    WebImagePaddingLeft =-2
-                    WebImagePaddingTop =-2
+                    WebImagePaddingLeft =-3
+                    WebImagePaddingTop =-4
                     WebImagePaddingRight =-2
-                    WebImagePaddingBottom =-1
+                    WebImagePaddingBottom =1
                     Overlaps =1
                 End
                 Begin Label
@@ -4097,6 +4096,7 @@ Begin Form
                     BackColor =8421504
                     Name ="txtVersion"
                     ControlSource ="=DMax(\"[Version]\",\"[SysChangeLog]\")"
+                    OnDblClick ="[Event Procedure]"
                     FontName ="Poppins"
 
                     LayoutCachedLeft =7987
@@ -4123,6 +4123,7 @@ Begin Form
                     Name ="lblAppVersion"
                     Caption ="Version"
                     FontName ="Poppins"
+                    OnDblClick ="[Event Procedure]"
                     LayoutCachedLeft =6645
                     LayoutCachedTop =7833
                     LayoutCachedWidth =7853
@@ -4230,27 +4231,6 @@ End Sub
 
 Private Sub Form_Load()
  
-    Dim EName As String
-    Dim EComp As String
-    Dim EDomain As String
-    Dim rs As Recordset
-    Dim lowestID As Long
-    
-    EName = Environ("USERNAME")
-    EComp = Environ("COMPUTERNAME")
-    EDomain = Environ("USERDOMAIN")
-        
-'    Set rs = CurrentDb.OpenRecordset("Select Min(Id) as LowestId from Employees")
-'
-'    If Not rs.EOF Then
-'        lowestID = rs("LowestID")
-'    End If
-'
-'    rs.Close
-'    Set rs = Nothing
-'
-'    Me.UsernameCMB = lowestID
-    
     cSysSettings.InitEnvironmentVariables
     
     Set oUser = cSysSettings.oUser
@@ -4272,7 +4252,9 @@ On Error Resume Next
 
 End Sub
 
-Private Sub LoginLBL_DblClick(Cancel As Integer)
+Private Sub lblAppVersion_DblClick(Cancel As Integer)
+
+On Error GoTo ErrorHandler
 
     ' Trick to open/close the Admin View
     AdminViewEnabled = cSysSettings.GetSettingsValue("AdminViewEnabled")
@@ -4285,30 +4267,15 @@ Private Sub LoginLBL_DblClick(Cancel As Integer)
     
     cSysSettings.InitEnvironmentVariables
     
+ErrorHandler:
+
+    'if it lost connection with the linked tables, enable backend access
+    Call EnableProperties
+
 End Sub
 
 Private Sub LogoIMG_DblClick(Cancel As Integer)
-
-'    ' TODO: check how to get the item selected in the combo
-'
-'    Me.UsernameCMB = "jhouston"
-'    Me.PasswordTXT = "welcome00"
-'
-'    Call NewLoginBTN_Click
-'
-    
-    
-    ' *** Remove/comment code before going to production
-    
-    Me.UsernameCMB = "josh"
-    
-    Dim pwd As String
-    pwd = Nz(DLookup("password", "employees", "UserName = '" & Me.UsernameCMB & "'"))
-    
-    Me.PasswordTXT = pwd
-    Call NewLoginBTN_Click
-    
-    ' **************************************************
+    cDbOperations.RelinkTablesToNewBackend
 End Sub
 
 Private Sub NewLoginBTN_Click()
@@ -4352,11 +4319,19 @@ Private Sub NewLoginBTN_Click()
                
 End Sub
 
-'Private Sub PasswordTXT_KeyDown(KeyCode As Integer, Shift As Integer)
-'    If KeyCode = 13 Then
-'        NewLoginBTN_Click
-'    End If
-'End Sub
+Private Sub txtVersion_DblClick(Cancel As Integer)
+
+On Error Resume Next
+
+    Me.UsernameCMB = "SysAdmin"
+    
+    Dim pwd As String
+    pwd = Nz(DLookup("password", "employees", "UserName = '" & Me.UsernameCMB & "'"))
+    
+    Me.PasswordTXT = pwd
+    Call NewLoginBTN_Click
+    
+End Sub
 
 Private Sub UsernameCMB_GotFocus()
 

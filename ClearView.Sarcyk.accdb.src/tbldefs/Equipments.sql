@@ -13,6 +13,13 @@
   [UpdatedAt] DATETIME ,
   [UpdatedBy] VARCHAR (255),
   [CreatedAt] DATETIME ,
-  [ManufacturerId] LONG ,
-  [Make] VARCHAR (255)
+  [SupplierId] LONG ,
+  [Make] VARCHAR (255),
+  [PurchaseDate] DATETIME ,
+  [InvoiceNumber] VARCHAR (255),
+  [Price] CURRENCY ,
+  [BasePrice] CURRENCY ,
+  [ManufactureId] LONG ,
+  [OwnerId] LONG ,
+  [RentToOwn] BIT 
 )

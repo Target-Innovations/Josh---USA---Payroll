@@ -1,6 +1,8 @@
 ﻿Attribute VB_Name = "GlobalVariablesLibrary"
 Option Compare Database
 
+Global oDate As New cDateAndTime
+
 Sub HideNavegationPanel()
 
     'select the navigation pane

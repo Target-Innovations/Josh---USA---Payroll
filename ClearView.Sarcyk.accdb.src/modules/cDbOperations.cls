@@ -62,9 +62,9 @@ handleError:
     
 End Function
 
-Public Function dexists(field As String, table As String, criteria As String) As Boolean
+Public Function dexists(field As String, table As String, Criteria As String) As Boolean
     
-    dexists = IIf(DCount(field, table, criteria) > 0, True, False)
+    dexists = IIf(DCount(field, table, Criteria) > 0, True, False)
     
 End Function
 
@@ -104,24 +104,24 @@ End Function
 Public Function getRSCount(rs As Recordset) As Integer
 
 On Error GoTo handleError
-    Dim Count As Integer
+    Dim count As Integer
     
-    Count = 0
+    count = 0
     
     If Not rs.EOF Then
         
         rs.MoveFirst
         rs.MoveLast
         
-        Count = rs.RecordCount
+        count = rs.RecordCount
         
     End If
     
-    getRSCount = Count
+    getRSCount = count
     Exit Function
     
 handleError:
-    getRSCount = Count
+    getRSCount = count
     Exit Function
 
 End Function
@@ -280,30 +280,92 @@ HandleExit:
     '
 End Function
 
-Function RelinkExternalTables()
+Sub RelinkTablesToNewBackend()
 
-On Error GoTo ErrorHandler
+    On Error GoTo ErrorHandler
 
-Dim tdf As DAO.TableDef
+    Dim newBackendPath As String
+        
+    With Application.FileDialog(msoFileDialogFilePicker)
+    
+        .InitialFileName = Application.CurrentProject.path
+        
+        ' show the file picker dialog box
+        If .show <> 0 Then
+        
+            newBackendPath = .SelectedItems(1)
+        
+             If newBackendPath = "" Then
+                 MsgBox "Operation canceled. No backend database path provided.", vbExclamation
+                 Exit Sub
+             End If
+            
+             ' Delete all tables in the current database
+             DeleteAllTables
+            
+             ' Relink tables to the new backend database
+             RelinkTables newBackendPath
+            
+             MsgBox "Tables relinked successfully.", vbInformation
 
-    ' Article Reference: https://bytes.com/topic/access/insights/876985-relinking-odbc-tables-using-vba
-
-    For Each tdf In CurrentDb.TableDefs
-        ' check if table is a linked table
-        If Len(tdf.Connect) > 0 Then
-            tdf.Connect = SqliteConnStr
-            tdf.RefreshLink
-            DoEvents
         End If
-    Next
-
-    Exit Function
+    
+    End With
+    
+ExitSub:
+    Exit Sub
 
 ErrorHandler:
-    ' TODO
-    ' RecordEvent "Error refreshing linked tables. Error Description:" & Err.Description, "Critical", CStr(LoadId)
+    MsgBox "An error occurred: " & Err.Description, vbCritical
+    Resume ExitSub
+    
+End Sub
 
-End Function
+Sub DeleteAllTables()
+
+    Dim tblDef As TableDef
+    Dim db As dao.Database
+   
+    Set db = CurrentDb
+   
+    ' Delete all tables in the current database
+    For Each tblDef In db.TableDefs
+        If Left(tblDef.Name, 4) <> "MSys" Then ' Exclude system tables
+            ' db.TableDefs.Delete tblDef.Name
+        End If
+    Next tblDef
+    
+End Sub
+
+Sub RelinkTables(newBackendPath As String)
+    
+On Error GoTo ErrorHandler
+
+    Dim db As dao.Database
+    Dim tblDef As TableDef
+   
+   
+    Set db = CurrentDb
+   
+    ' Loop through all linked tables and relink them to the new backend
+    For Each tblDef In db.TableDefs
+    
+    Debug.Print tblDef.Name
+    
+        If tblDef.Attributes And dbAttachedTable Then
+            tblDef.Connect = ";DATABASE=" & newBackendPath
+            tblDef.RefreshLink
+        End If
+    Next tblDef
+    
+    Exit Sub
+    
+ErrorHandler:
+    MsgBox Err.Description
+    Resume Next
+    
+End Sub
+
 
 Public Function OpenConnection(ByVal StrConnection As String)
 
@@ -332,7 +394,7 @@ End Function
 
 Sub DropImportErrorTables()
 
-    Dim tbl_name As DAO.TableDef, str As String
+    Dim tbl_name As dao.TableDef, str As String
 
     If MsgBox("Are you sure you want to drop all import error tables?", vbExclamation + vbYesNo) = vbNo Then
         Exit Sub
@@ -423,6 +485,4 @@ CreateAttachedError:
     End If
 
 End Function
-
-
 

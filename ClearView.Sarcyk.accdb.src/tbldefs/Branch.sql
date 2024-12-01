@@ -1,0 +1,5 @@
+﻿CREATE TABLE [Branch] (
+  [ID] AUTOINCREMENT CONSTRAINT [PrimaryKey] PRIMARY KEY UNIQUE NOT NULL,
+  [BranchName] VARCHAR (255),
+  [Description] VARCHAR (255)
+)

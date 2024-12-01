@@ -4,7 +4,9 @@
   [CharityId] LONG ,
   [LocationId] LONG ,
   [SaleDate] DATETIME ,
-  [Description] VARCHAR (255),
+  [Notes] VARCHAR (255),
+  [WeekDay] LONG ,
+  [OpenTime] DATETIME ,
   [UpdatedAt] DATETIME ,
   [UpdatedBy] VARCHAR (255)
 )

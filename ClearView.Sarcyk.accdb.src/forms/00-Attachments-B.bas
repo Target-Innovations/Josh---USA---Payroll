@@ -407,7 +407,7 @@ Private Sub cmdDelete_Click()
     Dim varItem As Variant, strAttachmentList As String
 
     ' open document the first document(s) selected from list
-    If Me!lstImages.ItemsSelected.Count > 0 Then
+    If Me!lstImages.ItemsSelected.count > 0 Then
 
         If Not IsNull(Me!AddressID) Then
         
@@ -445,7 +445,7 @@ Private Sub cmdViewImage_Click()
     Dim varItem As Variant
     
     ' open document the first document(s) selected from list
-    If Me!lstImages.ItemsSelected.Count > 0 Then
+    If Me!lstImages.ItemsSelected.count > 0 Then
 
         For Each varItem In Me!lstImages.ItemsSelected
         

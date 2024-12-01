@@ -692,7 +692,7 @@ Begin Form
                     Width =1163
                     Height =405
                     TabIndex =2
-                    ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"510\""
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"yyyy-mm-dd\";\"10\";\"510\""
                     Name ="cboGoTo"
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT BoxInventory.ID, BoxInventory.SerialNumber, BoxInventory.InvoiceNumber, B"
@@ -963,6 +963,7 @@ Begin Form
                     Top =833
                     Width =3300
                     Height =293
+                    ColumnWidth =1875
                     TabIndex =2
                     Name ="DistributedDate"
                     ControlSource ="DistributedDate"

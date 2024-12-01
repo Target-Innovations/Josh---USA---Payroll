@@ -130,7 +130,7 @@ Public Function SetHistoryFieldDate() As Boolean
 On Error GoTo ErrorHandler
 
     Dim sql As String
-    Dim rs As DAO.Recordset
+    Dim rs As dao.Recordset
         
     Exit Function ' ****** This procedure is for production migration only  ******
     
@@ -269,9 +269,9 @@ Public Function SetReportFilterList(Filtro As String) As String
             If InStr(1, hdnames(i), "Between") Then
                 ' Clearning up the second date if present
                 DateTo = Trim(Replace(hdnames(i + 1), "#", ""))
-                SetReportFilterList = SetReportFilterList & " Dates From " & format(CDate(Datefrom), "dd-mmm-yy") & " To " & format(CDate(DateTo), "dd-mmm-yy")
+                SetReportFilterList = SetReportFilterList & " Dates From " & Format(CDate(Datefrom), "dd-mmm-yy") & " To " & Format(CDate(DateTo), "dd-mmm-yy")
             Else
-                SetReportFilterList = SetReportFilterList & " Date From " & format(CDate(Datefrom), "dd-mmm-yy")
+                SetReportFilterList = SetReportFilterList & " Date From " & Format(CDate(Datefrom), "dd-mmm-yy")
             End If
             Exit Function
         End If

@@ -236,11 +236,11 @@ Public Function NotifyTimeOff() As Boolean
     Err.Raise "50001", CLASS_NAME & ".NotifyTimeOff", "Method Not Implemented."
 End Function
 
-Public Function GetTimeOffById(Id As String) As DAO.Recordset
+Public Function GetTimeOffById(Id As String) As dao.Recordset
 
 On Error GoTo ErrorHandler
 
-    Dim rs As DAO.Recordset
+    Dim rs As dao.Recordset
 
     Set rs = CurrentDb().OpenRecordset("Select * From [TimeOffRequests] Where Id = " & Id, dbOpenDynaset)
     Me.PopulateFields rs

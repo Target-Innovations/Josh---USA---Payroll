@@ -14,8 +14,8 @@ Begin Form
     GridY =24
     Width =18213
     DatasheetFontHeight =11
-    ItemSuffix =425
-    Right =17408
+    ItemSuffix =428
+    Right =9405
     Bottom =10515
     Tag ="Home"
     RecSrcDt = Begin
@@ -6203,7 +6203,7 @@ Begin Form
         End
         Begin Section
             CanGrow = NotDefault
-            Height =5244
+            Height =5685
             Name ="Detail"
             AlternateBackColor =16777215
             BackThemeColorIndex =1
@@ -6686,7 +6686,7 @@ Begin Form
                     Top =707
                     Width =13846
                     Height =4021
-                    TabIndex =10
+                    TabIndex =11
                     Name ="Container-04-WOs"
                     EventProcPrefix ="Container_04_WOs"
                     FilterOnEmptyMaster =0
@@ -6835,6 +6835,64 @@ Begin Form
                     HoverForeThemeColorIndex =7
                     GroupTable =5
                     Overlaps =1
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =915
+                    Top =5145
+                    Width =2355
+                    Height =435
+                    TabIndex =10
+                    Name ="cmdEquipmentInventory"
+                    Caption ="  Equipment Inventory"
+                    Tag ="TR000000011"
+                    GroupTable =5
+                    LeftPadding =0
+                    TopPadding =0
+                    RightPadding =8
+                    BottomPadding =8
+                    OnClickEmMacro = Begin
+                        Version =196611
+                        ColumnsShown =0
+                        Begin
+                            Action ="OpenForm"
+                            Argument ="424-Machine-Inventory-List"
+                            Argument ="0"
+                            Argument =""
+                            Argument =""
+                            Argument ="-1"
+                            Argument ="0"
+                        End
+                        Begin
+                            Comment ="_AXL:<?xml version=\"1.0\" encoding=\"UTF-16\" standalone=\"no\"?>\015\012<UserI"
+                                "nterfaceMacro For=\"cmdEquipmentInventory\" Event=\"OnClick\" xmlns=\"http://sch"
+                                "emas.microsoft.com/office/accessservices/2009/11/application\"><Statements><Acti"
+                                "on Name=\"OpenForm\"><Argument Na"
+                        End
+                        Begin
+                            Comment ="_AXL:me=\"FormName\">424-Machine-Inventory-List</Argument></Action></Statements>"
+                                "</UserInterfaceMacro>"
+                        End
+                    End
+
+                    CursorOnHover =1
+                    LayoutCachedLeft =915
+                    LayoutCachedTop =5145
+                    LayoutCachedWidth =3270
+                    LayoutCachedHeight =5580
+                    Alignment =1
+                    RowStart =10
+                    RowEnd =10
+                    LayoutGroup =1
+                    ForeThemeColorIndex =0
+                    GridlineThemeColorIndex =1
+                    GridlineShade =65.0
+                    UseTheme =1
+                    BackThemeColorIndex =7
+                    BackTint =20.0
+                    HoverThemeColorIndex =1
+                    HoverForeThemeColorIndex =7
+                    GroupTable =5
                 End
             End
         End

@@ -1413,12 +1413,12 @@ Dim WhereClause As String
         '  & Format(Me.DateFrom, "yyyy-mm-dd") WhereCondition:="[DateField] Between #" & Format(Me.DateFrom, "yyyy-mm-dd") & _
         "# And #" & Format(Me.DateTo, "yyyy-mm-dd") &"#"
 
-        WhereClause = WhereClause & " And  " & Me.StartDate.Tag & "  Between #" & format(Me.StartDate, "yyyy-mm-dd") & "# And #" & format(Me.EndDate, "yyyy-mm-dd") & "#"
+        WhereClause = WhereClause & " And  " & Me.StartDate.Tag & "  Between #" & Format(Me.StartDate, "yyyy-mm-dd") & "# And #" & Format(Me.EndDate, "yyyy-mm-dd") & "#"
 
     ElseIf Nz(Me.StartDate) <> "" Then
 
         TempVars!DueDate = Me.StartDate.Value
-        WhereClause = WhereClause & " And " & Me.StartDate.Tag & "  >= #" & format(Me.StartDate, "yyyy-mm-dd") & "#"
+        WhereClause = WhereClause & " And " & Me.StartDate.Tag & "  >= #" & Format(Me.StartDate, "yyyy-mm-dd") & "#"
 
     End If
     

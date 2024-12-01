@@ -281,7 +281,7 @@ Public Sub CloseForms(Except As String)
     
     ' Loop all open forms, from last to first, to avoid problems due to closing forms
     ' (removing them from the Forms collection) in the loop
-    For i = Forms.Count - 1 To 0 Step -1
+    For i = Forms.count - 1 To 0 Step -1
         Set F = Forms(i)
         ' Close all forms except the login form
         If F.Name <> "00-Login" And F.Name <> Except Then
@@ -435,7 +435,7 @@ Sub FieldWritter(TableName As String)
 
 On Error GoTo ErrorHandler
 
-    Dim rs As DAO.Recordset
+    Dim rs As dao.Recordset
 
     Set rs = CurrentDb().OpenRecordset("Select * From [" & TableName & "] Where Id = 1", dbOpenDynaset)
     

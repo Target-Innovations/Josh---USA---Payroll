@@ -99,7 +99,7 @@ Public Property Get PettyCashBalance(Employee As Integer, Collection_Date As Dat
     Dim OpeningBalance As Double
     Dim PettyCashPayouts As Double
     
-    Dim rs As DAO.Recordset
+    Dim rs As dao.Recordset
     Set rs = CurrentDb().OpenRecordset("Select * From [Collection-Petty-Cash-Reconciliation] Where EmployeeId = " & Employee & " And CollectionDate = #" & Collection_Date & "# order by Id", dbOpenDynaset)
 
     With rs
@@ -239,7 +239,7 @@ Public Function GetStubInfoById(Id As Long) As Recordset
 
 On Error GoTo ErrorHandler
 
-    Dim rs As DAO.Recordset
+    Dim rs As dao.Recordset
         
     Set rs = CurrentDb().OpenRecordset("Select * From [Collection-Stub] Where Id = " & Id, dbOpenDynaset)
     
@@ -257,7 +257,7 @@ Public Function GetStubLocationAndDate(Employee As Integer, Location As Integer,
 
 On Error GoTo ErrorHandler
 
-    Dim rs As DAO.Recordset
+    Dim rs As dao.Recordset
         
     Set rs = CurrentDb().OpenRecordset("Select * From [Collection-Stub] Where EmployeeId = " & Employee & " And LocationId = " & Location & " And CollectionDate =#" & Collection_Date & "#", dbOpenDynaset)
     
@@ -379,7 +379,7 @@ On Error GoTo ErrorHandler
     Dim EquipmentId As Integer
     Dim UnionVendingId As Integer
             
-    Dim rs As DAO.Recordset
+    Dim rs As dao.Recordset
         
     Set rs = CurrentDb().OpenRecordset("Select * From [Equipments] Where Location = " & Location, dbOpenSnapshot)
 
@@ -487,7 +487,7 @@ Public Function GetReceiptInfoById(CollectionStubId As Integer) As Recordset
 
 On Error GoTo ErrorHandler
 
-    Dim rs As DAO.Recordset
+    Dim rs As dao.Recordset
 
     Set rs = CurrentDb().OpenRecordset("Select [Collection Date], [Location], [Collector]  From [305-Collection-Stub-Header] Where CollectionStubId = " & CollectionStubId, dbOpenDynaset)
     
@@ -516,7 +516,7 @@ On Error GoTo ErrorHandler
     
     ' Generate table headers
     html = html & "<tr>"
-    For i = 0 To rs.Fields.Count - 1
+    For i = 0 To rs.Fields.count - 1
         html = html & "<th>" & rs.Fields(i).Name & "</th>"
         ' Debug.Print "Dim " & rs.Fields(i).Name & " As String"
         Debug.Print rs.Fields(i).Name
@@ -527,7 +527,7 @@ On Error GoTo ErrorHandler
     ' Generate table rows
     Do Until rs.EOF
         html = html & "<tr>"
-        For i = 0 To rs.Fields.Count - 1
+        For i = 0 To rs.Fields.count - 1
             Debug.Print "Dim " & rs.Fields(i).Name & " As String"
             html = html & "<td>" & Nz(rs.Fields(i).Value) & "</td>"
         Next

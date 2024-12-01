@@ -15,10 +15,11 @@ Begin Form
     Width =14760
     DatasheetFontHeight =11
     ItemSuffix =751
-    Right =22065
-    Bottom =9720
+    Right =20985
+    Bottom =10770
     DatasheetGridlinesColor =-1
     Tag ="SplitList"
+    Filter ="([GameStyles].[StyleName] Like \"*599*\")"
     RecSrcDt = Begin
         0xcb1dfc975242e640
     End
@@ -1070,6 +1071,7 @@ Begin Form
                     Top =3188
                     Width =3870
                     Height =293
+                    ColumnWidth =2243
                     FontSize =10
                     TabIndex =10
                     Name ="UpdatedAt"

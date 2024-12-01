@@ -18,7 +18,7 @@ Begin Form
     Width =13978
     DatasheetFontHeight =11
     ItemSuffix =980
-    Right =17408
+    Right =12330
     Bottom =10515
     TimerInterval =125
     AfterInsert ="[Event Procedure]"
@@ -1014,19 +1014,19 @@ Begin Form
                 Begin Tab
                     OverlapFlags =85
                     TextFontFamily =34
-                    Left =98
-                    Top =263
-                    Width =13447
+                    Left =300
+                    Top =278
+                    Width =13448
                     Height =5767
                     FontSize =10
                     Name ="tabData"
                     FontName ="Segoe UI"
                     GridlineColor =0
 
-                    LayoutCachedLeft =98
-                    LayoutCachedTop =263
-                    LayoutCachedWidth =13545
-                    LayoutCachedHeight =6030
+                    LayoutCachedLeft =300
+                    LayoutCachedTop =278
+                    LayoutCachedWidth =13748
+                    LayoutCachedHeight =6045
                     ThemeFontIndex =-1
                     GridlineThemeColorIndex =-1
                     GridlineShade =100.0
@@ -1051,16 +1051,16 @@ Begin Form
                     Begin
                         Begin Page
                             OverlapFlags =87
-                            Left =135
-                            Top =645
+                            Left =337
+                            Top =660
                             Width =13373
                             Height =5348
                             Name ="PO_Entries_Page"
                             Caption ="|  Details   |"
-                            LayoutCachedLeft =135
-                            LayoutCachedTop =645
-                            LayoutCachedWidth =13508
-                            LayoutCachedHeight =5993
+                            LayoutCachedLeft =337
+                            LayoutCachedTop =660
+                            LayoutCachedWidth =13710
+                            LayoutCachedHeight =6008
                             WebImagePaddingLeft =4
                             WebImagePaddingTop =4
                             WebImagePaddingRight =4
@@ -1070,17 +1070,17 @@ Begin Form
                                     SpecialEffect =0
                                     BackStyle =1
                                     OverlapFlags =223
-                                    Left =398
-                                    Top =2243
+                                    Left =600
+                                    Top =2258
                                     Width =12876
                                     Height =2790
                                     BorderColor =8355711
                                     Name ="Box911"
                                     GridlineColor =0
-                                    LayoutCachedLeft =398
-                                    LayoutCachedTop =2243
-                                    LayoutCachedWidth =13274
-                                    LayoutCachedHeight =5033
+                                    LayoutCachedLeft =600
+                                    LayoutCachedTop =2258
+                                    LayoutCachedWidth =13476
+                                    LayoutCachedHeight =5048
                                     BackThemeColorIndex =8
                                     BackTint =20.0
                                     BorderShade =50.0
@@ -1091,34 +1091,34 @@ Begin Form
                                     OverlapFlags =215
                                     TextAlign =2
                                     IMESentenceMode =3
-                                    Left =2298
-                                    Top =1133
+                                    Left =2500
+                                    Top =1148
                                     Width =2303
                                     Height =285
                                     Name ="txtAcquiredDate"
                                     ControlSource ="AcquiredDate"
                                     Format ="yyyy-mm-dd"
 
-                                    LayoutCachedLeft =2298
-                                    LayoutCachedTop =1133
-                                    LayoutCachedWidth =4601
-                                    LayoutCachedHeight =1418
+                                    LayoutCachedLeft =2500
+                                    LayoutCachedTop =1148
+                                    LayoutCachedWidth =4803
+                                    LayoutCachedHeight =1433
                                     ColumnStart =1
                                     ColumnEnd =1
                                     Begin
                                         Begin Label
                                             OverlapFlags =215
                                             TextAlign =1
-                                            Left =543
-                                            Top =1133
+                                            Left =745
+                                            Top =1148
                                             Width =1688
                                             Height =285
                                             Name ="Label631"
                                             Caption ="Acquired Date"
-                                            LayoutCachedLeft =543
-                                            LayoutCachedTop =1133
-                                            LayoutCachedWidth =2231
-                                            LayoutCachedHeight =1418
+                                            LayoutCachedLeft =745
+                                            LayoutCachedTop =1148
+                                            LayoutCachedWidth =2433
+                                            LayoutCachedHeight =1433
                                         End
                                     End
                                 End
@@ -1128,8 +1128,8 @@ Begin Form
                                     TextAlign =1
                                     IMESentenceMode =3
                                     ColumnCount =2
-                                    Left =2367
-                                    Top =2399
+                                    Left =2569
+                                    Top =2414
                                     Width =2693
                                     Height =285
                                     ColumnWidth =1463
@@ -1143,10 +1143,10 @@ Begin Form
                                     ColumnWidths ="0;2268"
                                     OnClick ="[Event Procedure]"
 
-                                    LayoutCachedLeft =2367
-                                    LayoutCachedTop =2399
-                                    LayoutCachedWidth =5060
-                                    LayoutCachedHeight =2684
+                                    LayoutCachedLeft =2569
+                                    LayoutCachedTop =2414
+                                    LayoutCachedWidth =5262
+                                    LayoutCachedHeight =2699
                                     ColumnStart =4
                                     ColumnEnd =4
                                     ForeThemeColorIndex =0
@@ -1156,16 +1156,16 @@ Begin Form
                                         Begin Label
                                             OverlapFlags =215
                                             TextAlign =1
-                                            Left =425
-                                            Top =2399
+                                            Left =627
+                                            Top =2414
                                             Width =1875
                                             Height =285
                                             Name ="Label826"
                                             Caption ="Item #"
-                                            LayoutCachedLeft =425
-                                            LayoutCachedTop =2399
-                                            LayoutCachedWidth =2300
-                                            LayoutCachedHeight =2684
+                                            LayoutCachedLeft =627
+                                            LayoutCachedTop =2414
+                                            LayoutCachedWidth =2502
+                                            LayoutCachedHeight =2699
                                             ColumnStart =3
                                             ColumnEnd =3
                                         End
@@ -1174,34 +1174,34 @@ Begin Form
                                 Begin TextBox
                                     OverlapFlags =215
                                     IMESentenceMode =3
-                                    Left =11640
-                                    Top =3154
+                                    Left =11842
+                                    Top =3169
                                     Height =285
                                     TabIndex =2
                                     Name ="txtPrizesPaid"
                                     ControlSource ="PrizesPaid"
                                     Format ="$* #,##0.00;$* (#,##0.00);$* -00"
 
-                                    LayoutCachedLeft =11640
-                                    LayoutCachedTop =3154
-                                    LayoutCachedWidth =13080
-                                    LayoutCachedHeight =3439
+                                    LayoutCachedLeft =11842
+                                    LayoutCachedTop =3169
+                                    LayoutCachedWidth =13282
+                                    LayoutCachedHeight =3454
                                     ColumnStart =7
                                     ColumnEnd =7
                                     Begin
                                         Begin Label
                                             OverlapFlags =215
                                             TextAlign =1
-                                            Left =9874
-                                            Top =3154
+                                            Left =10076
+                                            Top =3169
                                             Width =1688
                                             Height =285
                                             Name ="Label725"
                                             Caption ="Prizes Paid"
-                                            LayoutCachedLeft =9874
-                                            LayoutCachedTop =3154
-                                            LayoutCachedWidth =11562
-                                            LayoutCachedHeight =3439
+                                            LayoutCachedLeft =10076
+                                            LayoutCachedTop =3169
+                                            LayoutCachedWidth =11764
+                                            LayoutCachedHeight =3454
                                             ColumnStart =6
                                             ColumnEnd =6
                                         End
@@ -1212,8 +1212,8 @@ Begin Form
                                     OverlapFlags =215
                                     TextAlign =1
                                     IMESentenceMode =3
-                                    Left =2367
-                                    Top =3438
+                                    Left =2569
+                                    Top =3453
                                     Width =2303
                                     Height =278
                                     TabIndex =3
@@ -1224,10 +1224,10 @@ Begin Form
                                     StatusBarText ="Distributed; New?"
                                     AllowValueListEdits =0
 
-                                    LayoutCachedLeft =2367
-                                    LayoutCachedTop =3438
-                                    LayoutCachedWidth =4670
-                                    LayoutCachedHeight =3716
+                                    LayoutCachedLeft =2569
+                                    LayoutCachedTop =3453
+                                    LayoutCachedWidth =4872
+                                    LayoutCachedHeight =3731
                                     RowStart =1
                                     RowEnd =1
                                     ColumnStart =1
@@ -1239,16 +1239,16 @@ Begin Form
                                         Begin Label
                                             OverlapFlags =215
                                             TextAlign =1
-                                            Left =425
-                                            Top =3438
+                                            Left =627
+                                            Top =3453
                                             Width =1688
                                             Height =278
                                             Name ="Label803"
                                             Caption ="Status"
-                                            LayoutCachedLeft =425
-                                            LayoutCachedTop =3438
-                                            LayoutCachedWidth =2113
-                                            LayoutCachedHeight =3716
+                                            LayoutCachedLeft =627
+                                            LayoutCachedTop =3453
+                                            LayoutCachedWidth =2315
+                                            LayoutCachedHeight =3731
                                             RowStart =1
                                             RowEnd =1
                                         End
@@ -1258,8 +1258,8 @@ Begin Form
                                     OverlapFlags =215
                                     TextAlign =3
                                     IMESentenceMode =3
-                                    Left =6930
-                                    Top =2399
+                                    Left =7132
+                                    Top =2414
                                     Width =2693
                                     Height =278
                                     TabIndex =4
@@ -1267,10 +1267,10 @@ Begin Form
                                     ControlSource ="GamePrice"
                                     Format ="$#,##0.00;[Red]($#,##0.00)"
 
-                                    LayoutCachedLeft =6930
-                                    LayoutCachedTop =2399
-                                    LayoutCachedWidth =9623
-                                    LayoutCachedHeight =2677
+                                    LayoutCachedLeft =7132
+                                    LayoutCachedTop =2414
+                                    LayoutCachedWidth =9825
+                                    LayoutCachedHeight =2692
                                     RowStart =1
                                     RowEnd =1
                                     ColumnStart =4
@@ -1279,16 +1279,16 @@ Begin Form
                                         Begin Label
                                             OverlapFlags =215
                                             TextAlign =1
-                                            Left =5237
-                                            Top =2399
+                                            Left =5439
+                                            Top =2414
                                             Width =1575
                                             Height =278
                                             Name ="Label700"
                                             Caption ="Game Price"
-                                            LayoutCachedLeft =5237
-                                            LayoutCachedTop =2399
-                                            LayoutCachedWidth =6812
-                                            LayoutCachedHeight =2677
+                                            LayoutCachedLeft =5439
+                                            LayoutCachedTop =2414
+                                            LayoutCachedWidth =7014
+                                            LayoutCachedHeight =2692
                                             RowStart =1
                                             RowEnd =1
                                             ColumnStart =3
@@ -1299,18 +1299,18 @@ Begin Form
                                 Begin TextBox
                                     OverlapFlags =215
                                     IMESentenceMode =3
-                                    Left =11640
-                                    Top =2399
+                                    Left =11842
+                                    Top =2414
                                     Height =278
                                     TabIndex =5
                                     Name ="txtLocationRent"
                                     ControlSource ="LocationRent"
                                     Format ="$* #,##0.00;$* (#,##0.00);$* -00"
 
-                                    LayoutCachedLeft =11640
-                                    LayoutCachedTop =2399
-                                    LayoutCachedWidth =13080
-                                    LayoutCachedHeight =2677
+                                    LayoutCachedLeft =11842
+                                    LayoutCachedTop =2414
+                                    LayoutCachedWidth =13282
+                                    LayoutCachedHeight =2692
                                     RowStart =1
                                     RowEnd =1
                                     ColumnStart =7
@@ -1319,16 +1319,16 @@ Begin Form
                                         Begin Label
                                             OverlapFlags =215
                                             TextAlign =1
-                                            Left =9874
-                                            Top =2399
+                                            Left =10076
+                                            Top =2414
                                             Width =1688
                                             Height =278
                                             Name ="Label744"
                                             Caption ="Location Rent"
-                                            LayoutCachedLeft =9874
-                                            LayoutCachedTop =2399
-                                            LayoutCachedWidth =11562
-                                            LayoutCachedHeight =2677
+                                            LayoutCachedLeft =10076
+                                            LayoutCachedTop =2414
+                                            LayoutCachedWidth =11764
+                                            LayoutCachedHeight =2692
                                             RowStart =1
                                             RowEnd =1
                                             ColumnStart =6
@@ -1342,8 +1342,8 @@ Begin Form
                                     TextAlign =1
                                     IMESentenceMode =3
                                     ColumnCount =2
-                                    Left =6503
-                                    Top =1133
+                                    Left =6705
+                                    Top =1148
                                     Width =2303
                                     Height =278
                                     TabIndex =6
@@ -1357,10 +1357,10 @@ Begin Form
                                     StatusBarText ="Employees?"
                                     AllowValueListEdits =0
 
-                                    LayoutCachedLeft =6503
-                                    LayoutCachedTop =1133
-                                    LayoutCachedWidth =8806
-                                    LayoutCachedHeight =1411
+                                    LayoutCachedLeft =6705
+                                    LayoutCachedTop =1148
+                                    LayoutCachedWidth =9008
+                                    LayoutCachedHeight =1426
                                     RowStart =2
                                     RowEnd =2
                                     ColumnStart =1
@@ -1371,17 +1371,17 @@ Begin Form
                                     Begin
                                         Begin Label
                                             OverlapFlags =215
-                                            TextAlign =1
-                                            Left =4748
-                                            Top =1133
+                                            TextAlign =3
+                                            Left =4950
+                                            Top =1148
                                             Width =1688
                                             Height =278
                                             Name ="Label784"
                                             Caption ="Purchaser"
-                                            LayoutCachedLeft =4748
-                                            LayoutCachedTop =1133
-                                            LayoutCachedWidth =6436
-                                            LayoutCachedHeight =1411
+                                            LayoutCachedLeft =4950
+                                            LayoutCachedTop =1148
+                                            LayoutCachedWidth =6638
+                                            LayoutCachedHeight =1426
                                             RowStart =2
                                             RowEnd =2
                                         End
@@ -1391,8 +1391,8 @@ Begin Form
                                     OverlapFlags =215
                                     TextAlign =3
                                     IMESentenceMode =3
-                                    Left =2367
-                                    Top =2753
+                                    Left =2569
+                                    Top =2768
                                     Width =2693
                                     Height =278
                                     TabIndex =7
@@ -1400,10 +1400,10 @@ Begin Form
                                     ControlSource ="TicketCount"
                                     Format ="General Number"
 
-                                    LayoutCachedLeft =2367
-                                    LayoutCachedTop =2753
-                                    LayoutCachedWidth =5060
-                                    LayoutCachedHeight =3031
+                                    LayoutCachedLeft =2569
+                                    LayoutCachedTop =2768
+                                    LayoutCachedWidth =5262
+                                    LayoutCachedHeight =3046
                                     RowStart =2
                                     RowEnd =2
                                     ColumnStart =4
@@ -1412,16 +1412,16 @@ Begin Form
                                         Begin Label
                                             OverlapFlags =215
                                             TextAlign =1
-                                            Left =425
-                                            Top =2753
+                                            Left =627
+                                            Top =2768
                                             Width =1875
                                             Height =278
                                             Name ="Label705"
                                             Caption ="Ticket Count"
-                                            LayoutCachedLeft =425
-                                            LayoutCachedTop =2753
-                                            LayoutCachedWidth =2300
-                                            LayoutCachedHeight =3031
+                                            LayoutCachedLeft =627
+                                            LayoutCachedTop =2768
+                                            LayoutCachedWidth =2502
+                                            LayoutCachedHeight =3046
                                             RowStart =2
                                             RowEnd =2
                                             ColumnStart =3
@@ -1432,18 +1432,18 @@ Begin Form
                                 Begin TextBox
                                     OverlapFlags =215
                                     IMESentenceMode =3
-                                    Left =11640
-                                    Top =2744
+                                    Left =11842
+                                    Top =2759
                                     Height =278
                                     TabIndex =8
                                     Name ="txtLastSale"
                                     ControlSource ="LastSale"
                                     Format ="$* #,##0.00;$* (#,##0.00);$* -00"
 
-                                    LayoutCachedLeft =11640
-                                    LayoutCachedTop =2744
-                                    LayoutCachedWidth =13080
-                                    LayoutCachedHeight =3022
+                                    LayoutCachedLeft =11842
+                                    LayoutCachedTop =2759
+                                    LayoutCachedWidth =13282
+                                    LayoutCachedHeight =3037
                                     RowStart =2
                                     RowEnd =2
                                     ColumnStart =7
@@ -1452,16 +1452,16 @@ Begin Form
                                         Begin Label
                                             OverlapFlags =215
                                             TextAlign =1
-                                            Left =9874
-                                            Top =2744
+                                            Left =10076
+                                            Top =2759
                                             Width =1688
                                             Height =278
                                             Name ="Label749"
                                             Caption ="Last Sale"
-                                            LayoutCachedLeft =9874
-                                            LayoutCachedTop =2744
-                                            LayoutCachedWidth =11562
-                                            LayoutCachedHeight =3022
+                                            LayoutCachedLeft =10076
+                                            LayoutCachedTop =2759
+                                            LayoutCachedWidth =11764
+                                            LayoutCachedHeight =3037
                                             RowStart =2
                                             RowEnd =2
                                             ColumnStart =6
@@ -1475,8 +1475,8 @@ Begin Form
                                     TextAlign =1
                                     IMESentenceMode =3
                                     ColumnCount =2
-                                    Left =10636
-                                    Top =1133
+                                    Left =10838
+                                    Top =1148
                                     Width =2303
                                     Height =278
                                     TabIndex =9
@@ -1489,10 +1489,10 @@ Begin Form
                                     ColumnWidths ="0;2268"
                                     AllowValueListEdits =0
 
-                                    LayoutCachedLeft =10636
-                                    LayoutCachedTop =1133
-                                    LayoutCachedWidth =12939
-                                    LayoutCachedHeight =1411
+                                    LayoutCachedLeft =10838
+                                    LayoutCachedTop =1148
+                                    LayoutCachedWidth =13141
+                                    LayoutCachedHeight =1426
                                     RowStart =3
                                     RowEnd =3
                                     ColumnStart =1
@@ -1503,17 +1503,17 @@ Begin Form
                                     Begin
                                         Begin Label
                                             OverlapFlags =215
-                                            TextAlign =1
-                                            Left =8881
-                                            Top =1133
+                                            TextAlign =3
+                                            Left =9083
+                                            Top =1148
                                             Width =1688
                                             Height =278
                                             Name ="Label789"
                                             Caption ="Supplier"
-                                            LayoutCachedLeft =8881
-                                            LayoutCachedTop =1133
-                                            LayoutCachedWidth =10569
-                                            LayoutCachedHeight =1411
+                                            LayoutCachedLeft =9083
+                                            LayoutCachedTop =1148
+                                            LayoutCachedWidth =10771
+                                            LayoutCachedHeight =1426
                                             RowStart =3
                                             RowEnd =3
                                         End
@@ -1523,8 +1523,8 @@ Begin Form
                                     OverlapFlags =215
                                     TextAlign =3
                                     IMESentenceMode =3
-                                    Left =6926
-                                    Top =2729
+                                    Left =7128
+                                    Top =2744
                                     Width =2693
                                     Height =278
                                     TabIndex =10
@@ -1532,10 +1532,10 @@ Begin Form
                                     ControlSource ="TicketValue"
                                     Format ="$* #,##0.00;$* (#,##0.00);$* -00"
 
-                                    LayoutCachedLeft =6926
-                                    LayoutCachedTop =2729
-                                    LayoutCachedWidth =9619
-                                    LayoutCachedHeight =3007
+                                    LayoutCachedLeft =7128
+                                    LayoutCachedTop =2744
+                                    LayoutCachedWidth =9821
+                                    LayoutCachedHeight =3022
                                     RowStart =3
                                     RowEnd =3
                                     ColumnStart =4
@@ -1544,16 +1544,16 @@ Begin Form
                                         Begin Label
                                             OverlapFlags =215
                                             TextAlign =1
-                                            Left =5237
-                                            Top =2729
+                                            Left =5439
+                                            Top =2744
                                             Width =1575
                                             Height =278
                                             Name ="Label710"
                                             Caption ="Ticket Value"
-                                            LayoutCachedLeft =5237
-                                            LayoutCachedTop =2729
-                                            LayoutCachedWidth =6812
-                                            LayoutCachedHeight =3007
+                                            LayoutCachedLeft =5439
+                                            LayoutCachedTop =2744
+                                            LayoutCachedWidth =7014
+                                            LayoutCachedHeight =3022
                                             RowStart =3
                                             RowEnd =3
                                             ColumnStart =3
@@ -1565,18 +1565,18 @@ Begin Form
                                     OverlapFlags =215
                                     TextAlign =1
                                     IMESentenceMode =3
-                                    Left =2298
-                                    Top =1530
+                                    Left =2500
+                                    Top =1545
                                     Width =2303
                                     Height =278
                                     TabIndex =11
                                     Name ="txtInvoiceNumber"
                                     ControlSource ="InvoiceNumber"
 
-                                    LayoutCachedLeft =2298
-                                    LayoutCachedTop =1530
-                                    LayoutCachedWidth =4601
-                                    LayoutCachedHeight =1808
+                                    LayoutCachedLeft =2500
+                                    LayoutCachedTop =1545
+                                    LayoutCachedWidth =4803
+                                    LayoutCachedHeight =1823
                                     RowStart =4
                                     RowEnd =4
                                     ColumnStart =1
@@ -1585,16 +1585,16 @@ Begin Form
                                         Begin Label
                                             OverlapFlags =215
                                             TextAlign =1
-                                            Left =543
-                                            Top =1530
+                                            Left =745
+                                            Top =1545
                                             Width =1688
                                             Height =278
                                             Name ="Label655"
                                             Caption ="Invoice #"
-                                            LayoutCachedLeft =543
-                                            LayoutCachedTop =1530
-                                            LayoutCachedWidth =2231
-                                            LayoutCachedHeight =1808
+                                            LayoutCachedLeft =745
+                                            LayoutCachedTop =1545
+                                            LayoutCachedWidth =2433
+                                            LayoutCachedHeight =1823
                                             RowStart =4
                                             RowEnd =4
                                         End
@@ -1604,8 +1604,8 @@ Begin Form
                                     OverlapFlags =215
                                     TextAlign =3
                                     IMESentenceMode =3
-                                    Left =2367
-                                    Top =3084
+                                    Left =2569
+                                    Top =3099
                                     Width =2693
                                     Height =278
                                     TabIndex =12
@@ -1613,10 +1613,10 @@ Begin Form
                                     ControlSource ="Revenue"
                                     Format ="$* #,##0.00;$* (#,##0.00);$* -00"
 
-                                    LayoutCachedLeft =2367
-                                    LayoutCachedTop =3084
-                                    LayoutCachedWidth =5060
-                                    LayoutCachedHeight =3362
+                                    LayoutCachedLeft =2569
+                                    LayoutCachedTop =3099
+                                    LayoutCachedWidth =5262
+                                    LayoutCachedHeight =3377
                                     RowStart =4
                                     RowEnd =4
                                     ColumnStart =4
@@ -1625,16 +1625,16 @@ Begin Form
                                         Begin Label
                                             OverlapFlags =215
                                             TextAlign =1
-                                            Left =425
-                                            Top =3084
+                                            Left =627
+                                            Top =3099
                                             Width =1875
                                             Height =278
                                             Name ="Label715"
                                             Caption ="Revenue"
-                                            LayoutCachedLeft =425
-                                            LayoutCachedTop =3084
-                                            LayoutCachedWidth =2300
-                                            LayoutCachedHeight =3362
+                                            LayoutCachedLeft =627
+                                            LayoutCachedTop =3099
+                                            LayoutCachedWidth =2502
+                                            LayoutCachedHeight =3377
                                             RowStart =4
                                             RowEnd =4
                                             ColumnStart =3
@@ -1646,18 +1646,18 @@ Begin Form
                                     OverlapFlags =215
                                     TextAlign =1
                                     IMESentenceMode =3
-                                    Left =6502
-                                    Top =1530
+                                    Left =6704
+                                    Top =1545
                                     Width =2303
                                     Height =293
                                     TabIndex =13
                                     Name ="txtSalesOrderNumber"
                                     ControlSource ="SalesOrderNumber"
 
-                                    LayoutCachedLeft =6502
-                                    LayoutCachedTop =1530
-                                    LayoutCachedWidth =8805
-                                    LayoutCachedHeight =1823
+                                    LayoutCachedLeft =6704
+                                    LayoutCachedTop =1545
+                                    LayoutCachedWidth =9007
+                                    LayoutCachedHeight =1838
                                     RowStart =5
                                     RowEnd =5
                                     ColumnStart =1
@@ -1665,17 +1665,17 @@ Begin Form
                                     Begin
                                         Begin Label
                                             OverlapFlags =215
-                                            TextAlign =1
-                                            Left =4747
-                                            Top =1530
+                                            TextAlign =3
+                                            Left =4949
+                                            Top =1545
                                             Width =1688
                                             Height =293
                                             Name ="Label662"
                                             Caption ="Sales Order #"
-                                            LayoutCachedLeft =4747
-                                            LayoutCachedTop =1530
-                                            LayoutCachedWidth =6435
-                                            LayoutCachedHeight =1823
+                                            LayoutCachedLeft =4949
+                                            LayoutCachedTop =1545
+                                            LayoutCachedWidth =6637
+                                            LayoutCachedHeight =1838
                                             RowStart =5
                                             RowEnd =5
                                         End
@@ -1685,8 +1685,8 @@ Begin Form
                                     OverlapFlags =215
                                     TextAlign =3
                                     IMESentenceMode =3
-                                    Left =6879
-                                    Top =3131
+                                    Left =7081
+                                    Top =3146
                                     Width =2693
                                     Height =293
                                     TabIndex =14
@@ -1694,10 +1694,10 @@ Begin Form
                                     ControlSource ="IdealProfit"
                                     Format ="$* #,##0.00;$* (#,##0.00);$* -00"
 
-                                    LayoutCachedLeft =6879
-                                    LayoutCachedTop =3131
-                                    LayoutCachedWidth =9572
-                                    LayoutCachedHeight =3424
+                                    LayoutCachedLeft =7081
+                                    LayoutCachedTop =3146
+                                    LayoutCachedWidth =9774
+                                    LayoutCachedHeight =3439
                                     RowStart =5
                                     RowEnd =5
                                     ColumnStart =4
@@ -1706,16 +1706,16 @@ Begin Form
                                         Begin Label
                                             OverlapFlags =215
                                             TextAlign =1
-                                            Left =5237
-                                            Top =3131
+                                            Left =5439
+                                            Top =3146
                                             Width =1575
                                             Height =293
                                             Name ="Label720"
                                             Caption ="Ideal Profit"
-                                            LayoutCachedLeft =5237
-                                            LayoutCachedTop =3131
-                                            LayoutCachedWidth =6812
-                                            LayoutCachedHeight =3424
+                                            LayoutCachedLeft =5439
+                                            LayoutCachedTop =3146
+                                            LayoutCachedWidth =7014
+                                            LayoutCachedHeight =3439
                                             RowStart =5
                                             RowEnd =5
                                             ColumnStart =3
@@ -1727,18 +1727,18 @@ Begin Form
                                     OverlapFlags =215
                                     TextAlign =1
                                     IMESentenceMode =3
-                                    Left =2367
-                                    Top =3816
+                                    Left =2569
+                                    Top =3831
                                     Width =2303
                                     Height =293
                                     TabIndex =15
                                     Name ="txtSerialNumber"
                                     ControlSource ="SerialNumber"
 
-                                    LayoutCachedLeft =2367
-                                    LayoutCachedTop =3816
-                                    LayoutCachedWidth =4670
-                                    LayoutCachedHeight =4109
+                                    LayoutCachedLeft =2569
+                                    LayoutCachedTop =3831
+                                    LayoutCachedWidth =4872
+                                    LayoutCachedHeight =4124
                                     RowStart =6
                                     RowEnd =6
                                     ColumnStart =1
@@ -1747,16 +1747,16 @@ Begin Form
                                         Begin Label
                                             OverlapFlags =215
                                             TextAlign =1
-                                            Left =425
-                                            Top =3816
+                                            Left =627
+                                            Top =3831
                                             Width =1688
                                             Height =293
                                             Name ="Label669"
                                             Caption ="Serial #'s"
-                                            LayoutCachedLeft =425
-                                            LayoutCachedTop =3816
-                                            LayoutCachedWidth =2113
-                                            LayoutCachedHeight =4109
+                                            LayoutCachedLeft =627
+                                            LayoutCachedTop =3831
+                                            LayoutCachedWidth =2315
+                                            LayoutCachedHeight =4124
                                             RowStart =6
                                             RowEnd =6
                                         End
@@ -1767,8 +1767,8 @@ Begin Form
                                     TextAlign =1
                                     TextFontFamily =34
                                     IMESentenceMode =3
-                                    Left =6926
-                                    Top =3485
+                                    Left =7128
+                                    Top =3500
                                     Width =6217
                                     Height =811
                                     TabIndex =16
@@ -1777,10 +1777,10 @@ Begin Form
                                     OnGotFocus ="[Event Procedure]"
                                     OnLostFocus ="[Event Procedure]"
 
-                                    LayoutCachedLeft =6926
-                                    LayoutCachedTop =3485
-                                    LayoutCachedWidth =13143
-                                    LayoutCachedHeight =4296
+                                    LayoutCachedLeft =7128
+                                    LayoutCachedTop =3500
+                                    LayoutCachedWidth =13345
+                                    LayoutCachedHeight =4311
                                     RowStart =7
                                     RowEnd =7
                                     ColumnStart =1
@@ -1790,16 +1790,16 @@ Begin Form
                                             OverlapFlags =215
                                             TextAlign =1
                                             TextFontFamily =34
-                                            Left =5246
-                                            Top =3485
+                                            Left =5448
+                                            Top =3500
                                             Width =1560
                                             Height =293
                                             Name ="Label918"
                                             Caption ="Serial # List"
-                                            LayoutCachedLeft =5246
-                                            LayoutCachedTop =3485
-                                            LayoutCachedWidth =6806
-                                            LayoutCachedHeight =3778
+                                            LayoutCachedLeft =5448
+                                            LayoutCachedTop =3500
+                                            LayoutCachedWidth =7008
+                                            LayoutCachedHeight =3793
                                             RowStart =7
                                             RowEnd =7
                                         End
@@ -1807,8 +1807,8 @@ Begin Form
                                 End
                                 Begin CommandButton
                                     OverlapFlags =215
-                                    Left =448
-                                    Top =4700
+                                    Left =650
+                                    Top =4715
                                     Width =1283
                                     Height =293
                                     TabIndex =17
@@ -1816,10 +1816,10 @@ Begin Form
                                     Caption ="Add Item"
                                     OnClick ="[Event Procedure]"
 
-                                    LayoutCachedLeft =448
-                                    LayoutCachedTop =4700
-                                    LayoutCachedWidth =1731
-                                    LayoutCachedHeight =4993
+                                    LayoutCachedLeft =650
+                                    LayoutCachedTop =4715
+                                    LayoutCachedWidth =1933
+                                    LayoutCachedHeight =5008
                                     WebImagePaddingLeft =4
                                     WebImagePaddingTop =4
                                     WebImagePaddingRight =3
@@ -1828,31 +1828,31 @@ Begin Form
                                 End
                                 Begin Label
                                     OverlapFlags =215
-                                    Left =6945
-                                    Top =4320
+                                    Left =7147
+                                    Top =4335
                                     Width =1245
                                     Height =293
                                     Name ="lblSerialConunt"
                                     Caption ="Count: (0)"
-                                    LayoutCachedLeft =6945
-                                    LayoutCachedTop =4320
-                                    LayoutCachedWidth =8190
-                                    LayoutCachedHeight =4613
+                                    LayoutCachedLeft =7147
+                                    LayoutCachedTop =4335
+                                    LayoutCachedWidth =8392
+                                    LayoutCachedHeight =4628
                                 End
                             End
                         End
                         Begin Page
                             OverlapFlags =247
-                            Left =135
-                            Top =645
+                            Left =337
+                            Top =660
                             Width =13373
                             Height =5348
                             Name ="Distribution_page"
                             Caption ="|  Distribution Details  |"
-                            LayoutCachedLeft =135
-                            LayoutCachedTop =645
-                            LayoutCachedWidth =13508
-                            LayoutCachedHeight =5993
+                            LayoutCachedLeft =337
+                            LayoutCachedTop =660
+                            LayoutCachedWidth =13710
+                            LayoutCachedHeight =6008
                             WebImagePaddingLeft =4
                             WebImagePaddingTop =4
                             WebImagePaddingRight =4
@@ -1860,8 +1860,8 @@ Begin Form
                             Begin
                                 Begin Subform
                                     OverlapFlags =247
-                                    Left =391
-                                    Top =901
+                                    Left =593
+                                    Top =916
                                     Width =12876
                                     Height =4847
                                     Name ="420-sb-Ticket-Distribution"
@@ -1870,25 +1870,25 @@ Begin Form
                                     LinkMasterFields ="SerialNumber"
                                     EventProcPrefix ="Ctl420_sb_Ticket_Distribution"
 
-                                    LayoutCachedLeft =391
-                                    LayoutCachedTop =901
-                                    LayoutCachedWidth =13267
-                                    LayoutCachedHeight =5748
+                                    LayoutCachedLeft =593
+                                    LayoutCachedTop =916
+                                    LayoutCachedWidth =13469
+                                    LayoutCachedHeight =5763
                                 End
                             End
                         End
                         Begin Page
                             OverlapFlags =247
-                            Left =135
-                            Top =645
+                            Left =337
+                            Top =660
                             Width =13373
                             Height =5348
                             Name ="Ownership_Page"
                             Caption ="|  Ownership History  |"
-                            LayoutCachedLeft =135
-                            LayoutCachedTop =645
-                            LayoutCachedWidth =13508
-                            LayoutCachedHeight =5993
+                            LayoutCachedLeft =337
+                            LayoutCachedTop =660
+                            LayoutCachedWidth =13710
+                            LayoutCachedHeight =6008
                             WebImagePaddingLeft =4
                             WebImagePaddingTop =4
                             WebImagePaddingRight =4
@@ -1896,8 +1896,8 @@ Begin Form
                             Begin
                                 Begin Subform
                                     OverlapFlags =247
-                                    Left =391
-                                    Top =901
+                                    Left =593
+                                    Top =916
                                     Width =12876
                                     Height =4847
                                     Name ="421-sb-InventoryOwnershipTransfers"
@@ -1906,10 +1906,10 @@ Begin Form
                                     LinkMasterFields ="ID"
                                     EventProcPrefix ="Ctl421_sb_InventoryOwnershipTransfers"
 
-                                    LayoutCachedLeft =391
-                                    LayoutCachedTop =901
-                                    LayoutCachedWidth =13267
-                                    LayoutCachedHeight =5748
+                                    LayoutCachedLeft =593
+                                    LayoutCachedTop =916
+                                    LayoutCachedWidth =13469
+                                    LayoutCachedHeight =5763
                                 End
                             End
                         End
@@ -1921,8 +1921,8 @@ Begin Form
                     OverlapFlags =215
                     TextAlign =2
                     IMESentenceMode =3
-                    Left =12692
-                    Top =165
+                    Left =13074
+                    Top =240
                     Width =622
                     Height =278
                     TabIndex =1
@@ -1930,23 +1930,23 @@ Begin Form
                     ControlSource ="ID"
                     Format ="General Number"
 
-                    LayoutCachedLeft =12692
-                    LayoutCachedTop =165
-                    LayoutCachedWidth =13314
-                    LayoutCachedHeight =443
+                    LayoutCachedLeft =13074
+                    LayoutCachedTop =240
+                    LayoutCachedWidth =13696
+                    LayoutCachedHeight =518
                     Begin
                         Begin Label
                             OverlapFlags =215
-                            Left =12278
-                            Top =165
+                            Left =12660
+                            Top =240
                             Width =383
                             Height =278
                             Name ="Label754"
                             Caption ="ID"
-                            LayoutCachedLeft =12278
-                            LayoutCachedTop =165
-                            LayoutCachedWidth =12661
-                            LayoutCachedHeight =443
+                            LayoutCachedLeft =12660
+                            LayoutCachedTop =240
+                            LayoutCachedWidth =13043
+                            LayoutCachedHeight =518
                         End
                     End
                 End
@@ -2045,7 +2045,7 @@ Private Sub Form_AfterInsert()
     Me.SerialNumberList = Replace(Me.SerialNumberList, vbLf, COMMA)
     Me.SerialNumberList = Replace(Me.SerialNumberList, SPACE, COMMA)
     
-    Me.lblSerialConunt.Caption = "Count: (" & cArray.Count(Nz(Me.txtSerialNumberList), ",") & ")"
+    Me.lblSerialConunt.Caption = "Count: (" & cArray.count(Nz(Me.txtSerialNumberList), ",") & ")"
 
     oBox.CreateVariousBoxes Me.txtSerialNumberList, Me.RecordsetClone
     
@@ -2286,6 +2286,6 @@ Private Sub ResetItemCount()
     Me.txtSerialNumberList = Replace(Me.txtSerialNumberList, Chr(13), "")
     Me.txtSerialNumberList = Replace(Me.txtSerialNumberList, SPACE, COMMA)
     
-    Me.lblSerialConunt.Caption = "Count: (" & cArray.Count(Nz(Me.txtSerialNumberList), ",") & ")"
+    Me.lblSerialConunt.Caption = "Count: (" & cArray.count(Nz(Me.txtSerialNumberList), ",") & ")"
 
 End Sub

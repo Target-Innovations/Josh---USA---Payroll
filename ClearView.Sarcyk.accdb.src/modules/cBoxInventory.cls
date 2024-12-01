@@ -333,7 +333,7 @@ Public Function Add() As Boolean
 On Error GoTo ErrorHandler
 
     Dim sql As String
-    Dim rs As DAO.Recordset
+    Dim rs As dao.Recordset
     
     Set rs = CurrentDb.OpenRecordset("BoxInventory")
     
@@ -409,7 +409,7 @@ Public Function GetInfoById(Id As Long) As Recordset
 
 On Error GoTo ErrorHandler
 
-    Dim rs As DAO.Recordset
+    Dim rs As dao.Recordset
 
     Set rs = CurrentDb().OpenRecordset("Select * From [BoxInventory] Where ID = " & Id, dbOpenDynaset)
     
@@ -426,7 +426,7 @@ Public Function GetInfoBySerialNumber(SerialNumber As String) As Recordset
 
 On Error GoTo ErrorHandler
 
-    Dim rs As DAO.Recordset
+    Dim rs As dao.Recordset
 
     Set rs = CurrentDb().OpenRecordset("Select * From [BoxInventory] Where SerialNumber = '" & SerialNumber & "'", dbOpenDynaset)
     
@@ -442,11 +442,11 @@ ErrorHandler:
 End Function
 
 
-Public Function GetGameInfo(OrderFormId As Integer) As DAO.Recordset
+Public Function GetGameInfo(OrderFormId As Integer) As dao.Recordset
 
 On Error GoTo ErrorHandler
 
-    Dim rs As DAO.Recordset
+    Dim rs As dao.Recordset
 
     Set rs = CurrentDb().OpenRecordset("Select * From [OrderForms] Where ID = " & Id, dbOpenDynaset)
     
@@ -505,7 +505,7 @@ Sub SubmitDistribution(OrderId As Long)
 
 On Error GoTo ErrorHandler
 
-    Dim rs As DAO.Recordset
+    Dim rs As dao.Recordset
 
     ' Search for specific order
     Set rs = CurrentDb().OpenRecordset("Select * From [407-Ticket-Delivery-Order] Where OrderID = " & OrderId, dbOpenDynaset)
@@ -552,12 +552,12 @@ ErrorHandler:
      
 End Sub
 
-Public Function AddDistribuiton(rsInfo As DAO.Recordset) As Boolean
+Public Function AddDistribuiton(rsInfo As dao.Recordset) As Boolean
 
 On Error GoTo ErrorHandler
 
     Dim sql As String
-    Dim rs As DAO.Recordset
+    Dim rs As dao.Recordset
     
     Set rs = CurrentDb.OpenRecordset("TicketDistribution")
     
@@ -695,7 +695,7 @@ Function GetFirstSerialNumber(SerialNumbers As String) As String
     GetFirstSerialNumber = cArray.GetArrayValue(SerialNumbers, ",", 0)
 End Function
 
-Sub CreateVariousBoxes(SerialNumbers As String, FirstBox As DAO.Recordset)
+Sub CreateVariousBoxes(SerialNumbers As String, FirstBox As dao.Recordset)
 
     Dim MyArray() As String
     Dim i As Integer
