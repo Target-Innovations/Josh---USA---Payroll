@@ -178,8 +178,8 @@ Public Function AddSplit(SplitSetupId As Integer, Amount As Double) As Boolean
 On Error GoTo ErrorHandler
 
     Dim sql As String
-    Dim rs As dao.Recordset
-    Dim rsAdd As dao.Recordset
+    Dim rs As DAO.Recordset
+    Dim rsAdd As DAO.Recordset
     
     Dim CollecDate As Date
     Dim Employee As Integer
@@ -299,7 +299,7 @@ Public Function Add() As Boolean
 On Error GoTo ErrorHandler
 
     Dim sql As String
-    Dim rs As dao.Recordset
+    Dim rs As DAO.Recordset
     
     Set rs = CurrentDb.OpenRecordset("Collections")
     
@@ -382,7 +382,7 @@ Public Function GetCollectionInfoById(Id As Long) As Recordset
 
 On Error GoTo ErrorHandler
 
-    Dim rs As dao.Recordset
+    Dim rs As DAO.Recordset
         
     Set rs = CurrentDb().OpenRecordset("Select * From [Collections] Where Id = " & Id, dbOpenDynaset)
     
@@ -469,7 +469,7 @@ On Error GoTo ErrorHandler
 
     Dim oCollection As New cCollection
     Dim SplitValue As String
-    Dim rs As dao.Recordset
+    Dim rs As DAO.Recordset
        
     Set rs = CurrentDb().OpenRecordset("Select * From [Collections] Where CollectionStubId = " & CollectionId, dbOpenSnapshot)
 
@@ -542,7 +542,7 @@ Public Function Approve(CollectionId As Integer) As Boolean
 
 On Error GoTo ErrorHandler
 
-    Dim rs As dao.Recordset
+    Dim rs As DAO.Recordset
     
     CurrentDb.Execute "Update [Collections-Splitted] Set IsApproved = True Where CollectionStubId = " & CollectionId
     CurrentDb.Execute "Update [Collections] Set IsApproved = True Where CollectionStubId = " & CollectionId

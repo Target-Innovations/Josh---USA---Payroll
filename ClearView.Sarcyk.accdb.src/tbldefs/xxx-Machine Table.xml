@@ -2,12 +2,12 @@
   <xsd:element name="dataroot">
     <xsd:complexType>
       <xsd:sequence>
-        <xsd:element ref="Machine_x0020_Table" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="xxx-Machine_x0020_Table" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
       <xsd:attribute name="generated" type="xsd:dateTime"/>
     </xsd:complexType>
   </xsd:element>
-  <xsd:element name="Machine_x0020_Table">
+  <xsd:element name="xxx-Machine_x0020_Table">
     <xsd:annotation>
       <xsd:appinfo>
         <od:index index-name="ID" index-key="ID " primary="yes" unique="yes" clustered="no" order="asc"/>
@@ -28,7 +28,6 @@
         <od:tableProperty name="ReadOnlyWhenDisconnected" type="1" value="0"/>
         <od:tableProperty name="DatasheetGridlinesThemeColorIndex" type="4" value="-1"/>
         <od:tableProperty name="DatasheetForeThemeColorIndex" type="4" value="-1"/>
-        <od:tableProperty name="OrderBy" type="12" value="[Machine Table].[Manufacturer] DESC, [Machine Table].[Vendor Name] DESC"/>
       </xsd:appinfo>
     </xsd:annotation>
     <xsd:complexType>

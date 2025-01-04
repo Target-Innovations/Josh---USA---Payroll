@@ -247,7 +247,7 @@
         <xsd:element name="SerialNumberList" minOccurs="0" od:jetType="memo" od:sqlSType="ntext">
           <xsd:annotation>
             <xsd:appinfo>
-              <od:fieldProperty name="ColumnWidth" type="3" value="-1"/>
+              <od:fieldProperty name="ColumnWidth" type="3" value="2318"/>
               <od:fieldProperty name="ColumnOrder" type="3" value="0"/>
               <od:fieldProperty name="ColumnHidden" type="1" value="0"/>
               <od:fieldProperty name="Required" type="1" value="0"/>
@@ -272,7 +272,7 @@
         <xsd:element name="SerialNumber" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
           <xsd:annotation>
             <xsd:appinfo>
-              <od:fieldProperty name="ColumnWidth" type="3" value="-1"/>
+              <od:fieldProperty name="ColumnWidth" type="3" value="2738"/>
               <od:fieldProperty name="ColumnOrder" type="3" value="0"/>
               <od:fieldProperty name="ColumnHidden" type="1" value="0"/>
               <od:fieldProperty name="Required" type="1" value="0"/>

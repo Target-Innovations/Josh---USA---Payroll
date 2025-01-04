@@ -80,10 +80,8 @@ Begin
     Begin
         dbText "Name" ="BoxInventory.InvoiceNumber"
         dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="BoxInventory.Supplier"
-        dbLong "AggregateType" ="-1"
+        dbInteger "ColumnWidth" ="1673"
+        dbBoolean "ColumnHidden" ="0"
     End
     Begin
         dbText "Name" ="Suppliers.Supplier"
@@ -120,6 +118,8 @@ Begin
     Begin
         dbText "Name" ="BoxInventory.SalesOrderNumber"
         dbLong "AggregateType" ="-1"
+        dbInteger "ColumnWidth" ="2003"
+        dbBoolean "ColumnHidden" ="0"
     End
     Begin
         dbText "Name" ="BoxInventory.SerialNumberList"
@@ -208,12 +208,12 @@ Begin
     State =0
     Left =0
     Top =0
-    Right =2321
-    Bottom =1436
+    Right =2798
+    Bottom =1206
     Left =-1
     Top =-1
-    Right =1808
-    Bottom =893
+    Right =2135
+    Bottom =859
     Left =0
     Top =0
     ColumnsShown =539

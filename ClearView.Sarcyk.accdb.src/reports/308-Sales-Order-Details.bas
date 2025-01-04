@@ -3,7 +3,6 @@ VersionRequired =20
 Begin Report
     LayoutForPrint = NotDefault
     DividingLines = NotDefault
-    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     TabularFamily =0
     DateGrouping =1
@@ -11,12 +10,11 @@ Begin Report
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
     GridY =10
-    Width =13872
+    Width =11513
     DatasheetFontHeight =11
     ItemSuffix =118
-    Filter ="InvoiceNumber = '01-205640'"
     RecSrcDt = Begin
-        0x3a96014bf644e640
+        0x33d1e69bb44be640
     End
     RecordSource ="308-Inventory-Extented"
     Caption ="308-Invoice-Details"
@@ -1531,9 +1529,9 @@ Begin Report
                     OldBorderStyle =0
                     TextAlign =1
                     IMESentenceMode =3
-                    Left =908
-                    Top =405
-                    Width =3346
+                    Left =68
+                    Top =428
+                    Width =3345
                     Height =278
                     ColumnWidth =3023
                     Name ="ControlKey"
@@ -1544,10 +1542,10 @@ Begin Report
                     RightPadding =0
                     BottomPadding =0
 
-                    LayoutCachedLeft =908
-                    LayoutCachedTop =405
-                    LayoutCachedWidth =4254
-                    LayoutCachedHeight =683
+                    LayoutCachedLeft =68
+                    LayoutCachedTop =428
+                    LayoutCachedWidth =3413
+                    LayoutCachedHeight =706
                     RowStart =1
                     RowEnd =1
                     LayoutGroup =3
@@ -1557,9 +1555,9 @@ Begin Report
                     OldBorderStyle =0
                     TextAlign =2
                     IMESentenceMode =3
-                    Left =7838
-                    Top =405
-                    Width =1140
+                    Left =6270
+                    Top =428
+                    Width =1005
                     Height =278
                     TabIndex =2
                     Name ="txtOrder"
@@ -1571,10 +1569,10 @@ Begin Report
                     RightPadding =0
                     BottomPadding =0
 
-                    LayoutCachedLeft =7838
-                    LayoutCachedTop =405
-                    LayoutCachedWidth =8978
-                    LayoutCachedHeight =683
+                    LayoutCachedLeft =6270
+                    LayoutCachedTop =428
+                    LayoutCachedWidth =7275
+                    LayoutCachedHeight =706
                     RowStart =1
                     RowEnd =1
                     ColumnStart =2
@@ -1584,11 +1582,10 @@ Begin Report
                 End
                 Begin Label
                     OldBorderStyle =1
-                    OverlapFlags =4
                     TextAlign =2
-                    Left =7838
-                    Top =113
-                    Width =1140
+                    Left =6270
+                    Top =143
+                    Width =1005
                     Height =285
                     FontWeight =700
                     Name ="Label68"
@@ -1599,10 +1596,10 @@ Begin Report
                     TopPadding =0
                     RightPadding =0
                     BottomPadding =0
-                    LayoutCachedLeft =7838
-                    LayoutCachedTop =113
-                    LayoutCachedWidth =8978
-                    LayoutCachedHeight =398
+                    LayoutCachedLeft =6270
+                    LayoutCachedTop =143
+                    LayoutCachedWidth =7275
+                    LayoutCachedHeight =428
                     ColumnStart =2
                     ColumnEnd =2
                     LayoutGroup =3
@@ -1613,11 +1610,10 @@ Begin Report
                 End
                 Begin Label
                     OldBorderStyle =1
-                    OverlapFlags =4
                     TextAlign =1
-                    Left =908
-                    Top =113
-                    Width =3346
+                    Left =68
+                    Top =143
+                    Width =3345
                     Height =285
                     FontWeight =700
                     Name ="Label64"
@@ -1628,10 +1624,10 @@ Begin Report
                     TopPadding =0
                     RightPadding =0
                     BottomPadding =0
-                    LayoutCachedLeft =908
-                    LayoutCachedTop =113
-                    LayoutCachedWidth =4254
-                    LayoutCachedHeight =398
+                    LayoutCachedLeft =68
+                    LayoutCachedTop =143
+                    LayoutCachedWidth =3413
+                    LayoutCachedHeight =428
                     LayoutGroup =3
                     BorderThemeColorIndex =1
                     BorderTint =100.0
@@ -1640,11 +1636,10 @@ Begin Report
                 End
                 Begin Label
                     OldBorderStyle =1
-                    OverlapFlags =4
                     TextAlign =2
-                    Left =8985
-                    Top =113
-                    Width =1140
+                    Left =7283
+                    Top =143
+                    Width =998
                     Height =285
                     FontWeight =700
                     Name ="Label92"
@@ -1655,10 +1650,10 @@ Begin Report
                     TopPadding =0
                     RightPadding =0
                     BottomPadding =0
-                    LayoutCachedLeft =8985
-                    LayoutCachedTop =113
-                    LayoutCachedWidth =10125
-                    LayoutCachedHeight =398
+                    LayoutCachedLeft =7283
+                    LayoutCachedTop =143
+                    LayoutCachedWidth =8281
+                    LayoutCachedHeight =428
                     ColumnStart =3
                     ColumnEnd =3
                     LayoutGroup =3
@@ -1669,11 +1664,10 @@ Begin Report
                 End
                 Begin Label
                     OldBorderStyle =1
-                    OverlapFlags =4
                     TextAlign =2
-                    Left =10133
-                    Top =113
-                    Width =1545
+                    Left =8288
+                    Top =143
+                    Width =1433
                     Height =285
                     FontWeight =700
                     Name ="Label94"
@@ -1684,10 +1678,10 @@ Begin Report
                     TopPadding =0
                     RightPadding =0
                     BottomPadding =0
-                    LayoutCachedLeft =10133
-                    LayoutCachedTop =113
-                    LayoutCachedWidth =11678
-                    LayoutCachedHeight =398
+                    LayoutCachedLeft =8288
+                    LayoutCachedTop =143
+                    LayoutCachedWidth =9721
+                    LayoutCachedHeight =428
                     ColumnStart =4
                     ColumnEnd =4
                     LayoutGroup =3
@@ -1700,9 +1694,9 @@ Begin Report
                     OldBorderStyle =0
                     TextAlign =2
                     IMESentenceMode =3
-                    Left =8985
-                    Top =405
-                    Width =1140
+                    Left =7283
+                    Top =428
+                    Width =998
                     Height =278
                     TabIndex =3
                     Name ="txtShip"
@@ -1714,10 +1708,10 @@ Begin Report
                     RightPadding =0
                     BottomPadding =0
 
-                    LayoutCachedLeft =8985
-                    LayoutCachedTop =405
-                    LayoutCachedWidth =10125
-                    LayoutCachedHeight =683
+                    LayoutCachedLeft =7283
+                    LayoutCachedTop =428
+                    LayoutCachedWidth =8281
+                    LayoutCachedHeight =706
                     RowStart =1
                     RowEnd =1
                     ColumnStart =3
@@ -1727,10 +1721,9 @@ Begin Report
                 End
                 Begin Label
                     OldBorderStyle =1
-                    OverlapFlags =4
                     TextAlign =2
-                    Left =11685
-                    Top =113
+                    Left =9728
+                    Top =143
                     Width =1635
                     Height =285
                     FontWeight =700
@@ -1742,10 +1735,10 @@ Begin Report
                     TopPadding =0
                     RightPadding =0
                     BottomPadding =0
-                    LayoutCachedLeft =11685
-                    LayoutCachedTop =113
-                    LayoutCachedWidth =13320
-                    LayoutCachedHeight =398
+                    LayoutCachedLeft =9728
+                    LayoutCachedTop =143
+                    LayoutCachedWidth =11363
+                    LayoutCachedHeight =428
                     ColumnStart =5
                     ColumnEnd =5
                     LayoutGroup =3
@@ -1758,9 +1751,9 @@ Begin Report
                     OldBorderStyle =0
                     TextAlign =2
                     IMESentenceMode =3
-                    Left =10133
-                    Top =405
-                    Width =1545
+                    Left =8288
+                    Top =428
+                    Width =1433
                     Height =278
                     TabIndex =4
                     Name ="txtUnitPrice"
@@ -1773,10 +1766,10 @@ Begin Report
                     RightPadding =0
                     BottomPadding =0
 
-                    LayoutCachedLeft =10133
-                    LayoutCachedTop =405
-                    LayoutCachedWidth =11678
-                    LayoutCachedHeight =683
+                    LayoutCachedLeft =8288
+                    LayoutCachedTop =428
+                    LayoutCachedWidth =9721
+                    LayoutCachedHeight =706
                     RowStart =1
                     RowEnd =1
                     ColumnStart =4
@@ -1789,8 +1782,8 @@ Begin Report
                     OldBorderStyle =0
                     TextAlign =2
                     IMESentenceMode =3
-                    Left =11685
-                    Top =405
+                    Left =9728
+                    Top =428
                     Width =1635
                     Height =278
                     TabIndex =5
@@ -1804,10 +1797,10 @@ Begin Report
                     RightPadding =0
                     BottomPadding =0
 
-                    LayoutCachedLeft =11685
-                    LayoutCachedTop =405
-                    LayoutCachedWidth =13320
-                    LayoutCachedHeight =683
+                    LayoutCachedLeft =9728
+                    LayoutCachedTop =428
+                    LayoutCachedWidth =11363
+                    LayoutCachedHeight =706
                     RowStart =1
                     RowEnd =1
                     ColumnStart =5
@@ -1840,7 +1833,7 @@ Begin Report
                     IMESentenceMode =3
                     Left =2058
                     Top =936
-                    Width =11383
+                    Width =9246
                     Height =1413
                     TabIndex =6
                     Name ="SerialNumberList"
@@ -1848,16 +1841,16 @@ Begin Report
 
                     LayoutCachedLeft =2058
                     LayoutCachedTop =936
-                    LayoutCachedWidth =13441
+                    LayoutCachedWidth =11304
                     LayoutCachedHeight =2349
                 End
                 Begin TextBox
                     OldBorderStyle =0
                     TextAlign =1
                     IMESentenceMode =3
-                    Left =4260
-                    Top =405
-                    Width =3570
+                    Left =3420
+                    Top =428
+                    Width =2843
                     Height =278
                     ColumnWidth =2693
                     TabIndex =1
@@ -1870,10 +1863,10 @@ Begin Report
                     RightPadding =0
                     BottomPadding =0
 
-                    LayoutCachedLeft =4260
-                    LayoutCachedTop =405
-                    LayoutCachedWidth =7830
-                    LayoutCachedHeight =683
+                    LayoutCachedLeft =3420
+                    LayoutCachedTop =428
+                    LayoutCachedWidth =6263
+                    LayoutCachedHeight =706
                     RowStart =1
                     RowEnd =1
                     ColumnStart =1
@@ -1883,11 +1876,10 @@ Begin Report
                 End
                 Begin Label
                     OldBorderStyle =1
-                    OverlapFlags =4
                     TextAlign =1
-                    Left =4260
-                    Top =113
-                    Width =3570
+                    Left =3420
+                    Top =143
+                    Width =2843
                     Height =285
                     FontWeight =700
                     Name ="Label108"
@@ -1897,10 +1889,10 @@ Begin Report
                     TopPadding =0
                     RightPadding =0
                     BottomPadding =0
-                    LayoutCachedLeft =4260
-                    LayoutCachedTop =113
-                    LayoutCachedWidth =7830
-                    LayoutCachedHeight =398
+                    LayoutCachedLeft =3420
+                    LayoutCachedTop =143
+                    LayoutCachedWidth =6263
+                    LayoutCachedHeight =428
                     ColumnStart =1
                     ColumnEnd =1
                     LayoutGroup =3

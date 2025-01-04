@@ -14,14 +14,14 @@ Begin Form
     GridY =24
     Width =18213
     DatasheetFontHeight =11
-    ItemSuffix =428
-    Right =9405
-    Bottom =10515
+    ItemSuffix =433
+    Right =16272
+    Bottom =10248
     Tag ="Home"
     RecSrcDt = Begin
         0xc24b21e65336e640
     End
-    Caption ="Union Vending System"
+    Caption ="SMAC System"
     DatasheetFontName ="Calibri"
     OnActivate ="[Event Procedure]"
     OnLoad ="[Event Procedure]"
@@ -257,8 +257,8 @@ Begin Form
                     ForeThemeColorIndex =0
                     HoverForeThemeColorIndex =0
                     PressedForeThemeColorIndex =0
-                    WebImagePaddingLeft =4
-                    WebImagePaddingRight =4
+                    WebImagePaddingLeft =3
+                    WebImagePaddingRight =2
                     Overlaps =1
                 End
                 Begin Image
@@ -687,8 +687,8 @@ Begin Form
                     ForeThemeColorIndex =0
                     HoverForeThemeColorIndex =0
                     PressedForeThemeColorIndex =0
-                    WebImagePaddingLeft =4
-                    WebImagePaddingRight =4
+                    WebImagePaddingLeft =3
+                    WebImagePaddingRight =2
                     Overlaps =1
                 End
                 Begin CommandButton
@@ -752,9 +752,9 @@ Begin Form
                     PressedThemeColorIndex =0
                     HoverForeThemeColorIndex =5
                     PressedForeThemeColorIndex =1
-                    WebImagePaddingLeft =4
-                    WebImagePaddingRight =5
-                    WebImagePaddingBottom =2
+                    WebImagePaddingLeft =3
+                    WebImagePaddingRight =3
+                    WebImagePaddingBottom =1
                     Overlaps =1
                 End
                 Begin Image
@@ -5167,7 +5167,7 @@ Begin Form
                     AccessKey =78
                     Left =1732
                     Top =1343
-                    Width =1818
+                    Width =2298
                     Height =460
                     FontSize =10
                     TabIndex =3
@@ -5209,7 +5209,7 @@ Begin Form
                     CursorOnHover =1
                     LayoutCachedLeft =1732
                     LayoutCachedTop =1343
-                    LayoutCachedWidth =3550
+                    LayoutCachedWidth =4030
                     LayoutCachedHeight =1803
                     Alignment =1
                     ColumnStart =2
@@ -5222,9 +5222,9 @@ Begin Form
                     PressedThemeColorIndex =0
                     HoverForeThemeColorIndex =5
                     PressedForeThemeColorIndex =1
-                    WebImagePaddingLeft =4
-                    WebImagePaddingRight =5
-                    WebImagePaddingBottom =2
+                    WebImagePaddingLeft =3
+                    WebImagePaddingRight =3
+                    WebImagePaddingBottom =1
                     Overlaps =1
                 End
                 Begin Image
@@ -5534,9 +5534,8 @@ Begin Form
                     PressedThemeColorIndex =0
                     HoverForeThemeColorIndex =0
                     PressedForeThemeColorIndex =0
-                    WebImagePaddingLeft =4
-                    WebImagePaddingRight =5
-                    WebImagePaddingBottom =1
+                    WebImagePaddingLeft =3
+                    WebImagePaddingRight =3
                     Overlaps =1
                 End
                 Begin Image
@@ -6194,26 +6193,26 @@ Begin Form
                     PressedThemeColorIndex =0
                     HoverForeThemeColorIndex =5
                     PressedForeThemeColorIndex =1
-                    WebImagePaddingLeft =4
-                    WebImagePaddingRight =5
-                    WebImagePaddingBottom =2
+                    WebImagePaddingLeft =3
+                    WebImagePaddingRight =3
+                    WebImagePaddingBottom =1
                     Overlaps =1
                 End
             End
         End
         Begin Section
             CanGrow = NotDefault
-            Height =5685
+            Height =6072
             Name ="Detail"
             AlternateBackColor =16777215
             BackThemeColorIndex =1
             Begin
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =915
-                    Top =645
-                    Width =2355
-                    Height =435
+                    Left =912
+                    Top =648
+                    Width =2352
+                    Height =432
                     Name ="cmdCharities"
                     Caption ="  Charities"
                     Tag ="TR000000009"
@@ -6247,9 +6246,9 @@ Begin Form
                     End
 
                     CursorOnHover =1
-                    LayoutCachedLeft =915
-                    LayoutCachedTop =645
-                    LayoutCachedWidth =3270
+                    LayoutCachedLeft =912
+                    LayoutCachedTop =648
+                    LayoutCachedWidth =3264
                     LayoutCachedHeight =1080
                     Alignment =1
                     LayoutGroup =1
@@ -6264,11 +6263,11 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =915
-                    Top =4245
-                    Width =2355
-                    Height =435
-                    TabIndex =8
+                    Left =912
+                    Top =5088
+                    Width =2352
+                    Height =432
+                    TabIndex =10
                     Name ="cmdInventory"
                     Caption ="  Inventory"
                     Tag ="TR000000010"
@@ -6302,13 +6301,13 @@ Begin Form
                     End
 
                     CursorOnHover =1
-                    LayoutCachedLeft =915
-                    LayoutCachedTop =4245
-                    LayoutCachedWidth =3270
-                    LayoutCachedHeight =4680
+                    LayoutCachedLeft =912
+                    LayoutCachedTop =5088
+                    LayoutCachedWidth =3264
+                    LayoutCachedHeight =5520
                     Alignment =1
-                    RowStart =8
-                    RowEnd =8
+                    RowStart =10
+                    RowEnd =10
                     LayoutGroup =1
                     ForeThemeColorIndex =0
                     UseTheme =1
@@ -6321,11 +6320,11 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =915
-                    Top =2445
-                    Width =2355
-                    Height =435
-                    TabIndex =4
+                    Left =912
+                    Top =3312
+                    Width =2352
+                    Height =432
+                    TabIndex =6
                     Name ="cmdSalesReps"
                     Caption ="  Sales Reps"
                     Tag ="TR000000011"
@@ -6358,13 +6357,13 @@ Begin Form
                     End
 
                     CursorOnHover =1
-                    LayoutCachedLeft =915
-                    LayoutCachedTop =2445
-                    LayoutCachedWidth =3270
-                    LayoutCachedHeight =2880
+                    LayoutCachedLeft =912
+                    LayoutCachedTop =3312
+                    LayoutCachedWidth =3264
+                    LayoutCachedHeight =3744
                     Alignment =1
-                    RowStart =4
-                    RowEnd =4
+                    RowStart =6
+                    RowEnd =6
                     LayoutGroup =1
                     ForeThemeColorIndex =0
                     UseTheme =1
@@ -6377,10 +6376,10 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =915
-                    Top =1545
-                    Width =2355
-                    Height =435
+                    Left =912
+                    Top =1536
+                    Width =2352
+                    Height =432
                     TabIndex =2
                     Name ="cmdManufacturers"
                     Caption ="  Manufacturers"
@@ -6415,10 +6414,10 @@ Begin Form
                     End
 
                     CursorOnHover =1
-                    LayoutCachedLeft =915
-                    LayoutCachedTop =1545
-                    LayoutCachedWidth =3270
-                    LayoutCachedHeight =1980
+                    LayoutCachedLeft =912
+                    LayoutCachedTop =1536
+                    LayoutCachedWidth =3264
+                    LayoutCachedHeight =1968
                     Alignment =1
                     RowStart =2
                     RowEnd =2
@@ -6434,11 +6433,11 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =915
-                    Top =1995
-                    Width =2355
-                    Height =435
-                    TabIndex =3
+                    Left =912
+                    Top =2868
+                    Width =2352
+                    Height =432
+                    TabIndex =5
                     Name ="cmdMarketingReps"
                     Caption ="  Marketing Reps"
                     Tag ="TR000000013"
@@ -6472,13 +6471,13 @@ Begin Form
                     End
 
                     CursorOnHover =1
-                    LayoutCachedLeft =915
-                    LayoutCachedTop =1995
-                    LayoutCachedWidth =3270
-                    LayoutCachedHeight =2430
+                    LayoutCachedLeft =912
+                    LayoutCachedTop =2868
+                    LayoutCachedWidth =3264
+                    LayoutCachedHeight =3300
                     Alignment =1
-                    RowStart =3
-                    RowEnd =3
+                    RowStart =5
+                    RowEnd =5
                     LayoutGroup =1
                     ForeThemeColorIndex =0
                     UseTheme =1
@@ -6491,10 +6490,10 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =915
-                    Top =1095
-                    Width =2355
-                    Height =435
+                    Left =912
+                    Top =1092
+                    Width =2352
+                    Height =432
                     TabIndex =1
                     Name ="cmdLocations"
                     Caption ="  Locations"
@@ -6529,10 +6528,10 @@ Begin Form
                     End
 
                     CursorOnHover =1
-                    LayoutCachedLeft =915
-                    LayoutCachedTop =1095
-                    LayoutCachedWidth =3270
-                    LayoutCachedHeight =1530
+                    LayoutCachedLeft =912
+                    LayoutCachedTop =1092
+                    LayoutCachedWidth =3264
+                    LayoutCachedHeight =1524
                     Alignment =1
                     RowStart =1
                     RowEnd =1
@@ -6548,11 +6547,11 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =915
-                    Top =2895
-                    Width =2355
-                    Height =435
-                    TabIndex =5
+                    Left =912
+                    Top =3756
+                    Width =2352
+                    Height =432
+                    TabIndex =7
                     Name ="cmdGameStyle"
                     Caption ="  Game Style"
                     Tag ="TR000000017"
@@ -6585,13 +6584,13 @@ Begin Form
                     End
 
                     CursorOnHover =1
-                    LayoutCachedLeft =915
-                    LayoutCachedTop =2895
-                    LayoutCachedWidth =3270
-                    LayoutCachedHeight =3330
+                    LayoutCachedLeft =912
+                    LayoutCachedTop =3756
+                    LayoutCachedWidth =3264
+                    LayoutCachedHeight =4188
                     Alignment =1
-                    RowStart =5
-                    RowEnd =5
+                    RowStart =7
+                    RowEnd =7
                     LayoutGroup =1
                     ForeThemeColorIndex =0
                     UseTheme =1
@@ -6625,11 +6624,11 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =915
-                    Top =4695
-                    Width =2355
-                    Height =435
-                    TabIndex =9
+                    Left =912
+                    Top =5532
+                    Width =2352
+                    Height =432
+                    TabIndex =11
                     Name ="cmdTicketDistribution"
                     Caption ="  Ticket Distribution"
                     Tag ="TR000000011"
@@ -6663,13 +6662,13 @@ Begin Form
                     End
 
                     CursorOnHover =1
-                    LayoutCachedLeft =915
-                    LayoutCachedTop =4695
-                    LayoutCachedWidth =3270
-                    LayoutCachedHeight =5130
+                    LayoutCachedLeft =912
+                    LayoutCachedTop =5532
+                    LayoutCachedWidth =3264
+                    LayoutCachedHeight =5964
                     Alignment =1
-                    RowStart =9
-                    RowEnd =9
+                    RowStart =11
+                    RowEnd =11
                     LayoutGroup =1
                     ForeThemeColorIndex =0
                     UseTheme =1
@@ -6686,7 +6685,7 @@ Begin Form
                     Top =707
                     Width =13846
                     Height =4021
-                    TabIndex =11
+                    TabIndex =12
                     Name ="Container-04-WOs"
                     EventProcPrefix ="Container_04_WOs"
                     FilterOnEmptyMaster =0
@@ -6722,11 +6721,11 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =915
-                    Top =3345
-                    Width =2355
-                    Height =435
-                    TabIndex =6
+                    Left =912
+                    Top =4200
+                    Width =2352
+                    Height =432
+                    TabIndex =8
                     Name ="cmdTicketForms"
                     Caption ="  Order Forms"
                     Tag ="TR000000016"
@@ -6760,13 +6759,13 @@ Begin Form
                     End
 
                     CursorOnHover =1
-                    LayoutCachedLeft =915
-                    LayoutCachedTop =3345
-                    LayoutCachedWidth =3270
-                    LayoutCachedHeight =3780
+                    LayoutCachedLeft =912
+                    LayoutCachedTop =4200
+                    LayoutCachedWidth =3264
+                    LayoutCachedHeight =4632
                     Alignment =1
-                    RowStart =6
-                    RowEnd =6
+                    RowStart =8
+                    RowEnd =8
                     LayoutGroup =1
                     ForeThemeColorIndex =0
                     UseTheme =1
@@ -6779,11 +6778,11 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =915
-                    Top =3795
-                    Width =2355
-                    Height =435
-                    TabIndex =7
+                    Left =912
+                    Top =4644
+                    Width =2352
+                    Height =432
+                    TabIndex =9
                     Name ="cmdPayStructure"
                     Caption ="  Ticket Pay Structure"
                     Tag ="TR000000011"
@@ -6817,13 +6816,13 @@ Begin Form
                     End
 
                     CursorOnHover =1
-                    LayoutCachedLeft =915
-                    LayoutCachedTop =3795
-                    LayoutCachedWidth =3270
-                    LayoutCachedHeight =4230
+                    LayoutCachedLeft =912
+                    LayoutCachedTop =4644
+                    LayoutCachedWidth =3264
+                    LayoutCachedHeight =5076
                     Alignment =1
-                    RowStart =7
-                    RowEnd =7
+                    RowStart =9
+                    RowEnd =9
                     LayoutGroup =1
                     ForeThemeColorIndex =0
                     GridlineThemeColorIndex =1
@@ -6838,11 +6837,11 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =915
-                    Top =5145
-                    Width =2355
-                    Height =435
-                    TabIndex =10
+                    Left =912
+                    Top =2424
+                    Width =2352
+                    Height =432
+                    TabIndex =4
                     Name ="cmdEquipmentInventory"
                     Caption ="  Equipment Inventory"
                     Tag ="TR000000011"
@@ -6876,13 +6875,70 @@ Begin Form
                     End
 
                     CursorOnHover =1
-                    LayoutCachedLeft =915
-                    LayoutCachedTop =5145
-                    LayoutCachedWidth =3270
-                    LayoutCachedHeight =5580
+                    LayoutCachedLeft =912
+                    LayoutCachedTop =2424
+                    LayoutCachedWidth =3264
+                    LayoutCachedHeight =2856
                     Alignment =1
-                    RowStart =10
-                    RowEnd =10
+                    RowStart =4
+                    RowEnd =4
+                    LayoutGroup =1
+                    ForeThemeColorIndex =0
+                    GridlineThemeColorIndex =1
+                    GridlineShade =65.0
+                    UseTheme =1
+                    BackThemeColorIndex =7
+                    BackTint =20.0
+                    HoverThemeColorIndex =1
+                    HoverForeThemeColorIndex =7
+                    GroupTable =5
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =912
+                    Top =1980
+                    Width =2352
+                    Height =432
+                    TabIndex =3
+                    Name ="cmdSuppliers"
+                    Caption ="  Suppliers"
+                    Tag ="TR000000011"
+                    GroupTable =5
+                    LeftPadding =0
+                    TopPadding =0
+                    RightPadding =8
+                    BottomPadding =8
+                    OnClickEmMacro = Begin
+                        Version =196611
+                        ColumnsShown =0
+                        Begin
+                            Action ="OpenForm"
+                            Argument ="425-Suppliers"
+                            Argument ="0"
+                            Argument =""
+                            Argument =""
+                            Argument ="-1"
+                            Argument ="0"
+                        End
+                        Begin
+                            Comment ="_AXL:<?xml version=\"1.0\" encoding=\"UTF-16\" standalone=\"no\"?>\015\012<UserI"
+                                "nterfaceMacro For=\"cmdSuppliers\" Event=\"OnClick\" xmlns=\"http://schemas.micr"
+                                "osoft.com/office/accessservices/2009/11/application\"><Statements><Action Name=\""
+                                "OpenForm\"><Argument Name=\"FormN"
+                        End
+                        Begin
+                            Comment ="_AXL:ame\">425-Suppliers</Argument></Action></Statements></UserInterfaceMacro>"
+                        End
+                    End
+
+                    CursorOnHover =1
+                    LayoutCachedLeft =912
+                    LayoutCachedTop =1980
+                    LayoutCachedWidth =3264
+                    LayoutCachedHeight =2412
+                    Alignment =1
+                    RowStart =3
+                    RowEnd =3
                     LayoutGroup =1
                     ForeThemeColorIndex =0
                     GridlineThemeColorIndex =1

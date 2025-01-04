@@ -99,7 +99,7 @@ Public Property Get PettyCashBalance(Employee As Integer, Collection_Date As Dat
     Dim OpeningBalance As Double
     Dim PettyCashPayouts As Double
     
-    Dim rs As dao.Recordset
+    Dim rs As DAO.Recordset
     Set rs = CurrentDb().OpenRecordset("Select * From [Collection-Petty-Cash-Reconciliation] Where EmployeeId = " & Employee & " And CollectionDate = #" & Collection_Date & "# order by Id", dbOpenDynaset)
 
     With rs
@@ -239,7 +239,7 @@ Public Function GetStubInfoById(Id As Long) As Recordset
 
 On Error GoTo ErrorHandler
 
-    Dim rs As dao.Recordset
+    Dim rs As DAO.Recordset
         
     Set rs = CurrentDb().OpenRecordset("Select * From [Collection-Stub] Where Id = " & Id, dbOpenDynaset)
     
@@ -257,7 +257,7 @@ Public Function GetStubLocationAndDate(Employee As Integer, Location As Integer,
 
 On Error GoTo ErrorHandler
 
-    Dim rs As dao.Recordset
+    Dim rs As DAO.Recordset
         
     Set rs = CurrentDb().OpenRecordset("Select * From [Collection-Stub] Where EmployeeId = " & Employee & " And LocationId = " & Location & " And CollectionDate =#" & Collection_Date & "#", dbOpenDynaset)
     
@@ -379,7 +379,7 @@ On Error GoTo ErrorHandler
     Dim EquipmentId As Integer
     Dim UnionVendingId As Integer
             
-    Dim rs As dao.Recordset
+    Dim rs As DAO.Recordset
         
     Set rs = CurrentDb().OpenRecordset("Select * From [Equipments] Where Location = " & Location, dbOpenSnapshot)
 
@@ -487,7 +487,7 @@ Public Function GetReceiptInfoById(CollectionStubId As Integer) As Recordset
 
 On Error GoTo ErrorHandler
 
-    Dim rs As dao.Recordset
+    Dim rs As DAO.Recordset
 
     Set rs = CurrentDb().OpenRecordset("Select [Collection Date], [Location], [Collector]  From [305-Collection-Stub-Header] Where CollectionStubId = " & CollectionStubId, dbOpenDynaset)
     

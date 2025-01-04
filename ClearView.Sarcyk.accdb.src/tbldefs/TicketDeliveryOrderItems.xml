@@ -14,7 +14,7 @@
         <od:index index-name="Serial_Idx" index-key="SerialNumber " primary="no" unique="yes" clustered="no" order="asc"/>
         <od:index index-name="TicketDistributionOrdersTicketDistributionOrderItems" index-key="DistributionOrderId " primary="no" unique="no" clustered="no" order="asc"/>
         <od:tableProperty name="Orientation" type="2" value="0"/>
-        <od:tableProperty name="OrderByOn" type="1" value="0"/>
+        <od:tableProperty name="OrderByOn" type="1" value="1"/>
         <od:tableProperty name="DefaultView" type="2" value="2"/>
         <od:tableProperty name="DisplayViewsOnSharePointSite" type="2" value="1"/>
         <od:tableProperty name="TotalsRow" type="1" value="0"/>
@@ -30,6 +30,7 @@
         <od:tableProperty name="ReadOnlyWhenDisconnected" type="1" value="0"/>
         <od:tableProperty name="DatasheetGridlinesThemeColorIndex" type="4" value="3"/>
         <od:tableProperty name="DatasheetForeThemeColorIndex" type="4" value="0"/>
+        <od:tableProperty name="OrderBy" type="12" value="[TicketDeliveryOrderItems].[Id]"/>
       </xsd:appinfo>
     </xsd:annotation>
     <xsd:complexType>

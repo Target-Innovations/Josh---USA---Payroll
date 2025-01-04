@@ -18,11 +18,11 @@ Begin Form
     Width =13978
     DatasheetFontHeight =11
     ItemSuffix =980
-    Right =12330
+    Right =16005
     Bottom =10515
     TimerInterval =125
     AfterInsert ="[Event Procedure]"
-    Filter ="Id = 6"
+    Filter ="1=0"
     RecSrcDt = Begin
         0xc5b94ca08842e640
     End
@@ -1015,18 +1015,18 @@ Begin Form
                     OverlapFlags =85
                     TextFontFamily =34
                     Left =300
-                    Top =278
-                    Width =13448
-                    Height =5767
+                    Top =276
+                    Width =13455
+                    Height =5772
                     FontSize =10
                     Name ="tabData"
                     FontName ="Segoe UI"
                     GridlineColor =0
 
                     LayoutCachedLeft =300
-                    LayoutCachedTop =278
-                    LayoutCachedWidth =13748
-                    LayoutCachedHeight =6045
+                    LayoutCachedTop =276
+                    LayoutCachedWidth =13755
+                    LayoutCachedHeight =6048
                     ThemeFontIndex =-1
                     GridlineThemeColorIndex =-1
                     GridlineShade =100.0
@@ -1051,15 +1051,15 @@ Begin Form
                     Begin
                         Begin Page
                             OverlapFlags =87
-                            Left =337
+                            Left =338
                             Top =660
-                            Width =13373
+                            Width =13380
                             Height =5348
                             Name ="PO_Entries_Page"
                             Caption ="|  Details   |"
-                            LayoutCachedLeft =337
+                            LayoutCachedLeft =338
                             LayoutCachedTop =660
-                            LayoutCachedWidth =13710
+                            LayoutCachedWidth =13718
                             LayoutCachedHeight =6008
                             WebImagePaddingLeft =4
                             WebImagePaddingTop =4
@@ -1258,7 +1258,7 @@ Begin Form
                                     OverlapFlags =215
                                     TextAlign =3
                                     IMESentenceMode =3
-                                    Left =7132
+                                    Left =7081
                                     Top =2414
                                     Width =2693
                                     Height =278
@@ -1267,9 +1267,9 @@ Begin Form
                                     ControlSource ="GamePrice"
                                     Format ="$#,##0.00;[Red]($#,##0.00)"
 
-                                    LayoutCachedLeft =7132
+                                    LayoutCachedLeft =7081
                                     LayoutCachedTop =2414
-                                    LayoutCachedWidth =9825
+                                    LayoutCachedWidth =9774
                                     LayoutCachedHeight =2692
                                     RowStart =1
                                     RowEnd =1
@@ -1523,7 +1523,7 @@ Begin Form
                                     OverlapFlags =215
                                     TextAlign =3
                                     IMESentenceMode =3
-                                    Left =7128
+                                    Left =7081
                                     Top =2744
                                     Width =2693
                                     Height =278
@@ -1532,9 +1532,9 @@ Begin Form
                                     ControlSource ="TicketValue"
                                     Format ="$* #,##0.00;$* (#,##0.00);$* -00"
 
-                                    LayoutCachedLeft =7128
+                                    LayoutCachedLeft =7081
                                     LayoutCachedTop =2744
-                                    LayoutCachedWidth =9821
+                                    LayoutCachedWidth =9774
                                     LayoutCachedHeight =3022
                                     RowStart =3
                                     RowEnd =3
@@ -1843,15 +1843,15 @@ Begin Form
                         End
                         Begin Page
                             OverlapFlags =247
-                            Left =337
+                            Left =338
                             Top =660
-                            Width =13373
+                            Width =13380
                             Height =5348
                             Name ="Distribution_page"
                             Caption ="|  Distribution Details  |"
-                            LayoutCachedLeft =337
+                            LayoutCachedLeft =338
                             LayoutCachedTop =660
-                            LayoutCachedWidth =13710
+                            LayoutCachedWidth =13718
                             LayoutCachedHeight =6008
                             WebImagePaddingLeft =4
                             WebImagePaddingTop =4
@@ -1879,15 +1879,15 @@ Begin Form
                         End
                         Begin Page
                             OverlapFlags =247
-                            Left =337
+                            Left =338
                             Top =660
-                            Width =13373
+                            Width =13380
                             Height =5348
                             Name ="Ownership_Page"
                             Caption ="|  Ownership History  |"
-                            LayoutCachedLeft =337
+                            LayoutCachedLeft =338
                             LayoutCachedTop =660
-                            LayoutCachedWidth =13710
+                            LayoutCachedWidth =13718
                             LayoutCachedHeight =6008
                             WebImagePaddingLeft =4
                             WebImagePaddingTop =4
@@ -2041,6 +2041,8 @@ End Sub
 
 Private Sub Form_AfterInsert()
     
+    On Error GoTo ErrorHandler
+    
     Me.SerialNumberList = Replace(Me.SerialNumberList, vbCr, COMMA)
     Me.SerialNumberList = Replace(Me.SerialNumberList, vbLf, COMMA)
     Me.SerialNumberList = Replace(Me.SerialNumberList, SPACE, COMMA)
@@ -2052,6 +2054,9 @@ Private Sub Form_AfterInsert()
     If cUIObjects.IsLoaded("411-Box-Inventory-List") Then Forms("411-Box-Inventory-List").Requery
        
     SetFormState
+
+ErrorHandler:
+    Debug.Print Err.Description
     
 End Sub
 
@@ -2063,8 +2068,10 @@ On Error GoTo ErrorHandler
     
     UpdateModel
     
-    DbOperation = IIf(Me.Status = "New", "INSERT", "UPDATE")
+    DbOperation = IIf(Me.cboStatus = "New", "INSERT", "UPDATE")
     
+    Me.Status = IIf(Me.cboStatus = "New", "In-Stock", Me.cboStatus)
+
     If Not oBox.Validate(DbOperation) Then
     
         MsgBox oBox.Message, vbExclamation
@@ -2072,7 +2079,7 @@ On Error GoTo ErrorHandler
         
     Else
     
-        Me.Status = "In-Stock"
+        ' Me.Status = "In-Stock"
         Me.UpdatedAt = Now()
         Me.UpdatedBy = cSysSettings.oUser.Username
         
@@ -2183,7 +2190,7 @@ End Sub
 
 Private Sub Form_Current()
 
-    If Me.Status.Value = "New" Then
+    If Me.cboStatus.Value = "New" Then
 
         oBox.PopulateFields oBox.GetInfoById(9999) ' Forcing to be a new box
         Me.txtSerialNumber.Locked = True
@@ -2282,9 +2289,9 @@ End Sub
 
 Private Sub ResetItemCount()
     
-    Me.txtSerialNumberList = Replace(Me.txtSerialNumberList, Chr(10), "")
-    Me.txtSerialNumberList = Replace(Me.txtSerialNumberList, Chr(13), "")
-    Me.txtSerialNumberList = Replace(Me.txtSerialNumberList, SPACE, COMMA)
+    Me.txtSerialNumberList = Replace(Nz(Me.txtSerialNumberList), Chr(10), "")
+    Me.txtSerialNumberList = Replace(Nz(Me.txtSerialNumberList), Chr(13), "")
+    Me.txtSerialNumberList = Replace(Nz(Me.txtSerialNumberList), SPACE, COMMA)
     
     Me.lblSerialConunt.Caption = "Count: (" & cArray.count(Nz(Me.txtSerialNumberList), ",") & ")"
 

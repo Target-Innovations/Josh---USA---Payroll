@@ -104,6 +104,9 @@ End Function
 
 Function IsValidCsvString(str As String) As Boolean
 
+    '
+    ' Valid String: item1,item2,item3,itemx
+    '
     Dim regEx As Object
     Set regEx = CreateObject("VBScript.RegExp")
     

@@ -14,6 +14,8 @@ Private Const CLASS_NAME = "cBoxInventory"
 Private Const DB_INSERT As String = "INSERT"
 Private Const DB_UPDATE As String = "UPDATE"
 
+Private oDistribuition As New cDistribution
+
 Public Id As Long
 Public AcquiredDate As Date
 Public DistributedDate As Date
@@ -62,30 +64,30 @@ Public Property Get Message() As String
     Message = this.Message
 End Property
 
-Public Property Get BillingStyle(CharityId As Long) As String
-
-    BillingStyle = Nz(DLookup("BillingStyle", "Charities", "CharityId =" & CharityId))
-    
-End Property
-
-Public Property Get SalesRep(LocationId As Long) As String
-
-    SalesRep = Nz(DLookup("SalesRepId", "Locations", "Id =" & LocationId), 0)
-    
-End Property
-
-Public Property Get MarketingRep1(MarketingRep As Long) As String
-
-    MarketingRep1 = Nz(DLookup("MarketingRepId", "Locations", "Id =" & MarketingRep), 0)
-
-End Property
-
-Public Property Get SaleCommision(MarketingRep As Long) As String
-
-    SaleCommision = Nz(DLookup("Commission", "MarketingReps", "Id =" & MarketingRep), 0)
-    
-End Property
-
+'Public Property Get BillingStyle(CharityId As Long) As String
+'
+'    BillingStyle = Nz(DLookup("BillingStyle", "Charities", "CharityId =" & CharityId))
+'
+'End Property
+'
+'Public Property Get SalesRep(LocationId As Long) As String
+'
+'    SalesRep = Nz(DLookup("SalesRepId", "Locations", "Id =" & LocationId), 0)
+'
+'End Property
+'
+'Public Property Get MarketingRep1(MarketingRep As Long) As String
+'
+'    MarketingRep1 = Nz(DLookup("MarketingRepId", "Locations", "Id =" & MarketingRep), 0)
+'
+'End Property
+'
+'Public Property Get SaleCommision(MarketingRep As Long) As String
+'
+'    SaleCommision = Nz(DLookup("Commission", "MarketingReps", "Id =" & MarketingRep), 0)
+'
+'End Property
+'
 Private Sub Class_Initialize()
     ' Constructor
     ClearFields
@@ -323,7 +325,7 @@ On Error GoTo ErrorHandler
     Exit Sub
 
 ErrorHandler:
-    this.Message = "Unable to retrieve Time-Off."
+    this.Message = "Unable to retrieve " & CLASS_NAME & " record."
     Err.Raise Err.Number, CLASS_NAME & ".PopulateFields", Err.Description
 
 End Sub
@@ -333,7 +335,7 @@ Public Function Add() As Boolean
 On Error GoTo ErrorHandler
 
     Dim sql As String
-    Dim rs As dao.Recordset
+    Dim rs As DAO.Recordset
     
     Set rs = CurrentDb.OpenRecordset("BoxInventory")
     
@@ -344,7 +346,7 @@ On Error GoTo ErrorHandler
             !AcquiredDate = AcquiredDate
             !DistributedDate = DistributedDate
             !SameMonthSold = SameMonthSold
-            !Status = Status
+            !Status = "In-Stock" ' Status
             !Purchaser = Purchaser
             !Supplier = Supplier
             !InvoiceNumber = InvoiceNumber
@@ -409,7 +411,7 @@ Public Function GetInfoById(Id As Long) As Recordset
 
 On Error GoTo ErrorHandler
 
-    Dim rs As dao.Recordset
+    Dim rs As DAO.Recordset
 
     Set rs = CurrentDb().OpenRecordset("Select * From [BoxInventory] Where ID = " & Id, dbOpenDynaset)
     
@@ -426,7 +428,7 @@ Public Function GetInfoBySerialNumber(SerialNumber As String) As Recordset
 
 On Error GoTo ErrorHandler
 
-    Dim rs As dao.Recordset
+    Dim rs As DAO.Recordset
 
     Set rs = CurrentDb().OpenRecordset("Select * From [BoxInventory] Where SerialNumber = '" & SerialNumber & "'", dbOpenDynaset)
     
@@ -441,14 +443,13 @@ ErrorHandler:
     
 End Function
 
-
-Public Function GetGameInfo(OrderFormId As Integer) As dao.Recordset
+Public Function GetGameInfo(OrderFormId As Integer) As DAO.Recordset
 
 On Error GoTo ErrorHandler
 
-    Dim rs As dao.Recordset
+    Dim rs As DAO.Recordset
 
-    Set rs = CurrentDb().OpenRecordset("Select * From [OrderForms] Where ID = " & Id, dbOpenDynaset)
+    Set rs = CurrentDb().OpenRecordset("Select * From [OrderForms] Where ID = " & OrderFormId, dbOpenDynaset)
     
     Set GetGameInfo = rs
 
@@ -505,7 +506,7 @@ Sub SubmitDistribution(OrderId As Long)
 
 On Error GoTo ErrorHandler
 
-    Dim rs As dao.Recordset
+    Dim rs As DAO.Recordset
 
     ' Search for specific order
     Set rs = CurrentDb().OpenRecordset("Select * From [407-Ticket-Delivery-Order] Where OrderID = " & OrderId, dbOpenDynaset)
@@ -528,7 +529,7 @@ On Error GoTo ErrorHandler
             GetInfoBySerialNumber Nz(rs("SerialNumber"))
             
             ' Insert record into Distribution Table
-            AddDistribuiton rs
+            oDistribuition.AddDistribuiton rs
             
             ' Set Inventory to sold
             SetInventoryState Nz(rs("SerialNumber")), "Distributed"
@@ -552,76 +553,76 @@ ErrorHandler:
      
 End Sub
 
-Public Function AddDistribuiton(rsInfo As dao.Recordset) As Boolean
-
-On Error GoTo ErrorHandler
-
-    Dim sql As String
-    Dim rs As dao.Recordset
-    
-    Set rs = CurrentDb.OpenRecordset("TicketDistribution")
-    
-    With rs
-            
-        .AddNew
-            
-            !SerialNumber = rsInfo("SerialNumber")
-            
-            '!Id = rs("Id")
-            
-            !Status = "Active"
-            !DeliveryNumber = rsInfo("OrderId")
-            !DistributionDate = rsInfo("SaleDate")
-            !LocationId = rsInfo("LocationId")
-            '!LegalName = rs("LegalName")
-            !CharityId = rsInfo("CharityId")
-            
-            !SalesRepId = Me.SalesRep(Nz(rsInfo("LocationId")))
-            !MarketingRepId = Me.MarketingRep1(Nz(rs("LocationId")))
-            
-            !RepCommission = Me.SaleCommision(!MarketingRepId)
-
-            !SupplierId = Me.Supplier
-            
-            !GameName = rsInfo("GameId")
-            !TicketCount = rsInfo("TicketCount")
-            
-            ' !TicketValue = rsInfo("?????")
-            ' !TotalRevenue = rsInfo("????")
-            
-            !PrizesPaid = rsInfo("PrizesPaid")
-            !Profit = rsInfo("IdealProfit")
-            !Rent = rsInfo("LocationRent")
-            
-            !BillingStyle = Me.BillingStyle(rsInfo("CharityId"))
-            
-'            !TotalBillable = rs("TotalBillable")
-'            !TicketSupplyCost = rs("TicketSupplyCost")
-'            !SMACServiceFee = rs("SMACServiceFee")
-'            !SMACAdminFee = rs("SMACAdminFee")
-'            !LocationCheckNumber = rs("LocationCheckNumber")
-'            !ReimbursementCheckNumber = rs("ReimbursementCheckNumber")
-'            !EnvelopeNumber = rs("EnvelopeNumber")
-'            !ReimbursementSent = rs("ReimbursementSent")
-
-            !UpdatedAt = Now()
-            !UpdatedBy = cSysSettings.LoggedUserName
-        
-        .Update
-    
-        .Close
-        
-    End With
-    
-    AddDistribuiton = True
-        
-    Exit Function
-
-ErrorHandler:
-    this.Message = "Unable to Add " & CLASS_NAME & " record."
-    Err.Raise Err.Number, CLASS_NAME & ".AddDistribuiton", Err.Description
-    
-End Function
+'Public Function AddDistribuiton(rsInfo As DAO.Recordset) As Boolean
+'
+'On Error GoTo ErrorHandler
+'
+'    Dim sql As String
+'    Dim rs As DAO.Recordset
+'
+'    Set rs = CurrentDb.OpenRecordset("TicketDistribution")
+'
+'    With rs
+'
+'        .AddNew
+'
+'            !SerialNumber = rsInfo("SerialNumber")
+'
+'            '!Id = rs("Id")
+'
+'            !Status = "Active"
+'            !DeliveryNumber = rsInfo("OrderId")
+'            !DistributionDate = rsInfo("SaleDate")
+'            !LocationId = rsInfo("LocationId")
+'            '!LegalName = rs("LegalName")
+'            !CharityId = rsInfo("CharityId")
+'
+'            !SalesRepId = Me.SalesRep(Nz(rsInfo("LocationId")))
+'            !MarketingRepId = Me.MarketingRep1(Nz(rs("LocationId")))
+'
+'            !RepCommission = Me.SaleCommision(!MarketingRepId)
+'
+'            !SupplierId = Me.Supplier
+'
+'            !GameName = rsInfo("GameId")
+'            !TicketCount = rsInfo("TicketCount")
+'
+'            ' !TicketValue = rsInfo("?????")
+'            ' !TotalRevenue = rsInfo("????")
+'
+'            !PrizesPaid = rsInfo("PrizesPaid")
+'            !Profit = rsInfo("IdealProfit")
+'            !Rent = rsInfo("LocationRent")
+'
+'            !BillingStyle = Me.BillingStyle(rsInfo("CharityId"))
+'
+''            !TotalBillable = rs("TotalBillable")
+''            !TicketSupplyCost = rs("TicketSupplyCost")
+''            !SMACServiceFee = rs("SMACServiceFee")
+''            !SMACAdminFee = rs("SMACAdminFee")
+''            !LocationCheckNumber = rs("LocationCheckNumber")
+''            !ReimbursementCheckNumber = rs("ReimbursementCheckNumber")
+''            !EnvelopeNumber = rs("EnvelopeNumber")
+''            !ReimbursementSent = rs("ReimbursementSent")
+'
+'            !UpdatedAt = Now()
+'            !UpdatedBy = cSysSettings.LoggedUserName
+'
+'        .Update
+'
+'        .Close
+'
+'    End With
+'
+'    AddDistribuiton = True
+'
+'    Exit Function
+'
+'ErrorHandler:
+'    this.Message = "Unable to Add " & CLASS_NAME & " record."
+'    Err.Raise Err.Number, CLASS_NAME & ".AddDistribuiton", Err.Description
+'
+'End Function
 
 Public Sub SetInventoryState(SerialNumber As String, State As String)
 
@@ -652,38 +653,38 @@ ErrorHandler:
 End Sub
 
 
-Function GetCurrentDistributionStatus(LocationCheck As String, ReimbursementCheck As String, EnvelopeNumber As String, ReimbursementSentDate As Date) As String
-
-    ' Distribution Statuses:  (Newly Created)                   -> Active
-    '                         (Location Check #)                -> Paid
-    '                         (SMAC Writes a check to Location) -> Reimbursement Check Ready
-    '                         (Create Envelop #)                -> Enveloped
-    '                         (Update Reimbursement Sent Date)  -> Reimbursement Sent
-
-    
-    ' Default Status
-    GetCurrentDistributionStatus = "Active"
-    
-    If Not IsNullOrEmpty(ReimbursementSentDate) Then
-    
-        GetCurrentDistributionStatus = "Reimbursement Sent"
-    
-    ElseIf Not IsNullOrEmpty(EnvelopeNumber) Then
-    
-        GetCurrentDistributionStatus = "Enveloped"
-    
-    ElseIf Not IsNullOrEmpty(ReimbursementCheck) Then
-    
-        GetCurrentDistributionStatus = "Reimbursement Check Ready "
-        
-    ElseIf Not IsNullOrEmpty(LocationCheck) Then
-    
-        GetCurrentDistributionStatus = "Location Paid"
-        
-    End If
-    
-
-End Function
+'Function GetCurrentDistributionStatus(LocationCheck As String, ReimbursementCheck As String, EnvelopeNumber As String, ReimbursementSentDate As Date) As String
+'
+'    ' Distribution Statuses:  (Newly Created)                   -> Active
+'    '                         (Location Check #)                -> Paid
+'    '                         (SMAC Writes a check to Location) -> Reimbursement Check Ready
+'    '                         (Create Envelop #)                -> Enveloped
+'    '                         (Update Reimbursement Sent Date)  -> Reimbursement Sent
+'
+'
+'    ' Default Status
+'    GetCurrentDistributionStatus = "Active"
+'
+'    If Not IsNullOrEmpty(ReimbursementSentDate) Then
+'
+'        GetCurrentDistributionStatus = "Reimbursement Sent"
+'
+'    ElseIf Not IsNullOrEmpty(EnvelopeNumber) Then
+'
+'        GetCurrentDistributionStatus = "Enveloped"
+'
+'    ElseIf Not IsNullOrEmpty(ReimbursementCheck) Then
+'
+'        GetCurrentDistributionStatus = "Reimbursement Check Ready "
+'
+'    ElseIf Not IsNullOrEmpty(LocationCheck) Then
+'
+'        GetCurrentDistributionStatus = "Location Paid"
+'
+'    End If
+'
+'
+'End Function
 
 Function IsValidSerialNumber(SerialNumbers As String) As Boolean
 
@@ -695,7 +696,7 @@ Function GetFirstSerialNumber(SerialNumbers As String) As String
     GetFirstSerialNumber = cArray.GetArrayValue(SerialNumbers, ",", 0)
 End Function
 
-Sub CreateVariousBoxes(SerialNumbers As String, FirstBox As dao.Recordset)
+Sub CreateVariousBoxes(SerialNumbers As String, FirstBox As DAO.Recordset)
 
     Dim MyArray() As String
     Dim i As Integer
@@ -713,7 +714,6 @@ Sub CreateVariousBoxes(SerialNumbers As String, FirstBox As dao.Recordset)
         
         If Not SerialNumberExists(SerialNumber) Then
         
-            
             ' grab the current serial number and insert a record in
             ' the database with the same information as the first records
             

@@ -130,7 +130,7 @@ Public Function SetHistoryFieldDate() As Boolean
 On Error GoTo ErrorHandler
 
     Dim sql As String
-    Dim rs As dao.Recordset
+    Dim rs As DAO.Recordset
         
     Exit Function ' ****** This procedure is for production migration only  ******
     

@@ -52,7 +52,7 @@ Dim ofdr        As Outlook.MAPIFolder
 Dim orcp        As Outlook.Recipient
 Dim oItem       As Outlook.AppointmentItem
 Dim oItems      As Outlook.Items
-Dim rst         As dao.Recordset
+Dim rst         As DAO.Recordset
 Dim dblCnt      As Double
 Dim i           As Integer
 
@@ -117,7 +117,7 @@ Dim ofdr        As Outlook.MAPIFolder
 Dim orcp        As Outlook.Recipient
 Dim oItem       As Outlook.AppointmentItem
 Dim oItems      As Outlook.Items
-Dim rst         As dao.Recordset
+Dim rst         As DAO.Recordset
 Dim arrList()   As String 'break up the subject into individual columns
 Dim i           As Double
 

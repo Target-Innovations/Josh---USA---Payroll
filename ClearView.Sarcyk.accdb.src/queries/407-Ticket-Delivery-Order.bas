@@ -3,17 +3,29 @@ Option =0
 Begin InputTables
     Name ="TicketDeliveryOrders"
     Name ="TicketDeliveryOrderItems"
+    Name ="Charities"
+    Name ="Locations"
 End
 Begin OutputColumns
     Alias ="OrderId"
     Expression ="TicketDeliveryOrders.Id"
     Expression ="TicketDeliveryOrders.*"
     Expression ="TicketDeliveryOrderItems.*"
+    Expression ="Charities.*"
+    Expression ="Locations.*"
 End
 Begin Joins
     LeftTable ="TicketDeliveryOrders"
     RightTable ="TicketDeliveryOrderItems"
     Expression ="TicketDeliveryOrders.Id = TicketDeliveryOrderItems.DistributionOrderId"
+    Flag =1
+    LeftTable ="TicketDeliveryOrders"
+    RightTable ="Charities"
+    Expression ="TicketDeliveryOrders.CharityId = Charities.Id"
+    Flag =1
+    LeftTable ="TicketDeliveryOrders"
+    RightTable ="Locations"
+    Expression ="TicketDeliveryOrders.LocationId = Locations.id"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -49,10 +61,6 @@ Begin
         dbLong "AggregateType" ="-1"
         dbInteger "ColumnWidth" ="3188"
         dbBoolean "ColumnHidden" ="0"
-    End
-    Begin
-        dbText "Name" ="TicketDeliveryOrders.Description"
-        dbLong "AggregateType" ="-1"
     End
     Begin
         dbText "Name" ="TicketDeliveryOrders.SaleDate"
@@ -124,36 +132,66 @@ Begin
         dbBoolean "ColumnHidden" ="0"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="TicketDeliveryOrders.Notes"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="TicketDeliveryOrders.WeekDay"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="TicketDeliveryOrders.OpenTime"
+        dbLong "AggregateType" ="-1"
+    End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =2446
-    Bottom =1206
+    Right =1876
+    Bottom =1436
     Left =-1
     Top =-1
-    Right =2413
-    Bottom =561
+    Right =1843
+    Bottom =956
     Left =0
     Top =0
     ColumnsShown =539
     Begin
-        Left =96
-        Top =24
-        Right =384
-        Bottom =312
+        Left =59
+        Top =176
+        Right =545
+        Bottom =689
         Top =0
         Name ="TicketDeliveryOrders"
         Name =""
     End
     Begin
-        Left =480
-        Top =24
-        Right =768
-        Bottom =312
+        Left =681
+        Top =42
+        Right =1045
+        Bottom =330
         Top =0
         Name ="TicketDeliveryOrderItems"
+        Name =""
+    End
+    Begin
+        Left =995
+        Top =372
+        Right =1283
+        Bottom =660
+        Top =0
+        Name ="Charities"
+        Name =""
+    End
+    Begin
+        Left =651
+        Top =562
+        Right =939
+        Bottom =850
+        Top =0
+        Name ="Locations"
         Name =""
     End
 End

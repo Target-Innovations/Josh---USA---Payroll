@@ -130,11 +130,11 @@ Public Function NotifyTimeOff() As Boolean
     Err.Raise "50001", CLASS_NAME & ".NotifyTimeOff", "Method Not Implemented."
 End Function
 
-Public Function GetADPFileById(Id As String) As dao.Recordset
+Public Function GetADPFileById(Id As String) As DAO.Recordset
 
 On Error GoTo ErrorHandler
 
-    Dim rs As dao.Recordset
+    Dim rs As DAO.Recordset
 
     Set rs = CurrentDb().OpenRecordset("Select * From [xxxxxxx] Where Id = " & Id, dbOpenDynaset)
     Me.PopulateFields rs

@@ -431,26 +431,43 @@ End Function
 
 
 
-Sub FieldWritter(TableName As String)
+Sub FieldWritter(TableName As String, PrintType As String)
+
+' Procedure Calls Types
+'
+' FieldWritter "Branch", "FieldNames"
+' FieldWritter "Branch", "FieldDeclaretion"
+' FieldWritter "Branch", "FieldAssignment"
+' FieldWritter "Branch", "ClearFields"
+' FieldWritter "Branch", "RecordsetAssignment"
+
 
 On Error GoTo ErrorHandler
 
-    Dim rs As dao.Recordset
+    Dim rs As DAO.Recordset
 
     Set rs = CurrentDb().OpenRecordset("Select * From [" & TableName & "] Where Id = 1", dbOpenDynaset)
     
     Dim fld As Variant
     
+    Debug.Print vbNullString
+    
     For Each fld In rs.Fields
     
-        ' Print field names.
+        Select Case PrintType
         
-        ' Debug.Print "Public " & fld.Name & " As " & GetAccessFieldTypeEnum(fld.Type)
-        ' Debug.Print fld.Name, " = ", "rs(""" & fld.Name & """)"
-        ' Debug.Print fld.Name, " = ", "vbNull"
-        
-        Debug.Print "!" & fld.Name & " = " & "rs(""" & fld.Name & """)"
-        
+            Case "FieldNames": Debug.Print fld.Name
+            
+            Case "FieldDeclaretion": Debug.Print "Public " & fld.Name & " As " & GetAccessFieldTypeEnum(fld.Type)
+    
+            Case "FieldAssignment": Debug.Print "!" & fld.Name, " = ", "rs(""" & fld.Name & """)"
+            
+            Case "RecordsetAssignment": Debug.Print "rs(""" & fld.Name & """)", " = ", fld.Name
+            
+            Case "ClearFields": Debug.Print fld.Name, " = ", "vbNullString"
+            
+        End Select
+    
     Next
 
     Exit Sub
@@ -530,50 +547,3 @@ Dim strMsg As String
     MsgBox strMsg, vbCritical, pstrTitle
 
 End Sub
-
-
-'Function IsValidCSV(str As String) As Boolean
-'
-''    Dim regex As Object
-''    Set regex = CreateObject("VBScript.RegExp")
-''
-''    ' Define the regular expression pattern for a valid CSV line
-''    regex.Pattern = "^(\s*""[^""]*""\s*|\s*[^,""\s]+?\s*)(,\s*""[^""]*""\s*|\s*[^,""\s]+?\s*)*$"
-''    regex.IgnoreCase = True
-''    regex.Global = False
-''
-''    ' Test if the string matches the CSV pattern
-''    IsValidCSV = regex.test(str)
-''
-''    Set regex = Nothing
-''
-'
-'    Dim regex As Object
-'    Set regex = CreateObject("VBScript.RegExp")
-'
-'    ' Define the regular expression pattern for a valid CSV line
-'    regex.Pattern = "^[A-Za-z0-9]+(,[A-Za-z0-9]+)*$"
-'    regex.IgnoreCase = True
-'    regex.Global = False
-'
-'    ' Test if the string matches the CSV pattern
-'    IsValidCSV = regex.test(str)
-'
-'    Set regex = Nothing
-'
-'End Function
-'
-'
-'Sub TestCSV()
-'    Dim testStr As String
-'    testStr = "abc123,def456,ghi789"  ' Should return True (valid CSV)
-'    testStr = "F186374,F186375,F186377"
-'
-'    If IsValidCSV(testStr) Then
-'        MsgBox "Valid CSV"
-'    Else
-'        MsgBox "Invalid CSV"
-'    End If
-'End Sub
-'
-'

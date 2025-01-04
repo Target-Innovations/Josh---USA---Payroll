@@ -10,62 +10,45 @@ Attribute VB_Exposed = False
 Option Compare Database
 Option Explicit
 
-Private Const CLASS_NAME = "cWorkOrder"
+Private Const CLASS_NAME = "cEntity"
+Private Const TABLE_NAME = "TableEntity"
+Private Const PRIMARY_KEY = "Id"
 
-Private Const WO_INSERT As String = "INSERT"
-Private Const WO_Update As String = "UPDATE"
+Private Const C_INSERT As String = "INSERT"
+Private Const C_UPDATE As String = "UPDATE"
 
-Private Enum woStatus
-    NewOrder = 1
-    Pending = 2
-    Assigned = 3
-    Completed = 4
+Private Enum ePaymentStatus
+
+    Active = 1              ' Active
+    Paid = 2                ' LocationPaid
+    CheckReady = 3          ' Reimbursement Check Ready
+    Enveloped = 4           ' Enveloped
+    CheckSent = 5           ' Reimbursement Check Sent
+    
 End Enum
 
-Public WorkOrderID        As Integer
-' Public WorkOrderNumber As Double
-Public RequestedBy    As String
-Public RequestedEmail As String
-Public DateRequested  As Date
-Public ProblemArea    As String
-Public WorkCategory   As String
-Public WorkRequested  As String
-Public ContactNumber  As String
-Public CNExtension    As String
-Public WhenCompleted  As Date
-Public AssignedTo     As String
-Public DateScheduled  As Date
-Public CompletedBy    As String
-Public DateCompleted  As Date
-Public JobStatus      As String
-Public DescriptionOfFinalWork As String
-Public Priority       As String
-Public HomeownerEmail As String
-Public PropertyLocation As String
+Public Id        As Integer
+Public Field1    As Integer
+Public Field_Number As Integer
 
 Public UpdatedAt As Date
 Public UpdatedBy As String
-        
-' State Change Fields
-Public NewStatus As String
-Public AssginedTo As String
-Public ScheduledDate As Date
-Public CompletedAt As Date
 
-Private Type TWorkOrder
+Private Type TEntity
 
-    WorkOrderNumber As Double
-
+    FieldNumber As Double
+    Message As String
+    
 End Type
 
-Private this As TWorkOrder
+Private this As TEntity
 
 Public RunTimeMode As String
 Public Message As String
 
 
-Public Property Get WorkOrderNumber() As String
-    WorkOrderNumber = this.WorkOrderNumber
+Public Property Get FieldNumber() As String
+    Field_Number = this.FieldNumber
 End Property
 
 
@@ -85,36 +68,20 @@ End Property
 
 Private Sub ClearFields()
     
-    WorkOrderID = vbNull
-    ' WorkOrderNumber = vbNull
-    RequestedBy = vbNull
-    RequestedEmail = vbNull
-    DateRequested = vbNull
-    ProblemArea = vbNull
-    WorkCategory = vbNull
-    WorkRequested = vbNull
-    ContactNumber = vbNull
-    CNExtension = vbNull
-    WhenCompleted = vbNull
-    AssignedTo = vbNull
-    DateScheduled = vbNull
-    CompletedBy = vbNull
-    DateCompleted = vbNull
-    JobStatus = vbNull
-    DescriptionOfFinalWork = vbNull
-    Priority = vbNull
-    HomeownerEmail = vbNull
-    PropertyLocation = vbNull
+    Field1 = vbNull
+    Field_Number = vbNull
+    
+    Message = vbNull
     RunTimeMode = "DEV"
     
 End Sub
 
-Public Function Validate(Optional ByVal Operation As String = WO_Update) As Boolean
+Public Function Validate(Optional ByVal Operation As String = C_UPDATE) As Boolean
 
     Validate = True
     
     ' In case it is a new user registration, check if user exist first
-    If Operation = WO_INSERT Then
+    If Operation = C_INSERT Then
     
 '        If DoesWOExist(WONumber) Then
 '            this.Message = "Work Order already registered in the system."
@@ -124,9 +91,9 @@ Public Function Validate(Optional ByVal Operation As String = WO_Update) As Bool
         
     End If
     
-    If Len(Trim(this.WorkOrderNumber)) = 0 Then
+    If Len(Trim(Me.FieldNumber)) = 0 Then
     
-        Message = "WO # is a mandatory field."
+        Message = "FieldNumber # is a mandatory field."
         Validate = False
         Exit Function
         
@@ -146,27 +113,6 @@ On Error GoTo ErrorHandler
             
             rs.MoveFirst
             
-            WorkOrderID = Nz(rs("WorkOrderID"))
-            ' WorkOrderNumber = rs("WorkOrderNumber")
-            RequestedBy = Nz(rs("RequestedBy"))
-            RequestedEmail = Nz(rs("RequestedEmail"))
-            DateRequested = Nz(rs("DateRequested"))
-            ProblemArea = Nz(rs("ProblemArea"))
-            WorkCategory = Nz(rs("WorkCategory"))
-            WorkRequested = Nz(rs("WorkRequested"))
-            ContactNumber = Nz(rs("ContactNumber"))
-            CNExtension = Nz(rs("CNExtension"))
-            WhenCompleted = Nz(rs("WhenCompleted"))
-            AssignedTo = Nz(rs("AssignedTo"))
-            DateScheduled = Nz(rs("DateScheduled"))
-            CompletedBy = Nz(rs("CompletedBy"))
-            DateCompleted = Nz(rs("DateCompleted"))
-            JobStatus = Nz(rs("JobStatus"))
-            DescriptionOfFinalWork = Nz(rs("DescriptionOfFinalWork"))
-            Priority = Nz(rs("Priority"))
-            HomeownerEmail = Nz(rs("HomeownerEmail"))
-            PropertyLocation = Nz(rs("PropertyLocation"))
-            
             UpdatedAt = Now()
             UpdatedBy = cSysSettings.LoggedUserName
             
@@ -184,36 +130,91 @@ On Error GoTo ErrorHandler
     Exit Sub
 
 ErrorHandler:
-    Message = "Unable to retrieve WO."
+    Message = "Unable to retrieve " & TABLE_NAME & " record."
     Err.Raise Err.Number, CLASS_NAME & ".PopulateFiels", Err.Description
 
 End Sub
 
 Public Function Add() As Boolean
 
-    this.WorkOrderNumber = Format(Date, "yyyy") & "-" & Format(Date, "mm") & DMax("WorkOrderID", "WorkOrder_TBL") + 1
+On Error GoTo ErrorHandler
 
-    UpdatedAt = Now()
-    UpdatedBy = cSysSettings.LoggedUserName
+    Dim rs As DAO.Recordset
+    
+    ' If IsNullOrEmpty(Me.CustId) Then Exit Function
+    
+    Me.Field_Number = Format(Date, "yyyy") & "-" & Format(Date, "mm") & DMax("WorkOrderID", "WorkOrder_TBL") + 1
+
+    
+    Set rs = CurrentDb.OpenRecordset("HomeOwners")
+    
+    With rs
+            
+        .AddNew
+
+            !Id = Me.Id
+            
+            !UpdatedAt = Now()
+            !UpdatedBy = !UpdatedBy = cSysSettings.oUser.Username
         
-    Add = False
+        .Update
+    
+        .Close
+        
+    End With
+    
+    Add = True
+        
+    Exit Function
+
+ErrorHandler:
+    this.Message = "Unable to Add " & TABLE_NAME & " record."
+    Err.Raise Err.Number, CLASS_NAME & ".Add", Err.Description
     
 End Function
 
 Public Function Update() As Boolean
-    Err.Raise "50001", CLASS_NAME & ".Archive", "Method Not Implemented."
+
+On Error GoTo ErrorHandler
+
+    Dim rs As DAO.Recordset
+    
+    ' If IsNullOrEmpty(Me.CustId) Then Exit Function
+    
+    Set rs = CurrentDb.OpenRecordset("Select * from HomeOwners Where " & PRIMARY_KEY & " = " & Trim(Me.Id))
+    
+    With rs
+            
+        .Edit
+            
+            !UpdatedAt = Now()
+            !UpdatedBy = cSysSettings.oUser.Username
+        
+        .Update
+    
+        .Close
+        
+    End With
+    
+    Set rs = Nothing
+    
+    Update = True
+        
+    Exit Function
+
+ErrorHandler:
+    this.Message = "Unable to Update " & TABLE_NAME & " records."
+    Err.Raise Err.Number, CLASS_NAME & ".Update", Err.Description
+
 End Function
 
-Public Function Search(WhereClause As String) As Recordset
-    Err.Raise "50001", CLASS_NAME & ".Search", "Method Not Implemented."
-End Function
 
 Public Function Archive(WorkOrderID As String)
 
 On Error GoTo ErrorHandler
 
     Dim rs As Recordset
-    Set rs = CurrentDb().OpenRecordset("Update WorkOrderr_TBL Set Archived = True Where WorkOrderId = " & WorkOrderID & "'")
+    Set rs = CurrentDb().OpenRecordset("Update " & TABLE_NAME & " Set Archived = True Where " & PRIMARY_KEY & " = " & Me.Id & "'")
     Archive = True
     
     Exit Function
@@ -229,7 +230,7 @@ On Error GoTo ErrorHandler
 
     Dim rs As Recordset
 
-    Set rs = CurrentDb().OpenRecordset("Select * From [WorkOrder_TBL] Where WONumber = '" & WorkOrderID & "'", dbOpenSnapshot)
+    Set rs = CurrentDb().OpenRecordset("Select * From " & TABLE_NAME & " Where " & PRIMARY_KEY & " = " & Me.Id, dbOpenSnapshot)
     
     With rs
     
@@ -240,8 +241,6 @@ On Error GoTo ErrorHandler
     Exit Sub
 
 ErrorHandler:
-     Err.Raise Err.Number, CLASS_NAME & ".GetUserInfoById", Err.Description
+     Err.Raise Err.Number, CLASS_NAME & ".GetInfoById", Err.Description
     
 End Sub
-
-

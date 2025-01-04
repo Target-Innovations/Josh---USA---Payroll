@@ -1,4 +1,4 @@
-﻿CREATE TABLE [Machine Table] (
+﻿CREATE TABLE [xxx-Machine Table] (
   [ID] VARCHAR (255) CONSTRAINT [ID] PRIMARY KEY UNIQUE NOT NULL,
   [Serial No2] VARCHAR (255),
   [Purchase Date] DATETIME ,

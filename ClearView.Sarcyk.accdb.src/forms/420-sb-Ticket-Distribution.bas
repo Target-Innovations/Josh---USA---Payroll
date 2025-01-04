@@ -2,6 +2,7 @@
 VersionRequired =20
 Begin Form
     DividingLines = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =2
     TabularFamily =0
@@ -11,10 +12,10 @@ Begin Form
     Width =13572
     DatasheetFontHeight =11
     ItemSuffix =210
-    Left =743
-    Top =3960
-    Right =13358
-    Bottom =8543
+    Left =120
+    Top =3225
+    Right =12990
+    Bottom =7808
     RecSrcDt = Begin
         0x452de1201d43e640
     End
@@ -1206,6 +1207,7 @@ Begin Form
                     Top =308
                     Width =3428
                     Height =338
+                    ColumnWidth =1598
                     TabIndex =1
                     LeftMargin =44
                     TopMargin =22

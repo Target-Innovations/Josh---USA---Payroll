@@ -1004,6 +1004,7 @@ Begin Form
                     Top =2895
                     Width =3870
                     Height =293
+                    ColumnWidth =1545
                     FontSize =10
                     TabIndex =9
                     Name ="LocationRent"

@@ -1,0 +1,2 @@
+﻿SELECT TicketDeliveryOrders.Id AS OrderId, Charities.*, Locations.*, TicketDeliveryOrders.SaleDate, TicketDeliveryOrderItems.*, OrderForms.TicketValue, OrderForms.Revenue
+FROM ((TicketDeliveryOrders INNER JOIN Charities ON TicketDeliveryOrders.CharityId = Charities.Id) INNER JOIN Locations ON TicketDeliveryOrders.LocationId = Locations.id) INNER JOIN (TicketDeliveryOrderItems INNER JOIN OrderForms ON TicketDeliveryOrderItems.GameId = OrderForms.Id) ON TicketDeliveryOrders.Id = TicketDeliveryOrderItems.DistributionOrderId;

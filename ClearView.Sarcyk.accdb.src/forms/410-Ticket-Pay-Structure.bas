@@ -16,7 +16,7 @@ Begin Form
     DatasheetFontHeight =11
     ItemSuffix =1024
     Right =20985
-    Bottom =9045
+    Bottom =10770
     DatasheetGridlinesColor =-1
     Tag ="SplitList"
     RecSrcDt = Begin
@@ -1110,7 +1110,7 @@ Begin Form
                             LeftMargin =22
                             BorderColor =-2147483633
                             Name ="Label1015"
-                            Caption ="Vendor"
+                            Caption ="Supplier"
                             GroupTable =32
                             LeftPadding =0
                             TopPadding =0

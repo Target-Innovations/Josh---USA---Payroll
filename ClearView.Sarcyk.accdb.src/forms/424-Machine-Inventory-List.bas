@@ -16,7 +16,7 @@ Begin Form
     Width =14760
     DatasheetFontHeight =11
     ItemSuffix =766
-    Right =17445
+    Right =20985
     Bottom =10770
     DatasheetGridlinesColor =-1
     Tag ="SplitList"
@@ -1057,7 +1057,7 @@ Begin Form
                         Begin
                             Action ="Close"
                             Argument ="2"
-                            Argument ="201-Divisions-List"
+                            Argument ="424-Machine-Inventory-List"
                             Argument ="0"
                         End
                         Begin
@@ -1068,8 +1068,8 @@ Begin Form
                         End
                         Begin
                             Comment ="_AXL:424-Machine-Inventory-List</Argument></Action><Action Name=\"CloseWindow\">"
-                                "<Argument Name=\"ObjectType\">Form</Argument><Argument Name=\"ObjectName\">201-D"
-                                "ivisions-List</Argument></Action></Statements></UserInterfaceMacro>"
+                                "<Argument Name=\"ObjectType\">Form</Argument><Argument Name=\"ObjectName\">424-M"
+                                "achine-Inventory-List</Argument></Action></Statements></UserInterfaceMacro>"
                         End
                     End
                     BackStyle =0
@@ -2274,7 +2274,7 @@ Begin Form
                     Width =3300
                     Height =293
                     TabIndex =10
-                    ColumnInfo ="\"\";\"\";\"\";\"@\";\"10\";\"510\""
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
                     Name ="OwnerId"
                     ControlSource ="OwnerId"
                     RowSourceType ="Table/Query"

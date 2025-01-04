@@ -324,7 +324,7 @@ End Sub
 Sub DeleteAllTables()
 
     Dim tblDef As TableDef
-    Dim db As dao.Database
+    Dim db As DAO.Database
    
     Set db = CurrentDb
    
@@ -341,7 +341,7 @@ Sub RelinkTables(newBackendPath As String)
     
 On Error GoTo ErrorHandler
 
-    Dim db As dao.Database
+    Dim db As DAO.Database
     Dim tblDef As TableDef
    
    
@@ -394,7 +394,7 @@ End Function
 
 Sub DropImportErrorTables()
 
-    Dim tbl_name As dao.TableDef, str As String
+    Dim tbl_name As DAO.TableDef, str As String
 
     If MsgBox("Are you sure you want to drop all import error tables?", vbExclamation + vbYesNo) = vbNo Then
         Exit Sub

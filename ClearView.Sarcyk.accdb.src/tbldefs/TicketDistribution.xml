@@ -30,7 +30,6 @@
         <od:tableProperty name="ReadOnlyWhenDisconnected" type="1" value="0"/>
         <od:tableProperty name="DatasheetGridlinesThemeColorIndex" type="4" value="-1"/>
         <od:tableProperty name="DatasheetForeThemeColorIndex" type="4" value="-1"/>
-        <od:tableProperty name="OrderBy" type="12" value="[TicketDistribution].[Id] DESC"/>
       </xsd:appinfo>
     </xsd:annotation>
     <xsd:complexType>
@@ -51,7 +50,7 @@
         <xsd:element name="Status" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
           <xsd:annotation>
             <xsd:appinfo>
-              <od:fieldProperty name="ColumnWidth" type="3" value="3270"/>
+              <od:fieldProperty name="ColumnWidth" type="3" value="1695"/>
               <od:fieldProperty name="ColumnOrder" type="3" value="0"/>
               <od:fieldProperty name="ColumnHidden" type="1" value="0"/>
               <od:fieldProperty name="Required" type="1" value="0"/>
