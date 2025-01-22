@@ -18,7 +18,7 @@ Begin Form
     Width =14760
     DatasheetFontHeight =11
     ItemSuffix =1457
-    Right =18000
+    Right =20985
     Bottom =10770
     DatasheetGridlinesColor =-1
     Tag ="SplitList"
@@ -1295,14 +1295,14 @@ Begin Form
                     OverlapFlags =215
                     AccessKey =71
                     TextFontCharSet =0
-                    Left =6360
+                    Left =6480
                     Top =1320
-                    Width =1818
+                    Width =1923
                     Height =460
                     FontSize =10
                     TabIndex =3
                     Name ="cmdNewDeliveryOrder"
-                    Caption ="&Generate CSV"
+                    Caption ="&Generate Cheques"
                     Tag ="TR000000006"
                     UnicodeAccessKey =71
                     TopPadding =0
@@ -1336,11 +1336,10 @@ Begin Form
                     BackStyle =0
 
                     CursorOnHover =1
-                    LayoutCachedLeft =6360
+                    LayoutCachedLeft =6480
                     LayoutCachedTop =1320
-                    LayoutCachedWidth =8178
+                    LayoutCachedWidth =8403
                     LayoutCachedHeight =1780
-                    Alignment =1
                     ColumnStart =2
                     ColumnEnd =2
                     ForeThemeColorIndex =1
@@ -1360,9 +1359,9 @@ Begin Form
                     OverlapFlags =215
                     AccessKey =71
                     TextFontCharSet =0
-                    Left =8400
+                    Left =8640
                     Top =1320
-                    Width =1818
+                    Width =1983
                     Height =460
                     FontSize =10
                     TabIndex =4
@@ -1401,11 +1400,10 @@ Begin Form
                     BackStyle =0
 
                     CursorOnHover =1
-                    LayoutCachedLeft =8400
+                    LayoutCachedLeft =8640
                     LayoutCachedTop =1320
-                    LayoutCachedWidth =10218
+                    LayoutCachedWidth =10623
                     LayoutCachedHeight =1780
-                    Alignment =1
                     ColumnStart =2
                     ColumnEnd =2
                     ForeThemeColorIndex =1
@@ -2092,7 +2090,7 @@ Begin Form
                     Width =3300
                     Height =285
                     TabIndex =7
-                    ColumnInfo ="\"\";\"\";\"\";\"@\";\"10\";\"510\""
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
                     Name ="MarketingRep"
                     ControlSource ="MarketingRepId"
                     RowSourceType ="Table/Query"
@@ -2346,6 +2344,7 @@ Begin Form
                     Top =3443
                     Width =3300
                     Height =285
+                    ColumnWidth =1988
                     TabIndex =11
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
                     Name ="GameName"

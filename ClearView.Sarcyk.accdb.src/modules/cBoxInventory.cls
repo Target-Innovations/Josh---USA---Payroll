@@ -443,14 +443,24 @@ ErrorHandler:
     
 End Function
 
+Public Function SerialNumberExists(SerialNumber As String) As Boolean
+
+    SerialNumberExists = Nz(DCount("*", "BoxInventory", "SerialNumber = '" & SerialNumber & "'"), 0)
+     
+End Function
 Public Function GetGameInfo(OrderFormId As Integer) As DAO.Recordset
 
 On Error GoTo ErrorHandler
 
     Dim rs As DAO.Recordset
-
-    Set rs = CurrentDb().OpenRecordset("Select * From [OrderForms] Where ID = " & OrderFormId, dbOpenDynaset)
+    Dim sql As String
     
+    sql = sql & "SELECT OrderForms.Id AS OrderFormID, OrderForms.GameName, GameStyles.* "
+    sql = sql & "  FROM GameStyles INNER JOIN OrderForms ON GameStyles.Id = OrderForms.GameStyleId"
+    sql = sql & " Where OrderForms.Id = " & OrderFormId
+
+    Set rs = CurrentDb().OpenRecordset(sql, dbOpenDynaset)
+
     Set GetGameInfo = rs
 
     With rs
@@ -464,7 +474,7 @@ On Error GoTo ErrorHandler
             TicketCount = Nz(rs("TicketCount"))
             TicketValue = Nz(rs("TicketValue"))
             Revenue = Nz(rs("Revenue"))
-            IdealProfit = Nz(rs("IdealProfit"))
+            IdealProfit = Nz(rs("Profit"))
             PrizesPaid = Nz(rs("Prizes"))
             LocationRent = Nz(rs("LocationRent"))
             LastSale = Nz(rs("LastSale"))
@@ -489,13 +499,6 @@ ErrorHandler:
      Err.Raise Err.Number, CLASS_NAME & ".GetGameInfo", Err.Description
     
 End Function
-
-Public Function SerialNumberExists(SerialNumber As String) As Boolean
-
-    SerialNumberExists = Nz(DCount("*", "BoxInventory", "SerialNumber = '" & SerialNumber & "'"), 0)
-     
-End Function
-
 Function GetTotalOwed(Id As Long) As Double
 
     GetTotalOwed = Nz(DSum("IdealProfit", "TicketDeliveryOrderItems", "DistributionOrderId = " & Id & ""), 0)
