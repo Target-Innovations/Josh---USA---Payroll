@@ -2,7 +2,6 @@
 VersionRequired =20
 Begin Form
     DividingLines = NotDefault
-    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =2
     TabularFamily =0
@@ -12,16 +11,17 @@ Begin Form
     Width =13572
     DatasheetFontHeight =11
     ItemSuffix =210
-    Left =120
-    Top =3225
-    Right =12990
-    Bottom =7808
+    Left =593
+    Top =3165
+    Right =13463
+    Bottom =7748
     RecSrcDt = Begin
         0x452de1201d43e640
     End
     RecordSource ="TicketDistribution"
     BeforeUpdate ="[Event Procedure]"
     DatasheetFontName ="Aptos"
+    OnLoad ="[Event Procedure]"
     AllowFormView =0
     FilterOnLoad =0
     ShowPageMargins =0
@@ -102,7 +102,7 @@ Begin Form
             Begin
                 Begin TextBox
                     OverlapFlags =93
-                    TextAlign =1
+                    TextAlign =2
                     IMESentenceMode =3
                     Left =3390
                     Top =653
@@ -235,7 +235,7 @@ Begin Form
                     Width =3428
                     Height =338
                     TabIndex =6
-                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
+                    ColumnInfo ="\"\";\"\";\"\";\"@\";\"10\";\"510\""
                     Name ="CharityId"
                     ControlSource ="CharityId"
                     RowSourceType ="Table/Query"
@@ -443,7 +443,7 @@ Begin Form
                     Height =338
                     ColumnWidth =1733
                     TabIndex =12
-                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
+                    ColumnInfo ="\"\";\"\";\"\";\"@\";\"10\";\"510\""
                     Name ="MarketingRepId"
                     ControlSource ="MarketingRepId"
                     RowSourceType ="Table/Query"
@@ -707,7 +707,7 @@ Begin Form
                     Width =3428
                     Height =338
                     TabIndex =20
-                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
+                    ColumnInfo ="\"\";\"\";\"\";\"@\";\"10\";\"510\""
                     Name ="GameName"
                     ControlSource ="GameName"
                     RowSourceType ="Table/Query"
@@ -1454,7 +1454,7 @@ Begin Form
                 End
                 Begin TextBox
                     OverlapFlags =85
-                    TextAlign =1
+                    TextAlign =2
                     IMESentenceMode =3
                     Left =9900
                     Top =1688
@@ -2188,7 +2188,7 @@ Begin Form
                 Begin ComboBox
                     RowSourceTypeInt =1
                     OverlapFlags =87
-                    TextAlign =1
+                    TextAlign =2
                     IMESentenceMode =3
                     Left =3390
                     Top =308
@@ -2261,3 +2261,80 @@ Attribute VB_Creatable = True
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
+
+Dim oDistribution As New cDistribution
+
+Private Sub Form_Load()
+
+    On Error Resume Next
+    
+    cLogger.LogIt "Entering [" & Me.Name & "]", EventType.Info
+    
+End Sub
+
+Private Sub Form_BeforeUpdate(Cancel As Integer)
+
+On Error GoTo ErrorHandler
+
+    Cancel = False
+    
+    UpdateModel
+    
+    DbOperation = IIf(Me.NewRecord, "INSERT", "UPDATE")
+    
+    If Not oDistribution.Validate(DbOperation) Then
+    
+        MsgBox oDistribution.Message, vbExclamation
+        DoCmd.CancelEvent
+        
+    Else
+    
+        Me.Status = oDistribution.SetCurrentDistributionStatus
+        Me.UpdatedAt = Now()
+        Me.UpdatedBy = cSysSettings.oUser.Username
+         
+    End If
+    
+    Exit Sub
+    
+ErrorHandler:
+    MsgBox Err.Number & " - " & Err.Description
+        
+End Sub
+
+Sub UpdateModel()
+
+    oDistribution.Id = Nz(Id)
+    oDistribution.Status = Nz(Status)
+    oDistribution.DeliveryNumber = Nz(DeliveryNumber)
+    oDistribution.DistributionDate = Nz(DistributionDate)
+    oDistribution.CharityId = Nz(CharityId)
+    oDistribution.LocationId = Nz(LocationId)
+    oDistribution.SalesRepId = Nz(SalesRepId)
+    oDistribution.MarketingRepId = Nz(MarketingRepId)
+    oDistribution.RepCommission = Nz(RepCommission)
+    oDistribution.SerialNumber = Nz(SerialNumber)
+    oDistribution.SupplierId = Nz(SupplierId)
+    oDistribution.GameName = Nz(GameName)
+    oDistribution.TicketCount = Nz(TicketCount)
+    oDistribution.TicketValue = Nz(TicketValue)
+    oDistribution.TotalRevenue = Nz(TotalRevenue)
+    oDistribution.PrizesPaid = Nz(PrizesPaid)
+    oDistribution.Profit = Nz(Profit)
+    oDistribution.Rent = Nz(Rent)
+    
+    ' TODO: Why is it generating an error
+    ' oDistribution.BillingStyle = BillingStyle
+    
+    oDistribution.TotalBillable = Nz(TotalBillable)
+    oDistribution.TicketSupplyCost = Nz(TicketSupplyCost)
+    oDistribution.SMACServiceFee = Nz(SMACServiceFee)
+    oDistribution.SMACAdminFee = Nz(SMACAdminFee)
+    oDistribution.LocationCheckNumber = Nz(LocationCheckNumber)
+    oDistribution.ReimbursementCheckNumber = Nz(ReimbursementCheckNumber)
+    oDistribution.EnvelopeNumber = Nz(EnvelopeNumber)
+    oDistribution.ReimbursementSent = Nz(ReimbursementSent)
+    oDistribution.UpdatedAt = Nz(UpdatedAt)
+    oDistribution.UpdatedBy = Nz(UpdatedBy)
+    
+End Sub

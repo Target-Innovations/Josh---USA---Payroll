@@ -12,7 +12,7 @@ Option Explicit
 Private Const CLASS_NAME = "cAdpEngine"
 
 Private Const WO_INSERT As String = "INSERT"
-Private Const WO_Update As String = "UPDATE"
+Private Const WO_UPDATE As String = "UPDATE"
 
 Public Id As Integer
 Public FilePath As String

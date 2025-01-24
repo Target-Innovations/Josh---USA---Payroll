@@ -12,7 +12,7 @@ Option Explicit
 Private Const CLASS_NAME = "cPayroll"
 
 Private Const WO_INSERT As String = "INSERT"
-Private Const WO_Update As String = "UPDATE"
+Private Const WO_UPDATE As String = "UPDATE"
 
 Public Id As Integer
 

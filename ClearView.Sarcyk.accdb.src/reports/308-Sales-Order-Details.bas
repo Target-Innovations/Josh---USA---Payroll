@@ -3,6 +3,7 @@ VersionRequired =20
 Begin Report
     LayoutForPrint = NotDefault
     DividingLines = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     TabularFamily =0
     DateGrouping =1
@@ -13,11 +14,12 @@ Begin Report
     Width =11513
     DatasheetFontHeight =11
     ItemSuffix =118
+    Filter ="InvoiceNumber = '01-205910'"
     RecSrcDt = Begin
         0x33d1e69bb44be640
     End
     RecordSource ="308-Inventory-Extented"
-    Caption ="308-Invoice-Details"
+    Caption ="Sales Order Details"
     DatasheetFontName ="Aptos"
     FilterOnLoad =0
     FitToPage =1
@@ -1518,7 +1520,7 @@ Begin Report
         Begin BreakHeader
             KeepTogether = NotDefault
             CanGrow = NotDefault
-            Height =2494
+            Height =1584
             BreakLevel =1
             Name ="GroupHeader1"
             AlternateBackThemeColorIndex =1
@@ -1529,23 +1531,19 @@ Begin Report
                     OldBorderStyle =0
                     TextAlign =1
                     IMESentenceMode =3
-                    Left =68
-                    Top =428
-                    Width =3345
+                    Left =30
+                    Top =488
+                    Width =3210
                     Height =278
                     ColumnWidth =3023
                     Name ="ControlKey"
                     ControlSource ="ControlKey"
                     GroupTable =11
-                    LeftPadding =0
-                    TopPadding =0
-                    RightPadding =0
-                    BottomPadding =0
 
-                    LayoutCachedLeft =68
-                    LayoutCachedTop =428
-                    LayoutCachedWidth =3413
-                    LayoutCachedHeight =706
+                    LayoutCachedLeft =30
+                    LayoutCachedTop =488
+                    LayoutCachedWidth =3240
+                    LayoutCachedHeight =766
                     RowStart =1
                     RowEnd =1
                     LayoutGroup =3
@@ -1555,24 +1553,20 @@ Begin Report
                     OldBorderStyle =0
                     TextAlign =2
                     IMESentenceMode =3
-                    Left =6270
-                    Top =428
-                    Width =1005
+                    Left =6218
+                    Top =488
+                    Width =908
                     Height =278
                     TabIndex =2
                     Name ="txtOrder"
                     ControlSource ="=Count([ID])"
                     ControlTipText ="ID Total"
                     GroupTable =11
-                    LeftPadding =0
-                    TopPadding =0
-                    RightPadding =0
-                    BottomPadding =0
 
-                    LayoutCachedLeft =6270
-                    LayoutCachedTop =428
-                    LayoutCachedWidth =7275
-                    LayoutCachedHeight =706
+                    LayoutCachedLeft =6218
+                    LayoutCachedTop =488
+                    LayoutCachedWidth =7126
+                    LayoutCachedHeight =766
                     RowStart =1
                     RowEnd =1
                     ColumnStart =2
@@ -1583,22 +1577,18 @@ Begin Report
                 Begin Label
                     OldBorderStyle =1
                     TextAlign =2
-                    Left =6270
+                    Left =6218
                     Top =143
-                    Width =1005
+                    Width =908
                     Height =285
                     FontWeight =700
                     Name ="Label68"
                     Caption ="Order"
                     Tag ="DetachedLabel"
                     GroupTable =11
-                    LeftPadding =0
-                    TopPadding =0
-                    RightPadding =0
-                    BottomPadding =0
-                    LayoutCachedLeft =6270
+                    LayoutCachedLeft =6218
                     LayoutCachedTop =143
-                    LayoutCachedWidth =7275
+                    LayoutCachedWidth =7126
                     LayoutCachedHeight =428
                     ColumnStart =2
                     ColumnEnd =2
@@ -1611,22 +1601,18 @@ Begin Report
                 Begin Label
                     OldBorderStyle =1
                     TextAlign =1
-                    Left =68
+                    Left =30
                     Top =143
-                    Width =3345
+                    Width =3210
                     Height =285
                     FontWeight =700
                     Name ="Label64"
                     Caption ="Item #:"
                     Tag ="DetachedLabel"
                     GroupTable =11
-                    LeftPadding =0
-                    TopPadding =0
-                    RightPadding =0
-                    BottomPadding =0
-                    LayoutCachedLeft =68
+                    LayoutCachedLeft =30
                     LayoutCachedTop =143
-                    LayoutCachedWidth =3413
+                    LayoutCachedWidth =3240
                     LayoutCachedHeight =428
                     LayoutGroup =3
                     BorderThemeColorIndex =1
@@ -1637,22 +1623,18 @@ Begin Report
                 Begin Label
                     OldBorderStyle =1
                     TextAlign =2
-                    Left =7283
+                    Left =7193
                     Top =143
-                    Width =998
+                    Width =946
                     Height =285
                     FontWeight =700
                     Name ="Label92"
                     Caption ="Ship"
                     Tag ="DetachedLabel"
                     GroupTable =11
-                    LeftPadding =0
-                    TopPadding =0
-                    RightPadding =0
-                    BottomPadding =0
-                    LayoutCachedLeft =7283
+                    LayoutCachedLeft =7193
                     LayoutCachedTop =143
-                    LayoutCachedWidth =8281
+                    LayoutCachedWidth =8139
                     LayoutCachedHeight =428
                     ColumnStart =3
                     ColumnEnd =3
@@ -1665,7 +1647,7 @@ Begin Report
                 Begin Label
                     OldBorderStyle =1
                     TextAlign =2
-                    Left =8288
+                    Left =8205
                     Top =143
                     Width =1433
                     Height =285
@@ -1674,13 +1656,9 @@ Begin Report
                     Caption ="Unit Price"
                     Tag ="DetachedLabel"
                     GroupTable =11
-                    LeftPadding =0
-                    TopPadding =0
-                    RightPadding =0
-                    BottomPadding =0
-                    LayoutCachedLeft =8288
+                    LayoutCachedLeft =8205
                     LayoutCachedTop =143
-                    LayoutCachedWidth =9721
+                    LayoutCachedWidth =9638
                     LayoutCachedHeight =428
                     ColumnStart =4
                     ColumnEnd =4
@@ -1694,24 +1672,20 @@ Begin Report
                     OldBorderStyle =0
                     TextAlign =2
                     IMESentenceMode =3
-                    Left =7283
-                    Top =428
-                    Width =998
+                    Left =7193
+                    Top =488
+                    Width =946
                     Height =278
                     TabIndex =3
                     Name ="txtShip"
                     ControlSource ="=Count([ID])"
                     ControlTipText ="ID Total"
                     GroupTable =11
-                    LeftPadding =0
-                    TopPadding =0
-                    RightPadding =0
-                    BottomPadding =0
 
-                    LayoutCachedLeft =7283
-                    LayoutCachedTop =428
-                    LayoutCachedWidth =8281
-                    LayoutCachedHeight =706
+                    LayoutCachedLeft =7193
+                    LayoutCachedTop =488
+                    LayoutCachedWidth =8139
+                    LayoutCachedHeight =766
                     RowStart =1
                     RowEnd =1
                     ColumnStart =3
@@ -1722,7 +1696,7 @@ Begin Report
                 Begin Label
                     OldBorderStyle =1
                     TextAlign =2
-                    Left =9728
+                    Left =9705
                     Top =143
                     Width =1635
                     Height =285
@@ -1731,13 +1705,9 @@ Begin Report
                     Caption ="Extended Price"
                     Tag ="DetachedLabel"
                     GroupTable =11
-                    LeftPadding =0
-                    TopPadding =0
-                    RightPadding =0
-                    BottomPadding =0
-                    LayoutCachedLeft =9728
+                    LayoutCachedLeft =9705
                     LayoutCachedTop =143
-                    LayoutCachedWidth =11363
+                    LayoutCachedWidth =11340
                     LayoutCachedHeight =428
                     ColumnStart =5
                     ColumnEnd =5
@@ -1751,8 +1721,8 @@ Begin Report
                     OldBorderStyle =0
                     TextAlign =2
                     IMESentenceMode =3
-                    Left =8288
-                    Top =428
+                    Left =8205
+                    Top =488
                     Width =1433
                     Height =278
                     TabIndex =4
@@ -1761,15 +1731,11 @@ Begin Report
                     Format ="$#,##0.00;-$#,##0.00"
                     ControlTipText ="ID Total"
                     GroupTable =11
-                    LeftPadding =0
-                    TopPadding =0
-                    RightPadding =0
-                    BottomPadding =0
 
-                    LayoutCachedLeft =8288
-                    LayoutCachedTop =428
-                    LayoutCachedWidth =9721
-                    LayoutCachedHeight =706
+                    LayoutCachedLeft =8205
+                    LayoutCachedTop =488
+                    LayoutCachedWidth =9638
+                    LayoutCachedHeight =766
                     RowStart =1
                     RowEnd =1
                     ColumnStart =4
@@ -1782,8 +1748,8 @@ Begin Report
                     OldBorderStyle =0
                     TextAlign =2
                     IMESentenceMode =3
-                    Left =9728
-                    Top =428
+                    Left =9705
+                    Top =488
                     Width =1635
                     Height =278
                     TabIndex =5
@@ -1792,15 +1758,11 @@ Begin Report
                     Format ="$#,##0.00;-$#,##0.00"
                     ControlTipText ="ID Total"
                     GroupTable =11
-                    LeftPadding =0
-                    TopPadding =0
-                    RightPadding =0
-                    BottomPadding =0
 
-                    LayoutCachedLeft =9728
-                    LayoutCachedTop =428
-                    LayoutCachedWidth =11363
-                    LayoutCachedHeight =706
+                    LayoutCachedLeft =9705
+                    LayoutCachedTop =488
+                    LayoutCachedWidth =11340
+                    LayoutCachedHeight =766
                     RowStart =1
                     RowEnd =1
                     ColumnStart =5
@@ -1834,22 +1796,24 @@ Begin Report
                     Left =2058
                     Top =936
                     Width =9246
-                    Height =1413
+                    Height =506
                     TabIndex =6
+                    ForeColor =0
                     Name ="SerialNumberList"
                     ControlSource ="SerialNumberList"
 
                     LayoutCachedLeft =2058
                     LayoutCachedTop =936
                     LayoutCachedWidth =11304
-                    LayoutCachedHeight =2349
+                    LayoutCachedHeight =1442
+                    ForeTint =100.0
                 End
                 Begin TextBox
                     OldBorderStyle =0
                     TextAlign =1
                     IMESentenceMode =3
-                    Left =3420
-                    Top =428
+                    Left =3308
+                    Top =488
                     Width =2843
                     Height =278
                     ColumnWidth =2693
@@ -1858,15 +1822,11 @@ Begin Report
                     ControlSource ="StyleName"
                     Format ="@"
                     GroupTable =11
-                    LeftPadding =0
-                    TopPadding =0
-                    RightPadding =0
-                    BottomPadding =0
 
-                    LayoutCachedLeft =3420
-                    LayoutCachedTop =428
-                    LayoutCachedWidth =6263
-                    LayoutCachedHeight =706
+                    LayoutCachedLeft =3308
+                    LayoutCachedTop =488
+                    LayoutCachedWidth =6151
+                    LayoutCachedHeight =766
                     RowStart =1
                     RowEnd =1
                     ColumnStart =1
@@ -1877,7 +1837,7 @@ Begin Report
                 Begin Label
                     OldBorderStyle =1
                     TextAlign =1
-                    Left =3420
+                    Left =3308
                     Top =143
                     Width =2843
                     Height =285
@@ -1885,13 +1845,9 @@ Begin Report
                     Name ="Label108"
                     Caption ="Description"
                     GroupTable =11
-                    LeftPadding =0
-                    TopPadding =0
-                    RightPadding =0
-                    BottomPadding =0
-                    LayoutCachedLeft =3420
+                    LayoutCachedLeft =3308
                     LayoutCachedTop =143
-                    LayoutCachedWidth =6263
+                    LayoutCachedWidth =6151
                     LayoutCachedHeight =428
                     ColumnStart =1
                     ColumnEnd =1

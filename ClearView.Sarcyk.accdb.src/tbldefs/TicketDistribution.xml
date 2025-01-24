@@ -10,11 +10,16 @@
   <xsd:element name="TicketDistribution">
     <xsd:annotation>
       <xsd:appinfo>
+        <od:index index-name="CharityId" index-key="CharityId " primary="no" unique="no" clustered="no" order="asc"/>
         <od:index index-name="IdPk" index-key="Id " primary="no" unique="no" clustered="no" order="asc"/>
+        <od:index index-name="LocationId" index-key="LocationId " primary="no" unique="no" clustered="no" order="asc"/>
+        <od:index index-name="MarketingRepId" index-key="MarketingRepId " primary="no" unique="no" clustered="no" order="asc"/>
         <od:index index-name="PrimaryKey" index-key="Id " primary="yes" unique="yes" clustered="no" order="asc"/>
         <od:index index-name="Prizes Paid" index-key="PrizesPaid " primary="no" unique="no" clustered="no" order="asc"/>
+        <od:index index-name="SalesRepId" index-key="SalesRepId " primary="no" unique="no" clustered="no" order="asc"/>
+        <od:index index-name="SupplierId" index-key="SupplierId " primary="no" unique="no" clustered="no" order="asc"/>
         <od:tableProperty name="Orientation" type="2" value="0"/>
-        <od:tableProperty name="OrderByOn" type="1" value="1"/>
+        <od:tableProperty name="OrderByOn" type="1" value="0"/>
         <od:tableProperty name="DefaultView" type="2" value="2"/>
         <od:tableProperty name="DisplayViewsOnSharePointSite" type="2" value="1"/>
         <od:tableProperty name="TotalsRow" type="1" value="0"/>
@@ -38,7 +43,7 @@
           <xsd:annotation>
             <xsd:appinfo>
               <od:fieldProperty name="ColumnWidth" type="3" value="-1"/>
-              <od:fieldProperty name="ColumnOrder" type="3" value="1"/>
+              <od:fieldProperty name="ColumnOrder" type="3" value="0"/>
               <od:fieldProperty name="ColumnHidden" type="1" value="0"/>
               <od:fieldProperty name="TextAlign" type="2" value="0"/>
               <od:fieldProperty name="AggregateType" type="4" value="-1"/>

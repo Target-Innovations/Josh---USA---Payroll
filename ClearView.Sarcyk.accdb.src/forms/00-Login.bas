@@ -19,7 +19,7 @@ Begin Form
     Width =13620
     DatasheetFontHeight =11
     ItemSuffix =34
-    Right =11385
+    Right =11295
     Bottom =10515
     OnUnload ="[Event Procedure]"
     Tag ="LoggedUser: Josh"

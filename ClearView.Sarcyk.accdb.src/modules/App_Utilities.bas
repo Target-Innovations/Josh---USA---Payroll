@@ -144,7 +144,7 @@ Public Sub MyMkDir(sPath As String)
 End Sub
 
 Public Function IsNullOrEmpty(Value As Variant) As Boolean
-    IsNullOrEmpty = (Len(Trim(Value)) = 0) Or IsNull(Value) Or (Value = "12:00:00 AM") Or (Value = "0")
+    IsNullOrEmpty = (Len(Trim(Value)) = 0) Or IsNull(Value) Or (Value = "12:00:00 AM") Or (Value = "0") Or (Value = "12/31/1899")
 End Function
 
 Function IsValidEmail(sEmailAddress As String) As Boolean
@@ -345,11 +345,11 @@ End Sub
     
 End Sub
 
-Public Function GetYTDValue(EmployeeID As Integer, CheckDate As Date, fieldname As String) As Double
+Public Function GetYTDValue(EmployeeID As Integer, CheckDate As Date, FieldName As String) As Double
 
     Dim YTDValue As Double
     
-    YTDValue = DSum(fieldname, "303-ADP-Pay-Stubs", "EmployeeId = " & EmployeeID & " And CheckDate <= # " & CheckDate & "# And YTD = " & Year(CheckDate))
+    YTDValue = DSum(FieldName, "303-ADP-Pay-Stubs", "EmployeeId = " & EmployeeID & " And CheckDate <= # " & CheckDate & "# And YTD = " & Year(CheckDate))
     
     
     GetYTDValue = YTDValue
@@ -431,92 +431,92 @@ End Function
 
 
 
-Sub FieldWritter(TableName As String, PrintType As String)
-
-' Procedure Calls Types
+'Sub FieldWritter(TableName As String, PrintType As String)
 '
-' FieldWritter "Branch", "FieldNames"
-' FieldWritter "Branch", "FieldDeclaretion"
-' FieldWritter "Branch", "FieldAssignment"
-' FieldWritter "Branch", "ClearFields"
-' FieldWritter "Branch", "RecordsetAssignment"
+'' Procedure Calls Types
+''
+'' FieldWritter "Branch", "FieldNames"
+'' FieldWritter "Branch", "FieldDeclaretion"
+'' FieldWritter "Branch", "FieldAssignment"
+'' FieldWritter "Branch", "ClearFields"
+'' FieldWritter "Branch", "RecordsetAssignment"
+'
+'
+'On Error GoTo ErrorHandler
+'
+'    Dim rs As DAO.Recordset
+'
+'    Set rs = CurrentDb().OpenRecordset("Select * From [" & TableName & "] Where Id = 1", dbOpenDynaset)
+'
+'    Dim fld As Variant
+'
+'    Debug.Print vbNullString
+'
+'    For Each fld In rs.Fields
+'
+'        Select Case PrintType
+'
+'            Case "FieldNames": Debug.Print fld.Name
+'
+'            Case "FieldDeclaretion": Debug.Print "Public " & fld.Name & " As " & GetAccessFieldTypeEnum(fld.Type)
+'
+'            Case "FieldAssignment": Debug.Print "!" & fld.Name, " = ", "rs(""" & fld.Name & """)"
+'
+'            Case "RecordsetAssignment": Debug.Print "rs(""" & fld.Name & """)", " = ", fld.Name
+'
+'            Case "ClearFields": Debug.Print fld.Name, " = ", "vbNullString"
+'
+'        End Select
+'
+'    Next
+'
+'    Exit Sub
+'
+'ErrorHandler:
+'     Err.Raise Err.Number, CLASS_NAME & ".FieldWritter", Err.Description
+'
+'End Sub
 
-
-On Error GoTo ErrorHandler
-
-    Dim rs As DAO.Recordset
-
-    Set rs = CurrentDb().OpenRecordset("Select * From [" & TableName & "] Where Id = 1", dbOpenDynaset)
-    
-    Dim fld As Variant
-    
-    Debug.Print vbNullString
-    
-    For Each fld In rs.Fields
-    
-        Select Case PrintType
-        
-            Case "FieldNames": Debug.Print fld.Name
-            
-            Case "FieldDeclaretion": Debug.Print "Public " & fld.Name & " As " & GetAccessFieldTypeEnum(fld.Type)
-    
-            Case "FieldAssignment": Debug.Print "!" & fld.Name, " = ", "rs(""" & fld.Name & """)"
-            
-            Case "RecordsetAssignment": Debug.Print "rs(""" & fld.Name & """)", " = ", fld.Name
-            
-            Case "ClearFields": Debug.Print fld.Name, " = ", "vbNullString"
-            
-        End Select
-    
-    Next
-
-    Exit Sub
-
-ErrorHandler:
-     Err.Raise Err.Number, CLASS_NAME & ".FieldWritter", Err.Description
-
-End Sub
-
-Function GetAccessFieldTypeEnum(fieldTypeNumber As Integer) As String
-
-    Select Case fieldTypeNumber
-        Case 1
-            GetAccessFieldTypeEnum = "String"
-        Case 2
-            GetAccessFieldTypeEnum = "dbMemo"
-        Case 3
-            GetAccessFieldTypeEnum = "dbByte"
-        Case 4
-            GetAccessFieldTypeEnum = "Integer"
-        Case 5
-            GetAccessFieldTypeEnum = "Long"
-        Case 6
-            GetAccessFieldTypeEnum = "dbCurrency"
-        Case 7
-            GetAccessFieldTypeEnum = "dbSingle"
-        Case 8
-            GetAccessFieldTypeEnum = "Double"
-        Case 9
-            GetAccessFieldTypeEnum = "dbFloat" ' Often used interchangeably with dbDouble
-        Case 10
-            GetAccessFieldTypeEnum = "Double"
-        Case 11
-            GetAccessFieldTypeEnum = "Date"
-        Case 12
-            GetAccessFieldTypeEnum = "String"
-        Case 13
-            GetAccessFieldTypeEnum = "dbLongBinary"
-        Case 14
-            GetAccessFieldTypeEnum = "dbReplicationID"
-        Case 15
-            GetAccessFieldTypeEnum = "dbGUID"
-        Case 16
-            GetAccessFieldTypeEnum = "dbBigInt"
-        Case Else
-            GetAccessFieldTypeEnum = "Unknown Field Type"
-    End Select
-    
-End Function
+'Function GetAccessFieldTypeEnum(fieldTypeNumber As Integer) As String
+'
+'    Select Case fieldTypeNumber
+'        Case 1
+'            GetAccessFieldTypeEnum = "String"
+'        Case 2
+'            GetAccessFieldTypeEnum = "dbMemo"
+'        Case 3
+'            GetAccessFieldTypeEnum = "dbByte"
+'        Case 4
+'            GetAccessFieldTypeEnum = "Integer"
+'        Case 5
+'            GetAccessFieldTypeEnum = "Long"
+'        Case 6
+'            GetAccessFieldTypeEnum = "dbCurrency"
+'        Case 7
+'            GetAccessFieldTypeEnum = "dbSingle"
+'        Case 8
+'            GetAccessFieldTypeEnum = "Double"
+'        Case 9
+'            GetAccessFieldTypeEnum = "dbFloat" ' Often used interchangeably with dbDouble
+'        Case 10
+'            GetAccessFieldTypeEnum = "Double"
+'        Case 11
+'            GetAccessFieldTypeEnum = "Date"
+'        Case 12
+'            GetAccessFieldTypeEnum = "String"
+'        Case 13
+'            GetAccessFieldTypeEnum = "dbLongBinary"
+'        Case 14
+'            GetAccessFieldTypeEnum = "dbReplicationID"
+'        Case 15
+'            GetAccessFieldTypeEnum = "dbGUID"
+'        Case 16
+'            GetAccessFieldTypeEnum = "dbBigInt"
+'        Case Else
+'            GetAccessFieldTypeEnum = "Unknown Field Type"
+'    End Select
+'
+'End Function
 
 '
 Public Sub ErrorMsg(ByVal pstrProcedure As String, _

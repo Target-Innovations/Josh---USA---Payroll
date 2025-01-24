@@ -10,9 +10,11 @@
   <xsd:element name="TicketDeliveryOrders">
     <xsd:annotation>
       <xsd:appinfo>
+        <od:index index-name="CharityId" index-key="CharityId " primary="no" unique="no" clustered="no" order="asc"/>
+        <od:index index-name="LocationId" index-key="LocationId " primary="no" unique="no" clustered="no" order="asc"/>
         <od:index index-name="PrimaryKey" index-key="Id " primary="yes" unique="yes" clustered="no" order="asc"/>
         <od:tableProperty name="Orientation" type="2" value="0"/>
-        <od:tableProperty name="OrderByOn" type="1" value="1"/>
+        <od:tableProperty name="OrderByOn" type="1" value="0"/>
         <od:tableProperty name="DefaultView" type="2" value="2"/>
         <od:tableProperty name="DisplayViewsOnSharePointSite" type="2" value="1"/>
         <od:tableProperty name="TotalsRow" type="1" value="0"/>
@@ -28,7 +30,6 @@
         <od:tableProperty name="ReadOnlyWhenDisconnected" type="1" value="0"/>
         <od:tableProperty name="DatasheetGridlinesThemeColorIndex" type="4" value="3"/>
         <od:tableProperty name="DatasheetForeThemeColorIndex" type="4" value="0"/>
-        <od:tableProperty name="OrderBy" type="12" value="[TicketDeliveryOrders].[Id]"/>
       </xsd:appinfo>
     </xsd:annotation>
     <xsd:complexType>
@@ -37,7 +38,7 @@
           <xsd:annotation>
             <xsd:appinfo>
               <od:fieldProperty name="ColumnWidth" type="3" value="-1"/>
-              <od:fieldProperty name="ColumnOrder" type="3" value="1"/>
+              <od:fieldProperty name="ColumnOrder" type="3" value="0"/>
               <od:fieldProperty name="ColumnHidden" type="1" value="0"/>
               <od:fieldProperty name="TextAlign" type="2" value="0"/>
               <od:fieldProperty name="AggregateType" type="4" value="-1"/>
@@ -51,7 +52,7 @@
           <xsd:annotation>
             <xsd:appinfo>
               <od:fieldProperty name="ColumnWidth" type="3" value="-1"/>
-              <od:fieldProperty name="ColumnOrder" type="3" value="2"/>
+              <od:fieldProperty name="ColumnOrder" type="3" value="0"/>
               <od:fieldProperty name="ColumnHidden" type="1" value="0"/>
               <od:fieldProperty name="Required" type="1" value="0"/>
               <od:fieldProperty name="AllowZeroLength" type="1" value="1"/>
@@ -86,7 +87,7 @@
           <xsd:annotation>
             <xsd:appinfo>
               <od:fieldProperty name="ColumnWidth" type="3" value="-1"/>
-              <od:fieldProperty name="ColumnOrder" type="3" value="3"/>
+              <od:fieldProperty name="ColumnOrder" type="3" value="0"/>
               <od:fieldProperty name="ColumnHidden" type="1" value="0"/>
               <od:fieldProperty name="DecimalPlaces" type="2" value="255"/>
               <od:fieldProperty name="Required" type="1" value="0"/>
@@ -114,7 +115,7 @@
           <xsd:annotation>
             <xsd:appinfo>
               <od:fieldProperty name="ColumnWidth" type="3" value="-1"/>
-              <od:fieldProperty name="ColumnOrder" type="3" value="4"/>
+              <od:fieldProperty name="ColumnOrder" type="3" value="0"/>
               <od:fieldProperty name="ColumnHidden" type="1" value="0"/>
               <od:fieldProperty name="Description" type="10" value="Location attached to Choose Charity"/>
               <od:fieldProperty name="DecimalPlaces" type="2" value="255"/>
@@ -143,7 +144,7 @@
           <xsd:annotation>
             <xsd:appinfo>
               <od:fieldProperty name="ColumnWidth" type="3" value="-1"/>
-              <od:fieldProperty name="ColumnOrder" type="3" value="5"/>
+              <od:fieldProperty name="ColumnOrder" type="3" value="0"/>
               <od:fieldProperty name="ColumnHidden" type="1" value="0"/>
               <od:fieldProperty name="Required" type="1" value="0"/>
               <od:fieldProperty name="IMEMode" type="2" value="0"/>
@@ -161,7 +162,7 @@
           <xsd:annotation>
             <xsd:appinfo>
               <od:fieldProperty name="ColumnWidth" type="3" value="-1"/>
-              <od:fieldProperty name="ColumnOrder" type="3" value="6"/>
+              <od:fieldProperty name="ColumnOrder" type="3" value="0"/>
               <od:fieldProperty name="ColumnHidden" type="1" value="0"/>
               <od:fieldProperty name="Required" type="1" value="0"/>
               <od:fieldProperty name="AllowZeroLength" type="1" value="1"/>
@@ -185,7 +186,7 @@
           <xsd:annotation>
             <xsd:appinfo>
               <od:fieldProperty name="ColumnWidth" type="3" value="-1"/>
-              <od:fieldProperty name="ColumnOrder" type="3" value="7"/>
+              <od:fieldProperty name="ColumnOrder" type="3" value="0"/>
               <od:fieldProperty name="ColumnHidden" type="1" value="0"/>
               <od:fieldProperty name="DecimalPlaces" type="2" value="255"/>
               <od:fieldProperty name="Required" type="1" value="0"/>
@@ -213,7 +214,7 @@
           <xsd:annotation>
             <xsd:appinfo>
               <od:fieldProperty name="ColumnWidth" type="3" value="-1"/>
-              <od:fieldProperty name="ColumnOrder" type="3" value="8"/>
+              <od:fieldProperty name="ColumnOrder" type="3" value="0"/>
               <od:fieldProperty name="ColumnHidden" type="1" value="0"/>
               <od:fieldProperty name="Format" type="10" value="Short Time"/>
               <od:fieldProperty name="Required" type="1" value="0"/>
@@ -227,11 +228,59 @@
             </xsd:appinfo>
           </xsd:annotation>
         </xsd:element>
+        <xsd:element name="ReceiverName" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+          <xsd:annotation>
+            <xsd:appinfo>
+              <od:fieldProperty name="ColumnWidth" type="3" value="-1"/>
+              <od:fieldProperty name="ColumnOrder" type="3" value="0"/>
+              <od:fieldProperty name="ColumnHidden" type="1" value="0"/>
+              <od:fieldProperty name="Required" type="1" value="0"/>
+              <od:fieldProperty name="AllowZeroLength" type="1" value="1"/>
+              <od:fieldProperty name="DisplayControl" type="3" value="109"/>
+              <od:fieldProperty name="IMEMode" type="2" value="0"/>
+              <od:fieldProperty name="IMESentenceMode" type="2" value="3"/>
+              <od:fieldProperty name="UnicodeCompression" type="1" value="1"/>
+              <od:fieldProperty name="TextAlign" type="2" value="0"/>
+              <od:fieldProperty name="AggregateType" type="4" value="-1"/>
+              <od:fieldProperty name="ResultType" type="2" value="0"/>
+              <od:fieldProperty name="CurrencyLCID" type="4" value="0"/>
+            </xsd:appinfo>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:maxLength value="255"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="DeliveryPersonsName" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+          <xsd:annotation>
+            <xsd:appinfo>
+              <od:fieldProperty name="ColumnWidth" type="3" value="-1"/>
+              <od:fieldProperty name="ColumnOrder" type="3" value="0"/>
+              <od:fieldProperty name="ColumnHidden" type="1" value="0"/>
+              <od:fieldProperty name="Required" type="1" value="0"/>
+              <od:fieldProperty name="AllowZeroLength" type="1" value="1"/>
+              <od:fieldProperty name="DisplayControl" type="3" value="109"/>
+              <od:fieldProperty name="IMEMode" type="2" value="0"/>
+              <od:fieldProperty name="IMESentenceMode" type="2" value="3"/>
+              <od:fieldProperty name="UnicodeCompression" type="1" value="1"/>
+              <od:fieldProperty name="TextAlign" type="2" value="0"/>
+              <od:fieldProperty name="AggregateType" type="4" value="-1"/>
+              <od:fieldProperty name="ResultType" type="2" value="0"/>
+              <od:fieldProperty name="CurrencyLCID" type="4" value="0"/>
+            </xsd:appinfo>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:maxLength value="255"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
         <xsd:element name="UpdatedAt" minOccurs="0" od:jetType="datetime" od:sqlSType="datetime" type="xsd:dateTime">
           <xsd:annotation>
             <xsd:appinfo>
               <od:fieldProperty name="ColumnWidth" type="3" value="-1"/>
-              <od:fieldProperty name="ColumnOrder" type="3" value="9"/>
+              <od:fieldProperty name="ColumnOrder" type="3" value="0"/>
               <od:fieldProperty name="ColumnHidden" type="1" value="0"/>
               <od:fieldProperty name="DefaultValue" type="12" value="Now()"/>
               <od:fieldProperty name="Required" type="1" value="0"/>
@@ -249,7 +298,7 @@
           <xsd:annotation>
             <xsd:appinfo>
               <od:fieldProperty name="ColumnWidth" type="3" value="-1"/>
-              <od:fieldProperty name="ColumnOrder" type="3" value="10"/>
+              <od:fieldProperty name="ColumnOrder" type="3" value="0"/>
               <od:fieldProperty name="ColumnHidden" type="1" value="0"/>
               <od:fieldProperty name="Required" type="1" value="0"/>
               <od:fieldProperty name="AllowZeroLength" type="1" value="1"/>

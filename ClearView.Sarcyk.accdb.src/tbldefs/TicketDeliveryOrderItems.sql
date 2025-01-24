@@ -9,8 +9,6 @@
   [LocationCheckNumbers] VARCHAR (255),
   [LocationRent] CURRENCY ,
   [LastSale] CURRENCY ,
-  [ReceiverName] VARCHAR (255),
-  [DeliveryPersonsName] VARCHAR (255),
   [UpdatedAt] DATETIME ,
   [UpdatedBy] VARCHAR (255)
 )

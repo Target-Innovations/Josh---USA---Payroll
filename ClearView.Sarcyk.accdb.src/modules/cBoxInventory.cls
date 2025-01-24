@@ -14,7 +14,7 @@ Private Const CLASS_NAME = "cBoxInventory"
 Private Const DB_INSERT As String = "INSERT"
 Private Const DB_UPDATE As String = "UPDATE"
 
-Private oDistribuition As New cDistribution
+Private oDistribution As New cDistribution
 
 Public Id As Long
 Public AcquiredDate As Date
@@ -28,24 +28,24 @@ Public SalesOrderNumber As String
 Public SerialNumber As String
 Public SerialNumberList As String
 Public ItemNumber As String
-Public OrderFormId As Integer
+Public OrderFormId As Long
 Public GameName As String
 Public GamePrice As Double
-Public TicketCount As Integer
+Public TicketCount As Long
 Public TicketValue As Double
 Public Revenue As Double
 Public IdealProfit As Double
 Public PrizesPaid As Double
 Public LocationRent As Double
 Public LastSale As Double
-Public InitialSupplyStockOwnerID As Integer
-Public InitialSupplyStockOwner As Integer
+Public InitialSupplyStockOwnerID As Long
+Public InitialSupplyStockOwner As Long
 Public TransferDate As Date
-Public CharityDistributedFor As Integer
-Public SMACSaleInvoiceNumber As String
+Public CharityDistributedFor As Long
+Public SMACSaleInvoiceNumber As Long
 Public SaleDate As Date
-Public NewSupplyStockOwnerID As Integer
-Public NewSupplyStockOwner As Integer
+Public NewSupplyStockOwnerID As Long
+Public NewSupplyStockOwner As Long
 
 Public UpdatedAt As Date
 Public UpdatedBy As String
@@ -432,7 +432,7 @@ On Error GoTo ErrorHandler
 
     Set rs = CurrentDb().OpenRecordset("Select * From [BoxInventory] Where SerialNumber = '" & SerialNumber & "'", dbOpenDynaset)
     
-    Me.PopulateFields rs
+    PopulateFields rs
     
     Set GetInfoBySerialNumber = rs
 
@@ -532,13 +532,13 @@ On Error GoTo ErrorHandler
             GetInfoBySerialNumber Nz(rs("SerialNumber"))
             
             ' Insert record into Distribution Table
-            oDistribuition.AddDistribuiton rs
+            oDistribution.AddDistribuiton rs
             
             ' Set Inventory to sold
-            SetInventoryState Nz(rs("SerialNumber")), "Distributed"
+            SetInventoryState Nz(rs("SerialNumber")), "Sold" ' "Distributed"
             
             ' Set  Order to Distributed
-            SetDeliveryOrderState Nz(rs("OrderId")), "Active"
+            SetDeliveryOrderState Nz(rs("OrderId")), "Distributed" '  "Active"
             
             rs.MoveNext
             
@@ -655,6 +655,21 @@ ErrorHandler:
     
 End Sub
 
+Public Sub SetDeliveryItemCheckNumber(CheckNumber As String)
+
+On Error GoTo ErrorHandler
+
+    oDistribution.GetInfoBySerialNumberf Me.SerialNumber
+    oDistribution.SetLocationCheckNumber CheckNumber
+    oDistribution.SetCurrentDistributionStatus
+    
+    Exit Sub
+
+ErrorHandler:
+    this.Message = "Unable to Add " & CLASS_NAME & " record."
+    Err.Raise Err.Number, CLASS_NAME & ".SetDeliveryItemCheckNumber", Err.Description
+    
+End Sub
 
 'Function GetCurrentDistributionStatus(LocationCheck As String, ReimbursementCheck As String, EnvelopeNumber As String, ReimbursementSentDate As Date) As String
 '

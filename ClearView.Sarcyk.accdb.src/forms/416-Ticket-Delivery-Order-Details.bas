@@ -17,9 +17,9 @@ Begin Form
     GridY =24
     Width =16327
     DatasheetFontHeight =11
-    ItemSuffix =1362
-    Right =17670
-    Bottom =10515
+    ItemSuffix =1364
+    Right =17183
+    Bottom =8790
     TimerInterval =125
     DatasheetGridlinesColor =15263976
     Filter ="1=0"
@@ -468,7 +468,7 @@ Begin Form
                     Width =1726
                     Height =405
                     FontSize =10
-                    TabIndex =1
+                    TabIndex =5
                     ForeColor =0
                     Name ="cmdEmployeeList"
                     Caption ="&Order List"
@@ -688,7 +688,7 @@ Begin Form
                     LayoutCachedTop =1447
                     LayoutCachedWidth =745
                     LayoutCachedHeight =1787
-                    TabIndex =7
+                    TabIndex =8
                     BackThemeColorIndex =-1
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
@@ -703,7 +703,7 @@ Begin Form
                     Width =340
                     Height =340
                     FontSize =10
-                    TabIndex =2
+                    TabIndex =6
                     ForeColor =0
                     Name ="cmdHome"
                     FontName ="Segoe UI"
@@ -1371,7 +1371,7 @@ Begin Form
                     LayoutCachedTop =233
                     LayoutCachedWidth =1607
                     LayoutCachedHeight =1083
-                    TabIndex =8
+                    TabIndex =7
                     BackThemeColorIndex =-1
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
@@ -1387,7 +1387,7 @@ Begin Form
                     Width =1441
                     Height =405
                     FontSize =10
-                    TabIndex =3
+                    TabIndex =1
                     ForeColor =0
                     Name ="cmdSave"
                     Caption =" &Save"
@@ -1435,7 +1435,7 @@ Begin Form
                     Top =1417
                     Height =405
                     FontSize =10
-                    TabIndex =4
+                    TabIndex =2
                     ForeColor =0
                     Name ="cmdNew"
                     Caption ="&New "
@@ -1528,7 +1528,7 @@ Begin Form
                     Top =1417
                     Height =405
                     FontSize =10
-                    TabIndex =5
+                    TabIndex =3
                     ForeColor =0
                     Name ="cmdSubmit"
                     Caption ="S&ubmit"
@@ -1579,7 +1579,7 @@ Begin Form
                     Top =1417
                     Height =405
                     FontSize =10
-                    TabIndex =6
+                    TabIndex =4
                     ForeColor =0
                     Name ="cmdPrint"
                     Caption ="&Print"
@@ -1626,7 +1626,7 @@ Begin Form
         End
         Begin Section
             CanGrow = NotDefault
-            Height =7128
+            Height =7140
             BackColor =15921906
             Name ="Detail"
             AlternateBackColor =15921906
@@ -1638,19 +1638,19 @@ Begin Form
                 Begin Tab
                     OverlapFlags =85
                     TextFontFamily =34
-                    Left =192
+                    Left =195
                     Top =120
-                    Width =15972
-                    Height =7008
+                    Width =15968
+                    Height =7020
                     FontSize =10
                     Name ="tabData"
                     FontName ="Segoe UI"
                     GridlineColor =0
 
-                    LayoutCachedLeft =192
+                    LayoutCachedLeft =195
                     LayoutCachedTop =120
-                    LayoutCachedWidth =16164
-                    LayoutCachedHeight =7128
+                    LayoutCachedWidth =16163
+                    LayoutCachedHeight =7140
                     ThemeFontIndex =-1
                     GridlineThemeColorIndex =-1
                     GridlineShade =100.0
@@ -1680,13 +1680,13 @@ Begin Form
                             Left =233
                             Top =503
                             Width =15892
-                            Height =6585
+                            Height =6596
                             Name ="PO_Entries_Page"
                             Caption ="|  Details   |"
                             LayoutCachedLeft =233
                             LayoutCachedTop =503
                             LayoutCachedWidth =16125
-                            LayoutCachedHeight =7088
+                            LayoutCachedHeight =7099
                             WebImagePaddingLeft =4
                             WebImagePaddingTop =4
                             WebImagePaddingRight =4
@@ -1699,7 +1699,7 @@ Begin Form
                                     Left =375
                                     Top =720
                                     Width =15404
-                                    Height =2402
+                                    Height =2822
                                     BackColor =13952764
                                     BorderColor =8355711
                                     Name ="Box911"
@@ -1707,11 +1707,25 @@ Begin Form
                                     LayoutCachedLeft =375
                                     LayoutCachedTop =720
                                     LayoutCachedWidth =15779
-                                    LayoutCachedHeight =3122
+                                    LayoutCachedHeight =3542
                                     BackThemeColorIndex =-1
                                     BorderShade =50.0
                                     GridlineThemeColorIndex =-1
                                     GridlineShade =100.0
+                                End
+                                Begin Rectangle
+                                    BackStyle =1
+                                    OverlapFlags =223
+                                    Left =11648
+                                    Top =1043
+                                    Width =3184
+                                    Height =1436
+                                    Name ="Box49"
+                                    LayoutCachedLeft =11648
+                                    LayoutCachedTop =1043
+                                    LayoutCachedWidth =14832
+                                    LayoutCachedHeight =2479
+                                    BackThemeColorIndex =0
                                 End
                                 Begin TextBox
                                     OverlapFlags =215
@@ -1747,19 +1761,155 @@ Begin Form
                                         End
                                     End
                                 End
-                                Begin Rectangle
-                                    BackStyle =1
-                                    OverlapFlags =223
-                                    Left =11648
-                                    Top =1043
-                                    Width =3184
-                                    Height =1436
-                                    Name ="Box49"
-                                    LayoutCachedLeft =11648
-                                    LayoutCachedTop =1043
-                                    LayoutCachedWidth =14832
-                                    LayoutCachedHeight =2479
-                                    BackThemeColorIndex =0
+                                Begin ComboBox
+                                    LimitToList = NotDefault
+                                    OverlapFlags =215
+                                    TextAlign =1
+                                    IMESentenceMode =3
+                                    ColumnCount =2
+                                    Left =1908
+                                    Top =1260
+                                    Width =8112
+                                    Height =288
+                                    TabIndex =7
+                                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
+                                    Name ="CharityId"
+                                    ControlSource ="CharityId"
+                                    RowSourceType ="Table/Query"
+                                    RowSource ="SELECT Charities.Id, Charities.CharityName FROM Charities ORDER BY Charities.Cha"
+                                        "rityName; "
+                                    ColumnWidths ="0;2268"
+                                    OnClick ="[Event Procedure]"
+
+                                    LayoutCachedLeft =1908
+                                    LayoutCachedTop =1260
+                                    LayoutCachedWidth =10020
+                                    LayoutCachedHeight =1548
+                                    ColumnStart =1
+                                    ColumnEnd =1
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =215
+                                            TextAlign =1
+                                            Left =600
+                                            Top =1260
+                                            Width =1236
+                                            Height =288
+                                            Name ="Label1158"
+                                            Caption ="Charity"
+                                            LayoutCachedLeft =600
+                                            LayoutCachedTop =1260
+                                            LayoutCachedWidth =1836
+                                            LayoutCachedHeight =1548
+                                        End
+                                    End
+                                End
+                                Begin TextBox
+                                    OldBorderStyle =0
+                                    OverlapFlags =215
+                                    TextAlign =2
+                                    BackStyle =0
+                                    IMESentenceMode =3
+                                    Left =11745
+                                    Top =1613
+                                    Width =3023
+                                    Height =278
+                                    FontSize =12
+                                    TabIndex =5
+                                    ForeColor =16777215
+                                    Name ="txtTotalOwed"
+                                    Format ="$#,##0.00;($#,##0.00)"
+                                    GroupTable =12
+
+                                    LayoutCachedLeft =11745
+                                    LayoutCachedTop =1613
+                                    LayoutCachedWidth =14768
+                                    LayoutCachedHeight =1891
+                                    RowStart =1
+                                    RowEnd =1
+                                    LayoutGroup =1
+                                    ForeThemeColorIndex =-1
+                                    ForeTint =100.0
+                                    GroupTable =12
+                                    CurrencySymbol ="$"
+                                End
+                                Begin TextBox
+                                    OldBorderStyle =0
+                                    OverlapFlags =215
+                                    TextAlign =2
+                                    BackStyle =0
+                                    IMESentenceMode =3
+                                    Left =11745
+                                    Top =1950
+                                    Width =3023
+                                    Height =398
+                                    FontSize =16
+                                    TabIndex =6
+                                    ForeColor =2366701
+                                    Name ="txtStatus"
+                                    ControlSource ="Status"
+                                    GroupTable =12
+
+                                    LayoutCachedLeft =11745
+                                    LayoutCachedTop =1950
+                                    LayoutCachedWidth =14768
+                                    LayoutCachedHeight =2348
+                                    RowStart =2
+                                    RowEnd =2
+                                    LayoutGroup =1
+                                    ForeThemeColorIndex =-1
+                                    ForeTint =100.0
+                                    GroupTable =12
+                                End
+                                Begin ComboBox
+                                    LimitToList = NotDefault
+                                    OverlapFlags =215
+                                    TextAlign =1
+                                    IMESentenceMode =3
+                                    ColumnCount =4
+                                    Left =1908
+                                    Top =1620
+                                    Width =8112
+                                    Height =288
+                                    TabIndex =8
+                                    ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"510\""
+                                    Name ="cboLocationId"
+                                    ControlSource ="LocationId"
+                                    RowSourceType ="Table/Query"
+                                    RowSource ="SELECT Locations.id, Locations.LocationName, Associations.CharityId, [FirstName]"
+                                        " & \" \" & [LastName] AS FullName FROM Locations INNER JOIN Associations ON Loca"
+                                        "tions.id = Associations.LocationId WHERE (((Associations.CharityId)=[Forms]![416"
+                                        "-Ticket-Delivery-Order-Details]![CharityId])) ORDER BY Locations.LocationName; "
+                                    ColumnWidths ="0;2880;0;0"
+                                    StatusBarText ="Location attached to Choose Charity"
+                                    OnGotFocus ="[Event Procedure]"
+
+                                    LayoutCachedLeft =1908
+                                    LayoutCachedTop =1620
+                                    LayoutCachedWidth =10020
+                                    LayoutCachedHeight =1908
+                                    RowStart =1
+                                    RowEnd =1
+                                    ColumnStart =1
+                                    ColumnEnd =1
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =215
+                                            TextAlign =1
+                                            Left =600
+                                            Top =1620
+                                            Width =1236
+                                            Height =288
+                                            Name ="Label1159"
+                                            Caption ="Location"
+                                            LayoutCachedLeft =600
+                                            LayoutCachedTop =1620
+                                            LayoutCachedWidth =1836
+                                            LayoutCachedHeight =1908
+                                            RowStart =1
+                                            RowEnd =1
+                                        End
+                                    End
                                 End
                                 Begin TextBox
                                     OverlapFlags =215
@@ -1874,6 +2024,7 @@ Begin Form
                                     Format ="Short Time"
                                     GroupTable =15
                                     BottomPadding =150
+                                    ShowDatePicker =0
 
                                     LayoutCachedLeft =7470
                                     LayoutCachedTop =1980
@@ -1997,176 +2148,6 @@ Begin Form
                                     WebImagePaddingBottom =19
                                     Overlaps =1
                                 End
-                                Begin Label
-                                    OverlapFlags =215
-                                    TextAlign =2
-                                    Left =11745
-                                    Top =1238
-                                    Width =3023
-                                    Height =315
-                                    FontSize =12
-                                    ForeColor =62207
-                                    Name ="Label51"
-                                    Caption ="Total Owned:"
-                                    GroupTable =12
-                                    LayoutCachedLeft =11745
-                                    LayoutCachedTop =1238
-                                    LayoutCachedWidth =14768
-                                    LayoutCachedHeight =1553
-                                    LayoutGroup =1
-                                    ForeThemeColorIndex =-1
-                                    ForeTint =100.0
-                                    GroupTable =12
-                                End
-                                Begin TextBox
-                                    OldBorderStyle =0
-                                    OverlapFlags =215
-                                    TextAlign =2
-                                    BackStyle =0
-                                    IMESentenceMode =3
-                                    Left =11745
-                                    Top =1613
-                                    Width =3023
-                                    Height =278
-                                    FontSize =12
-                                    TabIndex =5
-                                    ForeColor =16777215
-                                    Name ="txtTotalOwed"
-                                    Format ="$#,##0.00;($#,##0.00)"
-                                    GroupTable =12
-
-                                    LayoutCachedLeft =11745
-                                    LayoutCachedTop =1613
-                                    LayoutCachedWidth =14768
-                                    LayoutCachedHeight =1891
-                                    RowStart =1
-                                    RowEnd =1
-                                    LayoutGroup =1
-                                    ForeThemeColorIndex =-1
-                                    ForeTint =100.0
-                                    GroupTable =12
-                                    CurrencySymbol ="$"
-                                End
-                                Begin TextBox
-                                    OldBorderStyle =0
-                                    OverlapFlags =215
-                                    TextAlign =2
-                                    BackStyle =0
-                                    IMESentenceMode =3
-                                    Left =11745
-                                    Top =1950
-                                    Width =3023
-                                    Height =398
-                                    FontSize =16
-                                    TabIndex =6
-                                    ForeColor =2366701
-                                    Name ="txtStatus"
-                                    ControlSource ="Status"
-                                    GroupTable =12
-
-                                    LayoutCachedLeft =11745
-                                    LayoutCachedTop =1950
-                                    LayoutCachedWidth =14768
-                                    LayoutCachedHeight =2348
-                                    RowStart =2
-                                    RowEnd =2
-                                    LayoutGroup =1
-                                    ForeThemeColorIndex =-1
-                                    ForeTint =100.0
-                                    GroupTable =12
-                                End
-                                Begin ComboBox
-                                    LimitToList = NotDefault
-                                    OverlapFlags =215
-                                    TextAlign =1
-                                    IMESentenceMode =3
-                                    ColumnCount =2
-                                    Left =1908
-                                    Top =1260
-                                    Width =8112
-                                    Height =288
-                                    TabIndex =7
-                                    ColumnInfo ="\"\";\"\";\"\";\"@\";\"10\";\"510\""
-                                    Name ="CharityId"
-                                    ControlSource ="CharityId"
-                                    RowSourceType ="Table/Query"
-                                    RowSource ="SELECT Charities.Id, Charities.CharityName FROM Charities ORDER BY Charities.Cha"
-                                        "rityName; "
-                                    ColumnWidths ="0;2268"
-                                    OnClick ="[Event Procedure]"
-
-                                    LayoutCachedLeft =1908
-                                    LayoutCachedTop =1260
-                                    LayoutCachedWidth =10020
-                                    LayoutCachedHeight =1548
-                                    ColumnStart =1
-                                    ColumnEnd =1
-                                    Begin
-                                        Begin Label
-                                            OverlapFlags =215
-                                            TextAlign =1
-                                            Left =600
-                                            Top =1260
-                                            Width =1236
-                                            Height =288
-                                            Name ="Label1158"
-                                            Caption ="Charity"
-                                            LayoutCachedLeft =600
-                                            LayoutCachedTop =1260
-                                            LayoutCachedWidth =1836
-                                            LayoutCachedHeight =1548
-                                        End
-                                    End
-                                End
-                                Begin ComboBox
-                                    LimitToList = NotDefault
-                                    OverlapFlags =215
-                                    TextAlign =1
-                                    IMESentenceMode =3
-                                    ColumnCount =2
-                                    Left =1908
-                                    Top =1620
-                                    Width =8112
-                                    Height =288
-                                    TabIndex =8
-                                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
-                                    Name ="LocationId"
-                                    ControlSource ="LocationId"
-                                    RowSourceType ="Table/Query"
-                                    RowSource ="SELECT Locations.id, Locations.LocationName, Associations.CharityId FROM Locatio"
-                                        "ns INNER JOIN Associations ON Locations.id = Associations.LocationId WHERE (((As"
-                                        "sociations.CharityId)=Forms![416-Ticket-Delivery-Order-Details]!CharityId)) ORDE"
-                                        "R BY Locations.LocationName; "
-                                    ColumnWidths ="0;2268"
-                                    StatusBarText ="Location attached to Choose Charity"
-
-                                    LayoutCachedLeft =1908
-                                    LayoutCachedTop =1620
-                                    LayoutCachedWidth =10020
-                                    LayoutCachedHeight =1908
-                                    RowStart =1
-                                    RowEnd =1
-                                    ColumnStart =1
-                                    ColumnEnd =1
-                                    Begin
-                                        Begin Label
-                                            OverlapFlags =215
-                                            TextAlign =1
-                                            Left =600
-                                            Top =1620
-                                            Width =1236
-                                            Height =288
-                                            Name ="Label1159"
-                                            Caption ="Location"
-                                            LayoutCachedLeft =600
-                                            LayoutCachedTop =1620
-                                            LayoutCachedWidth =1836
-                                            LayoutCachedHeight =1908
-                                            RowStart =1
-                                            RowEnd =1
-                                        End
-                                    End
-                                End
                                 Begin TextBox
                                     OverlapFlags =215
                                     TextAlign =1
@@ -2206,10 +2187,75 @@ Begin Form
                                         End
                                     End
                                 End
+                                Begin TextBox
+                                    OverlapFlags =215
+                                    IMESentenceMode =3
+                                    Left =1908
+                                    Top =3060
+                                    Width =3255
+                                    Height =300
+                                    Name ="ReceiverName"
+                                    ControlSource ="ReceiverName"
+                                    OnDblClick ="[Event Procedure]"
+
+                                    LayoutCachedLeft =1908
+                                    LayoutCachedTop =3060
+                                    LayoutCachedWidth =5163
+                                    LayoutCachedHeight =3360
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =215
+                                            Left =600
+                                            Top =3060
+                                            Width =1236
+                                            Height =300
+                                            Name ="Label1362"
+                                            Caption ="Receiver"
+                                            LayoutCachedLeft =600
+                                            LayoutCachedTop =3060
+                                            LayoutCachedWidth =1836
+                                            LayoutCachedHeight =3360
+                                        End
+                                    End
+                                End
+                                Begin ComboBox
+                                    OverlapFlags =215
+                                    IMESentenceMode =3
+                                    Left =7020
+                                    Top =3060
+                                    Width =3000
+                                    Height =300
+                                    ColumnInfo ="\"\";\"\";\"10\";\"486\""
+                                    Name ="DeliveryPersonsName"
+                                    ControlSource ="DeliveryPersonsName"
+                                    RowSourceType ="Table/Query"
+                                    RowSource ="SELECT Employees.FullName FROM Employees ORDER BY Employees.FullName; "
+                                    AllowValueListEdits =0
+
+                                    LayoutCachedLeft =7020
+                                    LayoutCachedTop =3060
+                                    LayoutCachedWidth =10020
+                                    LayoutCachedHeight =3360
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =215
+                                            Left =5220
+                                            Top =3060
+                                            Width =1560
+                                            Height =300
+                                            Name ="Label1363"
+                                            Caption ="Delivery Person"
+                                            LayoutCachedLeft =5220
+                                            LayoutCachedTop =3060
+                                            LayoutCachedWidth =6780
+                                            LayoutCachedHeight =3360
+                                        End
+                                    End
+                                End
                                 Begin Subform
                                     OverlapFlags =215
                                     Left =420
-                                    Top =3562
+                                    Top =3982
                                     Width =15496
                                     Height =3117
                                     TabIndex =10
@@ -2220,24 +2266,45 @@ Begin Form
                                     EventProcPrefix ="Ctl416_sb_Ticket_Distribution_Order_Items"
 
                                     LayoutCachedLeft =420
-                                    LayoutCachedTop =3562
+                                    LayoutCachedTop =3982
                                     LayoutCachedWidth =15916
-                                    LayoutCachedHeight =6679
+                                    LayoutCachedHeight =7099
                                     Begin
                                         Begin Label
                                             OverlapFlags =215
                                             Left =420
-                                            Top =3180
+                                            Top =3600
                                             Width =2355
                                             Height =293
                                             Name ="Label1218"
                                             Caption ="Delivery Order Items"
                                             LayoutCachedLeft =420
-                                            LayoutCachedTop =3180
+                                            LayoutCachedTop =3600
                                             LayoutCachedWidth =2775
-                                            LayoutCachedHeight =3473
+                                            LayoutCachedHeight =3893
                                         End
                                     End
+                                End
+                                Begin Label
+                                    OverlapFlags =215
+                                    TextAlign =2
+                                    Left =11745
+                                    Top =1238
+                                    Width =3023
+                                    Height =315
+                                    FontSize =12
+                                    ForeColor =62207
+                                    Name ="Label51"
+                                    Caption ="Total Owned:"
+                                    GroupTable =12
+                                    LayoutCachedLeft =11745
+                                    LayoutCachedTop =1238
+                                    LayoutCachedWidth =14768
+                                    LayoutCachedHeight =1553
+                                    LayoutGroup =1
+                                    ForeThemeColorIndex =-1
+                                    ForeTint =100.0
+                                    GroupTable =12
                                 End
                             End
                         End
@@ -2263,6 +2330,10 @@ Attribute VB_Exposed = False
 Option Compare Database
 
 Dim oBox As New cBoxInventory
+
+Private Sub cboLocationId_GotFocus()
+    Me.cboLocationId.Requery
+End Sub
 
 Private Sub cmdOpenTime_Click()
     If Me.txtOpenTime.Enabled Then
@@ -2320,11 +2391,16 @@ Private Sub Form_Current()
 End Sub
 
 Private Sub cmdPrint_Click()
-    DoCmd.OpenReport "309-Ticket-Delivery-Order-Details", acViewReport, , "OrderId = " & Me.Id, acDialog
+
+    DoCmd.OpenReport "309-Ticket-Delivery-Order-Details", acViewPreview, , "OrderId = " & Me.Id, acDialog
+    
+    DoCmd.OpenReport "310-Ticket-Delivery-Invoice-Details", acViewPreview, , "OrderId = " & Me.Id, acDialog
+
+
 End Sub
 
 Private Sub CharityId_Click()
-    Me.LocationId.Requery
+    Me.cboLocationId.Requery
 End Sub
 
 Public Sub UpdateModel()
@@ -2407,6 +2483,12 @@ ErrorHandler:
         ' just ignore it
     End If
     
+End Sub
+
+Private Sub ReceiverName_DblClick(Cancel As Integer)
+    If Not IsNullOrEmpty(Me.cboLocationId.Column(3)) Then
+        Me.ReceiverName = Nz(Me.cboLocationId.Column(3))
+    End If
 End Sub
 
 Private Sub SaleDate_AfterUpdate()

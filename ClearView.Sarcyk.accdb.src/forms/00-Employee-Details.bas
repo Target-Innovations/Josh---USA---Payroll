@@ -21,14 +21,15 @@ Begin Form
     Width =13067
     DatasheetFontHeight =11
     ItemSuffix =769
-    Left =615
-    Top =3255
-    Right =16538
-    Bottom =12045
+    Left =4170
+    Top =698
+    Right =17235
+    Bottom =10740
     DatasheetGridlinesColor =-1
     OnUnload ="[Event Procedure]"
     Tag ="EditDetails~Extensions=OnLoad_DefaultFirstAndLastName~FirstName=First Name~LastN"
         "ame=Last Name"
+    Filter ="Id = 3661"
     OrderBy ="[Employees].[FullName]"
     RecSrcDt = Begin
         0x32fea4fc3543e640

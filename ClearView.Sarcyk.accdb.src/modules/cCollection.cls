@@ -13,7 +13,7 @@ Option Explicit
 Private Const CLASS_NAME = "cCollection"
 
 Private Const WO_INSERT As String = "INSERT"
-Private Const WO_Update As String = "UPDATE"
+Private Const WO_UPDATE As String = "UPDATE"
 
 Public Id As Integer
 
@@ -350,7 +350,7 @@ ErrorHandler:
     
 End Function
 
-Public Function delete(CollectionId As Integer) As Boolean
+Public Function Delete(CollectionId As Integer) As Boolean
 
 On Error GoTo ErrorHandler
 
@@ -360,7 +360,7 @@ On Error GoTo ErrorHandler
     
     DoCmd.SetWarnings True
         
-    delete = True
+    Delete = True
     
     Exit Function
 
@@ -494,10 +494,10 @@ ErrorHandler:
 
 End Function
 
-Public Function UpdatePettyCash(Employee As Integer, Location As Integer, Collection_Date As Date)
+Public Function UpdatePettyCash(Employee As Integer, Location As Integer, Collection_Date As Date, Optional CollectionId As Integer = -1)
 
     Dim CashToUnionVending As Double
-    CashToUnionVending = oStub.PettyCashUsage(Employee, Location, Collection_Date)
+    CashToUnionVending = oStub.PettyCashUsage(CollectionId, Employee, Location, Collection_Date)
     
     CurrentDb.Execute "Update [Collection-Petty-Cash-Reconciliation] Set PettyCashPayout = " & Abs(CashToUnionVending) & " Where EmployeeId = " & Employee & " And LocationId = " & Location & " And CollectionDate =#" & Collection_Date & "#"
     

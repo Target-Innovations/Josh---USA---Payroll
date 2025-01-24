@@ -1,0 +1,18 @@
+﻿{
+  "Info": {
+    "Class": "clsDbRelation",
+    "Description": "Database relationship"
+  },
+  "Items": {
+    "Name": "{311D1E24-361A-4E2C-8B07-A292F6E4A631}",
+    "Attributes": 0,
+    "Table": "GameStyles",
+    "ForeignTable": "OrderForms",
+    "Fields": [
+      {
+        "Name": "Id",
+        "ForeignName": "GameStyleId"
+      }
+    ]
+  }
+}

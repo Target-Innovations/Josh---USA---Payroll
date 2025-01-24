@@ -1,25 +1,34 @@
 ﻿Operation =1
 Option =0
+Where ="(((TicketDistribution.Status)=\"Location Paid\"))"
 Begin InputTables
     Name ="TicketDeliveryOrders"
-    Name ="TicketDeliveryOrderItems"
     Name ="Charities"
     Name ="Locations"
-    Name ="OrderForms"
+    Name ="TicketDistribution"
 End
 Begin OutputColumns
-    Alias ="OrderId"
-    Expression ="TicketDeliveryOrders.Id"
-    Expression ="Charities.CharityName"
+    Alias ="Payee"
+    Expression ="Locations.PayeeName"
+    Alias ="Amount"
+    Expression ="TicketDistribution.rent"
+    Alias ="CheckDate"
+    Expression ="TicketDistribution.DistributionDate"
+    Alias ="Memo"
+    Expression ="TicketDistribution.SerialNumber"
+    Alias ="Note1"
+    Expression ="\"Reimbursement for IBTP Audits and Accounting Services, IBTP Advertising, Perce"
+        "nt of Location Property Taxes, and Percent of Location's Rent Payment\""
+    Alias ="Note2"
+    Expression ="\"\""
+    Alias ="PayeeAddress1"
     Expression ="Locations.LocationName"
-    Expression ="OrderForms.Revenue"
-    Alias ="Memo"
-    Expression ="\"ABC\""
-    Alias ="Memo"
-    Expression ="\"ABC\""
-    Expression ="TicketDeliveryOrders.SaleDate"
-    Expression ="TicketDeliveryOrderItems.*"
-    Expression ="OrderForms.TicketValue"
+    Alias ="PayeeAddress2"
+    Expression ="Locations.Address"
+    Alias ="PayeeAddress3"
+    Expression ="[Locations].[City] & \", \" & [Locations].[state] & \" \" & [Locations].[zip]"
+    Alias ="PayeeAddress4"
+    Expression ="\"\""
 End
 Begin Joins
     LeftTable ="TicketDeliveryOrders"
@@ -30,13 +39,9 @@ Begin Joins
     RightTable ="Locations"
     Expression ="TicketDeliveryOrders.LocationId = Locations.id"
     Flag =1
-    LeftTable ="TicketDeliveryOrderItems"
-    RightTable ="OrderForms"
-    Expression ="TicketDeliveryOrderItems.GameId = OrderForms.Id"
-    Flag =1
-    LeftTable ="TicketDeliveryOrders"
-    RightTable ="TicketDeliveryOrderItems"
-    Expression ="TicketDeliveryOrders.Id = TicketDeliveryOrderItems.DistributionOrderId"
+    LeftTable ="TicketDistribution"
+    RightTable ="TicketDeliveryOrders"
+    Expression ="TicketDistribution.DeliveryNumber = TicketDeliveryOrders.Id"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -50,241 +55,47 @@ dbBoolean "OrderByOnLoad" ="-1"
 dbBoolean "TotalsRow" ="0"
 Begin
     Begin
-        dbText "Name" ="TicketDeliveryOrders.SaleDate"
+        dbText "Name" ="Memo"
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="TicketDeliveryOrderItems.Id"
+        dbText "Name" ="Payee"
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="TicketDeliveryOrderItems.DistributionOrderId"
+        dbText "Name" ="Amount"
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="TicketDeliveryOrderItems.SerialNumber"
+        dbText "Name" ="CheckDate"
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="TicketDeliveryOrderItems.GameId"
+        dbText "Name" ="Note1"
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="TicketDeliveryOrderItems.TicketCount"
+        dbText "Name" ="PayeeAddress1"
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="TicketDeliveryOrderItems.IdealProfit"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="TicketDeliveryOrderItems.PrizesPaid"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="TicketDeliveryOrderItems.LocationCheckNumbers"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="TicketDeliveryOrderItems.LocationRent"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="TicketDeliveryOrderItems.LastSale"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="TicketDeliveryOrderItems.ReceiverName"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="TicketDeliveryOrderItems.DeliveryPersonsName"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="TicketDeliveryOrderItems.UpdatedAt"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="TicketDeliveryOrderItems.UpdatedBy"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="OrderId"
-        dbInteger "ColumnWidth" ="2205"
-        dbBoolean "ColumnHidden" ="0"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Locations.Status"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Locations.FaxNumber"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Charities.County"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Locations.UpdatedAt"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Locations.Address"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Locations.MarketingRepId"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Locations.MobilePhone"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Locations.HomePhone"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Locations.BusinessPhone"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Charities.Id"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Locations.UpdatedBy"
-        dbInteger "ColumnWidth" ="2198"
-        dbBoolean "ColumnHidden" ="0"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Charities.UpdatedAt"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Charities.Code"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Locations.PayeeName"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Charities.CharityName"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Charities.Address"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Charities.City"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Locations.ContractExpirationDate"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Charities.State"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Charities.ZipCode"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Charities.Status"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Charities.BillingStyle"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Charities.UpdatedBy"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Locations.id"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Locations.BusinessPartnerId"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Locations.LocationName"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Locations.LastName"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Locations.FirstName"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Locations.E-mail"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Locations.JobTitle"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Locations.City"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Locations.State"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Locations.ZIP"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Locations.Country"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Locations.WebPage"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Locations.Notes"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Locations.Attachments"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Locations.IsActive"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Locations.SalesRepId"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="OrderForms.TicketValue"
+        dbText "Name" ="PayeeAddress2"
         dbInteger "ColumnWidth" ="2453"
         dbBoolean "ColumnHidden" ="0"
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="OrderForms.Revenue"
+        dbText "Name" ="PayeeAddress3"
+        dbInteger "ColumnWidth" ="2453"
+        dbBoolean "ColumnHidden" ="0"
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="Memo"
+        dbText "Name" ="Note2"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="PayeeAddress4"
         dbLong "AggregateType" ="-1"
     End
 End
@@ -293,57 +104,48 @@ Begin
     Left =0
     Top =0
     Right =2325
-    Bottom =1436
+    Bottom =1206
     Left =-1
     Top =-1
     Right =2292
-    Bottom =786
+    Bottom =734
     Left =0
     Top =0
     ColumnsShown =539
     Begin
-        Left =40
-        Top =138
-        Right =526
-        Bottom =651
+        Left =549
+        Top =182
+        Right =1035
+        Bottom =695
         Top =0
         Name ="TicketDeliveryOrders"
         Name =""
     End
     Begin
-        Left =606
-        Top =16
-        Right =970
-        Bottom =364
-        Top =0
-        Name ="TicketDeliveryOrderItems"
-        Name =""
-    End
-    Begin
-        Left =1010
-        Top =426
-        Right =1298
-        Bottom =714
+        Left =1275
+        Top =106
+        Right =1563
+        Bottom =394
         Top =0
         Name ="Charities"
         Name =""
     End
     Begin
-        Left =639
-        Top =475
-        Right =927
-        Bottom =763
+        Left =1270
+        Top =483
+        Right =1558
+        Bottom =771
         Top =0
         Name ="Locations"
         Name =""
     End
     Begin
-        Left =1126
-        Top =24
-        Right =1414
-        Bottom =353
+        Left =71
+        Top =59
+        Right =458
+        Bottom =807
         Top =0
-        Name ="OrderForms"
+        Name ="TicketDistribution"
         Name =""
     End
 End

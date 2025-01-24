@@ -11,7 +11,12 @@
     <xsd:annotation>
       <xsd:appinfo>
         <od:index index-name="BoxInventorySerialNumber" index-key="SerialNumber " primary="no" unique="no" clustered="no" order="asc"/>
+        <od:index index-name="IdealProfit" index-key="IdealProfit " primary="no" unique="no" clustered="no" order="asc"/>
+        <od:index index-name="InitialSupplyStockOwnerID" index-key="InitialSupplyStockOwnerID " primary="no" unique="no" clustered="no" order="asc"/>
+        <od:index index-name="NewSupplyStockOwnerID" index-key="NewSupplyStockOwnerID " primary="no" unique="no" clustered="no" order="asc"/>
+        <od:index index-name="OrderFormId" index-key="OrderFormId " primary="no" unique="no" clustered="no" order="asc"/>
         <od:index index-name="PrimaryKey" index-key="ID " primary="yes" unique="yes" clustered="no" order="asc"/>
+        <od:index index-name="PrizesPaid" index-key="PrizesPaid " primary="no" unique="no" clustered="no" order="asc"/>
         <od:tableProperty name="Orientation" type="2" value="0"/>
         <od:tableProperty name="OrderByOn" type="1" value="0"/>
         <od:tableProperty name="DefaultView" type="2" value="2"/>
@@ -49,8 +54,7 @@
         <xsd:element name="AcquiredDate" minOccurs="0" od:jetType="datetime" od:sqlSType="datetime" type="xsd:dateTime">
           <xsd:annotation>
             <xsd:appinfo>
-              <od:fieldProperty name="Format" type="10" value="yyyy-mm-dd"/>
-              <od:fieldProperty name="ColumnWidth" type="3" value="-1"/>
+              <od:fieldProperty name="ColumnWidth" type="3" value="1538"/>
               <od:fieldProperty name="ColumnOrder" type="3" value="0"/>
               <od:fieldProperty name="ColumnHidden" type="1" value="0"/>
               <od:fieldProperty name="Required" type="1" value="0"/>
@@ -67,7 +71,7 @@
         <xsd:element name="DistributedDate" minOccurs="0" od:jetType="datetime" od:sqlSType="datetime" type="xsd:dateTime">
           <xsd:annotation>
             <xsd:appinfo>
-              <od:fieldProperty name="ColumnWidth" type="3" value="-1"/>
+              <od:fieldProperty name="ColumnWidth" type="3" value="1740"/>
               <od:fieldProperty name="ColumnOrder" type="3" value="0"/>
               <od:fieldProperty name="ColumnHidden" type="1" value="0"/>
               <od:fieldProperty name="Required" type="1" value="0"/>
@@ -85,7 +89,7 @@
         <xsd:element name="SameMonthSold" minOccurs="1" od:jetType="yesno" od:sqlSType="bit" od:nonNullable="yes" type="xsd:boolean">
           <xsd:annotation>
             <xsd:appinfo>
-              <od:fieldProperty name="ColumnWidth" type="3" value="-1"/>
+              <od:fieldProperty name="ColumnWidth" type="3" value="1785"/>
               <od:fieldProperty name="ColumnOrder" type="3" value="0"/>
               <od:fieldProperty name="ColumnHidden" type="1" value="0"/>
               <od:fieldProperty name="Format" type="10" value="Yes/No"/>

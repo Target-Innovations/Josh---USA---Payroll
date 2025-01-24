@@ -9,18 +9,18 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
 
-Private Const CLASS_NAME = "cSql"
+Private Const CLASS_NAME = "cDbOperations"
 
 Private Const C1 As String = "C1"
 
-Private Type TSql
+Private Type TDbOperations
 
     Id As Long
     Message As String
     
 End Type
 
-Private this As TSql
+Private this As TDbOperations
 
 Public F1 As String
 
@@ -28,7 +28,7 @@ Public Property Get Message() As String
     Message = this.Message
 End Property
 
-Public Function delete(table As String, identifier As Variant, Optional columnName As String = "") As Boolean
+Public Function Delete(table As String, identifier As Variant, Optional columnName As String = "") As Boolean
 
 On Error GoTo handleError
 
@@ -53,11 +53,11 @@ On Error GoTo handleError
     End If
     
     CurrentDb.Execute qry, dbFailOnError
-    delete = True
+    Delete = True
     Exit Function
     
 handleError:
-    delete = False
+    Delete = False
     Exit Function
     
 End Function
@@ -68,15 +68,15 @@ Public Function dexists(field As String, table As String, Criteria As String) As
     
 End Function
 
-Public Function doesTableContain(table As String, searchCriteria As String, searchColumn As String, Optional fuzzyMatch As Boolean = True) As Boolean
+Public Function doesTableContain(table As String, SearchCriteria As String, searchColumn As String, Optional fuzzyMatch As Boolean = True) As Boolean
     
     Dim selectQry As String
     Dim rs As Recordset
     
     If fuzzyMatch Then
-        selectQry = "SELECT * FROM " & table & " WHERE " & searchColumn & " LIKE '*" & searchCriteria & "*'"
+        selectQry = "SELECT * FROM " & table & " WHERE " & searchColumn & " LIKE '*" & SearchCriteria & "*'"
     Else
-        selectQry = "SELECT * FROM " & table & " WHERE " & searchColumn & " = '" & searchCriteria & "'"
+        selectQry = "SELECT * FROM " & table & " WHERE " & searchColumn & " = '" & SearchCriteria & "'"
     End If
     
     Set rs = CurrentDb.OpenRecordset(selectQry)
@@ -283,35 +283,23 @@ End Function
 Sub RelinkTablesToNewBackend()
 
     On Error GoTo ErrorHandler
-
+   
     Dim newBackendPath As String
-        
-    With Application.FileDialog(msoFileDialogFilePicker)
-    
-        .InitialFileName = Application.CurrentProject.path
-        
-        ' show the file picker dialog box
-        If .show <> 0 Then
-        
-            newBackendPath = .SelectedItems(1)
-        
-             If newBackendPath = "" Then
-                 MsgBox "Operation canceled. No backend database path provided.", vbExclamation
-                 Exit Sub
-             End If
-            
-             ' Delete all tables in the current database
-             DeleteAllTables
-            
-             ' Relink tables to the new backend database
-             RelinkTables newBackendPath
-            
-             MsgBox "Tables relinked successfully.", vbInformation
+    newBackendPath = InputBox("Enter the path of the new backend database:", "New Backend Database Path", "")
+   
+    If newBackendPath = "" Then
+        MsgBox "Operation canceled. No backend database path provided.", vbExclamation
+        Exit Sub
+    End If
+   
+    ' Delete all tables in the current database
+    DeleteAllTables
+   
+    ' Relink tables to the new backend database
+    RelinkTables newBackendPath
+   
+    MsgBox "Tables relinked successfully.", vbInformation
 
-        End If
-    
-    End With
-    
 ExitSub:
     Exit Sub
 
@@ -358,8 +346,6 @@ On Error GoTo ErrorHandler
         End If
     Next tblDef
     
-    Exit Sub
-    
 ErrorHandler:
     MsgBox Err.Description
     Resume Next
@@ -396,9 +382,9 @@ Sub DropImportErrorTables()
 
     Dim tbl_name As DAO.TableDef, str As String
 
-    If MsgBox("Are you sure you want to drop all import error tables?", vbExclamation + vbYesNo) = vbNo Then
-        Exit Sub
-    End If
+'    If MsgBox("Are you sure you want to drop all import error tables?", vbExclamation + vbYesNo) = vbNo Then
+'        Exit Sub
+'    End If
 
     With CurrentDb
       For Each tbl_name In .TableDefs
@@ -414,12 +400,12 @@ Sub DropImportErrorTables()
 
 End Sub
 
-Function FieldExists(TableName As String, fieldname As String) As Boolean
+Function FieldExists(TableName As String, FieldName As String) As Boolean
 
     FieldExists = False
 
     On Error Resume Next
-    FieldExists = CurrentDb.TableDefs(TableName).Fields(fieldname).Name = fieldname
+    FieldExists = CurrentDb.TableDefs(TableName).Fields(FieldName).Name = FieldName
 
 End Function
 
@@ -485,4 +471,112 @@ CreateAttachedError:
     End If
 
 End Function
+
+Sub ResetSeedId(TableName As String, FieldName As String)
+
+    CurrentDb.Execute "INSERT INTO " & TableName & " ( " & FieldName & " )SELECT -1 AS PkField;"
+    
+End Sub
+
+Public Function FixQuotes(Val As Variant) As String
+    FixQuotes = Replace(Val, "'", "''")
+End Function
+
+Function FieldWritter()
+
+' Procedure Calls Types
+'
+' cDbOperations.FieldWritter "Branch", "FieldNames"
+' cDbOperations.FieldWritter "Branch", "FieldDeclaretion"
+' cDbOperations.FieldWritter "Branch", "ClearFields"
+' cDbOperations.FieldWritter "Branch", "PopulateFields" -> PopulateFields
+' cDbOperations.FieldWritter "Branch", "Add" or "Update"
+
+
+Dim TableName As String, PrintType As String
+
+ TableName = "TicketDistribution"
+ PrintType = "Add"
+  
+On Error GoTo ErrorHandler
+
+    Dim rs As DAO.Recordset
+
+    Set rs = CurrentDb().OpenRecordset("Select top 1 * From [" & TableName & "]", dbOpenDynaset)
+    
+    Dim fld As Variant
+    
+    Debug.Print vbNullString
+    
+    For Each fld In rs.Fields
+    
+        Select Case PrintType
+        
+            Case "FieldNames": Debug.Print fld.Name
+            
+            Case "FieldDeclaretion": Debug.Print "Public " & fld.Name & " As " & GetAccessFieldTypeEnum(fld.Type)
+    
+            Case "PopulateFields": Debug.Print fld.Name, " = ", "Nz(rs(""" & fld.Name & """))"
+            
+            Case "Add", "Update": Debug.Print "!" & fld.Name, " = ", fld.Name
+            
+            Case "ClearFields": Debug.Print fld.Name, " = ", "vbNullString"
+            
+            Case "UpdateModel": Debug.Print "oModel." & fld.Name, " = ", "Nz(Me." & fld.Name & ")"
+            
+            
+        End Select
+    
+    Next
+
+    Exit Function
+
+ErrorHandler:
+     Err.Raise Err.Number, CLASS_NAME & ".FieldWritter", Err.Description
+
+End Function
+
+Function GetAccessFieldTypeEnum(fieldTypeNumber As Integer) As String
+
+    ' Article Reference: https://learn.microsoft.com/en-us/office/client-developer/access/desktop-database-reference/datatypeenum-enumeration-dao
+    
+    Select Case fieldTypeNumber
+        Case 1
+            GetAccessFieldTypeEnum = "Boolean"
+        Case 2
+            GetAccessFieldTypeEnum = "dbByte"
+        Case 3
+            GetAccessFieldTypeEnum = "Integer"
+        Case 4
+            GetAccessFieldTypeEnum = "Long"
+        Case 5
+            GetAccessFieldTypeEnum = "Currency"
+        Case 6
+            GetAccessFieldTypeEnum = "dbSingle"
+        Case 7
+            GetAccessFieldTypeEnum = "Double"
+        Case 8
+            GetAccessFieldTypeEnum = "Date"
+        Case 9
+            GetAccessFieldTypeEnum = "dbBinary" ' Often used interchangeably with dbDouble
+        Case 10
+            GetAccessFieldTypeEnum = "String" ' dbText
+        Case 11
+            GetAccessFieldTypeEnum = "dbMemo"
+        Case 12
+            GetAccessFieldTypeEnum = "String"
+        Case 13
+            GetAccessFieldTypeEnum = "Unknown"
+'        Case 14
+'            GetAccessFieldTypeEnum = "dbReplicationID"
+'        Case 15
+'            GetAccessFieldTypeEnum = "dbGUID"
+'        Case 16
+'            GetAccessFieldTypeEnum = "dbBigInt"
+'        Case Else
+'            GetAccessFieldTypeEnum = "Unknown Field Type"
+    End Select
+    
+End Function
+
 

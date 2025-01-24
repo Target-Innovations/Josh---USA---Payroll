@@ -15,8 +15,8 @@ Begin Form
     Width =14760
     DatasheetFontHeight =11
     ItemSuffix =751
-    Right =20985
-    Bottom =10770
+    Right =11295
+    Bottom =10515
     DatasheetGridlinesColor =-1
     Tag ="SplitList"
     Filter ="([GameStyles].[StyleName] Like \"*599*\")"

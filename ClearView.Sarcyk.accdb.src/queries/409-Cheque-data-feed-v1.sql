@@ -1,0 +1,3 @@
+﻿SELECT TicketDistribution.SerialNumber, TicketDistribution.Status, Charities.CharityName, Locations.LocationName, OrderForms.Revenue, "ABC" AS [Memo], TicketDeliveryOrders.SaleDate, OrderForms.TicketValue
+FROM (TicketDistribution INNER JOIN ((TicketDeliveryOrders INNER JOIN Charities ON TicketDeliveryOrders.CharityId = Charities.Id) INNER JOIN Locations ON TicketDeliveryOrders.LocationId = Locations.id) ON TicketDistribution.DeliveryNumber = TicketDeliveryOrders.Id) INNER JOIN (TicketDeliveryOrderItems INNER JOIN OrderForms ON TicketDeliveryOrderItems.GameId = OrderForms.Id) ON TicketDeliveryOrders.Id = TicketDeliveryOrderItems.DistributionOrderId
+WHERE (((TicketDistribution.Status)="Location Paid"));

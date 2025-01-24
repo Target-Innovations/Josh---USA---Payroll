@@ -18,7 +18,7 @@ Begin Form
     Width =13978
     DatasheetFontHeight =11
     ItemSuffix =980
-    Right =16005
+    Right =14843
     Bottom =10515
     TimerInterval =125
     AfterInsert ="[Event Procedure]"
@@ -913,25 +913,26 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =215
-                    AccessKey =80
+                    AccessKey =86
                     TextFontFamily =34
                     Left =7771
                     Top =1748
+                    Width =1770
                     Height =405
                     FontSize =10
                     TabIndex =6
                     ForeColor =0
                     Name ="cmdPrint"
-                    Caption ="&Print"
+                    Caption ="&View Sales Order"
                     OnClick ="[Event Procedure]"
                     FontName ="Segoe UI"
                     Tag ="Close"
-                    UnicodeAccessKey =80
+                    UnicodeAccessKey =86
 
                     CursorOnHover =1
                     LayoutCachedLeft =7771
                     LayoutCachedTop =1748
-                    LayoutCachedWidth =9211
+                    LayoutCachedWidth =9541
                     LayoutCachedHeight =2153
                     PictureCaptionArrangement =1
                     ColumnStart =2
@@ -1763,6 +1764,7 @@ Begin Form
                                     End
                                 End
                                 Begin TextBox
+                                    Locked = NotDefault
                                     OverlapFlags =215
                                     TextAlign =1
                                     TextFontFamily =34
@@ -1833,7 +1835,7 @@ Begin Form
                                     Width =1245
                                     Height =293
                                     Name ="lblSerialConunt"
-                                    Caption ="Count: (0)"
+                                    Caption ="Count: (1)"
                                     LayoutCachedLeft =7147
                                     LayoutCachedTop =4335
                                     LayoutCachedWidth =8392

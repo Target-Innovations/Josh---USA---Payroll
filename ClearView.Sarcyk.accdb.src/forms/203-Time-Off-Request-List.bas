@@ -4,6 +4,7 @@ Begin Form
     RecordSelectors = NotDefault
     AutoCenter = NotDefault
     DividingLines = NotDefault
+    OrderByOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =5
     ScrollBars =0
@@ -14,12 +15,13 @@ Begin Form
     GridY =24
     Width =14760
     DatasheetFontHeight =11
-    ItemSuffix =563
-    Right =14505
+    ItemSuffix =658
+    Right =9668
     Bottom =10515
     DatasheetGridlinesColor =-1
     Tag ="SplitList"
-    Filter ="EmployeeId = 3671"
+    Filter ="EmployeeId = 3673"
+    OrderBy ="[TimeOffRequests].[ID]"
     RecSrcDt = Begin
         0x0f88738e7935e640
     End
@@ -200,7 +202,7 @@ Begin Form
                     LayoutCachedTop =1110
                     LayoutCachedWidth =1815
                     LayoutCachedHeight =1515
-                    TabIndex =3
+                    TabIndex =4
                 End
                 Begin CommandButton
                     OverlapFlags =247
@@ -1194,7 +1196,7 @@ Begin Form
                     LayoutCachedTop =68
                     LayoutCachedWidth =1298
                     LayoutCachedHeight =893
-                    TabIndex =4
+                    TabIndex =5
                 End
                 Begin Image
                     BackStyle =0
@@ -1344,7 +1346,7 @@ Begin Form
                     LayoutCachedTop =1170
                     LayoutCachedWidth =760
                     LayoutCachedHeight =1510
-                    TabIndex =5
+                    TabIndex =6
                 End
                 Begin CommandButton
                     OverlapFlags =247
@@ -1496,11 +1498,48 @@ Begin Form
                     WebImagePaddingBottom =3
                     Overlaps =1
                 End
+                Begin CommandButton
+                    Enabled = NotDefault
+                    OverlapFlags =215
+                    AccessKey =65
+                    TextFontCharSet =0
+                    Left =5280
+                    Top =1110
+                    Width =1441
+                    Height =405
+                    FontSize =10
+                    TabIndex =3
+                    ForeColor =0
+                    Name ="cmdApprove"
+                    Caption =" &Approve"
+                    OnClick ="[Event Procedure]"
+                    Tag ="SaveAndNew~DefaultControl=First Name"
+                    ControlTipText ="Save record"
+                    UnicodeAccessKey =65
+
+                    CursorOnHover =1
+                    LayoutCachedLeft =5280
+                    LayoutCachedTop =1110
+                    LayoutCachedWidth =6721
+                    LayoutCachedHeight =1515
+                    PictureCaptionArrangement =1
+                    GridlineThemeColorIndex =1
+                    GridlineShade =65.0
+                    UseTheme =1
+                    BorderThemeColorIndex =4
+                    HoverForeThemeColorIndex =4
+                    PressedForeThemeColorIndex =0
+                    WebImagePaddingLeft =4
+                    WebImagePaddingTop =4
+                    WebImagePaddingRight =3
+                    WebImagePaddingBottom =3
+                    Overlaps =1
+                End
             End
         End
         Begin Section
             CanGrow = NotDefault
-            Height =3218
+            Height =3360
             BackColor =-2147483613
             Name ="Detail"
             Begin
@@ -1757,11 +1796,12 @@ Begin Form
                     Name ="cboEmployeeId"
                     ControlSource ="EmployeeId"
                     RowSourceType ="Table/Query"
-                    RowSource ="SELECT Employees.Id, Employees.FullName, Employees.TimeOffLeft FROM Employees OR"
-                        "DER BY Employees.FullName; "
+                    RowSource ="SELECT [Employees Extended].ID, [Employees Extended].FullName AS Name FROM [Empl"
+                        "oyees Extended] ORDER BY [Employees Extended].FullName; "
                     ColumnWidths ="0;1701"
                     AfterUpdate ="[Event Procedure]"
                     OnDblClick ="[Event Procedure]"
+                    OnGotFocus ="[Event Procedure]"
                     GroupTable =31
                     LeftPadding =0
                     TopPadding =0
@@ -1890,7 +1930,7 @@ Begin Form
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT Employees.Id, Employees.FullName, Employees.BusinessRole FROM Employees W"
                         "HERE (((Employees.BusinessRole)=1)) ORDER BY Employees.FullName; "
-                    ColumnWidths ="0;1701"
+                    ColumnWidths ="0;1700"
                     GroupTable =31
                     LeftPadding =0
                     TopPadding =0
@@ -2014,6 +2054,7 @@ Begin Form
                     Top =1373
                     Width =3300
                     Height =270
+                    ColumnWidth =2505
                     TabIndex =4
                     Name ="BalanceBeforeApproval"
                     ControlSource ="BalanceBeforeApproval"
@@ -2137,6 +2178,30 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
 
+Private Sub cboEmployeeId_GotFocus()
+    Me.cboEmployeeId.Requery
+End Sub
+
+Private Sub cmdApprove_Click()
+
+    If MsgBox("Are you sure you want to approve this time off request?", vbExclamation + vbYesNo) = vbNo Then
+        Exit Sub
+    End If
+
+    If Me.chkApproved = False Then
+        ' Me.cboApprovedBy = cSysSettings.oUser.Id
+        Me.chkApproved = True
+    End If
+    
+    If Me.Dirty Then
+        Me.Dirty = False
+    End If
+    
+    DoCmd.RunCommand acCmdSaveRecord
+    DoCmd.GoToRecord , , acNewRec
+    
+End Sub
+
 Private Sub Form_Load()
 
     On Error Resume Next
@@ -2175,7 +2240,9 @@ Private Sub Form_Load()
 End Sub
 
 Private Sub cboEmployeeId_AfterUpdate()
-    Me.BalanceBeforeApproval = Me.cboEmployeeId.Column(2)
+    If Len(Me.BalanceBeforeApproval) = 0 Then
+        Me.BalanceBeforeApproval = Nz(Me.cboEmployeeId.Column(2), 0)
+    End If
 End Sub
 
 Private Sub cboEmployeeId_DblClick(Cancel As Integer)
@@ -2188,6 +2255,14 @@ Private Sub Form_BeforeUpdate(Cancel As Integer)
 '    Set oTimeOff = New cTimeOffRequest
 
     Dim TimeOffLeft As Integer
+    
+    If Me.chkApproved And Me.chkApproved.OldValue Then
+        ' if record has already been approved in the past
+        ' it can not be changed anymore
+        Me.Undo
+        Exit Sub
+    End If
+    
     
     UpdateModel
     
@@ -2206,21 +2281,21 @@ Private Sub Form_BeforeUpdate(Cancel As Integer)
                 oTimeOff.GetTimeOffById Me.Id
                 Me.BalanceBeforeApproval = oTimeOff.GetTimeOffLeft(Me.EmployeeID)
                 
-                oTimeOff.ApplyTimeOff
+                If oTimeOff.ApplyTimeOff Then
                 
-                Me.ApprovedBy = cSysSettings.oUser.Id
-          
-                If Len(oTimeOff.Message) > 0 Then
-                    MsgBox oTimeOff.Message, vbInformation
-                    Me.Undo
-                Else
-                    MsgBox "Time-off approved successfully.", vbInformation
+                  Me.cboApprovedBy = cSysSettings.oUser.Id
+            
+                  If Len(oTimeOff.Message) > 0 Then
+                      MsgBox oTimeOff.Message, vbInformation
+                  End If
+                
                 End If
+            Else
+                MsgBox oTimeOff.Message, vbInformation
+                DoCmd.CancelEvent
             End If
-
+            
         End If
-        
-        Exit Sub
     
     End If
     
@@ -2253,14 +2328,20 @@ Private Sub UpdateModel()
 End Sub
 
 Private Sub Form_Current()
-    ' If Not Me.NewRecord Then Me.cmdSave.Enabled = True
     
     Me.chkApproved.Locked = True
+    Me.cmdApprove.Enabled = False
+    
+    If Me.NewRecord Then Exit Sub
+    
     
     If cSysSettings.oUser.UserType = User_Type.Admin Then
-        If Not Me.chkApproved Then Me.chkApproved.Locked = False
+        ' If Not Me.chkApproved Then Me.chkApproved.Locked = False
+        Me.cmdApprove.Enabled = Not Me.chkApproved
     Else
         Me.chkApproved.Locked = True
     End If
+    
+    ' Me.cmdSave.Enabled = Not Me.chkApproved.Locked
     
 End Sub

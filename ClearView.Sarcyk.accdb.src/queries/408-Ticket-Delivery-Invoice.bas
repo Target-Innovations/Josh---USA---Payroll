@@ -90,14 +90,6 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="TicketDeliveryOrderItems.ReceiverName"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="TicketDeliveryOrderItems.DeliveryPersonsName"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
         dbText "Name" ="TicketDeliveryOrderItems.UpdatedAt"
         dbLong "AggregateType" ="-1"
     End
@@ -279,17 +271,33 @@ Begin
         dbText "Name" ="OrderForms.Revenue"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="TicketDeliveryOrderItems.DeliveryPersonsName"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="TicketDeliveryOrderItems.ReceiverName"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Expr1"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Rent"
+        dbLong "AggregateType" ="-1"
+    End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =2168
+    Right =2013
     Bottom =1206
     Left =-1
     Top =-1
-    Right =2135
-    Bottom =854
+    Right =1980
+    Bottom =786
     Left =0
     Top =0
     ColumnsShown =539
@@ -312,19 +320,19 @@ Begin
         Name =""
     End
     Begin
-        Left =1010
-        Top =426
-        Right =1298
-        Bottom =714
+        Left =1081
+        Top =395
+        Right =1369
+        Bottom =683
         Top =0
         Name ="Charities"
         Name =""
     End
     Begin
-        Left =651
-        Top =562
-        Right =939
-        Bottom =850
+        Left =672
+        Top =498
+        Right =960
+        Bottom =786
         Top =0
         Name ="Locations"
         Name =""

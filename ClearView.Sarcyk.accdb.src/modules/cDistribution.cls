@@ -28,7 +28,7 @@ Private Enum deStatus
 End Enum
 
 Public Id As Long
-Public Status As Double
+Public Status As String
 Public DeliveryNumber As Long
 Public DistributionDate As Date
 Public CharityId As Long
@@ -103,7 +103,7 @@ End Property
 Private Sub ClearFields()
 
     'Id = vbNullString
-    Status = 1
+    Status = "Active"
     DeliveryNumber = vbNull
     DistributionDate = vbNull
     CharityId = vbNull
@@ -157,7 +157,7 @@ Public Function Validate(Optional ByVal Operation As String = C_UPDATE) As Boole
 '
 '    End If
 
-    Validate = False
+    Validate = True
     
 End Function
 
@@ -171,36 +171,36 @@ On Error GoTo ErrorHandler
             
             rs.MoveFirst
             
-            Id = rs("Id")
-            Status = rs("Status")
-            DeliveryNumber = rs("DeliveryNumber")
-            DistributionDate = rs("DistributionDate")
-            CharityId = rs("CharityId")
-            LocationId = rs("LocationId")
-            SalesRepId = rs("SalesRepId")
-            MarketingRepId = rs("MarketingRepId")
-            RepCommission = rs("RepCommission")
-            SerialNumber = rs("SerialNumber")
-            SupplierId = rs("SupplierId")
-            GameName = rs("GameName")
-            TicketCount = rs("TicketCount")
-            TicketValue = rs("TicketValue")
-            TotalRevenue = rs("TotalRevenue")
-            PrizesPaid = rs("PrizesPaid")
-            Profit = rs("Profit")
-            Rent = rs("Rent")
+            Id = Nz(rs("Id"))
+            Status = Nz(rs("Status"))
+            DeliveryNumber = Nz(rs("DeliveryNumber"))
+            DistributionDate = Nz(rs("DistributionDate"))
+            CharityId = Nz(rs("CharityId"))
+            LocationId = Nz(rs("LocationId"))
+            SalesRepId = Nz(rs("SalesRepId"))
+            MarketingRepId = Nz(rs("MarketingRepId"))
+            RepCommission = Nz(rs("RepCommission"))
+            SerialNumber = Nz(rs("SerialNumber"))
+            SupplierId = Nz(rs("SupplierId"))
+            GameName = Nz(rs("GameName"))
+            TicketCount = Nz(rs("TicketCount"))
+            TicketValue = Nz(rs("TicketValue"))
+            TotalRevenue = Nz(rs("TotalRevenue"))
+            PrizesPaid = Nz(rs("PrizesPaid"))
+            Profit = Nz(rs("Profit"))
+            Rent = Nz(rs("Rent"))
             ' BillingStyle = rs("BillingStyle")
-            TotalBillable = rs("TotalBillable")
-            TicketSupplyCost = rs("TicketSupplyCost")
-            SMACServiceFee = rs("SMACServiceFee")
-            SMACAdminFee = rs("SMACAdminFee")
-            LocationCheckNumber = rs("LocationCheckNumber")
-            ReimbursementCheckNumber = rs("ReimbursementCheckNumber")
-            EnvelopeNumber = rs("EnvelopeNumber")
-            ReimbursementSent = rs("ReimbursementSent")
+            TotalBillable = Nz(rs("TotalBillable"))
+            TicketSupplyCost = Nz(rs("TicketSupplyCost"))
+            SMACServiceFee = Nz(rs("SMACServiceFee"))
+            SMACAdminFee = Nz(rs("SMACAdminFee"))
+            LocationCheckNumber = Nz(rs("LocationCheckNumber"))
+            ReimbursementCheckNumber = Nz(rs("ReimbursementCheckNumber"))
+            EnvelopeNumber = Nz(rs("EnvelopeNumber"))
+            ReimbursementSent = Nz(rs("ReimbursementSent"))
             
-            UpdatedAt = rs("UpdatedAt")
-            UpdatedBy = rs("UpdatedBy")
+            UpdatedAt = Nz(rs("UpdatedAt"))
+            UpdatedBy = Nz(rs("UpdatedBy"))
                         
             this.Message = vbNullString
             
@@ -225,20 +225,33 @@ Public Sub GetInfoById(Pk_Id As Long)
 
 On Error GoTo ErrorHandler
 
-    Dim rs As Recordset
+    Dim rs As DAO.Recordset
 
     Set rs = CurrentDb().OpenRecordset("Select * From [" & TABLE_NAME & "] Where Id = " & Pk_Id, dbOpenSnapshot)
     
-    With rs
-    
-        PopulateFiels (rs)
-       
-    End With
+    PopulateFiels rs
 
     Exit Sub
 
 ErrorHandler:
      Err.Raise Err.Number, CLASS_NAME & ".GetInfoById", Err.Description
+    
+End Sub
+
+Public Sub GetInfoBySerialNumberf(SerialNumber As String)
+
+On Error GoTo ErrorHandler
+
+    Dim rs As DAO.Recordset
+
+    Set rs = CurrentDb().OpenRecordset("Select * From [" & TABLE_NAME & "] Where SerialNumber = '" & Trim(SerialNumber) & "'", dbOpenSnapshot)
+
+    PopulateFiels rs
+    
+    Exit Sub
+
+ErrorHandler:
+     Err.Raise Err.Number, CLASS_NAME & ".GetInfoBySerialNumberf", Err.Description
     
 End Sub
 
@@ -496,3 +509,34 @@ Function GetCurrentDistributionStatus(LocationCheck As String, ReimbursementChec
 
 End Function
 
+Function SetCurrentDistributionStatus() As String
+
+On Error GoTo ErrorHandler
+
+    Me.Status = Me.GetCurrentDistributionStatus(Me.LocationCheckNumber, Me.ReimbursementCheckNumber, Me.EnvelopeNumber, Me.ReimbursementSent)
+    
+    ' CurrentDb.Execute "Update TicketDistribution set Status = '" & Me.Status & "' Where SerialNumber = '" & Me.SerialNumber & "'"
+
+    SetCurrentDistributionStatus = Me.Status
+    Exit Function
+
+ErrorHandler:
+    this.Message = "Unable to Add " & CLASS_NAME & " record."
+    Err.Raise Err.Number, CLASS_NAME & ".SetCurrentDistributionStatus", Err.Description
+    
+End Function
+
+Function SetLocationCheckNumber(CheckNumber As String)
+
+On Error GoTo ErrorHandler
+
+    CurrentDb.Execute "Update TicketDistribution set LocationCheckNumber = '" & CheckNumber & "' Where SerialNumber = '" & SerialNumber & "'"
+
+    SetLocationCheckNumber = True
+    Exit Function
+
+ErrorHandler:
+    this.Message = "Unable to Add " & CLASS_NAME & " record."
+    Err.Raise Err.Number, CLASS_NAME & ".SetLocationCheckNumber", Err.Description
+    
+End Function

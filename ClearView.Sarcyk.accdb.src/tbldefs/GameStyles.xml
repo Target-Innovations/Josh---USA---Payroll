@@ -11,7 +11,6 @@
     <xsd:annotation>
       <xsd:appinfo>
         <od:index index-name="ID" index-key="xxxID " primary="no" unique="no" clustered="no" order="asc"/>
-        <od:index index-name="ManufacturerGameStyles" index-key="ManufacturerId " primary="no" unique="no" clustered="no" order="asc"/>
         <od:index index-name="ManufacturerId" index-key="ManufacturerId " primary="no" unique="no" clustered="no" order="asc"/>
         <od:index index-name="Pkid" index-key="Id " primary="no" unique="no" clustered="no" order="asc"/>
         <od:index index-name="PrimaryKey" index-key="Id " primary="yes" unique="yes" clustered="no" order="asc"/>

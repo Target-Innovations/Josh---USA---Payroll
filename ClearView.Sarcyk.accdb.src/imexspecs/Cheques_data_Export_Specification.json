@@ -1,0 +1,102 @@
+﻿{
+  "Info": {
+    "Class": "clsDbImexSpec",
+    "Description": "Import/Export Specification from MSysIMEXSpecs"
+  },
+  "Items": {
+    "DateDelim": "/",
+    "DateFourDigitYear": true,
+    "DateLeadingZeros": false,
+    "DateOrder": 2,
+    "DecimalPoint": ".",
+    "FieldSeparator": ",",
+    "FileType": -535,
+    "SpecName": "Cheques_data_Export_Specification",
+    "SpecType": 1,
+    "StartRow": 1,
+    "TextDelim": "\"",
+    "TimeDelim": ":",
+    "Columns": {
+      "Amount": {
+        "Attributes": 0,
+        "DataType": 4,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 26,
+        "Width": 7
+      },
+      "CheckDate": {
+        "Attributes": 0,
+        "DataType": 8,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 33,
+        "Width": 10
+      },
+      "Memo": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 43,
+        "Width": 10
+      },
+      "Note1": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 53,
+        "Width": 148
+      },
+      "Note2": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 201,
+        "Width": 18
+      },
+      "Payee": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 1,
+        "Width": 25
+      },
+      "PayeeAddress1": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 219,
+        "Width": 36
+      },
+      "PayeeAddress2": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 255,
+        "Width": 41
+      },
+      "PayeeAddress3": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 296,
+        "Width": 23
+      },
+      "PayeeAddress4": {
+        "Attributes": 0,
+        "DataType": 10,
+        "IndexType": 0,
+        "SkipColumn": false,
+        "Start": 319,
+        "Width": 14
+      }
+    }
+  }
+}

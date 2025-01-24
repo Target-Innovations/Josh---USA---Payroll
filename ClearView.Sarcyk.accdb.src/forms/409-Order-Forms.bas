@@ -4,6 +4,7 @@ Begin Form
     RecordSelectors = NotDefault
     AutoCenter = NotDefault
     DividingLines = NotDefault
+    FilterOn = NotDefault
     OrderByOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =5
@@ -16,11 +17,11 @@ Begin Form
     Width =14760
     DatasheetFontHeight =11
     ItemSuffix =894
-    Right =17670
+    Right =17438
     Bottom =10770
     DatasheetGridlinesColor =-1
     Tag ="SplitList"
-    Filter ="([OrderForms].[FormNumber] Like \"*AR-YF38*\")"
+    Filter ="([OrderForms].[FormNumber] Like \"*yf38*\")"
     OrderBy ="[OrderForms].[GameName], [OrderForms].[Id]"
     RecSrcDt = Begin
         0x7be57bf35242e640
@@ -737,7 +738,7 @@ Begin Form
                     ColumnWidth =2513
                     TabIndex =3
                     ForeColor =1279872587
-                    ColumnInfo ="\"\";\"\";\"\";\"@\";\"10\";\"510\""
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
                     Name ="GameStyleId"
                     ControlSource ="GameStyleId"
                     RowSourceType ="Table/Query"

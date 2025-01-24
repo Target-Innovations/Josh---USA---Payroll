@@ -15,7 +15,7 @@ Begin Form
     Width =14760
     DatasheetFontHeight =11
     ItemSuffix =872
-    Right =15923
+    Right =11295
     Bottom =10515
     DatasheetGridlinesColor =-1
     Tag ="SplitList"
@@ -4028,7 +4028,7 @@ Private Sub txtApply_Click()
         Exit Sub
     End If
     
-    Me.txtPettyCashPayout = Abs(oStub.PettyCashUsage(Nz(Me.EmployeeID), (Me.LocationId), Nz(Me.CollectionDate)))
+    Me.txtPettyCashPayout = Abs(oStub.PettyCashUsage(Me.Id, Nz(Me.EmployeeID), (Me.LocationId), Nz(Me.CollectionDate)))
     
     On Error Resume Next
     

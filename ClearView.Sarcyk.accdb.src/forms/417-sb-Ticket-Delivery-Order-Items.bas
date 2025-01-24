@@ -10,11 +10,11 @@ Begin Form
     GridY =10
     Width =5952
     DatasheetFontHeight =11
-    ItemSuffix =69
+    ItemSuffix =130
     Left =765
-    Top =6368
+    Top =4740
     Right =15998
-    Bottom =9225
+    Bottom =7598
     RecSrcDt = Begin
         0x44a82bad1043e640
     End
@@ -93,7 +93,7 @@ Begin Form
             GridlineShade =65.0
         End
         Begin Section
-            Height =4688
+            Height =3312
             Name ="Detail"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
@@ -336,59 +336,6 @@ Begin Form
                     TextAlign =1
                     IMESentenceMode =3
                     Left =2813
-                    Top =2108
-                    Width =2835
-                    Height =338
-                    TabIndex =5
-                    LeftMargin =44
-                    TopMargin =22
-                    RightMargin =44
-                    BottomMargin =22
-                    Name ="txtLocationCheckNumbers"
-                    ControlSource ="LocationCheckNumbers"
-                    GroupTable =1
-
-                    LayoutCachedLeft =2813
-                    LayoutCachedTop =2108
-                    LayoutCachedWidth =5648
-                    LayoutCachedHeight =2446
-                    RowStart =5
-                    RowEnd =5
-                    ColumnStart =1
-                    ColumnEnd =1
-                    LayoutGroup =1
-                    GroupTable =1
-                    Begin
-                        Begin Label
-                            OverlapFlags =85
-                            TextAlign =1
-                            Left =285
-                            Top =2108
-                            Width =2458
-                            Height =338
-                            LeftMargin =44
-                            TopMargin =22
-                            RightMargin =44
-                            BottomMargin =22
-                            Name ="Label21"
-                            Caption ="Check #"
-                            GroupTable =1
-                            LayoutCachedLeft =285
-                            LayoutCachedTop =2108
-                            LayoutCachedWidth =2743
-                            LayoutCachedHeight =2446
-                            RowStart =5
-                            RowEnd =5
-                            LayoutGroup =1
-                            GroupTable =1
-                        End
-                    End
-                End
-                Begin TextBox
-                    OverlapFlags =85
-                    TextAlign =3
-                    IMESentenceMode =3
-                    Left =2813
                     Top =2858
                     Width =2835
                     Height =338
@@ -397,9 +344,8 @@ Begin Form
                     TopMargin =22
                     RightMargin =44
                     BottomMargin =22
-                    Name ="txtLastSale"
-                    ControlSource ="LastSale"
-                    Format ="$#,##0.00;-$#,##0.00"
+                    Name ="txtLocationCheckNumbers"
+                    ControlSource ="LocationCheckNumbers"
                     GroupTable =1
 
                     LayoutCachedLeft =2813
@@ -412,8 +358,6 @@ Begin Form
                     ColumnEnd =1
                     LayoutGroup =1
                     GroupTable =1
-                    CurrencySymbol ="$"
-                    ColLCID =4105
                     Begin
                         Begin Label
                             OverlapFlags =85
@@ -426,8 +370,8 @@ Begin Form
                             TopMargin =22
                             RightMargin =44
                             BottomMargin =22
-                            Name ="Label24"
-                            Caption ="Last Sale"
+                            Name ="Label21"
+                            Caption ="Check #"
                             GroupTable =1
                             LayoutCachedLeft =285
                             LayoutCachedTop =2858
@@ -442,107 +386,55 @@ Begin Form
                 End
                 Begin TextBox
                     OverlapFlags =85
-                    TextAlign =1
+                    TextAlign =3
                     IMESentenceMode =3
                     Left =2813
-                    Top =3263
+                    Top =2453
                     Width =2835
                     Height =338
-                    ColumnWidth =2678
-                    TabIndex =8
+                    TabIndex =6
                     LeftMargin =44
                     TopMargin =22
                     RightMargin =44
                     BottomMargin =22
-                    Name ="txtReceiverName"
-                    ControlSource ="ReceiverName"
+                    Name ="txtLastSale"
+                    ControlSource ="LastSale"
+                    Format ="$#,##0.00;-$#,##0.00"
                     GroupTable =1
 
                     LayoutCachedLeft =2813
-                    LayoutCachedTop =3263
+                    LayoutCachedTop =2453
                     LayoutCachedWidth =5648
-                    LayoutCachedHeight =3601
-                    RowStart =8
-                    RowEnd =8
+                    LayoutCachedHeight =2791
+                    RowStart =6
+                    RowEnd =6
                     ColumnStart =1
                     ColumnEnd =1
                     LayoutGroup =1
                     GroupTable =1
+                    CurrencySymbol ="$"
+                    ColLCID =4105
                     Begin
                         Begin Label
                             OverlapFlags =85
                             TextAlign =1
                             Left =285
-                            Top =3263
+                            Top =2453
                             Width =2458
                             Height =338
                             LeftMargin =44
                             TopMargin =22
                             RightMargin =44
                             BottomMargin =22
-                            Name ="Label30"
-                            Caption ="Receiver"
+                            Name ="Label24"
+                            Caption ="Last Sale"
                             GroupTable =1
                             LayoutCachedLeft =285
-                            LayoutCachedTop =3263
+                            LayoutCachedTop =2453
                             LayoutCachedWidth =2743
-                            LayoutCachedHeight =3601
-                            RowStart =8
-                            RowEnd =8
-                            LayoutGroup =1
-                            GroupTable =1
-                        End
-                    End
-                End
-                Begin TextBox
-                    OverlapFlags =85
-                    TextAlign =1
-                    IMESentenceMode =3
-                    Left =2813
-                    Top =3668
-                    Width =2835
-                    Height =338
-                    ColumnWidth =2648
-                    TabIndex =9
-                    LeftMargin =44
-                    TopMargin =22
-                    RightMargin =44
-                    BottomMargin =22
-                    Name ="txtDeliveryPersonsName"
-                    ControlSource ="DeliveryPersonsName"
-                    GroupTable =1
-
-                    LayoutCachedLeft =2813
-                    LayoutCachedTop =3668
-                    LayoutCachedWidth =5648
-                    LayoutCachedHeight =4006
-                    RowStart =9
-                    RowEnd =9
-                    ColumnStart =1
-                    ColumnEnd =1
-                    LayoutGroup =1
-                    GroupTable =1
-                    Begin
-                        Begin Label
-                            OverlapFlags =85
-                            TextAlign =1
-                            Left =285
-                            Top =3668
-                            Width =2458
-                            Height =338
-                            LeftMargin =44
-                            TopMargin =22
-                            RightMargin =44
-                            BottomMargin =22
-                            Name ="Label33"
-                            Caption ="Delivery Person"
-                            GroupTable =1
-                            LayoutCachedLeft =285
-                            LayoutCachedTop =3668
-                            LayoutCachedWidth =2743
-                            LayoutCachedHeight =4006
-                            RowStart =9
-                            RowEnd =9
+                            LayoutCachedHeight =2791
+                            RowStart =6
+                            RowEnd =6
                             LayoutGroup =1
                             GroupTable =1
                         End
@@ -618,10 +510,10 @@ Begin Form
                     TextAlign =3
                     IMESentenceMode =3
                     Left =2813
-                    Top =2513
+                    Top =2108
                     Width =2835
                     Height =278
-                    TabIndex =6
+                    TabIndex =5
                     LeftMargin =44
                     TopMargin =22
                     RightMargin =44
@@ -632,11 +524,11 @@ Begin Form
                     GroupTable =1
 
                     LayoutCachedLeft =2813
-                    LayoutCachedTop =2513
+                    LayoutCachedTop =2108
                     LayoutCachedWidth =5648
-                    LayoutCachedHeight =2791
-                    RowStart =6
-                    RowEnd =6
+                    LayoutCachedHeight =2386
+                    RowStart =5
+                    RowEnd =5
                     ColumnStart =1
                     ColumnEnd =1
                     LayoutGroup =1
@@ -648,7 +540,7 @@ Begin Form
                             OverlapFlags =85
                             TextAlign =1
                             Left =285
-                            Top =2513
+                            Top =2108
                             Width =2458
                             Height =278
                             LeftMargin =44
@@ -659,11 +551,11 @@ Begin Form
                             Caption ="Six %"
                             GroupTable =1
                             LayoutCachedLeft =285
-                            LayoutCachedTop =2513
+                            LayoutCachedTop =2108
                             LayoutCachedWidth =2743
-                            LayoutCachedHeight =2791
-                            RowStart =6
-                            RowEnd =6
+                            LayoutCachedHeight =2386
+                            RowStart =5
+                            RowEnd =5
                             LayoutGroup =1
                             GroupTable =1
                         End
@@ -680,13 +572,15 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
 
+Dim oBox As New cBoxInventory
+
 Private Sub CboSerialNumber_Click()
 
     Me.cboGame = Nz(Me.CboSerialNumber.Column(1), 0)
     Me.txtIdealProfit = Nz(Me.CboSerialNumber.Column(3), 0)
     Me.txtTicketCount = Nz(Me.CboSerialNumber.Column(4), 0)
     Me.txtPrizesPaid = Nz(Me.CboSerialNumber.Column(5), 0)
-    Me.txtLocationRent = Nz(Me.CboSerialNumber.Column(5), 0)
+    Me.txtLocationRent = Nz(Me.CboSerialNumber.Column(6), 0)
     Me.txtLastSale = Nz(Me.CboSerialNumber.Column(7), 0)
     
 End Sub
@@ -698,8 +592,23 @@ Private Sub Form_BeforeUpdate(Cancel As Integer)
         Me.txtPrizesPaid = Me.txtPrizesPaid + Me.txtLastSale
         Me.txtIdealProfit = Me.txtIdealProfit - Me.txtLastSale
 
-        ' Me.Parent.Requery
+    End If
+    
+    If Not IsNullOrEmpty(Me.txtLocationCheckNumbers) Then
+        If Me.txtLocationCheckNumbers.Value <> Me.txtLocationCheckNumbers.OldValue Then
+        
+            oBox.GetInfoBySerialNumber (Me.SerialNumber)
+            oBox.SetDeliveryItemCheckNumber Me.LocationCheckNumbers
+            
+        End If
+    End If
+    
+End Sub
 
+Private Sub txtReceiverName_DblClick(Cancel As Integer)
+
+    If Not IsNullOrEmpty(Me.Parent.cboLocationId.Column(3)) Then
+        Me.ReceiverName = Nz(Me.Parent.cboLocationId.Column(3))
     End If
     
 End Sub

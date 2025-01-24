@@ -19,7 +19,7 @@ Begin Form
     DatasheetFontHeight =11
     ItemSuffix =1457
     Right =20985
-    Bottom =10770
+    Bottom =9045
     DatasheetGridlinesColor =-1
     Tag ="SplitList"
     OrderBy ="[TicketDistribution].[ID] DESC"
@@ -1295,7 +1295,7 @@ Begin Form
                     OverlapFlags =215
                     AccessKey =71
                     TextFontCharSet =0
-                    Left =6480
+                    Left =6720
                     Top =1320
                     Width =1923
                     Height =460
@@ -1303,63 +1303,40 @@ Begin Form
                     TabIndex =3
                     Name ="cmdNewDeliveryOrder"
                     Caption ="&Generate Cheques"
+                    OnClick ="[Event Procedure]"
                     Tag ="TR000000006"
                     UnicodeAccessKey =71
                     TopPadding =0
                     RightPadding =38
                     BottomPadding =15
                     GridlineColor =10921638
-                    OnClickEmMacro = Begin
-                        Version =196611
-                        ColumnsShown =0
-                        Begin
-                            Action ="OpenForm"
-                            Argument ="416-Ticket-Delivery-Order-Details"
-                            Argument ="0"
-                            Argument =""
-                            Argument ="1=0"
-                            Argument ="-1"
-                            Argument ="3"
-                        End
-                        Begin
-                            Comment ="_AXL:<?xml version=\"1.0\" encoding=\"UTF-16\" standalone=\"no\"?>\015\012<UserI"
-                                "nterfaceMacro For=\"cmdNewDeliveryOrder\" Event=\"OnClick\" xmlns=\"http://schem"
-                                "as.microsoft.com/office/accessservices/2009/11/application\"><Statements><Action"
-                                " Name=\"OpenForm\"><Argument Name"
-                        End
-                        Begin
-                            Comment ="_AXL:=\"FormName\">416-Ticket-Delivery-Order-Details</Argument><Argument Name=\""
-                                "WhereCondition\">1=0</Argument><Argument Name=\"WindowMode\">Dialog</Argument></"
-                                "Action></Statements></UserInterfaceMacro>"
-                        End
-                    End
                     BackStyle =0
 
                     CursorOnHover =1
-                    LayoutCachedLeft =6480
+                    LayoutCachedLeft =6720
                     LayoutCachedTop =1320
-                    LayoutCachedWidth =8403
+                    LayoutCachedWidth =8643
                     LayoutCachedHeight =1780
                     ColumnStart =2
                     ColumnEnd =2
                     ForeThemeColorIndex =1
                     GridlineShade =65.0
                     UseTheme =1
-                    OldBorderStyle =0
+                    BorderThemeColorIndex =1
                     HoverColor =2366701
                     PressedThemeColorIndex =0
                     HoverForeThemeColorIndex =5
                     PressedForeThemeColorIndex =1
                     WebImagePaddingLeft =4
-                    WebImagePaddingRight =5
-                    WebImagePaddingBottom =2
+                    WebImagePaddingRight =4
+                    WebImagePaddingBottom =1
                     Overlaps =1
                 End
                 Begin CommandButton
                     OverlapFlags =215
                     AccessKey =71
                     TextFontCharSet =0
-                    Left =8640
+                    Left =9120
                     Top =1320
                     Width =1983
                     Height =460
@@ -1367,56 +1344,33 @@ Begin Form
                     TabIndex =4
                     Name ="Command1456"
                     Caption ="&Generate Envelopes"
+                    OnClick ="[Event Procedure]"
                     Tag ="TR000000006"
                     UnicodeAccessKey =71
                     TopPadding =0
                     RightPadding =38
                     BottomPadding =15
                     GridlineColor =10921638
-                    OnClickEmMacro = Begin
-                        Version =196611
-                        ColumnsShown =0
-                        Begin
-                            Action ="OpenForm"
-                            Argument ="416-Ticket-Delivery-Order-Details"
-                            Argument ="0"
-                            Argument =""
-                            Argument ="1=0"
-                            Argument ="-1"
-                            Argument ="3"
-                        End
-                        Begin
-                            Comment ="_AXL:<?xml version=\"1.0\" encoding=\"UTF-16\" standalone=\"no\"?>\015\012<UserI"
-                                "nterfaceMacro For=\"Command1456\" Event=\"OnClick\" xmlns=\"http://schemas.micro"
-                                "soft.com/office/accessservices/2009/11/application\"><Statements><Action Name=\""
-                                "OpenForm\"><Argument Name=\"FormNa"
-                        End
-                        Begin
-                            Comment ="_AXL:me\">416-Ticket-Delivery-Order-Details</Argument><Argument Name=\"WhereCond"
-                                "ition\">1=0</Argument><Argument Name=\"WindowMode\">Dialog</Argument></Action></"
-                                "Statements></UserInterfaceMacro>"
-                        End
-                    End
                     BackStyle =0
 
                     CursorOnHover =1
-                    LayoutCachedLeft =8640
+                    LayoutCachedLeft =9120
                     LayoutCachedTop =1320
-                    LayoutCachedWidth =10623
+                    LayoutCachedWidth =11103
                     LayoutCachedHeight =1780
                     ColumnStart =2
                     ColumnEnd =2
                     ForeThemeColorIndex =1
                     GridlineShade =65.0
                     UseTheme =1
-                    OldBorderStyle =0
+                    BorderThemeColorIndex =1
                     HoverColor =2366701
                     PressedThemeColorIndex =0
                     HoverForeThemeColorIndex =5
                     PressedForeThemeColorIndex =1
                     WebImagePaddingLeft =4
-                    WebImagePaddingRight =5
-                    WebImagePaddingBottom =2
+                    WebImagePaddingRight =4
+                    WebImagePaddingBottom =1
                     Overlaps =1
                 End
             End
@@ -1436,6 +1390,7 @@ Begin Form
                     Top =8123
                     Width =3300
                     Height =285
+                    ColumnWidth =2130
                     TabIndex =27
                     Name ="UpdatedAt"
                     ControlSource ="UpdatedAt"
@@ -1495,6 +1450,7 @@ Begin Form
                     Top =8415
                     Width =3300
                     Height =285
+                    ColumnWidth =1365
                     TabIndex =28
                     Name ="UpdatedBy"
                     ControlSource ="UpdatedBy"
@@ -1555,6 +1511,7 @@ Begin Form
                     Top =165
                     Width =3300
                     Height =345
+                    ColumnOrder =0
                     ForeColor =1279872587
                     Name ="Text529"
                     ControlSource ="ID"
@@ -1704,6 +1661,8 @@ Begin Form
                     Top =518
                     Width =3300
                     Height =285
+                    ColumnWidth =2963
+                    ColumnOrder =20
                     TabIndex =1
                     Name ="Status"
                     ControlSource ="Status"
@@ -1768,6 +1727,7 @@ Begin Form
                     Width =3300
                     Height =285
                     ColumnWidth =1800
+                    ColumnOrder =1
                     TabIndex =2
                     Name ="Delivery#"
                     ControlSource ="DeliveryNumber"
@@ -1829,6 +1789,7 @@ Begin Form
                     Top =1103
                     Width =3300
                     Height =285
+                    ColumnOrder =2
                     TabIndex =3
                     Name ="DistributionDate"
                     ControlSource ="DistributionDate"
@@ -1891,6 +1852,7 @@ Begin Form
                     Top =1395
                     Width =3300
                     Height =285
+                    ColumnOrder =3
                     TabIndex =4
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
                     Name ="Location"
@@ -1957,8 +1919,9 @@ Begin Form
                     Top =1688
                     Width =3300
                     Height =285
+                    ColumnOrder =4
                     TabIndex =5
-                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
+                    ColumnInfo ="\"\";\"\";\"\";\"@\";\"10\";\"510\""
                     Name ="CharityAssociation"
                     ControlSource ="CharityId"
                     RowSourceType ="Table/Query"
@@ -2023,6 +1986,7 @@ Begin Form
                     Top =1980
                     Width =3300
                     Height =285
+                    ColumnOrder =5
                     TabIndex =6
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"486\""
                     Name ="SalesRep"
@@ -2089,8 +2053,9 @@ Begin Form
                     Top =2273
                     Width =3300
                     Height =285
+                    ColumnOrder =6
                     TabIndex =7
-                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
+                    ColumnInfo ="\"\";\"\";\"\";\"@\";\"10\";\"510\""
                     Name ="MarketingRep"
                     ControlSource ="MarketingRepId"
                     RowSourceType ="Table/Query"
@@ -2153,6 +2118,7 @@ Begin Form
                     Top =2565
                     Width =3300
                     Height =285
+                    ColumnOrder =7
                     TabIndex =8
                     Name ="RepCommission"
                     ControlSource ="RepCommission"
@@ -2216,6 +2182,7 @@ Begin Form
                     Top =2858
                     Width =3300
                     Height =285
+                    ColumnOrder =8
                     TabIndex =9
                     Name ="Serial#"
                     ControlSource ="SerialNumber"
@@ -2278,6 +2245,7 @@ Begin Form
                     Top =3150
                     Width =3300
                     Height =285
+                    ColumnOrder =9
                     TabIndex =10
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
                     Name ="Supplier"
@@ -2345,8 +2313,9 @@ Begin Form
                     Width =3300
                     Height =285
                     ColumnWidth =1988
+                    ColumnOrder =10
                     TabIndex =11
-                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
+                    ColumnInfo ="\"\";\"\";\"\";\"@\";\"10\";\"510\""
                     Name ="GameName"
                     ControlSource ="GameName"
                     RowSourceType ="Table/Query"
@@ -2410,6 +2379,7 @@ Begin Form
                     Top =3735
                     Width =3300
                     Height =285
+                    ColumnOrder =11
                     TabIndex =12
                     Name ="TicketCount"
                     ControlSource ="TicketCount"
@@ -2471,6 +2441,7 @@ Begin Form
                     Top =4028
                     Width =3300
                     Height =285
+                    ColumnOrder =12
                     TabIndex =13
                     Name ="TicketValue"
                     ControlSource ="TicketValue"
@@ -2532,6 +2503,7 @@ Begin Form
                     Top =4320
                     Width =3300
                     Height =285
+                    ColumnOrder =13
                     TabIndex =14
                     Name ="TotalRevenue"
                     ControlSource ="TotalRevenue"
@@ -2593,6 +2565,7 @@ Begin Form
                     Top =4613
                     Width =3300
                     Height =285
+                    ColumnOrder =14
                     TabIndex =15
                     Name ="PrizesPaid"
                     ControlSource ="PrizesPaid"
@@ -2654,6 +2627,7 @@ Begin Form
                     Top =4905
                     Width =3300
                     Height =285
+                    ColumnOrder =15
                     TabIndex =16
                     Name ="Profit"
                     ControlSource ="Profit"
@@ -2715,6 +2689,7 @@ Begin Form
                     Top =5198
                     Width =3300
                     Height =285
+                    ColumnOrder =16
                     TabIndex =17
                     Name ="Rent"
                     ControlSource ="Rent"
@@ -2775,6 +2750,7 @@ Begin Form
                     Top =5490
                     Width =3300
                     Height =285
+                    ColumnOrder =17
                     TabIndex =18
                     Name ="BillingStyle"
                     ControlSource ="BillingStyle"
@@ -2836,6 +2812,7 @@ Begin Form
                     Top =5783
                     Width =3300
                     Height =285
+                    ColumnOrder =18
                     TabIndex =19
                     Name ="TotalBillable"
                     ControlSource ="TotalBillable"
@@ -2897,6 +2874,7 @@ Begin Form
                     Top =6075
                     Width =3300
                     Height =285
+                    ColumnOrder =19
                     TabIndex =20
                     Name ="TicketSupplyCost"
                     ControlSource ="TicketSupplyCost"
@@ -3330,13 +3308,18 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
 
-Private Sub Form_BeforeUpdate(Cancel As Integer)
+Dim oDistribution As New cDistribution
 
-    On Error Resume Next
+Private Sub cmdNewDeliveryOrder_Click()
+
+    DoCmd.OpenReport "409-rpt-Cheque-data-feed", acViewReport, , , acDialog
     
-    Me.UpdatedAt = Now()
-    Me.UpdatedBy = cSysSettings.oUser.Username
-        
+End Sub
+
+Private Sub Command1456_Click()
+
+    DoCmd.OpenReport "410-Evelope-printout-data", acViewPreview, , , acDialog
+
 End Sub
 
 Private Sub Form_Load()
@@ -3344,5 +3327,72 @@ Private Sub Form_Load()
     On Error Resume Next
     
     cLogger.LogIt "Entering [" & Me.Name & "]", EventType.Info
+    
+End Sub
+
+Private Sub Form_BeforeUpdate(Cancel As Integer)
+
+On Error GoTo ErrorHandler
+
+    Cancel = False
+    
+    UpdateModel
+    
+    DbOperation = IIf(Me.NewRecord, "INSERT", "UPDATE")
+    
+    If Not oDistribution.Validate(DbOperation) Then
+    
+        MsgBox oDistribution.Message, vbExclamation
+        DoCmd.CancelEvent
+        
+    Else
+    
+        Me.Status = oDistribution.SetCurrentDistributionStatus
+        Me.UpdatedAt = Now()
+        Me.UpdatedBy = cSysSettings.oUser.Username
+         
+    End If
+    
+    Exit Sub
+    
+ErrorHandler:
+    MsgBox Err.Number & " - " & Err.Description
+        
+End Sub
+
+Sub UpdateModel()
+
+    oDistribution.Id = Nz(Id)
+    oDistribution.Status = Nz(Status)
+    oDistribution.DeliveryNumber = Nz(DeliveryNumber)
+    oDistribution.DistributionDate = Nz(DistributionDate)
+    oDistribution.CharityId = Nz(CharityId)
+    oDistribution.LocationId = Nz(LocationId)
+    oDistribution.SalesRepId = Nz(SalesRepId)
+    oDistribution.MarketingRepId = Nz(MarketingRepId)
+    oDistribution.RepCommission = Nz(RepCommission)
+    oDistribution.SerialNumber = Nz(SerialNumber)
+    oDistribution.SupplierId = Nz(SupplierId)
+    oDistribution.GameName = Nz(GameName)
+    oDistribution.TicketCount = Nz(TicketCount)
+    oDistribution.TicketValue = Nz(TicketValue)
+    oDistribution.TotalRevenue = Nz(TotalRevenue)
+    oDistribution.PrizesPaid = Nz(PrizesPaid)
+    oDistribution.Profit = Nz(Profit)
+    oDistribution.Rent = Nz(Rent)
+    
+    ' TODO: Why is it generating an error
+    ' oDistribution.BillingStyle = BillingStyle
+    
+    oDistribution.TotalBillable = Nz(TotalBillable)
+    oDistribution.TicketSupplyCost = Nz(TicketSupplyCost)
+    oDistribution.SMACServiceFee = Nz(SMACServiceFee)
+    oDistribution.SMACAdminFee = Nz(SMACAdminFee)
+    oDistribution.LocationCheckNumber = Nz(LocationCheckNumber)
+    oDistribution.ReimbursementCheckNumber = Nz(ReimbursementCheckNumber)
+    oDistribution.EnvelopeNumber = Nz(EnvelopeNumber)
+    oDistribution.ReimbursementSent = Nz(ReimbursementSent)
+    oDistribution.UpdatedAt = Nz(UpdatedAt)
+    oDistribution.UpdatedBy = Nz(UpdatedBy)
     
 End Sub

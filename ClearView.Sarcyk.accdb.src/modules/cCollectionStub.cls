@@ -13,7 +13,7 @@ Option Explicit
 Private Const CLASS_NAME = "cCollectionStub"
 
 Private Const WO_INSERT As String = "INSERT"
-Private Const WO_Update As String = "UPDATE"
+Private Const WO_UPDATE As String = "UPDATE"
 
 Public Id As Integer
 Public CollectionDate As Date
@@ -176,7 +176,7 @@ Private Sub ClearFields()
     
 End Sub
 
-Public Function Validate(Optional ByVal Operation As String = WO_Update) As Boolean
+Public Function Validate(Optional ByVal Operation As String = WO_UPDATE) As Boolean
     Validate = False
 End Function
 
@@ -253,13 +253,13 @@ ErrorHandler:
     
 End Function
 
-Public Function GetStubLocationAndDate(Employee As Integer, Location As Integer, Collection_Date As Date) As Recordset
+Public Function GetStubLocationAndDate(CollectionId As Integer, Employee As Integer, Location As Integer, Collection_Date As Date) As Recordset
 
 On Error GoTo ErrorHandler
 
     Dim rs As DAO.Recordset
         
-    Set rs = CurrentDb().OpenRecordset("Select * From [Collection-Stub] Where EmployeeId = " & Employee & " And LocationId = " & Location & " And CollectionDate =#" & Collection_Date & "#", dbOpenDynaset)
+    Set rs = CurrentDb().OpenRecordset("Select * From [Collection-Stub] Where Id = " & CollectionId & " And EmployeeId = " & Employee & " And LocationId = " & Location & " And CollectionDate =#" & Collection_Date & "# Order By Id Desc", dbOpenDynaset)
     
     PopulateFields rs
 
@@ -305,11 +305,17 @@ Public Function WasAlreadyCollected(Location As Integer, CollectionDate As Date)
     WasAlreadyCollected = IIf(Result > 1, True, False)
 End Function
 
-Public Function PettyCashUsage(Employee As Integer, Location As Integer, Collection_Date As Date) As Double
+Public Function PettyCashUsage(CollectionId As Integer, Employee As Integer, Location As Integer, Collection_Date As Date) As Double
 
     Dim Results As Double
     PettyCashUsage = 0
-    Me.GetStubLocationAndDate Employee, Location, Collection_Date
+    
+    If CollectionId <> -1 Then
+        Me.GetStubLocationAndDate CollectionId, Employee, Location, Collection_Date
+    Else
+        Me.GetStubInfoById CLng(CollectionId)
+    End If
+    
     
     ' Results = Me.SplitedServiceFee + Me.CashToUnionVending
     

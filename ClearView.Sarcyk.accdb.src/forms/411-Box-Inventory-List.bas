@@ -16,11 +16,12 @@ Begin Form
     Width =14760
     DatasheetFontHeight =11
     ItemSuffix =1228
-    Right =17438
+    Right =20985
     Bottom =10770
     DatasheetGridlinesColor =-1
     Tag ="SplitList"
-    OrderBy ="[BoxInventory].[ID]"
+    Filter ="([BoxInventory].[InvoiceNumber]=\"01-205537\")"
+    OrderBy ="[BoxInventory].[ID] DESC"
     RecSrcDt = Begin
         0x07a28acc7542e640
     End
@@ -1686,10 +1687,10 @@ Begin Form
                     Top =1133
                     Width =3300
                     Height =293
+                    ColumnWidth =1988
                     TabIndex =3
                     Name ="SameMonthSold"
                     ControlSource ="SameMonthSold"
-                    Format ="yyyy-mmm-dd;@"
                     GroupTable =31
                     LeftPadding =0
                     TopPadding =0
@@ -2521,7 +2522,7 @@ Begin Form
                     Top =6233
                     Width =3300
                     Height =293
-                    ColumnWidth =2723
+                    ColumnWidth =3045
                     TabIndex =20
                     Name ="CharityDistributedFor"
                     ControlSource ="CharityDistributedFor"
@@ -2582,7 +2583,7 @@ Begin Form
                     Top =6533
                     Width =3300
                     Height =293
-                    ColumnWidth =2048
+                    ColumnWidth =2460
                     TabIndex =21
                     Name ="SMACSaleInvoiceNumber"
                     ControlSource ="SMACSaleInvoiceNumber"
