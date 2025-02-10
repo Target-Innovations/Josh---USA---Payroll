@@ -4281,7 +4281,7 @@ End Sub
 Private Sub NewLoginBTN_Click()
 
     Dim TempPass As String
-    Dim Id As Integer
+    Dim ID As Integer
     Dim UserEmail As String
 
     Me.Tag = vbNullString

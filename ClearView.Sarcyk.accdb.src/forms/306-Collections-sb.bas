@@ -697,7 +697,7 @@ End Sub
 
 Private Sub txtCorrection_DblClick(Cancel As Integer)
 
-    TempVars!CollectionId = Me.Id.Value
+    TempVars!CollectionId = Me.ID.Value
     DoCmd.OpenForm "307-Custom-Fees", acNormal, , "CollectionId = " & Me.txtID, acFormEdit, acDialog
     'Me.CorrectionReason.SetFocus
     

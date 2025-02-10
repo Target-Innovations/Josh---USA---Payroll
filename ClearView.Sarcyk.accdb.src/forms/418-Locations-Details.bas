@@ -3057,7 +3057,7 @@ Private Sub cmdDelete_Click()
         
         DoCmd.SetWarnings False
         
-        DoCmd.RunSQL "Delete * from [Locations] Where Id = " & Nz(Me.Id, 0)
+        DoCmd.RunSQL "Delete * from [Locations] Where Id = " & Nz(Me.ID, 0)
         
         DoCmd.SetWarnings True
         

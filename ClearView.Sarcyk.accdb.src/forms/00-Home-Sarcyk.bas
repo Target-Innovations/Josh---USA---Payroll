@@ -15389,5 +15389,5 @@ Private Sub cmdLogout_Click()
 End Sub
 
 Private Sub imgAvatar_DblClick(Cancel As Integer)
-    DoCmd.OpenForm "00-Employee-Details", acNormal, , "Id = " & cSysSettings.oUser.Id
+    DoCmd.OpenForm "00-Employee-Details", acNormal, , "Id = " & cSysSettings.oUser.ID
 End Sub

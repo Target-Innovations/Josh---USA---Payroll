@@ -2,6 +2,8 @@
 VersionRequired =20
 Begin Report
     LayoutForPrint = NotDefault
+    AutoResize = NotDefault
+    AutoCenter = NotDefault
     DividingLines = NotDefault
     AllowDesignChanges = NotDefault
     TabularFamily =0
@@ -15,13 +17,12 @@ Begin Report
     DatasheetFontHeight =11
     ItemSuffix =59
     RecSrcDt = Begin
-        0x55cc4210144ee640
+        0x9a13b5e9ee4fe640
     End
-    RecordSource ="410-Evelope-printout-data"
+    RecordSource ="410-Envelope-printout-data"
     Caption ="410-Evelope-printout-data"
     DatasheetFontName ="Aptos"
     FilterOnLoad =0
-    FitToPage =1
     DisplayOnSharePointSite =1
     DatasheetAlternateBackColor =15921906
     DatasheetGridlinesColor12 =0

@@ -17,9 +17,11 @@ Begin Form
     GridY =24
     Width =16327
     DatasheetFontHeight =11
-    ItemSuffix =1364
-    Right =17183
-    Bottom =8790
+    ItemSuffix =1366
+    Left =2408
+    Top =945
+    Right =18990
+    Bottom =9998
     TimerInterval =125
     DatasheetGridlinesColor =15263976
     Filter ="1=0"
@@ -688,7 +690,7 @@ Begin Form
                     LayoutCachedTop =1447
                     LayoutCachedWidth =745
                     LayoutCachedHeight =1787
-                    TabIndex =8
+                    TabIndex =9
                     BackThemeColorIndex =-1
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
@@ -1371,7 +1373,7 @@ Begin Form
                     LayoutCachedTop =233
                     LayoutCachedWidth =1607
                     LayoutCachedHeight =1083
-                    TabIndex =7
+                    TabIndex =8
                     BackThemeColorIndex =-1
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
@@ -1521,8 +1523,9 @@ Begin Form
                     Overlaps =1
                 End
                 Begin CommandButton
+                    Enabled = NotDefault
                     OverlapFlags =215
-                    AccessKey =85
+                    AccessKey =68
                     TextFontFamily =34
                     Left =6133
                     Top =1417
@@ -1531,11 +1534,11 @@ Begin Form
                     TabIndex =3
                     ForeColor =0
                     Name ="cmdSubmit"
-                    Caption ="S&ubmit"
+                    Caption ="&Distribute"
                     OnClick ="[Event Procedure]"
                     FontName ="Segoe UI"
                     Tag ="Close"
-                    UnicodeAccessKey =117
+                    UnicodeAccessKey =68
 
                     CursorOnHover =1
                     LayoutCachedLeft =6133
@@ -1592,6 +1595,58 @@ Begin Form
                     LayoutCachedLeft =7632
                     LayoutCachedTop =1417
                     LayoutCachedWidth =9072
+                    LayoutCachedHeight =1822
+                    PictureCaptionArrangement =1
+                    ColumnStart =2
+                    ColumnEnd =2
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                    Shape =0
+                    Gradient =0
+                    BackColor =16777215
+                    BackThemeColorIndex =-1
+                    BackTint =100.0
+                    BorderColor =3259885
+                    BorderTint =100.0
+                    ThemeFontIndex =-1
+                    HoverColor =16777215
+                    HoverThemeColorIndex =-1
+                    HoverTint =100.0
+                    PressedColor =16777215
+                    PressedThemeColorIndex =-1
+                    PressedShade =100.0
+                    HoverForeThemeColorIndex =4
+                    HoverForeTint =100.0
+                    PressedForeColor =0
+                    PressedForeTint =100.0
+                    WebImagePaddingLeft =4
+                    WebImagePaddingTop =4
+                    WebImagePaddingRight =3
+                    WebImagePaddingBottom =3
+                    Overlaps =1
+                End
+                Begin CommandButton
+                    OverlapFlags =215
+                    AccessKey =65
+                    TextFontFamily =34
+                    Left =9180
+                    Top =1417
+                    Width =1620
+                    Height =405
+                    FontSize =10
+                    TabIndex =7
+                    ForeColor =0
+                    Name ="cmdApplyCheck"
+                    Caption ="&Apply Check #"
+                    OnClick ="[Event Procedure]"
+                    FontName ="Segoe UI"
+                    Tag ="Close"
+                    UnicodeAccessKey =65
+
+                    CursorOnHover =1
+                    LayoutCachedLeft =9180
+                    LayoutCachedTop =1417
+                    LayoutCachedWidth =10800
                     LayoutCachedHeight =1822
                     PictureCaptionArrangement =1
                     ColumnStart =2
@@ -1771,7 +1826,7 @@ Begin Form
                                     Top =1260
                                     Width =8112
                                     Height =288
-                                    TabIndex =7
+                                    TabIndex =1
                                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
                                     Name ="CharityId"
                                     ControlSource ="CharityId"
@@ -1815,7 +1870,7 @@ Begin Form
                                     Width =3023
                                     Height =278
                                     FontSize =12
-                                    TabIndex =5
+                                    TabIndex =2
                                     ForeColor =16777215
                                     Name ="txtTotalOwed"
                                     Format ="$#,##0.00;($#,##0.00)"
@@ -1844,7 +1899,7 @@ Begin Form
                                     Width =3023
                                     Height =398
                                     FontSize =16
-                                    TabIndex =6
+                                    TabIndex =3
                                     ForeColor =2366701
                                     Name ="txtStatus"
                                     ControlSource ="Status"
@@ -1871,7 +1926,7 @@ Begin Form
                                     Top =1620
                                     Width =8112
                                     Height =288
-                                    TabIndex =8
+                                    TabIndex =4
                                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"510\""
                                     Name ="cboLocationId"
                                     ControlSource ="LocationId"
@@ -1919,7 +1974,7 @@ Begin Form
                                     Top =1980
                                     Width =1695
                                     Height =300
-                                    TabIndex =1
+                                    TabIndex =5
                                     Name ="SaleDate"
                                     ControlSource ="SaleDate"
                                     AfterUpdate ="[Event Procedure]"
@@ -1964,7 +2019,7 @@ Begin Form
                                     Left =4748
                                     Top =1980
                                     Height =300
-                                    TabIndex =2
+                                    TabIndex =6
                                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
                                     Name ="cboWeekDay"
                                     ControlSource ="WeekDay"
@@ -2018,7 +2073,7 @@ Begin Form
                                     Top =1980
                                     Width =863
                                     Height =300
-                                    TabIndex =3
+                                    TabIndex =7
                                     Name ="txtOpenTime"
                                     ControlSource ="OpenTime"
                                     Format ="Short Time"
@@ -2066,7 +2121,7 @@ Begin Form
                                     Width =323
                                     Height =300
                                     FontSize =9
-                                    TabIndex =4
+                                    TabIndex =8
                                     ForeColor =-2147483615
                                     Name ="cmdOpenTime"
                                     OnClick ="[Event Procedure]"
@@ -2192,15 +2247,16 @@ Begin Form
                                     IMESentenceMode =3
                                     Left =1908
                                     Top =3060
-                                    Width =3255
+                                    Width =2775
                                     Height =300
+                                    TabIndex =10
                                     Name ="ReceiverName"
                                     ControlSource ="ReceiverName"
                                     OnDblClick ="[Event Procedure]"
 
                                     LayoutCachedLeft =1908
                                     LayoutCachedTop =3060
-                                    LayoutCachedWidth =5163
+                                    LayoutCachedWidth =4683
                                     LayoutCachedHeight =3360
                                     Begin
                                         Begin Label
@@ -2225,6 +2281,7 @@ Begin Form
                                     Top =3060
                                     Width =3000
                                     Height =300
+                                    TabIndex =11
                                     ColumnInfo ="\"\";\"\";\"10\";\"486\""
                                     Name ="DeliveryPersonsName"
                                     ControlSource ="DeliveryPersonsName"
@@ -2258,7 +2315,7 @@ Begin Form
                                     Top =3982
                                     Width =15496
                                     Height =3117
-                                    TabIndex =10
+                                    TabIndex =12
                                     Name ="416-sb-Ticket-Distribution-Order-Items"
                                     SourceObject ="Form.417-sb-Ticket-Delivery-Order-Items"
                                     LinkChildFields ="DistributionOrderId"
@@ -2306,6 +2363,62 @@ Begin Form
                                     ForeTint =100.0
                                     GroupTable =12
                                 End
+                                Begin CommandButton
+                                    OverlapFlags =215
+                                    Left =4709
+                                    Top =3060
+                                    Width =299
+                                    Height =300
+                                    TabIndex =13
+                                    Name ="cmdRefreshOwnerName"
+                                    OnClick ="[Event Procedure]"
+                                    ControlTipText ="Refresh Owner's Name"
+                                    ImageData = Begin
+                                        0x2800000010000000100000000100200000000000000000000000000000000000 ,
+                                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                                        0x0000000000000000000000000000000000000000000000000000000090a46869 ,
+                                        0x90a4686000000000000000000000000000000000000000000000000000000000 ,
+                                        0x00000000000000000000000000000000000000000000000090a4684e90a468fc ,
+                                        0x90a468f690a4682d000000000000000000000000000000000000000000000000 ,
+                                        0x000000000000000000000000000000000000000090a4683690a468f690a468ff ,
+                                        0x90a468ff90a468db90a4680f0000000000000000000000000000000000000000 ,
+                                        0x0000000000000000000000000000000090a4682d90a468ea90a468ff90a468ff ,
+                                        0x90a468ff90a468ff90a468b40000000000000000000000000000000000000000 ,
+                                        0x00000000000000000000000090a4681b90a468e490a468ff90a468ff90a468ae ,
+                                        0x90a468ba90a468ff90a468ff90a4687e00000000000000000000000000000000 ,
+                                        0x000000000000000090a4680f90a468d290a468ff90a468ff90a468bd90a46806 ,
+                                        0x90a4681590a468e790a468ff90a468fc90a46848000000000000000000000000 ,
+                                        0x000000000000000090a4684290a468ff90a468ff90a468c990a4680f00000000 ,
+                                        0x0000000090a4683c90a468fc90a468ff90a468ed90a468210000000000000000 ,
+                                        0x00000000000000000000000090a4685790a468cc90a468150000000000000000 ,
+                                        0x000000000000000090a4687b90a468ff90a468ff90a468cc90a4680600000000 ,
+                                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                                        0x00000000000000000000000090a468b790a468ff90a468ff90a4689c00000000 ,
+                                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                                        0x00000000000000000000000090a4681590a468e190a468ff90a468ff90a46863 ,
+                                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                                        0x0000000000000000000000000000000090a4683c90a468f990a468ff90a468f9 ,
+                                        0x90a4683300000000000000000000000000000000000000000000000000000000 ,
+                                        0x000000000000000000000000000000000000000090a4687590a468ff90a468ff ,
+                                        0x90a4689300000000000000000000000000000000000000000000000000000000 ,
+                                        0x00000000000000000000000000000000000000000000000090a468ab90a46887 ,
+                                        0x90a4680300000000000000000000000000000000000000000000000000000000 ,
+                                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                                        0x0000000000000000
+                                    End
+
+                                    LayoutCachedLeft =4709
+                                    LayoutCachedTop =3060
+                                    LayoutCachedWidth =5008
+                                    LayoutCachedHeight =3360
+                                    WebImagePaddingLeft =4
+                                    WebImagePaddingTop =4
+                                    WebImagePaddingRight =3
+                                    WebImagePaddingBottom =3
+                                End
                             End
                         End
                     End
@@ -2335,6 +2448,27 @@ Private Sub cboLocationId_GotFocus()
     Me.cboLocationId.Requery
 End Sub
 
+Private Sub cmdApplyCheck_Click()
+
+    Dim CheckNumber As String
+    CheckNumber = InputBox("Enter check # to be applied:", "Check #", "")
+   
+    If CheckNumber = "" Then
+        MsgBox "Operation canceled. No check # provided.", vbExclamation
+        Exit Sub
+    End If
+    
+    If MsgBox("Are you sure you want to apply this check to order: " & CheckNumber & "?", vbExclamation + vbYesNo) = vbYes Then
+
+        oBox.ApplyPaymentToOrder Me.ID, CheckNumber
+        CurrentDb.Execute "Update TicketDeliveryOrderItems Set LocationCheckNumbers = '" & CheckNumber & "' Where DistributionOrderId = " & Me.ID
+        Me![416-sb-Ticket-Distribution-Order-Items].Requery
+        
+        MsgBox "Check # applied successfully.", vbExclamation
+    End If
+    
+End Sub
+
 Private Sub cmdOpenTime_Click()
     If Me.txtOpenTime.Enabled Then
         Me.txtOpenTime.SetFocus
@@ -2342,11 +2476,19 @@ Private Sub cmdOpenTime_Click()
     End If
 End Sub
 
+Private Sub cmdRefreshOwnerName_Click()
+    If Not IsNullOrEmpty(Me.cboLocationId.Column(3)) Then
+        Me.ReceiverName = Nz(Me.cboLocationId.Column(3))
+    End If
+End Sub
+
 Private Sub cmdSubmit_Click()
     
-    If MsgBox("Are you sure you want to submit this ticket order?", vbExclamation + vbYesNo) = vbYes Then
+    If IsNull(Me.ID) Then Exit Sub
     
-        oBox.SubmitDistribution (Me.Id)
+    If MsgBox("Are you sure you want to distribute this ticket order?", vbExclamation + vbYesNo) = vbYes Then
+    
+        oBox.SubmitDistribution (Me.ID)
         
         If Len(oBox.Message) Then MsgBox oBox.Message, vbExclamation
     
@@ -2392,9 +2534,9 @@ End Sub
 
 Private Sub cmdPrint_Click()
 
-    DoCmd.OpenReport "309-Ticket-Delivery-Order-Details", acViewPreview, , "OrderId = " & Me.Id, acDialog
+    DoCmd.OpenReport "309-Ticket-Delivery-Order-Details", acViewPreview, , "OrderId = " & Me.ID, acDialog
     
-    DoCmd.OpenReport "310-Ticket-Delivery-Invoice-Details", acViewPreview, , "OrderId = " & Me.Id, acDialog
+    DoCmd.OpenReport "310-Ticket-Delivery-Invoice-Details", acViewPreview, , "OrderId = " & Me.ID, acDialog
 
 
 End Sub
@@ -2409,7 +2551,10 @@ End Sub
 
 Sub SetFormState()
 
-    Me.txtTotalOwed = oBox.GetTotalOwed(Nz(Me.Id, 0))
+    Me.txtTotalOwed = oBox.GetTotalOwed(Nz(Me.ID, 0))
+    Me.cmdApplyCheck.Enabled = (Not Me.NewRecord)
+    Me.cmdSubmit.Enabled = (Nz(Me.Status) <> "Distributed")
+    Me.cmdApplyCheck.Enabled = (Nz(Me.Status) = "Distributed")
     
 End Sub
 
@@ -2419,7 +2564,7 @@ Private Sub cmdDelete_Click()
         
         DoCmd.SetWarnings False
         
-        DoCmd.RunSQL "Delete * from [TicketDistributionOrders] Where Id = " & Nz(Me.Id, 0)
+        DoCmd.RunSQL "Delete * from [TicketDistributionOrders] Where Id = " & Nz(Me.ID, 0)
         
         DoCmd.SetWarnings True
         

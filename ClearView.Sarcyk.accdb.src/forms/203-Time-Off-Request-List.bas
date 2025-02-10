@@ -2223,14 +2223,14 @@ Private Sub Form_Load()
         Me.chkApproved.Locked = True
         Me.BalanceBeforeApproval.Locked = True
         
-        Me.Filter = "EmployeeId = " & cSysSettings.oUser.Id
+        Me.Filter = "EmployeeId = " & cSysSettings.oUser.ID
         Me.FilterOn = True
         
         sql = ""
 
         sql = sql & " SELECT ID, FullName AS Name"
         sql = sql & "   FROM [Employees Extended]"
-        sql = sql & "  WHERE  ID = " & cSysSettings.oUser.Id
+        sql = sql & "  WHERE  ID = " & cSysSettings.oUser.ID
         sql = sql & "  ORDER BY FullName;"
 
         Me.cboEmployeeId.RowSource = sql
@@ -2278,12 +2278,12 @@ Private Sub Form_BeforeUpdate(Cancel As Integer)
             
             If IsNull(Me.cboApprovedBy) Then
 
-                oTimeOff.GetTimeOffById Me.Id
+                oTimeOff.GetTimeOffById Me.ID
                 Me.BalanceBeforeApproval = oTimeOff.GetTimeOffLeft(Me.EmployeeID)
                 
                 If oTimeOff.ApplyTimeOff Then
                 
-                  Me.cboApprovedBy = cSysSettings.oUser.Id
+                  Me.cboApprovedBy = cSysSettings.oUser.ID
             
                   If Len(oTimeOff.Message) > 0 Then
                       MsgBox oTimeOff.Message, vbInformation
@@ -2316,7 +2316,7 @@ End Sub
 
 Private Sub UpdateModel()
     
-    oTimeOff.Id = Nz(Me.txtID)
+    oTimeOff.ID = Nz(Me.txtID)
     oTimeOff.EmployeeID = Nz(Me.cboEmployeeId)
     oTimeOff.NumberOfDays = Nz(Me.txtNumberOfDays)
     oTimeOff.Reason = Nz(Me.Reason)

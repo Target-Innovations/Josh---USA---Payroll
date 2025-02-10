@@ -3965,7 +3965,7 @@ Private Sub Form_Load()
     If cSysSettings.oUser.UserType = User_Type.Admin Then
         Me.FilterOn = False
     Else
-        Me.Filter = "EmployeeId = " & cSysSettings.oUser.Id
+        Me.Filter = "EmployeeId = " & cSysSettings.oUser.ID
         Me.FilterOn = True
     End If
     
@@ -4028,7 +4028,7 @@ Private Sub txtApply_Click()
         Exit Sub
     End If
     
-    Me.txtPettyCashPayout = Abs(oStub.PettyCashUsage(Me.Id, Nz(Me.EmployeeID), (Me.LocationId), Nz(Me.CollectionDate)))
+    Me.txtPettyCashPayout = Abs(oStub.PettyCashUsage(Me.ID, Nz(Me.EmployeeID), (Me.LocationId), Nz(Me.CollectionDate)))
     
     On Error Resume Next
     

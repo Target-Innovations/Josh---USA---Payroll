@@ -250,17 +250,17 @@ Public Function GetFile(strPath As String) As String
     
     ' gets file name from path
     
-    Dim n As Integer
+    Dim N As Integer
     
     ' step back through path until backslash character
     ' encountered and return all charcters to right
     ' of backslash
-    For n = Len(strPath) To 0 Step -1
-        If Mid$(strPath, n, 1) = "\" Then
-            GetFile = Mid$(strPath, n + 1)
+    For N = Len(strPath) To 0 Step -1
+        If Mid$(strPath, N, 1) = "\" Then
+            GetFile = Mid$(strPath, N + 1)
             Exit For
         End If
-    Next n
+    Next N
     
 End Function
 
@@ -547,3 +547,27 @@ Dim strMsg As String
     MsgBox strMsg, vbCritical, pstrTitle
 
 End Sub
+
+Public Function ROUNDDOWN(ByVal N As Double, ByVal p As Integer) As Double
+    ' Article Reference: https://www.access-programmers.co.uk/forums/threads/round-can-i-round-down.125957/
+    
+    Dim S1 As Integer, S2 As Integer
+    
+    S1 = Sgn(N)
+    S2 = Sgn(p)
+    Select Case S1
+        Case 1
+            Select Case S2
+                Case 1
+                    ROUNDDOWN = (Int(N * (10 ^ p)) / 10 ^ p) * S1
+                Case -1
+                    ROUNDDOWN = Int(N / (10 ^ Abs(p))) * 10 ^ (Abs(p) * Abs(S2))
+            End Select
+        Case -1
+            Select Case S2
+                Case 1
+                    ROUNDDOWN = (Int(Abs(N) * (10 ^ p)) / 10 ^ p) * S1
+            End Select
+    End Select
+
+End Function

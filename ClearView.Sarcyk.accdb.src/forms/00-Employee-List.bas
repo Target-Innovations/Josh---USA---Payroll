@@ -2447,7 +2447,7 @@ Private Sub Form_Load()
         
         sql = sql & " SELECT *"
         sql = sql & "   FROM [Employees Extended]"
-        sql = sql & "  WHERE  ID = " & cSysSettings.oUser.Id
+        sql = sql & "  WHERE  ID = " & cSysSettings.oUser.ID
         sql = sql & "  ORDER BY FullName;"
 
         Me.RecordSource = sql

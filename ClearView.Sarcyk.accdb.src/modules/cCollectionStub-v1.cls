@@ -15,7 +15,7 @@ Private Const CLASS_NAME = "cCollectionStub"
 Private Const WO_INSERT As String = "INSERT"
 Private Const WO_UPDATE As String = "UPDATE"
 
-Public Id As Integer
+Public ID As Integer
 Public CollectionDate As Date
 Public EmployeeID As Integer
 Public LocationId As Integer
@@ -46,11 +46,11 @@ Public Property Get Message() As String
 End Property
 
 Public Property Get TotalCash() As Double
-    TotalCash = Nz(DSum("[SplittedAmount]", "[Collections-Splitted]", "TransactionType = 'Cash'  And CollectionStubId =" & Me.Id), 0)
+    TotalCash = Nz(DSum("[SplittedAmount]", "[Collections-Splitted]", "TransactionType = 'Cash'  And CollectionStubId =" & Me.ID), 0)
 End Property
 
 Public Property Get TotalEletronic() As Double
-    TotalEletronic = Nz(DSum("[SplittedAmount]", "[Collections-Splitted]", "TransactionType = 'Credit Card'  And CollectionStubId =" & Me.Id), 0)
+    TotalEletronic = Nz(DSum("[SplittedAmount]", "[Collections-Splitted]", "TransactionType = 'Credit Card'  And CollectionStubId =" & Me.ID), 0)
 End Property
 
 Public Property Get TotalCollected() As Double
@@ -59,17 +59,17 @@ End Property
 
 Public Property Get SplitedServiceFee() As Double
     'SplitedServiceFee = Nz(DSum("[ServiceFeeAmount] + [CreditCardFeeAmount]", "[Collections-Splitted]", "CollectionStubId =" & Me.Id), 0)
-    SplitedServiceFee = Nz(DSum("[ServiceFeeAmount] + [CreditCardFeeAmount] + [CustomFee]", "[Collections-Splitted]", "CollectionStubId =" & Me.Id), 0)
+    SplitedServiceFee = Nz(DSum("[ServiceFeeAmount] + [CreditCardFeeAmount] + [CustomFee]", "[Collections-Splitted]", "CollectionStubId =" & Me.ID), 0)
 End Property
 
 Public Property Get FeeChargedToLocation() As Double
-    FeeChargedToLocation = Nz(DSum("LocationFeeAmount", "[Collections-Splitted]", "LocationId <> " & cSysSettings.UnionVendingId & " And Transactiontype = 'Cash' And CollectionStubId =" & Me.Id), 0)
+    FeeChargedToLocation = Nz(DSum("LocationFeeAmount", "[Collections-Splitted]", "LocationId <> " & cSysSettings.UnionVendingId & " And Transactiontype = 'Cash' And CollectionStubId =" & Me.ID), 0)
 End Property
 
 Public Property Get CashAfterSplitFees(Target As Integer) As Double
 
     Dim Split As Double
-    Split = Nz(DLookup("Split", "[Collections-Splitted]", "CollectionStubId =" & Me.Id & " And LocationId = " & Target), 0)
+    Split = Nz(DLookup("Split", "[Collections-Splitted]", "CollectionStubId =" & Me.ID & " And LocationId = " & Target), 0)
     
     CashAfterSplitFees = (Me.TotalCash - SplitedServiceFee) * Split
 
@@ -86,7 +86,7 @@ Public Property Get CashAfterFeesCharged(Target As Integer) As Double
 End Property
 
 Public Property Get SplitElectronicPayments(Target As Integer) As Double
-    SplitElectronicPayments = Nz(DSum("SplittedAmount", "[Collections-Splitted]", "TransactionType = 'Credit Card'  And CollectionStubId =" & Me.Id & " And LocationId = " & Target), 0)
+    SplitElectronicPayments = Nz(DSum("SplittedAmount", "[Collections-Splitted]", "TransactionType = 'Credit Card'  And CollectionStubId =" & Me.ID & " And LocationId = " & Target), 0)
 End Property
 
 ' Cash After Electronic Payment Split
@@ -131,7 +131,7 @@ End Property
 Public Property Get GrossCashSplit(Target As Integer) As Double
 
     Dim Split As Double
-    Split = Nz(DLookup("Split", "[Collections-Splitted]", "CollectionStubId =" & Me.Id & " And LocationId = " & Target), 0)
+    Split = Nz(DLookup("Split", "[Collections-Splitted]", "CollectionStubId =" & Me.ID & " And LocationId = " & Target), 0)
 
     GrossCashSplit = Me.TotalCash * Split
     
@@ -140,9 +140,9 @@ End Property
 Public Property Get FeeReimbursement(Target As Integer) As Double
 
     Dim Split As Double
-    Split = Nz(DLookup("Split", "[Collections-Splitted]", "CollectionStubId =" & Me.Id & " And LocationId = " & Target), 0)
+    Split = Nz(DLookup("Split", "[Collections-Splitted]", "CollectionStubId =" & Me.ID & " And LocationId = " & Target), 0)
 
-    oStub.Id = Me.Id
+    oStub.ID = Me.ID
     FeeReimbursement = oStub.SplitedServiceFee * Split
 
 End Property
@@ -165,7 +165,7 @@ End Property
 
 Private Sub ClearFields()
     
-    Id = 0
+    ID = 0
     CollectionDate = vbNull
     EmployeeID = 0
     LocationId = 0
@@ -190,7 +190,7 @@ On Error GoTo ErrorHandler
             
             rs.MoveFirst
             
-            Id = Nz(rs("Id"))
+            ID = Nz(rs("Id"))
             CollectionDate = rs("CollectionDate")
             EmployeeID = Nz(rs("EmployeeId"))
             LocationId = Nz(rs("LocationId"))
@@ -235,13 +235,13 @@ Public Function Search(WhereClause As String) As Recordset
     Err.Raise "50001", CLASS_NAME & ".Search", "Method Not Implemented."
 End Function
 
-Public Function GetStubInfoById(Id As Long) As Recordset
+Public Function GetStubInfoById(ID As Long) As Recordset
 
 On Error GoTo ErrorHandler
 
     Dim rs As DAO.Recordset
         
-    Set rs = CurrentDb().OpenRecordset("Select * From [Collection-Stub] Where Id = " & Id, dbOpenDynaset)
+    Set rs = CurrentDb().OpenRecordset("Select * From [Collection-Stub] Where Id = " & ID, dbOpenDynaset)
     
     PopulateFields rs
     Set GetStubInfoById = rs
@@ -269,11 +269,11 @@ ErrorHandler:
      Err.Raise Err.Number, CLASS_NAME & ".GetStubInfoById", Err.Description
     
 End Function
-Private Function Archive(Id As String)
+Private Function Archive(ID As String)
 
 On Error GoTo ErrorHandler
 
-    CurrentDb.Execute "Update [Collection-Stub] Set Archieved = True Where Id = " & Id
+    CurrentDb.Execute "Update [Collection-Stub] Set Archieved = True Where Id = " & ID
     Archive = True
     
     Exit Function

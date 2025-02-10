@@ -27,7 +27,7 @@ Private Enum ePaymentStatus
     
 End Enum
 
-Public Id        As Integer
+Public ID        As Integer
 Public Field1    As Integer
 Public Field_Number As Integer
 
@@ -152,7 +152,7 @@ On Error GoTo ErrorHandler
             
         .AddNew
 
-            !Id = Me.Id
+            !ID = Me.ID
             
             !UpdatedAt = Now()
             !UpdatedBy = !UpdatedBy = cSysSettings.oUser.Username
@@ -181,7 +181,7 @@ On Error GoTo ErrorHandler
     
     ' If IsNullOrEmpty(Me.CustId) Then Exit Function
     
-    Set rs = CurrentDb.OpenRecordset("Select * from HomeOwners Where " & PRIMARY_KEY & " = " & Trim(Me.Id))
+    Set rs = CurrentDb.OpenRecordset("Select * from HomeOwners Where " & PRIMARY_KEY & " = " & Trim(Me.ID))
     
     With rs
             
@@ -214,7 +214,7 @@ Public Function Archive(WorkOrderID As String)
 On Error GoTo ErrorHandler
 
     Dim rs As Recordset
-    Set rs = CurrentDb().OpenRecordset("Update " & TABLE_NAME & " Set Archived = True Where " & PRIMARY_KEY & " = " & Me.Id & "'")
+    Set rs = CurrentDb().OpenRecordset("Update " & TABLE_NAME & " Set Archived = True Where " & PRIMARY_KEY & " = " & Me.ID & "'")
     Archive = True
     
     Exit Function
@@ -230,7 +230,7 @@ On Error GoTo ErrorHandler
 
     Dim rs As Recordset
 
-    Set rs = CurrentDb().OpenRecordset("Select * From " & TABLE_NAME & " Where " & PRIMARY_KEY & " = " & Me.Id, dbOpenSnapshot)
+    Set rs = CurrentDb().OpenRecordset("Select * From " & TABLE_NAME & " Where " & PRIMARY_KEY & " = " & Me.ID, dbOpenSnapshot)
     
     With rs
     

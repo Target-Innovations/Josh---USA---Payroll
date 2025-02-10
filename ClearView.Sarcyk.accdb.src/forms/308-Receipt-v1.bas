@@ -684,9 +684,9 @@ Dim oStub As New cCollectionStub
 
 Private Sub Form_Current()
 
-    If IsNull(Me.Id) Then Exit Sub
+    If IsNull(Me.ID) Then Exit Sub
     
-    oStub.GetStubInfoById Nz(Me.Id)
+    oStub.GetStubInfoById Nz(Me.ID)
     
     Me.txtGrossCashSplitUV = oStub.GrossCashSplit(cSysSettings.UnionVendingId)
     Me.txtGrossCashSplitLocal = oStub.GrossCashSplit(Nz(Me.LocationId))

@@ -15,7 +15,7 @@ Private Const CLASS_NAME = "cCollection"
 Private Const WO_INSERT As String = "INSERT"
 Private Const WO_UPDATE As String = "UPDATE"
 
-Public Id As Integer
+Public ID As Integer
 
 Public CollectionStubId As Integer
 Public EquipmentId As Integer
@@ -105,7 +105,7 @@ On Error GoTo ErrorHandler
             
             rs.MoveFirst
             
-            Id = Nz(rs("Id"))
+            ID = Nz(rs("Id"))
             CollectionStubId = rs("CollectionStubId")
             TransactionType = Nz(rs("TransactionType"))
             EquipmentId = Nz(rs("EquipmentId"))
@@ -204,7 +204,7 @@ On Error GoTo ErrorHandler
        
                 ' ID = Nz(rs(Id))
                 !CollectionStubId = Me.CollectionStubId
-                !CollectionId = Me.Id
+                !CollectionId = Me.ID
                 !CollectionDate = CollecDate
                 !EmployeeID = Employee
                 !LocationId = Location
@@ -246,7 +246,7 @@ On Error GoTo ErrorHandler
            
                     ' ID = Nz(rs(Id))
                     !CollectionStubId = Me.CollectionStubId
-                    !CollectionId = Me.Id
+                    !CollectionId = Me.ID
                     !CollectionDate = CollecDate
                     !EmployeeID = Employee
                     !LocationId = cSysSettings.UnionVendingId
@@ -356,7 +356,7 @@ On Error GoTo ErrorHandler
 
     DoCmd.SetWarnings False
     
-    DoCmd.RunSQL "Delete * from [Collection-Stub] Where Id = " & Nz(Me.Id, 0)
+    DoCmd.RunSQL "Delete * from [Collection-Stub] Where Id = " & Nz(Me.ID, 0)
     
     DoCmd.SetWarnings True
         
@@ -378,13 +378,13 @@ Public Function Search(WhereClause As String) As Recordset
     Err.Raise "50001", CLASS_NAME & ".Search", "Method Not Implemented."
 End Function
 
-Public Function GetCollectionInfoById(Id As Long) As Recordset
+Public Function GetCollectionInfoById(ID As Long) As Recordset
 
 On Error GoTo ErrorHandler
 
     Dim rs As DAO.Recordset
         
-    Set rs = CurrentDb().OpenRecordset("Select * From [Collections] Where Id = " & Id, dbOpenDynaset)
+    Set rs = CurrentDb().OpenRecordset("Select * From [Collections] Where Id = " & ID, dbOpenDynaset)
     
     PopulateFields rs
     Set GetCollectionInfoById = rs

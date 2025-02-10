@@ -3765,7 +3765,7 @@ Private Sub cmdDelete_Click()
         
         DoCmd.SetWarnings False
         
-        DoCmd.RunSQL "Delete * from [TicketDistribution] Where Id = " & Nz(Me.Id, 0)
+        DoCmd.RunSQL "Delete * from [TicketDistribution] Where Id = " & Nz(Me.ID, 0)
         
         DoCmd.SetWarnings True
         
@@ -3831,7 +3831,7 @@ End Sub
 
 Sub UpdateModel()
 
-    oDistribution.Id = Nz(Id)
+    oDistribution.ID = Nz(ID)
     oDistribution.Status = Nz(Status)
     oDistribution.DeliveryNumber = Nz(DeliveryNumber)
     oDistribution.DistributionDate = Nz(DistributionDate)

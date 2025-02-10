@@ -5754,7 +5754,7 @@ On Error Resume Next
         Me.FilterOn = False
     Else
         
-        Me.Filter = "EmployeeId = " & cSysSettings.oUser.Id
+        Me.Filter = "EmployeeId = " & cSysSettings.oUser.ID
         Me.FilterOn = True
         
     End If

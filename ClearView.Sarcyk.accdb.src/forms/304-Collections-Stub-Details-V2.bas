@@ -3343,7 +3343,7 @@ Private Sub cboLocationId_Click()
         Exit Sub
     End If
     
-    If Not oStub.HasCollections(Me.Id) Then
+    If Not oStub.HasCollections(Me.ID) Then
         oStub.GetMachineListForCollection Me.txtID, Me.cboLocationId
         Me.Status = "Collected"
         Me.CollectionsSb.Requery
@@ -3360,7 +3360,7 @@ Private Sub cmdApprove_Click()
         Exit Sub
     End If
 
-    oCollection.Approve Me.Id
+    oCollection.Approve Me.ID
     Me.Status = "Approved"
     
     MsgBox "This Collection has been approve and locked.", vbInformation
@@ -3403,7 +3403,7 @@ Private Sub cmdClearSplit_Click()
     If MsgBox("Are you sure you want to clear the split for this collection?", vbExclamation + vbYesNo) = vbYes Then
         
         If oStub.ClearSplit(Me.txtID) Then
-            oCollection.UpdatePettyCash Me.EmployeeID, Me.LocationId, Me.CollectionDate, Me.Id
+            oCollection.UpdatePettyCash Me.EmployeeID, Me.LocationId, Me.CollectionDate, Me.ID
             Me.Status = "Collected"
         End If
         
@@ -3415,12 +3415,12 @@ End Sub
 
 Private Sub cmdPrint_Click()
 
-    DoCmd.OpenReport "306-Detailed-Receipt", acViewReport, , "CollectionStubId = " & Me.Id, acDialog
+    DoCmd.OpenReport "306-Detailed-Receipt", acViewReport, , "CollectionStubId = " & Me.ID, acDialog
 
 End Sub
 
 Private Sub cmdSendReceipt_Click()
-    oStub.SendReceipt Me.Id, Nz(Me.cboLocationId.Column(4))
+    oStub.SendReceipt Me.ID, Nz(Me.cboLocationId.Column(4))
 End Sub
 
 Private Sub Form_Close()
@@ -3468,10 +3468,10 @@ Private Sub cmdSplitIt_Click()
 '        Exit Sub
 '    End If
     
-    If Not oStub.HasSplits(Me.Id) Then
+    If Not oStub.HasSplits(Me.ID) Then
     
-        oCollection.SplitIt Me.Id
-        oCollection.UpdatePettyCash Me.EmployeeID, Me.LocationId, Me.CollectionDate, Me.Id
+        oCollection.SplitIt Me.ID
+        oCollection.UpdatePettyCash Me.EmployeeID, Me.LocationId, Me.CollectionDate, Me.ID
         
         Me.Status = "Splitted"
         
@@ -3503,13 +3503,13 @@ Sub SetFormState()
     Me.txtDisplayLocation = Nz(Me.cboLocationId.Column(1))
     'Me.txtLocationLabel = IIf(Me.cboEmployeeId.ListIndex <> -1, Nz(Me.cboLocationId.Column(1)), "To Location ($):")
     
-    If IsNull(Me.Id) Then
+    If IsNull(Me.ID) Then
         
         Me.txtCashToLocation = vbNullString
         Me.txtCashToUnionVending = 0
         ' Me.txtTotalServiceFee = 0
         Me.txtCollectionDate = Date
-        Me.cboEmployeeId = cSysSettings.oUser.Id
+        Me.cboEmployeeId = cSysSettings.oUser.ID
     
         Me.Form![308-Receipt].Form.FilterOn = False
         Me.Form![308-Receipt].Form.Filter = "1=0"
@@ -3519,25 +3519,25 @@ Sub SetFormState()
     Else
     
         Me.Form![308-Receipt].Form.FilterOn = False
-        Me.Form![308-Receipt].Form.Filter = "Id = " & Me.Id
+        Me.Form![308-Receipt].Form.Filter = "Id = " & Me.ID
         Me.Form![308-Receipt].Form.FilterOn = True
         Me.Form![308-Receipt].Form.Requery
         
         
         Me.Form![308-Receipt-v1].Form.FilterOn = False
-        Me.Form![308-Receipt-v1].Form.Filter = "Id = " & Me.Id
+        Me.Form![308-Receipt-v1].Form.Filter = "Id = " & Me.ID
         Me.Form![308-Receipt-v1].Form.FilterOn = True
         Me.Form![308-Receipt-v1].Form.Requery
         
         
-        oStub.GetStubInfoById Me.Id
+        oStub.GetStubInfoById Me.ID
 '
         Me.txtCashToLocation = oStub.CashToLocation
         Me.txtCashToUnionVending = oStub.CashToUnionVending
     
     End If
     
-    Me.cboLocationId.Enabled = Not oStub.HasCollections(Me.Id)
+    Me.cboLocationId.Enabled = Not oStub.HasCollections(Me.ID)
     
     Me.cmdSendReceipt.Enabled = (Me.Status = "Splitted") Or (Me.Status = "Approved")
 
@@ -3571,7 +3571,7 @@ Private Sub cmdDelete_Click()
         
         oCollection.ResetPettyCash Nz(Me.EmployeeID), Nz(Me.LocationId), Nz(Me.CollectionDate)
 
-        DoCmd.RunSQL "Delete * from [Collection-Stub] Where Id = " & Nz(Me.Id, 0)
+        DoCmd.RunSQL "Delete * from [Collection-Stub] Where Id = " & Nz(Me.ID, 0)
         
         DoCmd.SetWarnings True
         

@@ -52,7 +52,7 @@ Public Property Get LoggedUserName() As String
 End Property
 
 Public Property Get LoggedUserId() As Integer
-    LoggedUserId = oUser.Id
+    LoggedUserId = oUser.ID
 End Property
 
 Public Property Get LoggedUserType() As Integer

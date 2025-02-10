@@ -3,7 +3,6 @@ VersionRequired =20
 Begin Report
     LayoutForPrint = NotDefault
     DividingLines = NotDefault
-    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     TabularFamily =0
     DateGrouping =1
@@ -13,8 +12,8 @@ Begin Report
     GridY =10
     Width =11513
     DatasheetFontHeight =11
-    ItemSuffix =118
-    Filter ="InvoiceNumber = '01-205910'"
+    ItemSuffix =152
+    Filter ="InvoiceNumber = '01-205537'"
     RecSrcDt = Begin
         0x33d1e69bb44be640
     End
@@ -107,6 +106,7 @@ Begin Report
         End
         Begin BreakLevel
             GroupHeader = NotDefault
+            GroupFooter = NotDefault
             ControlSource ="InvoiceNumber"
         End
         Begin BreakLevel
@@ -1698,7 +1698,7 @@ Begin Report
                     TextAlign =2
                     Left =9705
                     Top =143
-                    Width =1635
+                    Width =1620
                     Height =285
                     FontWeight =700
                     Name ="Label100"
@@ -1707,7 +1707,7 @@ Begin Report
                     GroupTable =11
                     LayoutCachedLeft =9705
                     LayoutCachedTop =143
-                    LayoutCachedWidth =11340
+                    LayoutCachedWidth =11325
                     LayoutCachedHeight =428
                     ColumnStart =5
                     ColumnEnd =5
@@ -1718,6 +1718,7 @@ Begin Report
                     GroupTable =11
                 End
                 Begin TextBox
+                    RunningSum =1
                     OldBorderStyle =0
                     TextAlign =2
                     IMESentenceMode =3
@@ -1750,7 +1751,7 @@ Begin Report
                     IMESentenceMode =3
                     Left =9705
                     Top =488
-                    Width =1635
+                    Width =1620
                     Height =278
                     TabIndex =5
                     Name ="txtExtededPrice"
@@ -1761,7 +1762,7 @@ Begin Report
 
                     LayoutCachedLeft =9705
                     LayoutCachedTop =488
-                    LayoutCachedWidth =11340
+                    LayoutCachedWidth =11325
                     LayoutCachedHeight =766
                     RowStart =1
                     RowEnd =1
@@ -1797,7 +1798,7 @@ Begin Report
                     Top =936
                     Width =9246
                     Height =506
-                    TabIndex =6
+                    TabIndex =7
                     ForeColor =0
                     Name ="SerialNumberList"
                     ControlSource ="SerialNumberList"
@@ -1857,6 +1858,51 @@ Begin Report
                     BorderShade =50.0
                     GroupTable =11
                 End
+                Begin TextBox
+                    Visible = NotDefault
+                    RunningSum =2
+                    OldBorderStyle =0
+                    TextAlign =1
+                    IMESentenceMode =3
+                    Left =11385
+                    Top =488
+                    Width =45
+                    Height =278
+                    TabIndex =6
+                    Name ="TxtRunningTotal"
+                    ControlSource ="=Count([ID])*[GamePrice]"
+                    Format ="$#,##0.00;-$#,##0.00"
+                    ControlTipText ="ID Total"
+                    GroupTable =11
+
+                    LayoutCachedLeft =11385
+                    LayoutCachedTop =488
+                    LayoutCachedWidth =11430
+                    LayoutCachedHeight =766
+                    RowStart =1
+                    RowEnd =1
+                    ColumnStart =6
+                    ColumnEnd =6
+                    LayoutGroup =3
+                    GroupTable =11
+                    CurrencySymbol ="$"
+                End
+                Begin EmptyCell
+                    Left =11385
+                    Top =143
+                    Width =45
+                    Height =285
+                    Name ="EmptyCell146"
+                    GroupTable =11
+                    LayoutCachedLeft =11385
+                    LayoutCachedTop =143
+                    LayoutCachedWidth =11430
+                    LayoutCachedHeight =428
+                    ColumnStart =6
+                    ColumnEnd =6
+                    LayoutGroup =3
+                    GroupTable =11
+                End
             End
         End
         Begin Section
@@ -1867,6 +1913,69 @@ Begin Report
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
             BackThemeColorIndex =1
+        End
+        Begin BreakFooter
+            KeepTogether = NotDefault
+            CanGrow = NotDefault
+            CanShrink = NotDefault
+            Height =345
+            Name ="GroupFooter0"
+            AutoHeight =255
+            AlternateBackThemeColorIndex =1
+            AlternateBackShade =95.0
+            BackThemeColorIndex =1
+            Begin
+                Begin TextBox
+                    RunningSum =2
+                    OldBorderStyle =0
+                    TextAlign =2
+                    IMESentenceMode =3
+                    Left =9773
+                    Top =30
+                    Width =1440
+                    Height =285
+                    FontWeight =700
+                    Name ="Text148"
+                    ControlSource ="=[TxtRunningTotal]"
+                    Format ="$#,##0.00;-$#,##0.00"
+                    ControlTipText ="ID Total"
+                    GroupTable =20
+
+                    LayoutCachedLeft =9773
+                    LayoutCachedTop =30
+                    LayoutCachedWidth =11213
+                    LayoutCachedHeight =315
+                    ColumnStart =1
+                    ColumnEnd =1
+                    LayoutGroup =5
+                    GroupTable =20
+                    CurrencySymbol ="$"
+                    Begin
+                        Begin Label
+                            OldBorderStyle =1
+                            TextAlign =3
+                            Left =8708
+                            Top =30
+                            Width =1005
+                            Height =285
+                            FontWeight =700
+                            Name ="Label130"
+                            Caption ="Total:"
+                            Tag ="DetachedLabel"
+                            GroupTable =20
+                            LayoutCachedLeft =8708
+                            LayoutCachedTop =30
+                            LayoutCachedWidth =9713
+                            LayoutCachedHeight =315
+                            LayoutGroup =5
+                            BorderThemeColorIndex =1
+                            BorderTint =100.0
+                            BorderShade =50.0
+                            GroupTable =20
+                        End
+                    End
+                End
+            End
         End
         Begin PageFooter
             Height =515

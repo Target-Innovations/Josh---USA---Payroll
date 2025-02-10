@@ -16,7 +16,7 @@ Private Const C1 As String = "C1"
 
 Private Type THttp
 
-    Id As Long
+    ID As Long
     Message As String
     
 End Type

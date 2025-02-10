@@ -1104,7 +1104,7 @@ Dim oStub As New cCollectionStub
 
 Private Sub Form_Current()
 
-    oStub.GetStubInfoById Nz(Me.Id)
+    oStub.GetStubInfoById Nz(Me.ID)
     
     Me.txtCashToLocation = oStub.CashToLocation
     Me.txtCashToUnionVending = oStub.CashToUnionVending

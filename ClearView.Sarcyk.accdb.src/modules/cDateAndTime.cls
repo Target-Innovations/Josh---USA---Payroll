@@ -15,7 +15,7 @@ Private Const C1 As String = "C1"
 
 Private Type TAuth
 
-    Id As Long
+    ID As Long
     Message As String
     
 End Type
@@ -58,7 +58,7 @@ Function CalcHrsMins(TotalMinutes As Variant) As Variant
 End Function
 
 Public Function NthDayOfWeek(Y As Integer, m As Integer, _
-    n As Integer, DOW As VbDayOfWeek) As Date
+    N As Integer, DOW As VbDayOfWeek) As Date
 '
 
 ' http://www.cpearson.com/excel/datetimevba.htm
@@ -76,7 +76,7 @@ Public Function NthDayOfWeek(Y As Integer, m As Integer, _
 ' NthDayOfWeek(2021, 6, 2, vbTuesday)
 '
     NthDayOfWeek = DateSerial(Y, m, (8 - WeekDay(DateSerial(Y, m, 1), _
-     (DOW + 1) Mod 8)) + ((n - 1) * 7))
+     (DOW + 1) Mod 8)) + ((N - 1) * 7))
 
 End Function
 

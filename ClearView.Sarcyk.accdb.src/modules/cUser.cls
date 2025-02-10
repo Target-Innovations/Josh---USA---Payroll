@@ -16,7 +16,7 @@ Private Const Update As String = "UPDATE"
 
 Private Type TUser
 
-    Id As Long
+    ID As Long
     Username As String
     FullName As String
     Password As String
@@ -47,8 +47,8 @@ Public Property Get Username() As String
     Username = this.Username
 End Property
 
-Public Property Get Id() As Long
-    Id = this.Id
+Public Property Get ID() As Long
+    ID = this.ID
 End Property
 
 Public Property Get FullName() As String
@@ -97,7 +97,7 @@ End Sub
 
 Private Sub ClearFields()
     
-    this.Id = -1
+    this.ID = -1
     this.Username = ""
     this.FullName = ""
     this.Password = ""
@@ -183,7 +183,7 @@ Private Function Authenticate() As Boolean
 End Function
 
 Public Function LoggedIn() As Boolean
-    LoggedIn = Nz(Me.Id, 0) = -1
+    LoggedIn = Nz(Me.ID, 0) = -1
 End Function
 
 Public Function LogIn(Username As String, Password As String) As Boolean
@@ -324,7 +324,7 @@ Private Sub PopulateFields(rs As Variant)
             
             this.UserType = rs("UserType")    ' Nz(DLookup("[SecurityLevel]", "Employees", "Username='" & this.UserName & "'"))
             this.TempPass = rs("Password")          ' Nz(DLookup("Password", "Employees", "Username='" & this.UserName & "'"))
-            this.Id = rs("Id")              ' Nz(DLookup("Id", "Employees", "Username='" & this.UserName & "'"))
+            this.ID = rs("Id")              ' Nz(DLookup("Id", "Employees", "Username='" & this.UserName & "'"))
             this.Password = rs("Password")
             this.FullName = rs("FullName")
             this.UserType = rs("UserType")
@@ -344,11 +344,11 @@ Private Sub PopulateFields(rs As Variant)
     
 End Sub
 
-Public Sub GetUserInfoById(Id As Long)
+Public Sub GetUserInfoById(ID As Long)
 
 On Error GoTo ErrorHandler
     '
-    this.Username = DLookup("UserName", "Employees", "Id=" & Id)
+    this.Username = DLookup("UserName", "Employees", "Id=" & ID)
     
     GetUserInfoByUserName this.Username
 

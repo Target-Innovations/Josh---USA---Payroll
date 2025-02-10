@@ -2565,7 +2565,7 @@ End Sub
 
 Sub UpdateModel()
 
-    oPayroll.Id = Nz(Me.Id)
+    oPayroll.ID = Nz(Me.ID)
     oPayroll.PayPeriodStart = Nz(Me.txtPayPeriodStart)
     oPayroll.PayPeriodEnd = Nz(Me.txtPayPeriodEnd)
     oPayroll.EmployeeID = Nz(Me.cboEmployeeId)
@@ -2594,7 +2594,7 @@ Private Sub cmdDelete_Click()
         
         DoCmd.SetWarnings False
         
-        DoCmd.RunSQL "Delete * from PayrollEntries Where Id = " & Nz(Me.Id, 0)
+        DoCmd.RunSQL "Delete * from PayrollEntries Where Id = " & Nz(Me.ID, 0)
         
         DoCmd.SetWarnings True
         

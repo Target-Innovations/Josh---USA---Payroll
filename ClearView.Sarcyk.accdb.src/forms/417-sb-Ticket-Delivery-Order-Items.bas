@@ -12,9 +12,9 @@ Begin Form
     DatasheetFontHeight =11
     ItemSuffix =130
     Left =765
-    Top =4740
+    Top =6788
     Right =15998
-    Bottom =7598
+    Bottom =9645
     RecSrcDt = Begin
         0x44a82bad1043e640
     End
@@ -172,6 +172,7 @@ Begin Form
                     Top =893
                     Width =2835
                     Height =338
+                    ColumnWidth =1035
                     TabIndex =2
                     LeftMargin =44
                     TopMargin =22
@@ -226,7 +227,7 @@ Begin Form
                     Top =1298
                     Width =2835
                     Height =338
-                    ColumnWidth =1898
+                    ColumnWidth =870
                     TabIndex =3
                     LeftMargin =44
                     TopMargin =22
@@ -283,6 +284,7 @@ Begin Form
                     Top =1703
                     Width =2835
                     Height =338
+                    ColumnWidth =1050
                     TabIndex =4
                     LeftMargin =44
                     TopMargin =22
@@ -339,6 +341,7 @@ Begin Form
                     Top =2858
                     Width =2835
                     Height =338
+                    ColumnWidth =1478
                     TabIndex =7
                     LeftMargin =44
                     TopMargin =22
@@ -392,6 +395,7 @@ Begin Form
                     Top =2453
                     Width =2835
                     Height =338
+                    ColumnWidth =1238
                     TabIndex =6
                     LeftMargin =44
                     TopMargin =22
@@ -513,6 +517,7 @@ Begin Form
                     Top =2108
                     Width =2835
                     Height =278
+                    ColumnWidth =878
                     TabIndex =5
                     LeftMargin =44
                     TopMargin =22

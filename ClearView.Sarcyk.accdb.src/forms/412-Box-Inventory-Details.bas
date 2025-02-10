@@ -2217,7 +2217,7 @@ Private Sub cmdDelete_Click()
         
         DoCmd.SetWarnings False
         
-        DoCmd.RunSQL "Delete * from [BoxInventory] Where Id = " & Nz(Me.Id, 0)
+        DoCmd.RunSQL "Delete * from [BoxInventory] Where Id = " & Nz(Me.ID, 0)
         
         DoCmd.SetWarnings True
         

@@ -16,7 +16,7 @@ Private Const DB_UPDATE As String = "UPDATE"
 
 Private oDistribution As New cDistribution
 
-Public Id As Long
+Public ID As Long
 Public AcquiredDate As Date
 Public DistributedDate As Date
 Public SameMonthSold As Boolean
@@ -104,7 +104,7 @@ End Property
 
 Public Sub ClearFields()
 
-    Id = 0
+    ID = 0
     AcquiredDate = vbNull
     DistributedDate = vbNull
     SameMonthSold = 0
@@ -274,7 +274,7 @@ On Error GoTo ErrorHandler
             
             rs.MoveFirst
             
-            Id = Nz(rs("Id"))
+            ID = Nz(rs("Id"))
             
             AcquiredDate = Nz(rs("AcquiredDate"))
             DistributedDate = Nz(rs("DistributedDate"))
@@ -303,7 +303,7 @@ On Error GoTo ErrorHandler
             ' InitialSupplyStockOwner = Nz(rs("InitialSupplyStockOwner")) ' TODO type mismatch
             TransferDate = Nz(rs("TransferDate"))
             ' CharityDistributedFor = Nz(rs("CharityDistributedFor")) ' TODO Type Mismatch
-            SMACSaleInvoiceNumber = Nz(rs("SMACSaleInvoiceNumber"))
+            SMACSaleInvoiceNumber = IIf(Trim(Nz(rs("SMACSaleInvoiceNumber"))) = "", 0, rs("SMACSaleInvoiceNumber"))
             SaleDate = Nz(rs("SaleDate"))
             NewSupplyStockOwnerID = Nz(rs("NewSupplyStockOwnerID"))
             ' NewSupplyStockOwner = Nz(rs("NewSupplyStockOwner")) ' TODO Type Mismatch
@@ -407,13 +407,13 @@ Public Function Search(WhereClause As String) As Recordset
     Err.Raise "50001", CLASS_NAME & ".Search", "Method Not Implemented."
 End Function
 
-Public Function GetInfoById(Id As Long) As Recordset
+Public Function GetInfoById(ID As Long) As Recordset
 
 On Error GoTo ErrorHandler
 
     Dim rs As DAO.Recordset
 
-    Set rs = CurrentDb().OpenRecordset("Select * From [BoxInventory] Where ID = " & Id, dbOpenDynaset)
+    Set rs = CurrentDb().OpenRecordset("Select * From [BoxInventory] Where ID = " & ID, dbOpenDynaset)
     
     Set GetInfoById = rs
 
@@ -499,9 +499,9 @@ ErrorHandler:
      Err.Raise Err.Number, CLASS_NAME & ".GetGameInfo", Err.Description
     
 End Function
-Function GetTotalOwed(Id As Long) As Double
+Function GetTotalOwed(ID As Long) As Double
 
-    GetTotalOwed = Nz(DSum("IdealProfit", "TicketDeliveryOrderItems", "DistributionOrderId = " & Id & ""), 0)
+    GetTotalOwed = Nz(DSum("IdealProfit", "TicketDeliveryOrderItems", "DistributionOrderId = " & ID & ""), 0)
     
 End Function
 
@@ -535,7 +535,7 @@ On Error GoTo ErrorHandler
             oDistribution.AddDistribuiton rs
             
             ' Set Inventory to sold
-            SetInventoryState Nz(rs("SerialNumber")), "Sold" ' "Distributed"
+            SetInventoryState Nz(rs("SerialNumber")), "Sold", rs("SaleDate") ' "Distributed"
             
             ' Set  Order to Distributed
             SetDeliveryOrderState Nz(rs("OrderId")), "Distributed" '  "Active"
@@ -627,11 +627,11 @@ End Sub
 '
 'End Function
 
-Public Sub SetInventoryState(SerialNumber As String, State As String)
+Public Sub SetInventoryState(SerialNumber As String, State As String, DistributedDate As String)
 
 On Error GoTo ErrorHandler
 
-    CurrentDb.Execute "Update BoxInventory set Status = '" & State & "' Where SerialNumber = '" & SerialNumber & "'"
+    CurrentDb.Execute "Update BoxInventory set Status = '" & State & "' , DistributedDate = '" & DistributedDate & "' Where SerialNumber = '" & SerialNumber & "'"
         
     Exit Sub
 
@@ -660,8 +660,10 @@ Public Sub SetDeliveryItemCheckNumber(CheckNumber As String)
 On Error GoTo ErrorHandler
 
     oDistribution.GetInfoBySerialNumberf Me.SerialNumber
-    oDistribution.SetLocationCheckNumber CheckNumber
+    ' oDistribution.SetLocationCheckNumber CheckNumber
+    oDistribution.LocationCheckNumber = CheckNumber
     oDistribution.SetCurrentDistributionStatus
+    oDistribution.Update
     
     Exit Sub
 
@@ -743,3 +745,39 @@ Sub CreateVariousBoxes(SerialNumbers As String, FirstBox As DAO.Recordset)
     Next i
     
 End Sub
+
+Sub ApplyPaymentToOrder(OrderId As String, CheckNumber As String)
+
+On Error GoTo ErrorHandler
+
+    Dim rs As DAO.Recordset
+
+    ' Search for specific order
+    Set rs = CurrentDb().OpenRecordset("Select * From [407-Ticket-Delivery-Order] Where OrderID = " & OrderId, dbOpenDynaset)
+
+    With rs
+        
+        ' Loop through Orders and apply payment for
+        ' each Serial Number
+        While Not rs.EOF
+            
+            ' Load Inventory Info:
+            GetInfoBySerialNumber Nz(rs("SerialNumber"))
+            
+            SetDeliveryItemCheckNumber CheckNumber
+
+            rs.MoveNext
+            
+        Wend
+            
+    End With
+    
+    this.Message = "Check # applied successfully."
+    
+    Exit Sub
+
+ErrorHandler:
+     Err.Raise Err.Number, CLASS_NAME & ".ApplyPaymentToOrder", Err.Description
+     
+End Sub
+

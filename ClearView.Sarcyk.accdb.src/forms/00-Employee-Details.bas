@@ -3237,7 +3237,7 @@ Private Sub Form_Current()
     Me.cmdDelete.Enabled = (cSysSettings.oUser.UserType = User_Type.Admin)
 
     Me.txtComments = ""
-    ShowColumnHistoryDesc "Employees", "Comments", "[ID]=" & Nz([Id], 0), Me.txtComments
+    ShowColumnHistoryDesc "Employees", "Comments", "[ID]=" & Nz([ID], 0), Me.txtComments
 
 
 End Sub
@@ -3299,7 +3299,7 @@ On Error Resume Next
 
         sql = sql & " SELECT ID, FullName AS Name, PassNumber"
         sql = sql & "   FROM [Employees Extended]"
-        sql = sql & "  WHERE  ID = " & cSysSettings.oUser.Id
+        sql = sql & "  WHERE  ID = " & cSysSettings.oUser.ID
         sql = sql & "  ORDER BY FullName;"
 
         Me.cboGoTo.RowSource = sql
@@ -3334,7 +3334,7 @@ Private Sub cmdDelete_Click()
         
         DoCmd.SetWarnings False
         
-        DoCmd.RunSQL "Delete * from Employees Where id = " & Me.Id
+        DoCmd.RunSQL "Delete * from Employees Where id = " & Me.ID
         
         DoCmd.SetWarnings True
         
@@ -3345,7 +3345,7 @@ End Sub
 
 Private Sub Form_AfterUpdate()
     Me.txtComments = ""
-    ShowColumnHistoryDesc "Employees", "Comments", "[ID]=" & Nz([Id], 0), Me.txtComments
+    ShowColumnHistoryDesc "Employees", "Comments", "[ID]=" & Nz([ID], 0), Me.txtComments
 End Sub
 
 Private Sub Form_BeforeUpdate(Cancel As Integer)

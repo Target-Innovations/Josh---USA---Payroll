@@ -4041,7 +4041,7 @@ Private Sub Form_Load()
     If cSysSettings.oUser.UserType = User_Type.Admin Then
         Me.FilterOn = False
     Else
-        Me.Filter = "EmployeeId = " & cSysSettings.oUser.Id
+        Me.Filter = "EmployeeId = " & cSysSettings.oUser.ID
         Me.FilterOn = True
     End If
     

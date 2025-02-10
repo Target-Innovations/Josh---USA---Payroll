@@ -3,7 +3,6 @@ VersionRequired =20
 Begin Report
     LayoutForPrint = NotDefault
     DividingLines = NotDefault
-    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     TabularFamily =0
     DateGrouping =1
@@ -926,7 +925,7 @@ Begin Report
                     RightMargin =44
                     BottomMargin =22
                     Name ="txtLocationRent"
-                    ControlSource ="LocationRent"
+                    ControlSource ="=Fix([LocationRent])"
                     Format ="$#,##0.00;-$#,##0.00"
                     ShowDatePicker =1
 
@@ -1053,7 +1052,6 @@ Begin Report
                     Begin
                         Begin Label
                             BackStyle =1
-                            OverlapFlags =4
                             TextAlign =3
                             TextFontFamily =34
                             Left =5475
@@ -1091,7 +1089,7 @@ Begin Report
                     TextFontFamily =34
                     IMESentenceMode =3
                     Left =6488
-                    Top =1283
+                    Top =1275
                     Width =4749
                     Height =405
                     TabIndex =2
@@ -1109,9 +1107,9 @@ Begin Report
                     BottomPadding =0
 
                     LayoutCachedLeft =6488
-                    LayoutCachedTop =1283
+                    LayoutCachedTop =1275
                     LayoutCachedWidth =11237
-                    LayoutCachedHeight =1688
+                    LayoutCachedHeight =1680
                     RowStart =2
                     RowEnd =2
                     ColumnStart =1
@@ -1123,11 +1121,10 @@ Begin Report
                     Begin
                         Begin Label
                             BackStyle =1
-                            OverlapFlags =4
                             TextAlign =3
                             TextFontFamily =34
                             Left =5475
-                            Top =1283
+                            Top =1275
                             Width =1005
                             Height =405
                             LeftMargin =44
@@ -1143,9 +1140,9 @@ Begin Report
                             RightPadding =0
                             BottomPadding =0
                             LayoutCachedLeft =5475
-                            LayoutCachedTop =1283
+                            LayoutCachedTop =1275
                             LayoutCachedWidth =6480
-                            LayoutCachedHeight =1688
+                            LayoutCachedHeight =1680
                             RowStart =2
                             RowEnd =2
                             LayoutGroup =3

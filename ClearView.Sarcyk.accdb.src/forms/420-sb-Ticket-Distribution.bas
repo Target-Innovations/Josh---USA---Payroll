@@ -2304,7 +2304,7 @@ End Sub
 
 Sub UpdateModel()
 
-    oDistribution.Id = Nz(Id)
+    oDistribution.ID = Nz(ID)
     oDistribution.Status = Nz(Status)
     oDistribution.DeliveryNumber = Nz(DeliveryNumber)
     oDistribution.DistributionDate = Nz(DistributionDate)

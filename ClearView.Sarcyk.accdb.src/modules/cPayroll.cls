@@ -14,7 +14,7 @@ Private Const CLASS_NAME = "cPayroll"
 Private Const WO_INSERT As String = "INSERT"
 Private Const WO_UPDATE As String = "UPDATE"
 
-Public Id As Integer
+Public ID As Integer
 
 Public EmployeeID As Integer
 Public SSN As String
@@ -93,7 +93,7 @@ End Property
 
 Public Sub ClearFields()
 
-    Id = 0
+    ID = 0
     PayPeriodStart = 0
     PayPeriodEnd = 0
     EmployeeID = 0
@@ -145,7 +145,7 @@ On Error GoTo ErrorHandler
             
             rs.MoveFirst
             
-            Id = Nz(rs("Id"))
+            ID = Nz(rs("Id"))
             
             EmployeeID = Nz(rs("EmployeeID"))
             

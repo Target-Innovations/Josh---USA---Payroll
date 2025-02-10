@@ -9832,7 +9832,7 @@ On Error Resume Next
     If cSysSettings.oUser.UserType = User_Type.Admin Then
         Me.FilterOn = False
     Else
-        Me.Filter = "EmployeeId = " & cSysSettings.oUser.Id
+        Me.Filter = "EmployeeId = " & cSysSettings.oUser.ID
         Me.FilterOn = True
     End If
     
@@ -9851,7 +9851,7 @@ On Error GoTo ErrorHandler
     Else
 
         Dim TotalSplit As Double
-        TotalSplit = Nz(DSum("Split", "ChargeSplits", "Id <> " & Nz(Me.Id, 0) & " And EmployeeId = " & Nz(Me.EmployeeID, 0)), 0)
+        TotalSplit = Nz(DSum("Split", "ChargeSplits", "Id <> " & Nz(Me.ID, 0) & " And EmployeeId = " & Nz(Me.EmployeeID, 0)), 0)
         
         If TotalSplit + Me.Split > 1 Then
             MsgBox "Your total split adds up to " & (TotalSplit + Me.Split) * 100 & "%. It should never go over 100%. Fix your entry and try again.", vbExclamation

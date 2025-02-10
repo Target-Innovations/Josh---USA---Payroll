@@ -27,7 +27,7 @@ Private Enum deStatus
     
 End Enum
 
-Public Id As Long
+Public ID As Long
 Public Status As String
 Public DeliveryNumber As Long
 Public DistributionDate As Date
@@ -171,7 +171,7 @@ On Error GoTo ErrorHandler
             
             rs.MoveFirst
             
-            Id = Nz(rs("Id"))
+            ID = Nz(rs("Id"))
             Status = Nz(rs("Status"))
             DeliveryNumber = Nz(rs("DeliveryNumber"))
             DistributionDate = Nz(rs("DistributionDate"))
@@ -394,51 +394,42 @@ On Error GoTo ErrorHandler
     Dim sql As String
     Dim rs As DAO.Recordset
     
-    Set rs = CurrentDb.OpenRecordset("Select * from " & TABLE_NAME & " Where " & PRIMARY_KEY & " = " & Me.Id)
+    Set rs = CurrentDb.OpenRecordset("Select * from " & TABLE_NAME & " Where " & PRIMARY_KEY & " = " & Me.ID)
     
     With rs
             
         .Edit
             
-            '!SerialNumber = rsInfo("SerialNumber")
+            ' !Id = rs("Id")
+            !Status = Status
+            !DeliveryNumber = DeliveryNumber
+            !DistributionDate = DistributionDate
+            !CharityId = CharityId
+            !LocationId = LocationId
+            !SalesRepId = LocationId
+            !MarketingRepId = MarketingRepId
+            !RepCommission = RepCommission
+            !SerialNumber = SerialNumber
+            !SupplierId = SupplierId
+            !GameName = GameName
+            !TicketCount = TicketCount
+            !TicketValue = TicketValue
+            !TotalRevenue = TotalRevenue
+            !PrizesPaid = PrizesPaid
+            !Profit = Profit
+            !Rent = Rent
+            ' !BillingStyle = BillingStyle
+            !TotalBillable = TotalBillable
+            !TicketSupplyCost = TicketSupplyCost
+            !SMACServiceFee = SMACServiceFee
+            !SMACAdminFee = SMACAdminFee
+            !LocationCheckNumber = LocationCheckNumber
             
-            '!Id = rs("Id")
+            If IsNumeric(ReimbursementCheckNumber) Then !ReimbursementCheckNumber = ReimbursementCheckNumber
+            If IsNumeric(EnvelopeNumber) Then !EnvelopeNumber = EnvelopeNumber
             
-'            !Status = "Active"
-'            !DeliveryNumber = rsInfo("OrderId")
-'            !DistributionDate = rsInfo("SaleDate")
-'            !LocationId = rsInfo("LocationId")
-'            '!LegalName = rs("LegalName")
-'            !CharityId = rsInfo("CharityId")
-'
-'            !SalesRepId = Me.SalesRep(Nz(rsInfo("LocationId")))
-'            !MarketingRepId = Me.MarketingRep1(Nz(rs("LocationId")))
-'
-'            !RepCommission = Me.SaleCommision(!MarketingRepId)
-'
-'            !SupplierId = Me.Supplier
-'
-'            !GameName = rsInfo("GameId")
-'            !TicketCount = rsInfo("TicketCount")
-'
-'            ' !TicketValue = rsInfo("?????")
-'            ' !TotalRevenue = rsInfo("????")
-'
-'            !PrizesPaid = rsInfo("PrizesPaid")
-'            !Profit = rsInfo("IdealProfit")
-'            !Rent = rsInfo("LocationRent")
-'
-'            !BillingStyle = Me.BillingStyle(rsInfo("CharityId"))
+            !ReimbursementSent = ReimbursementSent
             
-'            !TotalBillable = rs("TotalBillable")
-'            !TicketSupplyCost = rs("TicketSupplyCost")
-'            !SMACServiceFee = rs("SMACServiceFee")
-'            !SMACAdminFee = rs("SMACAdminFee")
-'            !LocationCheckNumber = rs("LocationCheckNumber")
-'            !ReimbursementCheckNumber = rs("ReimbursementCheckNumber")
-'            !EnvelopeNumber = rs("EnvelopeNumber")
-'            !ReimbursementSent = rs("ReimbursementSent")
-
             !UpdatedAt = Now()
             !UpdatedBy = cSysSettings.LoggedUserName
         
@@ -466,8 +457,7 @@ Public Function Archive(Pk_Id As String)
 
 On Error GoTo ErrorHandler
 
-    Dim rs As Recordset
-    Set rs = CurrentDb().OpenRecordset("Update [" & TABLE_NAME & "] Set Archived = True Where " & PRIMARY_KEY & " = " & Pk_Id)
+    CurrentDb.Execute ("Update [" & TABLE_NAME & "] Set Archived = True Where " & PRIMARY_KEY & " = " & Pk_Id)
     Archive = True
     
     Exit Function
@@ -538,5 +528,52 @@ On Error GoTo ErrorHandler
 ErrorHandler:
     this.Message = "Unable to Add " & CLASS_NAME & " record."
     Err.Raise Err.Number, CLASS_NAME & ".SetLocationCheckNumber", Err.Description
+    
+End Function
+
+Function SetRecsToEnveloped() As Boolean
+
+On Error GoTo ErrorHandler
+    
+    CurrentDb.Execute "Update TicketDistribution set Status = 'Enveloped', EnvelopeNumber = [DeliveryNumber] Where Status = 'Location Paid'"
+
+    SetRecsToEnveloped = True
+
+    Exit Function
+
+ErrorHandler:
+    this.Message = "Unable to Add " & CLASS_NAME & " record."
+    Err.Raise Err.Number, CLASS_NAME & ".SetRecsToEnveloped", Err.Description
+
+    
+End Function
+
+Function SetReimbursementDate(DeliveryOrder As String, SentDate As Date) As Boolean
+
+On Error GoTo ErrorHandler
+    
+    Dim Result As Boolean
+    
+    Result = DCount("*", "TicketDistribution", "DeliveryNumber = " & DeliveryOrder & " And ReimbursementSent Is Not Null")
+    
+    If Result Then
+        If MsgBox("There are dates already set to this order. Are you sure you want to replace them?", vbExclamation + vbYesNo) = vbNo Then
+            
+            SetReimbursementDate = False
+            Exit Function
+            
+        End If
+    End If
+    
+    CurrentDb.Execute "Update TicketDistribution set Status = 'Reimbursement Sent', ReimbursementSent = #" & SentDate & "# Where DeliveryNumber = " & DeliveryOrder & ""
+
+    SetReimbursementDate = True
+
+    Exit Function
+
+ErrorHandler:
+    this.Message = "Unable to Add " & CLASS_NAME & " record."
+    Err.Raise Err.Number, CLASS_NAME & ".SetReimbursementDate", Err.Description
+
     
 End Function
