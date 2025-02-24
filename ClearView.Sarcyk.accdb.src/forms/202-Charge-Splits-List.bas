@@ -16,10 +16,11 @@ Begin Form
     Width =14760
     DatasheetFontHeight =11
     ItemSuffix =499
-    Right =14505
-    Bottom =10515
+    Right =20985
+    Bottom =10770
     DatasheetGridlinesColor =-1
     Tag ="SplitList"
+    Filter ="([Lookup_EmployeeId].[FullName]=\"Wayne Sarcyk\")"
     OrderBy ="[Lookup_EmployeeId].[FullName], [Lookup_DivisionId].[Division], [ChargeSplits].["
         "UpdatedAt] DESC"
     RecSrcDt = Begin
@@ -34,11 +35,11 @@ Begin Form
     FilterOnLoad =0
     SplitFormOrientation =1
     SplitFormSplitterBar =0
-    SplitFormSize =2205
+    SplitFormSize =1613
     SplitFormPrinting =1
     SplitFormOrientation =1
     SplitFormSplitterBar =0
-    SplitFormSize =2205
+    SplitFormSize =1613
     SplitFormPrinting =1
     ShowPageMargins =0
     DisplayOnSharePointSite =1
@@ -154,8 +155,8 @@ Begin Form
         Begin FormHeader
             Height =2206
             Name ="FormHeader"
-            BackThemeColorIndex =2
-            BackTint =50.0
+            BackThemeColorIndex =6
+            BackShade =75.0
             Begin
                 Begin Rectangle
                     BackStyle =1
@@ -9188,7 +9189,7 @@ Begin Form
                         ColumnsShown =0
                         Begin
                             Action ="OpenForm"
-                            Argument ="200-Home-Payroll-System"
+                            Argument ="00-Home"
                             Argument ="0"
                             Argument =""
                             Argument =""
@@ -9208,9 +9209,9 @@ Begin Form
                                 "Form\"><Argument Name=\"FormName\">"
                         End
                         Begin
-                            Comment ="_AXL:200-Home-Payroll-System</Argument></Action><Action Name=\"CloseWindow\"><Ar"
-                                "gument Name=\"ObjectType\">Form</Argument><Argument Name=\"ObjectName\">202-Char"
-                                "ge-Splits-List</Argument></Action></Statements></UserInterfaceMacro>"
+                            Comment ="_AXL:00-Home</Argument></Action><Action Name=\"CloseWindow\"><Argument Name=\"Ob"
+                                "jectType\">Form</Argument><Argument Name=\"ObjectName\">202-Charge-Splits-List</"
+                                "Argument></Action></Statements></UserInterfaceMacro>"
                         End
                     End
                     BackStyle =0
@@ -9297,6 +9298,7 @@ Begin Form
                     Height =368
                     FontSize =14
                     TabIndex =2
+                    ForeColor =2366701
                     Name ="txtEmployeeName"
                     FontName ="Aptos"
 
@@ -9308,8 +9310,6 @@ Begin Form
                     BorderThemeColorIndex =0
                     BorderTint =50.0
                     ThemeFontIndex =1
-                    ForeThemeColorIndex =2
-                    ForeTint =25.0
                     GridlineThemeColorIndex =1
                     GridlineShade =65.0
                 End
@@ -9823,21 +9823,6 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
 
-Private Sub Form_Load()
-
-On Error Resume Next
-    
-    cLogger.LogIt "Entering [" & Me.Name & "]", EventType.Info
-    
-    If cSysSettings.oUser.UserType = User_Type.Admin Then
-        Me.FilterOn = False
-    Else
-        Me.Filter = "EmployeeId = " & cSysSettings.oUser.ID
-        Me.FilterOn = True
-    End If
-    
-End Sub
-
 Private Sub Form_BeforeUpdate(Cancel As Integer)
 
 On Error GoTo ErrorHandler
@@ -9851,7 +9836,7 @@ On Error GoTo ErrorHandler
     Else
 
         Dim TotalSplit As Double
-        TotalSplit = Nz(DSum("Split", "ChargeSplits", "Id <> " & Nz(Me.ID, 0) & " And EmployeeId = " & Nz(Me.EmployeeID, 0)), 0)
+        TotalSplit = Nz(DSum("Split", "ChargeSplits", "Id <> " & Nz(Me.Id, 0) & " And EmployeeId = " & Nz(Me.EmployeeID, 0)), 0)
         
         If TotalSplit + Me.Split > 1 Then
             MsgBox "Your total split adds up to " & (TotalSplit + Me.Split) * 100 & "%. It should never go over 100%. Fix your entry and try again.", vbExclamation
@@ -9899,6 +9884,21 @@ Private Sub Form_Current()
         Me.txtDisplayTotalSplit = Nz(DSum("Split", "ChargeSplits", " EmployeeId = " & Nz(Me.EmployeeID, 0)), 0)
         Me.txtDisplayTotalSplit = (Me.txtDisplayTotalSplit * 100) & "%"
         
+    End If
+    
+End Sub
+
+Private Sub Form_Load()
+
+    On Error Resume Next
+    
+    cLogger.LogIt "Entering [" & Me.Name & "]", EventType.Info
+    
+    If cSysSettings.oUser.UserType = User_Type.Admin Then
+        Me.FilterOn = False
+    Else
+        Me.Filter = "EmployeeId = " & cSysSettings.oUser.Id
+        Me.FilterOn = True
     End If
     
 End Sub

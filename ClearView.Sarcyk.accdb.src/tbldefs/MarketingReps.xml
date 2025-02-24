@@ -10,6 +10,7 @@
   <xsd:element name="MarketingReps">
     <xsd:annotation>
       <xsd:appinfo>
+        <od:index index-name="CharityPayingId" index-key="CharityPayingId " primary="no" unique="no" clustered="no" order="asc"/>
         <od:index index-name="IdPk" index-key="Id " primary="no" unique="no" clustered="no" order="asc"/>
         <od:index index-name="PrimaryKey" index-key="Id " primary="yes" unique="yes" clustered="no" order="asc"/>
         <od:tableProperty name="Orientation" type="2" value="0"/>

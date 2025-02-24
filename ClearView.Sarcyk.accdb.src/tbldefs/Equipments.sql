@@ -21,5 +21,6 @@
   [BasePrice] CURRENCY ,
   [ManufactureId] LONG ,
   [OwnerId] LONG ,
-  [RentToOwn] BIT 
+  [RentToOwn] BIT ,
+  [MonthlyRentalCost] CURRENCY 
 )

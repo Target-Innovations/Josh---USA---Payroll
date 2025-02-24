@@ -27,7 +27,7 @@ Private Enum deStatus
     
 End Enum
 
-Public ID As Long
+Public Id As Long
 Public Status As String
 Public DeliveryNumber As Long
 Public DistributionDate As Date
@@ -86,6 +86,18 @@ End Property
 
 Public Property Get BillingStyle(CharityId As Long) As String
     BillingStyle = Nz(DLookup("BillingStyle", "Charities", "CharityId =" & CharityId))
+End Property
+
+Public Property Get GamePrice(SerialNumber As String) As String
+    GamePrice = Nz(DLookup("GamePrice", "BoxInventory", "SerialNumber ='" & SerialNumber & "'"))
+End Property
+
+Public Property Get Revenue(SerialNumber As String) As String
+    Revenue = Nz(DLookup("Revenue", "BoxInventory", "SerialNumber ='" & SerialNumber & "'"))
+End Property
+
+Public Property Get Supplier(SerialNumber As String) As String
+    Supplier = Nz(DLookup("Supplier", "BoxInventory", "SerialNumber ='" & SerialNumber & "'"))
 End Property
 
 Private Sub Class_Initialize()
@@ -171,7 +183,7 @@ On Error GoTo ErrorHandler
             
             rs.MoveFirst
             
-            ID = Nz(rs("Id"))
+            Id = Nz(rs("Id"))
             Status = Nz(rs("Status"))
             DeliveryNumber = Nz(rs("DeliveryNumber"))
             DistributionDate = Nz(rs("DistributionDate"))
@@ -318,7 +330,7 @@ Public Function AddDistribuiton(rsBoxInfo As DAO.Recordset) As Boolean
 
 On Error GoTo ErrorHandler
 
-    Dim sql As String
+    Dim Sql As String
     Dim rs As DAO.Recordset
     
     Set rs = CurrentDb.OpenRecordset(TABLE_NAME)
@@ -350,8 +362,9 @@ On Error GoTo ErrorHandler
             !GameName = rsBoxInfo("GameId")
             !TicketCount = rsBoxInfo("TicketCount")
             
+            
             ' !TicketValue = rsBoxInfo("?????")
-            ' !TotalRevenue = rsBoxInfo("????")
+            !TotalRevenue = Revenue(!SerialNumber)
             
             !PrizesPaid = rsBoxInfo("PrizesPaid")
             !Profit = rsBoxInfo("IdealProfit")
@@ -359,10 +372,21 @@ On Error GoTo ErrorHandler
             
             !BillingStyle = Me.BillingStyle(rsBoxInfo("CharityId"))
             
-'            !TotalBillable = rs("TotalBillable")
-'            !TicketSupplyCost = rs("TicketSupplyCost")
-'            !SMACServiceFee = rs("SMACServiceFee")
-'            !SMACAdminFee = rs("SMACAdminFee")
+            !TicketSupplyCost = GamePrice(!SerialNumber)
+            
+            Dim SupplierInfo As String
+            SupplierInfo = Supplier(!SerialNumber)
+            
+            !SMACServiceFee = GetServiceFee(SupplierInfo, !BillingStyle, !TicketCount, !TicketSupplyCost, !Profit)
+            
+            Dim RevenueInfo As Double
+            RevenueInfo = Revenue(!SerialNumber)
+            
+            !SMACAdminFee = GetAdminFee(SupplierInfo, !BillingStyle, !TotalRevenue)
+
+             !TotalBillable = Nz(!TicketSupplyCost, 0) + Nz(!SMACServiceFee, 0) + Nz(!SMACAdminFee, 0)
+
+
 '            !LocationCheckNumber = rs("LocationCheckNumber")
 '            !ReimbursementCheckNumber = rs("ReimbursementCheckNumber")
 '            !EnvelopeNumber = rs("EnvelopeNumber")
@@ -387,14 +411,81 @@ ErrorHandler:
     
 End Function
 
+Private Function GetServiceFee(Vendor As String, BillingStyle As String, TicketCount As Long, SupplyCost As Double, Profit As Double) As Double
+
+    '=IF(
+    '    [@[Billing Style]] = "Flat Per Ticket",
+    '    (        XLOOKUP(
+    '            [@Supplier] & [@[Ticket Value]],
+    '            Table1417[Vendor] & Table1417[Ticket Value],
+    '            Table1417[Flat Rates],
+    '            "Not There"
+    '        ) * [@[Ticket Count]] ) - [@[Ticket Supply Cost]],
+    '    XLOOKUP(
+    '        [@Supplier] & [@[Billing Style]],
+    '        Table1417[Vendor] & Table1417[Billing Style],
+    '        Table1417[% - Ideal Profit],
+    '        "Not There"
+    '    ) * [@Profit]
+    ')
+
+    Dim VendoRate As Double
+    
+    GetServiceFee = 0
+    
+    If BillingStyle = "Flat Per Ticket" Then
+    
+        VendoRate = DLookup("FlatRates", "TicketPayStructure", "VendorId = " & Vendor & " And BillingStyle = '" & BillingStyle & "'")
+        GetServiceFee = (VendoRate * TicketCount) - SupplyCost
+        
+    Else
+        
+        VendoRate = DLookup("IdealProfit", "TicketPayStructure", "VendorId = " & Vendor & " And BillingStyle = '" & BillingStyle & "'")
+        GetServiceFee = VendoRate * Profit
+        
+    End If
+    
+End Function
+
+Private Function GetAdminFee(Vendor As String, BillingStyle As String, TotalRevenue As Double) As Double
+
+    '    =IF(
+    '        [@[Billing Style]] = "Flat Per Ticket",
+    '        0,
+    '        XLOOKUP(
+    '            [@Supplier] & [@[Billing Style]],
+    '            Table1417[Vendor] & Table1417[Billing Style],
+    '            Table1417[% - Admin 1% Revenue],
+    '            "Not There"
+    '        ) * [@[Total Revenue]]
+    '    )
+
+
+    Dim VendoRate As Double
+    
+    GetAdminFee = 0
+    
+    If BillingStyle = "Flat Per Ticket" Then
+    
+        GetAdminFee = 0
+        
+    Else
+        
+        VendoRate = DLookup("AdminFee", "TicketPayStructure", "VendorId = " & Vendor & " And BillingStyle = '" & BillingStyle & "'")
+        GetAdminFee = VendoRate * TotalRevenue
+        
+    End If
+    
+End Function
+
 Public Function Update() As Boolean
 
 On Error GoTo ErrorHandler
 
-    Dim sql As String
+    Dim Sql As String
     Dim rs As DAO.Recordset
     
-    Set rs = CurrentDb.OpenRecordset("Select * from " & TABLE_NAME & " Where " & PRIMARY_KEY & " = " & Me.ID)
+    Set rs = CurrentDb.OpenRecordset("Select * from " & TABLE_NAME & " Where " & PRIMARY_KEY & " = " & Me.Id)
     
     With rs
             

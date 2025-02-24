@@ -1,0 +1,12 @@
+﻿{
+  "Info": {
+    "Class": "clsDbTableDef",
+    "Description": "Linked Table"
+  },
+  "Items": {
+    "Name": "IncomeSplits",
+    "Connect": ";DATABASE=rel:Videos\\20250221\\Clearview_v0.0.29_be.accdb",
+    "SourceTableName": "IncomeSplits",
+    "Attributes": 1073741824
+  }
+}

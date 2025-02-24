@@ -19,7 +19,6 @@ Begin Report
     End
     RecordSource ="304-Payroll-Reconciliation"
     Caption ="PayrollReconciliation"
-    OnOpen ="[Event Procedure]"
     OnClose ="[Event Procedure]"
     DatasheetFontName ="Aptos"
     FilterOnLoad =0
@@ -1441,12 +1440,4 @@ Option Compare Database
 Private Sub Report_Close()
     On Error Resume Next
     Forms("00-Report-Center").Visible = True
-End Sub
-
-Private Sub Report_Open(Cancel As Integer)
-
-On Error Resume Next
-    
-    cLogger.LogIt "Entering [" & Me.Name & "]", EventType.Info
-    
 End Sub

@@ -36,7 +36,6 @@ Begin OutputColumns
     Expression ="Employees.UpdatedAt"
     Expression ="Employees.UpdatedBy"
     Expression ="Employees.TimeOffLeft"
-    Expression ="Employees.SalesRep"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
@@ -69,7 +68,111 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="Employees.SalesRep"
+        dbText "Name" ="Employees.FullName"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Employees.LastName"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Employees.FirstName"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Employees.Notes"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Employees.HomePhone"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Employees.BusinessPhone"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Employees.ManagerId"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Employees.Address"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Employees.City"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Employees.State"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Employees.Zip"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Employees.[E-mailAddress]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Employees.IsActive"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Employees.[Date of Birth]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Employees.UpdatedAt"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Employees.Mobile"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Employees.Fax"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Employees.[PIN (Pager)]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Employees.Company"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Employees.UserType"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Employees.PassNumber"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Employees.Country"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Employees.WebPage"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Employees.BusinessRole"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Employees.UserName"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Employees.Password"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Employees.Comments"
         dbLong "AggregateType" ="-1"
     End
 End
@@ -77,12 +180,12 @@ Begin
     State =0
     Left =0
     Top =0
-    Right =1677
-    Bottom =1206
+    Right =2255
+    Bottom =1436
     Left =-1
     Top =-1
-    Right =1644
-    Bottom =586
+    Right =1742
+    Bottom =620
     Left =0
     Top =0
     ColumnsShown =539

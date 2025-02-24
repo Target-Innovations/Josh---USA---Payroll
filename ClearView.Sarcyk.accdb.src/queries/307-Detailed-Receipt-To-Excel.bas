@@ -30,10 +30,6 @@ Begin Joins
     RightTable ="Equipments"
     Expression ="[Collections-Splitted].EquipmentId = Equipments.ID"
     Flag =1
-    LeftTable ="EquipmentType"
-    RightTable ="Equipments"
-    Expression ="EquipmentType.Id = Equipments.EquipmentTypeId"
-    Flag =1
     LeftTable ="Locations"
     RightTable ="Collections-Splitted"
     Expression ="Locations.id = [Collections-Splitted].LocationId"
@@ -41,6 +37,10 @@ Begin Joins
     LeftTable ="Collections-Splitted"
     RightTable ="Employees"
     Expression ="[Collections-Splitted].EmployeeId = Employees.Id"
+    Flag =1
+    LeftTable ="EquipmentType"
+    RightTable ="Equipments"
+    Expression ="EquipmentType.Id = Equipments.EquipmentTypeId"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -126,12 +126,12 @@ Begin
     State =0
     Left =0
     Top =0
-    Right =1622
+    Right =2177
     Bottom =1436
     Left =-1
     Top =-1
-    Right =1589
-    Bottom =834
+    Right =2144
+    Bottom =766
     Left =0
     Top =0
     ColumnsShown =539

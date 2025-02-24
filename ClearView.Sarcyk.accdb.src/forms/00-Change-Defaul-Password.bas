@@ -19,10 +19,10 @@ Begin Form
     Width =5902
     DatasheetFontHeight =11
     ItemSuffix =2
-    Left =6840
+    Left =6345
     Top =1530
-    Right =21345
-    Bottom =12045
+    Right =14768
+    Bottom =12525
     Tag ="TR000000037"
     RecSrcDt = Begin
         0x0a5462786d04e640
@@ -312,13 +312,13 @@ Begin Form
                     BackThemeColorIndex =6
                     BackTint =100.0
                     BackShade =50.0
-                    BorderColor =3259885
+                    BorderColor =8544277
                     BorderTint =100.0
                     ThemeFontIndex =-1
                     HoverThemeColorIndex =5
                     HoverTint =100.0
                     HoverShade =75.0
-                    PressedColor =1221074
+                    PressedColor =6835473
                     PressedShade =80.0
                     HoverForeThemeColorIndex =1
                     HoverForeTint =100.0
@@ -358,13 +358,13 @@ Begin Form
                     BackThemeColorIndex =6
                     BackTint =100.0
                     BackShade =50.0
-                    BorderColor =3259885
+                    BorderColor =8544277
                     BorderTint =100.0
                     ThemeFontIndex =-1
                     HoverThemeColorIndex =5
                     HoverTint =100.0
                     HoverShade =75.0
-                    PressedColor =1221074
+                    PressedColor =6835473
                     PressedShade =80.0
                     HoverForeThemeColorIndex =1
                     HoverForeTint =100.0

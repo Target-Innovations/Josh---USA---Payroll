@@ -5,6 +5,7 @@ Begin Form
     AutoCenter = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
+    FilterOn = NotDefault
     OrderByOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =5
@@ -17,11 +18,12 @@ Begin Form
     Width =14760
     DatasheetFontHeight =11
     ItemSuffix =814
-    Right =20985
+    Right =16913
     Bottom =10770
     DatasheetGridlinesColor =-1
     Tag ="SplitList"
-    OrderBy ="[Collection-Stub].[ID] DESC"
+    Filter ="([Lookup_LocationId].[LocationName]=\"Mulligan's\")"
+    OrderBy ="[Collection-Stub].[ID] DESC, [Lookup_LocationId].[LocationName]"
     RecSrcDt = Begin
         0xa0ee51e45f3de640
     End
@@ -1331,7 +1333,7 @@ Begin Form
                     Height =270
                     ColumnWidth =1755
                     TabIndex =1
-                    Name ="CollectionDate"
+                    Name ="txtCollectionDate"
                     ControlSource ="CollectionDate"
                     GroupTable =32
                     LeftPadding =0
@@ -1704,7 +1706,7 @@ Begin Form
                     Width =4065
                     Height =345
                     ForeColor =1279872587
-                    Name ="Text529"
+                    Name ="txtId"
                     ControlSource ="ID"
                     Tag ="HyperlinkToDetails~FormName=Employee Details~SourceID=ID"
                     GroupTable =32
@@ -1766,42 +1768,42 @@ Begin Form
                         End
                         Begin
                             Comment ="_AXL:<?xml version=\"1.0\" encoding=\"UTF-16\" standalone=\"no\"?>\015\012<UserI"
-                                "nterfaceMacro For=\"Text529\" Event=\"OnClick\" xmlns=\"http://schemas.microsoft"
-                                ".com/office/accessservices/2009/11/application\"><Statements><Action Name=\"OnEr"
-                                "ror\"/><ConditionalBlock><If><Con"
+                                "nterfaceMacro For=\"txtId\" Event=\"OnClick\" xmlns=\"http://schemas.microsoft.c"
+                                "om/office/accessservices/2009/11/application\"><Statements><Action Name=\"OnErro"
+                                "r\"/><ConditionalBlock><If><Condi"
                         End
                         Begin
-                            Comment ="_AXL:dition>[Form].[Dirty]</Condition><Statements><Action Name=\"SaveRecord\"/><"
-                                "/Statements></If></ConditionalBlock><ConditionalBlock><If><Condition>[MacroError"
-                                "].[Number]&lt;&gt;0</Condition><Statements><Action Name=\"MessageBox\"><Argument"
-                                " Name=\"Message\">="
+                            Comment ="_AXL:tion>[Form].[Dirty]</Condition><Statements><Action Name=\"SaveRecord\"/></S"
+                                "tatements></If></ConditionalBlock><ConditionalBlock><If><Condition>[MacroError]."
+                                "[Number]&lt;&gt;0</Condition><Statements><Action Name=\"MessageBox\"><Argument N"
+                                "ame=\"Message\">=[M"
                         End
                         Begin
-                            Comment ="_AXL:[MacroError].[Description]</Argument></Action><Action Name=\"StopMacro\"/><"
-                                "/Statements></If></ConditionalBlock><Action Name=\"OnError\"><Argument Name=\"Go"
-                                "to\">Fail</Argument></Action><Action Name=\"OpenForm\"><Argument Name=\"FormName"
-                                "\">304-Collections-Stub"
+                            Comment ="_AXL:acroError].[Description]</Argument></Action><Action Name=\"StopMacro\"/></S"
+                                "tatements></If></ConditionalBlock><Action Name=\"OnError\"><Argument Name=\"Goto"
+                                "\">Fail</Argument></Action><Action Name=\"OpenForm\"><Argument Name=\"FormName\""
+                                ">304-Collections-Stub-D"
                         End
                         Begin
-                            Comment ="_AXL:-Details</Argument><Argument Name=\"WhereCondition\">=\"[ID]=\" &amp; Nz([I"
-                                "D],0)</Argument><Argument Name=\"WindowMode\">Dialog</Argument></Action><Conditi"
-                                "onalBlock><If><Condition>Not IsNull([ID])</Condition><Statements><Action Name=\""
-                                "SetTempVar\"><Argumen"
+                            Comment ="_AXL:etails</Argument><Argument Name=\"WhereCondition\">=\"[ID]=\" &amp; Nz([ID]"
+                                ",0)</Argument><Argument Name=\"WindowMode\">Dialog</Argument></Action><Condition"
+                                "alBlock><If><Condition>Not IsNull([ID])</Condition><Statements><Action Name=\"Se"
+                                "tTempVar\"><Argument "
                         End
                         Begin
-                            Comment ="_AXL:t Name=\"Name\">CurrentID</Argument><Argument Name=\"Expression\">[ID]</Arg"
-                                "ument></Action></Statements></If></ConditionalBlock><ConditionalBlock><If><Condi"
-                                "tion>IsNull([ID])</Condition><Statements><Action Name=\"SetTempVar\"><Argument N"
-                                "ame=\"Name\">CurrentI"
+                            Comment ="_AXL:Name=\"Name\">CurrentID</Argument><Argument Name=\"Expression\">[ID]</Argum"
+                                "ent></Action></Statements></If></ConditionalBlock><ConditionalBlock><If><Conditi"
+                                "on>IsNull([ID])</Condition><Statements><Action Name=\"SetTempVar\"><Argument Nam"
+                                "e=\"Name\">CurrentID<"
                         End
                         Begin
-                            Comment ="_AXL:D</Argument><Argument Name=\"Expression\">Nz(DMax(\"[ID]\",[Form].[RecordSo"
-                                "urce]),0)</Argument></Action></Statements></If></ConditionalBlock><Action Name=\""
-                                "RemoveTempVar\"><Argument Name=\"Name\">CurrentID</Argument></Action></Statement"
-                                "s></UserInterfaceMac"
+                            Comment ="_AXL:/Argument><Argument Name=\"Expression\">Nz(DMax(\"[ID]\",[Form].[RecordSour"
+                                "ce]),0)</Argument></Action></Statements></If></ConditionalBlock><Action Name=\"R"
+                                "emoveTempVar\"><Argument Name=\"Name\">CurrentID</Argument></Action></Statements"
+                                "></UserInterfaceMacro"
                         End
                         Begin
-                            Comment ="_AXL:ro>"
+                            Comment ="_AXL:>"
                         End
                     End
 
@@ -1865,10 +1867,18 @@ Private Sub Form_BeforeUpdate(Cancel As Integer)
 
     On Error Resume Next
     
+    If Me.txtCollectionDate.Value <> Me.txtCollectionDate.OldValue Then
+    
+        Dim oCollection As New cCollection
+        oCollection.UpdateCollectionDate Me.txtID, Me.txtCollectionDate
+        
+    End If
+    
     Me.UpdatedAt = Now()
     Me.UpdatedBy = cSysSettings.oUser.Username
         
 End Sub
+
 
 Private Sub Form_Load()
 

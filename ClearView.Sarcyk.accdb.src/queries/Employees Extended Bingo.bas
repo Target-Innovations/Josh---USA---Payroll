@@ -1,6 +1,6 @@
 ﻿Operation =1
 Option =0
-Where ="(((Employees.SalesRep)=True))"
+Where ="((([Employees].[SalesRep])=True))"
 Begin InputTables
     Name ="Employees"
 End
@@ -37,6 +37,7 @@ Begin OutputColumns
     Expression ="Employees.UpdatedAt"
     Expression ="Employees.UpdatedBy"
     Expression ="Employees.TimeOffLeft"
+    Alias ="Expr1"
     Expression ="Employees.SalesRep"
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -67,10 +68,6 @@ Begin
     End
     Begin
         dbText "Name" ="Employees.Division"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Employees.SalesRep"
         dbLong "AggregateType" ="-1"
     End
     Begin
@@ -181,17 +178,20 @@ Begin
         dbText "Name" ="Employees.IsActive"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="Expr1"
+    End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =1895
-    Bottom =1296
+    Right =1365
+    Bottom =1133
     Left =-1
     Top =-1
-    Right =1862
-    Bottom =552
+    Right =1332
+    Bottom =518
     Left =0
     Top =0
     ColumnsShown =539

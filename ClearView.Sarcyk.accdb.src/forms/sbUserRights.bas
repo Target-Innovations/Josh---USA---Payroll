@@ -16,7 +16,7 @@ Begin Form
     Top =1185
     Right =18870
     Bottom =11978
-    Filter ="([SysUserRights].[ObjectName] Like \"*cmdUnionVending*\")"
+    Filter ="([SysUserRights].[ObjectName] Like \"*cmdMenu5*\")"
     RecSrcDt = Begin
         0x3af27ccd0434e640
     End
@@ -184,7 +184,7 @@ Begin Form
                     Top =668
                     Width =9795
                     Height =345
-                    ColumnWidth =5070
+                    ColumnWidth =3623
                     TabIndex =1
                     LeftMargin =44
                     TopMargin =22
@@ -349,7 +349,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
-                    OverlapFlags =85
+                    OverlapFlags =93
                     TextAlign =1
                     IMESentenceMode =3
                     Left =1568
@@ -412,7 +412,7 @@ Begin Form
                 End
                 Begin TextBox
                     Locked = NotDefault
-                    OverlapFlags =85
+                    OverlapFlags =95
                     TextAlign =1
                     IMESentenceMode =3
                     Left =1568
@@ -474,7 +474,7 @@ Begin Form
                 End
                 Begin TextBox
                     Locked = NotDefault
-                    OverlapFlags =85
+                    OverlapFlags =87
                     TextAlign =1
                     IMESentenceMode =3
                     Left =1568

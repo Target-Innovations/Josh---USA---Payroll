@@ -11,8 +11,10 @@ Begin Form
     Width =11915
     DatasheetFontHeight =11
     ItemSuffix =67
-    Right =14505
-    Bottom =10515
+    Left =3173
+    Top =2303
+    Right =18960
+    Bottom =13095
     DatasheetGridlinesColor =-1
     RecSrcDt = Begin
         0x2edd727a7434e640
@@ -23,7 +25,6 @@ Begin Form
         "ings WHERE (((SysSettings.UserEditables)=True)); "
     BeforeUpdate ="[Event Procedure]"
     DatasheetFontName ="Calibri"
-    OnLoad ="[Event Procedure]"
     AllowFormView =0
     FilterOnLoad =0
     ShowPageMargins =0
@@ -523,17 +524,9 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
 
-Private Sub Form_Load()
-
-On Error Resume Next
-
-    Logger.LogIt "Entering [" & Me.Name & "]", EventType.Info
-
-End Sub
-
 Private Sub Form_BeforeUpdate(Cancel As Integer)
 
-On Error Resume Next
+    On Error Resume Next
     
     Me.UpdatedAt = Now()
     Me.UpdatedBy = cSysSettings.oUser.Username

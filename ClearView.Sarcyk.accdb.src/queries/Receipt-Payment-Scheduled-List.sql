@@ -1,0 +1,2 @@
+﻿SELECT Receipts.id, Receipts.ReceiptNumber, [ReceiptNumber] & "-" & [PaymentSchedule].[ID] AS [Receipt#], Receipts.ReceiptDate, Receipts.CustomerId, Receipts.For, Receipts.Amount, PaymentSchedule.PartialInvoice, PaymentSchedule.Amount, PaymentSchedule.DueDate, PaymentSchedule.PayDate, PaymentSchedule.PaymentMethod, PaymentSchedule.ReceivedBy, PaymentSchedule.Status
+FROM Receipts INNER JOIN PaymentSchedule ON Receipts.id = PaymentSchedule.ReceiptId;

@@ -16,17 +16,17 @@ Begin Form
     Width =14760
     DatasheetFontHeight =11
     ItemSuffix =627
-    Right =15923
-    Bottom =10515
+    Right =21105
+    Bottom =11985
     DatasheetGridlinesColor =-1
     Tag ="SplitList"
     Filter ="([Lookup_EquipmentTypeId].[EquipmentTypeName]=\"TouchTunes JukeBox\")"
     OrderBy ="[IncomeSplits].[ID], [Lookup_EquipmentTypeId].[EquipmentTypeName]"
     RecSrcDt = Begin
-        0xad2a22a5d442e640
+        0x9232e322d442e640
     End
     RecordSource ="IncomeSplits"
-    Caption ="Payout Split Setup"
+    Caption ="Income Split Setup"
     OnCurrent ="[Event Procedure]"
     BeforeUpdate ="[Event Procedure]"
     DatasheetFontName ="Calibri"
@@ -9270,9 +9270,9 @@ Begin Form
                     BackStyle =0
                     IMESentenceMode =3
                     Left =11115
-                    Top =233
+                    Top =240
                     Width =3188
-                    Height =368
+                    Height =375
                     FontSize =14
                     Name ="txtEquipmentName"
                     FontName ="Aptos"
@@ -9283,9 +9283,9 @@ Begin Form
                     BottomPadding =0
 
                     LayoutCachedLeft =11115
-                    LayoutCachedTop =233
+                    LayoutCachedTop =240
                     LayoutCachedWidth =14303
-                    LayoutCachedHeight =601
+                    LayoutCachedHeight =615
                     ColumnStart =1
                     ColumnEnd =1
                     LayoutGroup =2
@@ -9303,9 +9303,9 @@ Begin Form
                             OverlapFlags =215
                             TextAlign =3
                             Left =8880
-                            Top =233
+                            Top =240
                             Width =2235
-                            Height =368
+                            Height =375
                             FontSize =14
                             ForeColor =62207
                             Name ="Label51"
@@ -9317,9 +9317,9 @@ Begin Form
                             RightPadding =0
                             BottomPadding =0
                             LayoutCachedLeft =8880
-                            LayoutCachedTop =233
+                            LayoutCachedTop =240
                             LayoutCachedWidth =11115
-                            LayoutCachedHeight =601
+                            LayoutCachedHeight =615
                             LayoutGroup =2
                             ThemeFontIndex =1
                             BackThemeColorIndex =1
@@ -9345,9 +9345,9 @@ Begin Form
                     BackStyle =0
                     IMESentenceMode =3
                     Left =11115
-                    Top =968
+                    Top =990
                     Width =3188
-                    Height =413
+                    Height =420
                     FontSize =14
                     TabIndex =2
                     Name ="txtDisplayTotalSplit"
@@ -9360,9 +9360,9 @@ Begin Form
                     BottomPadding =0
 
                     LayoutCachedLeft =11115
-                    LayoutCachedTop =968
+                    LayoutCachedTop =990
                     LayoutCachedWidth =14303
-                    LayoutCachedHeight =1381
+                    LayoutCachedHeight =1410
                     RowStart =2
                     RowEnd =2
                     ColumnStart =1
@@ -9381,9 +9381,9 @@ Begin Form
                             OverlapFlags =215
                             TextAlign =3
                             Left =8880
-                            Top =968
+                            Top =990
                             Width =2235
-                            Height =413
+                            Height =420
                             FontSize =14
                             ForeColor =62207
                             Name ="Label498"
@@ -9395,9 +9395,9 @@ Begin Form
                             RightPadding =0
                             BottomPadding =0
                             LayoutCachedLeft =8880
-                            LayoutCachedTop =968
+                            LayoutCachedTop =990
                             LayoutCachedWidth =11115
-                            LayoutCachedHeight =1381
+                            LayoutCachedHeight =1410
                             RowStart =2
                             RowEnd =2
                             LayoutGroup =2
@@ -9425,9 +9425,9 @@ Begin Form
                     BackStyle =0
                     IMESentenceMode =3
                     Left =11115
-                    Top =600
+                    Top =615
                     Width =3188
-                    Height =368
+                    Height =375
                     FontSize =14
                     TabIndex =1
                     Name ="TxtDisplayTransactionType"
@@ -9440,9 +9440,9 @@ Begin Form
                     BottomPadding =0
 
                     LayoutCachedLeft =11115
-                    LayoutCachedTop =600
+                    LayoutCachedTop =615
                     LayoutCachedWidth =14303
-                    LayoutCachedHeight =968
+                    LayoutCachedHeight =990
                     RowStart =1
                     RowEnd =1
                     ColumnStart =1
@@ -9461,9 +9461,9 @@ Begin Form
                             OverlapFlags =215
                             TextAlign =3
                             Left =8880
-                            Top =600
+                            Top =615
                             Width =2235
-                            Height =368
+                            Height =375
                             FontSize =14
                             ForeColor =62207
                             Name ="Label615"
@@ -9475,9 +9475,9 @@ Begin Form
                             RightPadding =0
                             BottomPadding =0
                             LayoutCachedLeft =8880
-                            LayoutCachedTop =600
+                            LayoutCachedTop =615
                             LayoutCachedWidth =11115
-                            LayoutCachedHeight =968
+                            LayoutCachedHeight =990
                             RowStart =1
                             RowEnd =1
                             LayoutGroup =2
@@ -9495,7 +9495,7 @@ Begin Form
         End
         Begin Section
             CanGrow = NotDefault
-            Height =4351
+            Height =4395
             BackColor =-2147483613
             Name ="Detail"
             Begin
@@ -9756,9 +9756,9 @@ Begin Form
                     TextAlign =1
                     IMESentenceMode =3
                     Left =2468
-                    Top =3458
+                    Top =3480
                     Width =3300
-                    Height =293
+                    Height =300
                     TabIndex =11
                     Name ="Description"
                     ControlSource ="Description"
@@ -9769,9 +9769,9 @@ Begin Form
                     BottomPadding =0
 
                     LayoutCachedLeft =2468
-                    LayoutCachedTop =3458
+                    LayoutCachedTop =3480
                     LayoutCachedWidth =5768
-                    LayoutCachedHeight =3751
+                    LayoutCachedHeight =3780
                     RowStart =11
                     RowEnd =11
                     ColumnStart =1
@@ -9786,9 +9786,9 @@ Begin Form
                             TextAlign =1
                             TextFontFamily =34
                             Left =570
-                            Top =3458
+                            Top =3480
                             Width =1890
-                            Height =293
+                            Height =300
                             Name ="Label514"
                             Caption ="Description"
                             GroupTable =31
@@ -9797,9 +9797,9 @@ Begin Form
                             RightPadding =0
                             BottomPadding =0
                             LayoutCachedLeft =570
-                            LayoutCachedTop =3458
+                            LayoutCachedTop =3480
                             LayoutCachedWidth =2460
-                            LayoutCachedHeight =3751
+                            LayoutCachedHeight =3780
                             RowStart =11
                             RowEnd =11
                             LayoutGroup =1
@@ -9816,9 +9816,9 @@ Begin Form
                     TextAlign =2
                     IMESentenceMode =3
                     Left =2468
-                    Top =3758
+                    Top =3788
                     Width =3300
-                    Height =293
+                    Height =300
                     ColumnWidth =2213
                     TabIndex =12
                     Name ="UpdatedAt"
@@ -9830,9 +9830,9 @@ Begin Form
                     BottomPadding =0
 
                     LayoutCachedLeft =2468
-                    LayoutCachedTop =3758
+                    LayoutCachedTop =3788
                     LayoutCachedWidth =5768
-                    LayoutCachedHeight =4051
+                    LayoutCachedHeight =4088
                     RowStart =12
                     RowEnd =12
                     ColumnStart =1
@@ -9847,9 +9847,9 @@ Begin Form
                             TextAlign =1
                             TextFontFamily =34
                             Left =570
-                            Top =3758
+                            Top =3788
                             Width =1890
-                            Height =293
+                            Height =300
                             Name ="Label515"
                             Caption ="UpdatedAt"
                             GroupTable =31
@@ -9858,9 +9858,9 @@ Begin Form
                             RightPadding =0
                             BottomPadding =0
                             LayoutCachedLeft =570
-                            LayoutCachedTop =3758
+                            LayoutCachedTop =3788
                             LayoutCachedWidth =2460
-                            LayoutCachedHeight =4051
+                            LayoutCachedHeight =4088
                             RowStart =12
                             RowEnd =12
                             LayoutGroup =1
@@ -9877,9 +9877,9 @@ Begin Form
                     TextAlign =2
                     IMESentenceMode =3
                     Left =2468
-                    Top =4058
+                    Top =4095
                     Width =3300
-                    Height =293
+                    Height =300
                     TabIndex =13
                     Name ="UpdatedBy"
                     ControlSource ="UpdatedBy"
@@ -9890,9 +9890,9 @@ Begin Form
                     BottomPadding =0
 
                     LayoutCachedLeft =2468
-                    LayoutCachedTop =4058
+                    LayoutCachedTop =4095
                     LayoutCachedWidth =5768
-                    LayoutCachedHeight =4351
+                    LayoutCachedHeight =4395
                     RowStart =13
                     RowEnd =13
                     ColumnStart =1
@@ -9907,9 +9907,9 @@ Begin Form
                             TextAlign =1
                             TextFontFamily =34
                             Left =570
-                            Top =4058
+                            Top =4095
                             Width =1890
-                            Height =293
+                            Height =300
                             Name ="Label516"
                             Caption ="UpdatedBy"
                             GroupTable =31
@@ -9918,9 +9918,9 @@ Begin Form
                             RightPadding =0
                             BottomPadding =0
                             LayoutCachedLeft =570
-                            LayoutCachedTop =4058
+                            LayoutCachedTop =4095
                             LayoutCachedWidth =2460
-                            LayoutCachedHeight =4351
+                            LayoutCachedHeight =4395
                             RowStart =13
                             RowEnd =13
                             LayoutGroup =1
@@ -10185,7 +10185,7 @@ Begin Form
                     Left =2468
                     Top =2558
                     Width =3300
-                    Height =293
+                    Height =300
                     TabIndex =8
                     Name ="CreditCardFee"
                     ControlSource ="CreditCardFee"
@@ -10199,7 +10199,7 @@ Begin Form
                     LayoutCachedLeft =2468
                     LayoutCachedTop =2558
                     LayoutCachedWidth =5768
-                    LayoutCachedHeight =2851
+                    LayoutCachedHeight =2858
                     RowStart =8
                     RowEnd =8
                     ColumnStart =1
@@ -10218,7 +10218,7 @@ Begin Form
                             Left =570
                             Top =2558
                             Width =1890
-                            Height =293
+                            Height =300
                             Name ="Label563"
                             Caption ="Credit Card Fee"
                             GroupTable =31
@@ -10229,7 +10229,7 @@ Begin Form
                             LayoutCachedLeft =570
                             LayoutCachedTop =2558
                             LayoutCachedWidth =2460
-                            LayoutCachedHeight =2851
+                            LayoutCachedHeight =2858
                             RowStart =8
                             RowEnd =8
                             LayoutGroup =1
@@ -10245,9 +10245,9 @@ Begin Form
                     TextAlign =2
                     IMESentenceMode =3
                     Left =2468
-                    Top =2858
+                    Top =2865
                     Width =3300
-                    Height =293
+                    Height =300
                     TabIndex =9
                     Name ="LocationPercentage"
                     ControlSource ="LocationPercentage"
@@ -10259,9 +10259,9 @@ Begin Form
                     BottomPadding =0
 
                     LayoutCachedLeft =2468
-                    LayoutCachedTop =2858
+                    LayoutCachedTop =2865
                     LayoutCachedWidth =5768
-                    LayoutCachedHeight =3151
+                    LayoutCachedHeight =3165
                     RowStart =9
                     RowEnd =9
                     ColumnStart =1
@@ -10276,9 +10276,9 @@ Begin Form
                             TextAlign =1
                             TextFontFamily =34
                             Left =570
-                            Top =2858
+                            Top =2865
                             Width =1890
-                            Height =293
+                            Height =300
                             Name ="Label564"
                             Caption ="Location (%)"
                             GroupTable =31
@@ -10287,9 +10287,9 @@ Begin Form
                             RightPadding =0
                             BottomPadding =0
                             LayoutCachedLeft =570
-                            LayoutCachedTop =2858
+                            LayoutCachedTop =2865
                             LayoutCachedWidth =2460
-                            LayoutCachedHeight =3151
+                            LayoutCachedHeight =3165
                             RowStart =9
                             RowEnd =9
                             LayoutGroup =1
@@ -10305,9 +10305,9 @@ Begin Form
                     TextAlign =2
                     IMESentenceMode =3
                     Left =2468
-                    Top =3158
+                    Top =3173
                     Width =3300
-                    Height =293
+                    Height =300
                     TabIndex =10
                     Name ="LocationFee"
                     ControlSource ="LocationFee"
@@ -10319,9 +10319,9 @@ Begin Form
                     BottomPadding =0
 
                     LayoutCachedLeft =2468
-                    LayoutCachedTop =3158
+                    LayoutCachedTop =3173
                     LayoutCachedWidth =5768
-                    LayoutCachedHeight =3451
+                    LayoutCachedHeight =3473
                     RowStart =10
                     RowEnd =10
                     ColumnStart =1
@@ -10338,9 +10338,9 @@ Begin Form
                             TextAlign =1
                             TextFontFamily =34
                             Left =570
-                            Top =3158
+                            Top =3173
                             Width =1890
-                            Height =293
+                            Height =300
                             Name ="Label565"
                             Caption ="Location Fee"
                             GroupTable =31
@@ -10349,9 +10349,9 @@ Begin Form
                             RightPadding =0
                             BottomPadding =0
                             LayoutCachedLeft =570
-                            LayoutCachedTop =3158
+                            LayoutCachedTop =3173
                             LayoutCachedWidth =2460
-                            LayoutCachedHeight =3451
+                            LayoutCachedHeight =3473
                             RowStart =10
                             RowEnd =10
                             LayoutGroup =1

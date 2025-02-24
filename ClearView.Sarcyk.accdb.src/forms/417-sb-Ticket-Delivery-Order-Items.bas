@@ -11,10 +11,8 @@ Begin Form
     Width =5952
     DatasheetFontHeight =11
     ItemSuffix =130
-    Left =765
-    Top =6788
-    Right =15998
-    Bottom =9645
+    Right =10853
+    Bottom =9090
     RecSrcDt = Begin
         0x44a82bad1043e640
     End
@@ -612,8 +610,9 @@ End Sub
 
 Private Sub txtReceiverName_DblClick(Cancel As Integer)
 
-    If Not IsNullOrEmpty(Me.Parent.cboLocationId.Column(3)) Then
-        Me.ReceiverName = Nz(Me.Parent.cboLocationId.Column(3))
-    End If
+    ' TODO: Why was this code here? It seems it should be in the Parent form
+'    If Not IsNullOrEmpty(Me.Parent.cboLocationId.Column(3)) Then
+'        Me.ReceiverName = Nz(Me.Parent.cboLocationId.Column(3))
+'    End If
     
 End Sub

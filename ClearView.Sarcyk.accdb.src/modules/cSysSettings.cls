@@ -52,7 +52,7 @@ Public Property Get LoggedUserName() As String
 End Property
 
 Public Property Get LoggedUserId() As Integer
-    LoggedUserId = oUser.ID
+    LoggedUserId = oUser.Id
 End Property
 
 Public Property Get LoggedUserType() As Integer
@@ -204,7 +204,7 @@ Public Sub InitEnvironmentVariables()
     ' ***********************
     
     ' Static Class
-    cLogger.MustLogIt = LogIt ' Nz(GetSettingsValue("LogIt"), "1")
+    cLogger.MustLogIt = Nz(GetSettingsValue("LogIt"), "1")
     
     
     TempVars!Language = SystemDefaultLanguage ' Nz(GetSettingsValue("SystemDefaultLanguage"), "English")

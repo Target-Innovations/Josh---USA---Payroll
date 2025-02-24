@@ -15,7 +15,7 @@ Begin Form
     Width =19105
     DatasheetFontHeight =11
     ItemSuffix =144
-    Right =12375
+    Right =10305
     Bottom =10515
     Tag ="TR000000057"
     RecSrcDt = Begin
@@ -516,7 +516,7 @@ Begin Form
                                 End
                                 Begin
                                     Action ="OpenForm"
-                                    Argument ="200-Home-Payroll-System"
+                                    Argument ="00-Home-Sarcyk"
                                     Argument ="0"
                                     Argument =""
                                     Argument =""
@@ -531,8 +531,8 @@ Begin Form
                                 End
                                 Begin
                                     Comment ="_AXL: Name=\"Command\">CloseWindow</Argument></Action><Action Name=\"OpenForm\">"
-                                        "<Argument Name=\"FormName\">200-Home-Payroll-System</Argument></Action></Stateme"
-                                        "nts></UserInterfaceMacro>"
+                                        "<Argument Name=\"FormName\">00-Home-Sarcyk</Argument></Action></Statements></Use"
+                                        "rInterfaceMacro>"
                                 End
                             End
 
@@ -644,7 +644,7 @@ Option Compare Database
 
 Private Sub Form_Close()
 
-    If Not IsLoaded("00-Home") Then
+    If Not IsLoaded("00-Home-Sarcyk") Then
         DoCmd.OpenForm "00-Home-Sarcyk"
     End If
     

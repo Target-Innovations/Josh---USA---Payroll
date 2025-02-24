@@ -1,0 +1,13 @@
+﻿{
+  "Info": {
+    "Class": "clsDbTableDef",
+    "Description": "Linked Table"
+  },
+  "Items": {
+    "Name": "PayrollEntries",
+    "Connect": ";DATABASE=rel:Videos\\20250221\\Clearview_v0.0.29_be.accdb",
+    "SourceTableName": "PayrollEntries",
+    "Attributes": 1073741824,
+    "PrimaryKey": "[id]"
+  }
+}

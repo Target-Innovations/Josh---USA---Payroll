@@ -21,7 +21,6 @@ Begin Report
         0xa80e073e2c3ae640
     End
     RecordSource ="301-All-Total-By-Employee-Period"
-    OnOpen ="[Event Procedure]"
     OnClose ="[Event Procedure]"
     DatasheetFontName ="Aptos"
     FilterOnLoad =0
@@ -408,20 +407,20 @@ Begin Report
             Begin
                 Begin Label
                     TextAlign =1
-                    Left =1583
+                    Left =1590
                     Top =510
-                    Width =6811
-                    Height =616
+                    Width =6615
+                    Height =630
                     FontSize =16
                     Name ="Auto_Header0"
                     Caption ="AD-vs-Splits-Differences-By-Employee-Period"
                     FontName ="Aptos Display"
                     GroupTable =4
                     HorizontalAnchor =2
-                    LayoutCachedLeft =1583
+                    LayoutCachedLeft =1590
                     LayoutCachedTop =510
-                    LayoutCachedWidth =8394
-                    LayoutCachedHeight =1126
+                    LayoutCachedWidth =8205
+                    LayoutCachedHeight =1140
                     RowEnd =1
                     LayoutGroup =2
                     ThemeFontIndex =0
@@ -439,18 +438,18 @@ Begin Report
                     TextFontFamily =34
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =8453
+                    Left =8265
                     Top =510
-                    Width =2588
+                    Width =2970
                     Height =278
                     Name ="Auto_Date"
                     ControlSource ="=Date()"
                     Format ="Long Date"
                     GroupTable =4
 
-                    LayoutCachedLeft =8453
+                    LayoutCachedLeft =8265
                     LayoutCachedTop =510
-                    LayoutCachedWidth =11041
+                    LayoutCachedWidth =11235
                     LayoutCachedHeight =788
                     ColumnStart =1
                     ColumnEnd =1
@@ -467,20 +466,20 @@ Begin Report
                     TextFontFamily =34
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =8453
-                    Top =848
-                    Width =2588
-                    Height =278
+                    Left =8265
+                    Top =855
+                    Width =2970
+                    Height =285
                     TabIndex =1
                     Name ="Auto_Time"
                     ControlSource ="=Time()"
                     Format ="Long Time"
                     GroupTable =4
 
-                    LayoutCachedLeft =8453
-                    LayoutCachedTop =848
-                    LayoutCachedWidth =11041
-                    LayoutCachedHeight =1126
+                    LayoutCachedLeft =8265
+                    LayoutCachedTop =855
+                    LayoutCachedWidth =11235
+                    LayoutCachedHeight =1140
                     RowStart =1
                     RowEnd =1
                     ColumnStart =1
@@ -2916,9 +2915,9 @@ Begin Report
                     TextAlign =2
                     IMESentenceMode =3
                     Left =1770
-                    Top =113
+                    Top =120
                     Width =1410
-                    Height =329
+                    Height =330
                     FontWeight =700
                     LeftMargin =44
                     TopMargin =22
@@ -2929,9 +2928,9 @@ Begin Report
                     GroupTable =3
 
                     LayoutCachedLeft =1770
-                    LayoutCachedTop =113
+                    LayoutCachedTop =120
                     LayoutCachedWidth =3180
-                    LayoutCachedHeight =442
+                    LayoutCachedHeight =450
                     ColumnStart =1
                     ColumnEnd =1
                     LayoutGroup =1
@@ -2941,18 +2940,18 @@ Begin Report
                     Begin
                         Begin Label
                             TextAlign =1
-                            Left =908
-                            Top =113
+                            Left =915
+                            Top =120
                             Width =795
-                            Height =329
+                            Height =330
                             FontWeight =700
                             Name ="Label47"
                             Caption ="Period:"
                             GroupTable =3
-                            LayoutCachedLeft =908
-                            LayoutCachedTop =113
-                            LayoutCachedWidth =1703
-                            LayoutCachedHeight =442
+                            LayoutCachedLeft =915
+                            LayoutCachedTop =120
+                            LayoutCachedWidth =1710
+                            LayoutCachedHeight =450
                             LayoutGroup =1
                             GroupTable =3
                         End
@@ -3429,12 +3428,4 @@ Option Compare Database
 Private Sub Report_Close()
     On Error Resume Next
     Forms("00-Report-Center").Visible = True
-End Sub
-
-Private Sub Report_Open(Cancel As Integer)
-
-On Error Resume Next
-    
-    cLogger.LogIt "Entering [" & Me.Name & "]", EventType.Info
-    
 End Sub

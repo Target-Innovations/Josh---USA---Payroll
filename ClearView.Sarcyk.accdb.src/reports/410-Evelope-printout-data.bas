@@ -17,7 +17,7 @@ Begin Report
     DatasheetFontHeight =11
     ItemSuffix =59
     RecSrcDt = Begin
-        0x9a13b5e9ee4fe640
+        0xfce55804d450e640
     End
     RecordSource ="410-Envelope-printout-data"
     Caption ="410-Evelope-printout-data"
@@ -116,7 +116,6 @@ Begin Report
             Height =4980
             Name ="Detail"
             AlternateBackThemeColorIndex =1
-            AlternateBackShade =95.0
             BackThemeColorIndex =1
             Begin
                 Begin TextBox

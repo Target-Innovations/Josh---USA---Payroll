@@ -235,7 +235,7 @@ Begin Form
                     Width =3428
                     Height =338
                     TabIndex =6
-                    ColumnInfo ="\"\";\"\";\"\";\"@\";\"10\";\"510\""
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
                     Name ="CharityId"
                     ControlSource ="CharityId"
                     RowSourceType ="Table/Query"
@@ -443,7 +443,7 @@ Begin Form
                     Height =338
                     ColumnWidth =1733
                     TabIndex =12
-                    ColumnInfo ="\"\";\"\";\"\";\"@\";\"10\";\"510\""
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
                     Name ="MarketingRepId"
                     ControlSource ="MarketingRepId"
                     RowSourceType ="Table/Query"
@@ -707,7 +707,7 @@ Begin Form
                     Width =3428
                     Height =338
                     TabIndex =20
-                    ColumnInfo ="\"\";\"\";\"\";\"@\";\"10\";\"510\""
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
                     Name ="GameName"
                     ControlSource ="GameName"
                     RowSourceType ="Table/Query"
@@ -2304,7 +2304,7 @@ End Sub
 
 Sub UpdateModel()
 
-    oDistribution.ID = Nz(ID)
+    oDistribution.Id = Nz(Id)
     oDistribution.Status = Nz(Status)
     oDistribution.DeliveryNumber = Nz(DeliveryNumber)
     oDistribution.DistributionDate = Nz(DistributionDate)

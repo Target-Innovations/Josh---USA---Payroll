@@ -18,11 +18,11 @@ Begin Form
     Width =14760
     DatasheetFontHeight =11
     ItemSuffix =1528
-    Right =17783
+    Right =17385
     Bottom =10770
     DatasheetGridlinesColor =-1
     Tag ="SplitList"
-    OrderBy ="[TicketDistribution].[ID]"
+    OrderBy ="[TicketDistribution].[EnvelopeNumber], [TicketDistribution].[ID]"
     RecSrcDt = Begin
         0xb778b3108a42e640
     End
@@ -1861,7 +1861,7 @@ Begin Form
                     ColumnWidth =3240
                     ColumnOrder =4
                     TabIndex =5
-                    ColumnInfo ="\"\";\"\";\"\";\"@\";\"10\";\"510\""
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
                     Name ="CharityAssociation"
                     ControlSource ="CharityId"
                     RowSourceType ="Table/Query"
@@ -1995,7 +1995,7 @@ Begin Form
                     Height =285
                     ColumnOrder =6
                     TabIndex =7
-                    ColumnInfo ="\"\";\"\";\"\";\"@\";\"10\";\"510\""
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
                     Name ="MarketingRep"
                     ControlSource ="MarketingRepId"
                     RowSourceType ="Table/Query"
@@ -2255,7 +2255,7 @@ Begin Form
                     ColumnWidth =1988
                     ColumnOrder =10
                     TabIndex =11
-                    ColumnInfo ="\"\";\"\";\"\";\"@\";\"10\";\"510\""
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
                     Name ="GameName"
                     ControlSource ="GameName"
                     RowSourceType ="Table/Query"
@@ -3183,7 +3183,6 @@ Begin Form
                     TabIndex =26
                     Name ="ReimbursementSent"
                     ControlSource ="ReimbursementSent"
-                    Format ="yyyy-mm-dd"
                     AfterUpdate ="[Event Procedure]"
                     GroupTable =31
                     LeftPadding =0
@@ -3387,7 +3386,7 @@ End Sub
 
 Sub UpdateModel()
 
-    oDistribution.ID = Nz(ID)
+    oDistribution.Id = Nz(Id)
     oDistribution.Status = Nz(Status)
     oDistribution.DeliveryNumber = Nz(DeliveryNumber)
     oDistribution.DistributionDate = Nz(DistributionDate)

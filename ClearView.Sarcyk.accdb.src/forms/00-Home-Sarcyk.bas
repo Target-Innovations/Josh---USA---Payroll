@@ -6162,8 +6162,8 @@ Begin Form
                     ForeThemeColorIndex =0
                     HoverForeThemeColorIndex =0
                     PressedForeThemeColorIndex =0
-                    WebImagePaddingLeft =3
-                    WebImagePaddingRight =2
+                    WebImagePaddingLeft =4
+                    WebImagePaddingRight =4
                     Overlaps =1
                 End
                 Begin Image
@@ -7566,16 +7566,16 @@ Begin Form
                     ForeThemeColorIndex =0
                     HoverForeThemeColorIndex =0
                     PressedForeThemeColorIndex =0
-                    WebImagePaddingLeft =3
-                    WebImagePaddingRight =2
+                    WebImagePaddingLeft =4
+                    WebImagePaddingRight =4
                     Overlaps =1
                 End
                 Begin CommandButton
                     OverlapFlags =215
                     AccessKey =82
-                    Left =11268
-                    Top =1368
-                    Height =408
+                    Left =11243
+                    Top =1365
+                    Height =405
                     FontSize =10
                     TabIndex =5
                     ForeColor =3305961
@@ -7614,10 +7614,10 @@ Begin Form
                     BackStyle =0
 
                     CursorOnHover =1
-                    LayoutCachedLeft =11268
-                    LayoutCachedTop =1368
-                    LayoutCachedWidth =12708
-                    LayoutCachedHeight =1776
+                    LayoutCachedLeft =11243
+                    LayoutCachedTop =1365
+                    LayoutCachedWidth =12683
+                    LayoutCachedHeight =1770
                     Alignment =1
                     ColumnStart =9
                     ColumnEnd =9
@@ -7631,19 +7631,19 @@ Begin Form
                     HoverForeThemeColorIndex =5
                     PressedForeThemeColorIndex =1
                     GroupTable =1
-                    WebImagePaddingLeft =3
-                    WebImagePaddingTop =3
-                    WebImagePaddingRight =3
-                    WebImagePaddingBottom =3
+                    WebImagePaddingLeft =4
+                    WebImagePaddingTop =4
+                    WebImagePaddingRight =4
+                    WebImagePaddingBottom =4
                     Overlaps =1
                 End
                 Begin Image
                     OldBorderStyle =0
                     SizeMode =3
-                    Left =10740
-                    Top =1368
-                    Width =468
-                    Height =408
+                    Left =10718
+                    Top =1365
+                    Width =465
+                    Height =405
                     BorderColor =14870503
                     Name ="imgReportCenter"
                     Picture ="ReportCenter3-removebg-preview.png"
@@ -9253,10 +9253,10 @@ Begin Form
                         0x454e44ae426082
                     End
 
-                    LayoutCachedLeft =10740
-                    LayoutCachedTop =1368
-                    LayoutCachedWidth =11208
-                    LayoutCachedHeight =1776
+                    LayoutCachedLeft =10718
+                    LayoutCachedTop =1365
+                    LayoutCachedWidth =11183
+                    LayoutCachedHeight =1770
                     TabIndex =14
                     ColumnStart =8
                     ColumnEnd =8
@@ -9269,9 +9269,9 @@ Begin Form
                     OldBorderStyle =0
                     SizeMode =3
                     Left =480
-                    Top =1368
+                    Top =1365
                     Width =465
-                    Height =408
+                    Height =405
                     BorderColor =14870503
                     Name ="imgEmployee"
                     Picture ="Import_Clients.png"
@@ -9804,9 +9804,9 @@ Begin Form
                     End
 
                     LayoutCachedLeft =480
-                    LayoutCachedTop =1368
+                    LayoutCachedTop =1365
                     LayoutCachedWidth =945
-                    LayoutCachedHeight =1776
+                    LayoutCachedHeight =1770
                     TabIndex =10
                     LayoutGroup =1
                     GridlineThemeColorIndex =1
@@ -9816,10 +9816,10 @@ Begin Form
                 Begin CommandButton
                     OverlapFlags =215
                     AccessKey =69
-                    Left =1008
-                    Top =1368
+                    Left =1005
+                    Top =1365
                     Width =1500
-                    Height =408
+                    Height =405
                     FontSize =10
                     TabIndex =1
                     ForeColor =3305961
@@ -9855,10 +9855,10 @@ Begin Form
                     BackStyle =0
 
                     CursorOnHover =1
-                    LayoutCachedLeft =1008
-                    LayoutCachedTop =1368
-                    LayoutCachedWidth =2508
-                    LayoutCachedHeight =1776
+                    LayoutCachedLeft =1005
+                    LayoutCachedTop =1365
+                    LayoutCachedWidth =2505
+                    LayoutCachedHeight =1770
                     Alignment =1
                     ColumnStart =1
                     ColumnEnd =1
@@ -9872,10 +9872,10 @@ Begin Form
                     HoverForeThemeColorIndex =5
                     PressedForeThemeColorIndex =1
                     GroupTable =1
-                    WebImagePaddingLeft =3
-                    WebImagePaddingTop =3
-                    WebImagePaddingRight =3
-                    WebImagePaddingBottom =3
+                    WebImagePaddingLeft =4
+                    WebImagePaddingTop =4
+                    WebImagePaddingRight =4
+                    WebImagePaddingBottom =4
                     Overlaps =1
                 End
                 Begin Image
@@ -9972,10 +9972,10 @@ Begin Form
                 Begin CommandButton
                     OverlapFlags =215
                     AccessKey =83
-                    Left =8592
-                    Top =1368
-                    Width =2088
-                    Height =408
+                    Left =8573
+                    Top =1365
+                    Width =2085
+                    Height =405
                     FontSize =10
                     TabIndex =4
                     ForeColor =3305961
@@ -10014,10 +10014,10 @@ Begin Form
                     BackStyle =0
 
                     CursorOnHover =1
-                    LayoutCachedLeft =8592
-                    LayoutCachedTop =1368
-                    LayoutCachedWidth =10680
-                    LayoutCachedHeight =1776
+                    LayoutCachedLeft =8573
+                    LayoutCachedTop =1365
+                    LayoutCachedWidth =10658
+                    LayoutCachedHeight =1770
                     Alignment =1
                     ColumnStart =7
                     ColumnEnd =7
@@ -10031,18 +10031,18 @@ Begin Form
                     HoverForeThemeColorIndex =5
                     PressedForeThemeColorIndex =1
                     GroupTable =1
-                    WebImagePaddingLeft =3
-                    WebImagePaddingTop =3
-                    WebImagePaddingRight =3
-                    WebImagePaddingBottom =3
+                    WebImagePaddingLeft =4
+                    WebImagePaddingTop =4
+                    WebImagePaddingRight =4
+                    WebImagePaddingBottom =4
                     Overlaps =1
                 End
                 Begin Image
                     SizeMode =3
-                    Left =8064
-                    Top =1368
-                    Width =468
-                    Height =408
+                    Left =8048
+                    Top =1365
+                    Width =465
+                    Height =405
                     Name ="imgTarget"
                     Picture ="Target.Arrow.png"
                     GroupTable =1
@@ -12919,10 +12919,10 @@ Begin Form
                         0x4000021080402309fc7f87ee05618efab9260000000049454e44ae426082
                     End
 
-                    LayoutCachedLeft =8064
-                    LayoutCachedTop =1368
-                    LayoutCachedWidth =8532
-                    LayoutCachedHeight =1776
+                    LayoutCachedLeft =8048
+                    LayoutCachedTop =1365
+                    LayoutCachedWidth =8513
+                    LayoutCachedHeight =1770
                     TabIndex =13
                     ColumnStart =6
                     ColumnEnd =6
@@ -12935,10 +12935,10 @@ Begin Form
                 Begin CommandButton
                     OverlapFlags =215
                     AccessKey =85
-                    Left =3096
-                    Top =1368
+                    Left =3090
+                    Top =1365
                     Width =2340
-                    Height =408
+                    Height =405
                     FontSize =10
                     TabIndex =2
                     ForeColor =3305961
@@ -12977,10 +12977,10 @@ Begin Form
                     BackStyle =0
 
                     CursorOnHover =1
-                    LayoutCachedLeft =3096
-                    LayoutCachedTop =1368
-                    LayoutCachedWidth =5436
-                    LayoutCachedHeight =1776
+                    LayoutCachedLeft =3090
+                    LayoutCachedTop =1365
+                    LayoutCachedWidth =5430
+                    LayoutCachedHeight =1770
                     Alignment =1
                     ColumnStart =3
                     ColumnEnd =3
@@ -12994,19 +12994,19 @@ Begin Form
                     HoverForeThemeColorIndex =5
                     PressedForeThemeColorIndex =1
                     GroupTable =1
-                    WebImagePaddingLeft =3
-                    WebImagePaddingTop =3
-                    WebImagePaddingRight =3
-                    WebImagePaddingBottom =3
+                    WebImagePaddingLeft =4
+                    WebImagePaddingTop =4
+                    WebImagePaddingRight =4
+                    WebImagePaddingBottom =4
                     Overlaps =1
                 End
                 Begin Image
                     OldBorderStyle =0
                     SizeMode =3
-                    Left =2568
-                    Top =1368
-                    Width =468
-                    Height =408
+                    Left =2565
+                    Top =1365
+                    Width =465
+                    Height =405
                     Name ="imgMoney"
                     Picture ="route66-b.png"
                     GroupTable =1
@@ -14114,10 +14114,10 @@ Begin Form
                         0x3ad0da0000000049454e44ae426082
                     End
 
-                    LayoutCachedLeft =2568
-                    LayoutCachedTop =1368
-                    LayoutCachedWidth =3036
-                    LayoutCachedHeight =1776
+                    LayoutCachedLeft =2565
+                    LayoutCachedTop =1365
+                    LayoutCachedWidth =3030
+                    LayoutCachedHeight =1770
                     TabIndex =11
                     ColumnStart =2
                     ColumnEnd =2
@@ -14130,10 +14130,10 @@ Begin Form
                 Begin CommandButton
                     OverlapFlags =215
                     AccessKey =68
-                    Left =5964
-                    Top =1368
-                    Width =2028
-                    Height =408
+                    Left =5955
+                    Top =1365
+                    Width =2025
+                    Height =405
                     FontSize =10
                     TabIndex =3
                     ForeColor =3305961
@@ -14168,10 +14168,10 @@ Begin Form
                     BackStyle =0
 
                     CursorOnHover =1
-                    LayoutCachedLeft =5964
-                    LayoutCachedTop =1368
-                    LayoutCachedWidth =7992
-                    LayoutCachedHeight =1776
+                    LayoutCachedLeft =5955
+                    LayoutCachedTop =1365
+                    LayoutCachedWidth =7980
+                    LayoutCachedHeight =1770
                     Alignment =1
                     ColumnStart =5
                     ColumnEnd =5
@@ -14185,19 +14185,19 @@ Begin Form
                     HoverForeThemeColorIndex =5
                     PressedForeThemeColorIndex =1
                     GroupTable =1
-                    WebImagePaddingLeft =3
-                    WebImagePaddingTop =3
-                    WebImagePaddingRight =3
-                    WebImagePaddingBottom =3
+                    WebImagePaddingLeft =4
+                    WebImagePaddingTop =4
+                    WebImagePaddingRight =4
+                    WebImagePaddingBottom =4
                     Overlaps =1
                 End
                 Begin Image
                     OldBorderStyle =0
                     SizeMode =3
-                    Left =5496
-                    Top =1368
-                    Width =408
-                    Height =408
+                    Left =5490
+                    Top =1365
+                    Width =405
+                    Height =405
                     Name ="imgCloud"
                     Picture ="bingo2.png"
                     GroupTable =1
@@ -15296,10 +15296,10 @@ Begin Form
                         0xc808fc0ffe4897c58d4b04c60000000049454e44ae426082
                     End
 
-                    LayoutCachedLeft =5496
-                    LayoutCachedTop =1368
-                    LayoutCachedWidth =5904
-                    LayoutCachedHeight =1776
+                    LayoutCachedLeft =5490
+                    LayoutCachedTop =1365
+                    LayoutCachedWidth =5895
+                    LayoutCachedHeight =1770
                     TabIndex =12
                     ColumnStart =4
                     ColumnEnd =4
@@ -15389,5 +15389,5 @@ Private Sub cmdLogout_Click()
 End Sub
 
 Private Sub imgAvatar_DblClick(Cancel As Integer)
-    DoCmd.OpenForm "00-Employee-Details", acNormal, , "Id = " & cSysSettings.oUser.ID
+    DoCmd.OpenForm "00-Employee-Details", acNormal, , "Id = " & cSysSettings.oUser.Id
 End Sub

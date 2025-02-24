@@ -18,10 +18,8 @@ Begin Form
     Width =16327
     DatasheetFontHeight =11
     ItemSuffix =1366
-    Left =2408
-    Top =945
-    Right =18990
-    Bottom =9998
+    Right =11355
+    Bottom =10515
     TimerInterval =125
     DatasheetGridlinesColor =15263976
     Filter ="1=0"
@@ -525,7 +523,7 @@ Begin Form
                     BackColor =16777215
                     BackThemeColorIndex =-1
                     BackTint =100.0
-                    BorderColor =3259885
+                    BorderColor =8544277
                     BorderTint =100.0
                     ThemeFontIndex =-1
                     HoverColor =16777215
@@ -1410,7 +1408,7 @@ Begin Form
                     BackColor =16777215
                     BackThemeColorIndex =-1
                     BackTint =100.0
-                    BorderColor =3259885
+                    BorderColor =8544277
                     BorderTint =100.0
                     ThemeFontIndex =-1
                     HoverColor =16777215
@@ -1503,7 +1501,7 @@ Begin Form
                     BackColor =16777215
                     BackThemeColorIndex =-1
                     BackTint =100.0
-                    BorderColor =3259885
+                    BorderColor =8544277
                     BorderTint =100.0
                     ThemeFontIndex =-1
                     HoverColor =16777215
@@ -1555,7 +1553,7 @@ Begin Form
                     BackColor =16777215
                     BackThemeColorIndex =-1
                     BackTint =100.0
-                    BorderColor =3259885
+                    BorderColor =8544277
                     BorderTint =100.0
                     ThemeFontIndex =-1
                     HoverColor =16777215
@@ -1606,7 +1604,7 @@ Begin Form
                     BackColor =16777215
                     BackThemeColorIndex =-1
                     BackTint =100.0
-                    BorderColor =3259885
+                    BorderColor =8544277
                     BorderTint =100.0
                     ThemeFontIndex =-1
                     HoverColor =16777215
@@ -1658,7 +1656,7 @@ Begin Form
                     BackColor =16777215
                     BackThemeColorIndex =-1
                     BackTint =100.0
-                    BorderColor =3259885
+                    BorderColor =8544277
                     BorderTint =100.0
                     ThemeFontIndex =-1
                     HoverColor =16777215
@@ -2460,8 +2458,8 @@ Private Sub cmdApplyCheck_Click()
     
     If MsgBox("Are you sure you want to apply this check to order: " & CheckNumber & "?", vbExclamation + vbYesNo) = vbYes Then
 
-        oBox.ApplyPaymentToOrder Me.ID, CheckNumber
-        CurrentDb.Execute "Update TicketDeliveryOrderItems Set LocationCheckNumbers = '" & CheckNumber & "' Where DistributionOrderId = " & Me.ID
+        oBox.ApplyPaymentToOrder Me.Id, CheckNumber
+        CurrentDb.Execute "Update TicketDeliveryOrderItems Set LocationCheckNumbers = '" & CheckNumber & "' Where DistributionOrderId = " & Me.Id
         Me![416-sb-Ticket-Distribution-Order-Items].Requery
         
         MsgBox "Check # applied successfully.", vbExclamation
@@ -2484,11 +2482,11 @@ End Sub
 
 Private Sub cmdSubmit_Click()
     
-    If IsNull(Me.ID) Then Exit Sub
+    If IsNull(Me.Id) Then Exit Sub
     
     If MsgBox("Are you sure you want to distribute this ticket order?", vbExclamation + vbYesNo) = vbYes Then
     
-        oBox.SubmitDistribution (Me.ID)
+        oBox.SubmitDistribution (Me.Id)
         
         If Len(oBox.Message) Then MsgBox oBox.Message, vbExclamation
     
@@ -2534,9 +2532,9 @@ End Sub
 
 Private Sub cmdPrint_Click()
 
-    DoCmd.OpenReport "309-Ticket-Delivery-Order-Details", acViewPreview, , "OrderId = " & Me.ID, acDialog
+    DoCmd.OpenReport "309-Ticket-Delivery-Order-Details", acViewPreview, , "OrderId = " & Me.Id, acDialog
     
-    DoCmd.OpenReport "310-Ticket-Delivery-Invoice-Details", acViewPreview, , "OrderId = " & Me.ID, acDialog
+    DoCmd.OpenReport "310-Ticket-Delivery-Invoice-Details", acViewPreview, , "OrderId = " & Me.Id, acDialog
 
 
 End Sub
@@ -2551,9 +2549,9 @@ End Sub
 
 Sub SetFormState()
 
-    Me.txtTotalOwed = oBox.GetTotalOwed(Nz(Me.ID, 0))
+    Me.txtTotalOwed = oBox.GetTotalOwed(Nz(Me.Id, 0))
     Me.cmdApplyCheck.Enabled = (Not Me.NewRecord)
-    Me.cmdSubmit.Enabled = (Nz(Me.Status) <> "Distributed")
+    Me.cmdSubmit.Enabled = (Nz(Me.Status) = "New")
     Me.cmdApplyCheck.Enabled = (Nz(Me.Status) = "Distributed")
     
 End Sub
@@ -2564,7 +2562,7 @@ Private Sub cmdDelete_Click()
         
         DoCmd.SetWarnings False
         
-        DoCmd.RunSQL "Delete * from [TicketDistributionOrders] Where Id = " & Nz(Me.ID, 0)
+        DoCmd.RunSQL "Delete * from [TicketDistributionOrders] Where Id = " & Nz(Me.Id, 0)
         
         DoCmd.SetWarnings True
         

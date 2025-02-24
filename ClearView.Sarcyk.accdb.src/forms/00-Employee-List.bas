@@ -25,6 +25,9 @@ Begin Form
     Tag ="SplitList"
     Filter ="ID = 3660"
     OrderBy ="[Employees Extended].[FirstName]"
+    RecSrcDt = Begin
+        0x58ec08adae51e640
+    End
     RecordSource ="SELECT * FROM [Employees Extended] ORDER BY FullName; "
     Caption ="Employee List"
     DatasheetFontName ="Calibri"
@@ -2443,27 +2446,27 @@ Private Sub Form_Load()
     
     If cSysSettings.oUser.UserType = User_Type.RegularUser Then
     
-        sql = ""
+        Sql = ""
         
-        sql = sql & " SELECT *"
-        sql = sql & "   FROM [Employees Extended]"
-        sql = sql & "  WHERE  ID = " & cSysSettings.oUser.ID
-        sql = sql & "  ORDER BY FullName;"
+        Sql = Sql & " SELECT *"
+        Sql = Sql & "   FROM [Employees Extended]"
+        Sql = Sql & "  WHERE  ID = " & cSysSettings.oUser.Id
+        Sql = Sql & "  ORDER BY FullName;"
 
-        Me.RecordSource = sql
+        Me.RecordSource = Sql
         Me.AllowAdditions = False
         Me.AllowDeletions = False
         Me.AllowEdits = False
         
     Else
     
-        sql = ""
+        Sql = ""
         
-        sql = sql & " SELECT *"
-        sql = sql & "   FROM [Employees Extended]"
-        sql = sql & "  ORDER BY FullName;"
+        Sql = Sql & " SELECT *"
+        Sql = Sql & "   FROM [Employees Extended]"
+        Sql = Sql & "  ORDER BY FullName;"
 
-        Me.RecordSource = sql
+        Me.RecordSource = Sql
         
         Me.AllowAdditions = True
         Me.AllowDeletions = True

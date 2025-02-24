@@ -16,11 +16,11 @@ Begin Form
     Width =14760
     DatasheetFontHeight =11
     ItemSuffix =1228
-    Right =20985
+    Right =17828
     Bottom =10770
     DatasheetGridlinesColor =-1
     Tag ="SplitList"
-    Filter ="([BoxInventory].[InvoiceNumber]=\"01-205537\")"
+    Filter ="([BoxInventory].[InvoiceNumber] Like \"*205541*\")"
     OrderBy ="[BoxInventory].[ID] DESC"
     RecSrcDt = Begin
         0x07a28acc7542e640

@@ -12,14 +12,13 @@ Begin Report
     GridY =10
     Width =14760
     DatasheetFontHeight =11
-    ItemSuffix =246
+    ItemSuffix =253
     Filter ="1=1"
     RecSrcDt = Begin
         0x5199eb535b3ae640
     End
     RecordSource ="303-ADP-Pay-Stubs"
     Caption ="PayrollReconciliation"
-    OnOpen ="[Event Procedure]"
     OnClose ="[Event Procedure]"
     DatasheetFontName ="Aptos"
     FilterOnLoad =0
@@ -881,6 +880,7 @@ Begin Report
                     GridlineShade =100.0
                 End
                 Begin Label
+                    OverlapFlags =81
                     Left =1871
                     Top =511
                     Width =5235
@@ -927,6 +927,7 @@ Begin Report
             BackThemeColorIndex =1
             Begin
                 Begin Label
+                    OverlapFlags =81
                     TextAlign =1
                     TextFontFamily =34
                     Left =283
@@ -954,6 +955,208 @@ Begin Report
                     ForeTint =100.0
                 End
                 Begin Label
+                    OverlapFlags =81
+                    TextAlign =1
+                    TextFontFamily =34
+                    Left =11400
+                    Top =165
+                    Width =3195
+                    Height =420
+                    FontSize =16
+                    FontWeight =700
+                    BorderColor =0
+                    ForeColor =0
+                    Name ="Label30"
+                    Caption ="Statement of Earnings"
+                    FontName ="Calibri"
+                    Tag ="DetachedLabel"
+                    GroupTable =2
+                    LayoutCachedLeft =11400
+                    LayoutCachedTop =165
+                    LayoutCachedWidth =14595
+                    LayoutCachedHeight =585
+                    ColumnEnd =1
+                    LayoutGroup =1
+                    ThemeFontIndex =-1
+                    BackThemeColorIndex =-1
+                    BorderThemeColorIndex =-1
+                    BorderTint =100.0
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                    GroupTable =2
+                End
+                Begin ComboBox
+                    LimitToList = NotDefault
+                    OldBorderStyle =0
+                    OverlapFlags =81
+                    TextAlign =1
+                    IMESentenceMode =3
+                    ColumnCount =2
+                    Left =11400
+                    Top =645
+                    Width =3195
+                    Height =368
+                    FontSize =14
+                    FontWeight =700
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"486\""
+                    Name ="Combo31"
+                    ControlSource ="EmployeeId"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT Employees.Id, Employees.FullName FROM Employees ORDER BY Employees.FullNa"
+                        "me; "
+                    ColumnWidths ="0;1701"
+                    GroupTable =2
+
+                    LayoutCachedLeft =11400
+                    LayoutCachedTop =645
+                    LayoutCachedWidth =14595
+                    LayoutCachedHeight =1013
+                    RowStart =1
+                    RowEnd =1
+                    ColumnEnd =1
+                    LayoutGroup =1
+                    GroupTable =2
+                End
+                Begin TextBox
+                    OverlapFlags =81
+                    TextAlign =2
+                    IMESentenceMode =3
+                    Left =13005
+                    Top =1080
+                    Width =1590
+                    Height =293
+                    TabIndex =1
+                    Name ="PayPeriodStart"
+                    ControlSource ="PayPeriodStart"
+                    GroupTable =2
+                    ShowDatePicker =1
+
+                    LayoutCachedLeft =13005
+                    LayoutCachedTop =1080
+                    LayoutCachedWidth =14595
+                    LayoutCachedHeight =1373
+                    RowStart =2
+                    RowEnd =2
+                    ColumnStart =1
+                    ColumnEnd =1
+                    LayoutGroup =1
+                    GroupTable =2
+                    Begin
+                        Begin Label
+                            OverlapFlags =81
+                            TextAlign =1
+                            Left =11400
+                            Top =1080
+                            Width =1545
+                            Height =293
+                            Name ="Label39"
+                            Caption ="Period Starting:"
+                            GroupTable =2
+                            LayoutCachedLeft =11400
+                            LayoutCachedTop =1080
+                            LayoutCachedWidth =12945
+                            LayoutCachedHeight =1373
+                            RowStart =2
+                            RowEnd =2
+                            LayoutGroup =1
+                            GroupTable =2
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =81
+                    TextAlign =2
+                    IMESentenceMode =3
+                    Left =13005
+                    Top =1440
+                    Width =1590
+                    Height =278
+                    TabIndex =2
+                    Name ="PayPeriodEnd"
+                    ControlSource ="PayPeriodEnd"
+                    GroupTable =2
+                    ShowDatePicker =1
+
+                    LayoutCachedLeft =13005
+                    LayoutCachedTop =1440
+                    LayoutCachedWidth =14595
+                    LayoutCachedHeight =1718
+                    RowStart =3
+                    RowEnd =3
+                    ColumnStart =1
+                    ColumnEnd =1
+                    LayoutGroup =1
+                    GroupTable =2
+                    Begin
+                        Begin Label
+                            OverlapFlags =81
+                            TextAlign =1
+                            Left =11400
+                            Top =1440
+                            Width =1545
+                            Height =278
+                            Name ="Label40"
+                            Caption ="Period Ending:"
+                            GroupTable =2
+                            LayoutCachedLeft =11400
+                            LayoutCachedTop =1440
+                            LayoutCachedWidth =12945
+                            LayoutCachedHeight =1718
+                            RowStart =3
+                            RowEnd =3
+                            LayoutGroup =1
+                            GroupTable =2
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =81
+                    TextAlign =2
+                    IMESentenceMode =3
+                    Left =13005
+                    Top =1785
+                    Width =1590
+                    Height =285
+                    TabIndex =3
+                    Name ="Text32"
+                    ControlSource ="CheckDate"
+                    GroupTable =2
+                    ShowDatePicker =1
+
+                    LayoutCachedLeft =13005
+                    LayoutCachedTop =1785
+                    LayoutCachedWidth =14595
+                    LayoutCachedHeight =2070
+                    RowStart =4
+                    RowEnd =4
+                    ColumnStart =1
+                    ColumnEnd =1
+                    LayoutGroup =1
+                    GroupTable =2
+                    Begin
+                        Begin Label
+                            OverlapFlags =81
+                            TextAlign =1
+                            Left =11400
+                            Top =1785
+                            Width =1545
+                            Height =285
+                            Name ="Label33"
+                            Caption ="Pay Date:"
+                            GroupTable =2
+                            LayoutCachedLeft =11400
+                            LayoutCachedTop =1785
+                            LayoutCachedWidth =12945
+                            LayoutCachedHeight =2070
+                            RowStart =4
+                            RowEnd =4
+                            LayoutGroup =1
+                            GroupTable =2
+                        End
+                    End
+                End
+                Begin Label
+                    OverlapFlags =81
                     TextAlign =1
                     TextFontFamily =34
                     Left =283
@@ -981,116 +1184,12 @@ Begin Report
                     ForeTint =100.0
                 End
                 Begin Label
-                    TextAlign =1
-                    TextFontFamily =34
-                    Left =11393
-                    Top =165
-                    Width =3195
-                    Height =420
-                    FontSize =16
-                    FontWeight =700
-                    BorderColor =0
-                    ForeColor =0
-                    Name ="Label30"
-                    Caption ="Statement of Earnings"
-                    FontName ="Calibri"
-                    Tag ="DetachedLabel"
-                    GroupTable =2
-                    LayoutCachedLeft =11393
-                    LayoutCachedTop =165
-                    LayoutCachedWidth =14588
-                    LayoutCachedHeight =585
-                    ColumnEnd =1
-                    LayoutGroup =1
-                    ThemeFontIndex =-1
-                    BackThemeColorIndex =-1
-                    BorderThemeColorIndex =-1
-                    BorderTint =100.0
-                    ForeThemeColorIndex =-1
-                    ForeTint =100.0
-                    GroupTable =2
-                End
-                Begin ComboBox
-                    LimitToList = NotDefault
-                    OldBorderStyle =0
-                    TextAlign =1
-                    IMESentenceMode =3
-                    ColumnCount =2
-                    Left =11393
-                    Top =645
-                    Width =3195
-                    Height =368
-                    FontSize =14
-                    FontWeight =700
-                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"486\""
-                    Name ="Combo31"
-                    ControlSource ="EmployeeId"
-                    RowSourceType ="Table/Query"
-                    RowSource ="SELECT Employees.Id, Employees.FullName FROM Employees ORDER BY Employees.FullNa"
-                        "me; "
-                    ColumnWidths ="0;1701"
-                    GroupTable =2
-
-                    LayoutCachedLeft =11393
-                    LayoutCachedTop =645
-                    LayoutCachedWidth =14588
-                    LayoutCachedHeight =1013
-                    RowStart =1
-                    RowEnd =1
-                    ColumnEnd =1
-                    LayoutGroup =1
-                    GroupTable =2
-                End
-                Begin TextBox
-                    TextAlign =2
-                    IMESentenceMode =3
-                    Left =12998
-                    Top =1785
-                    Width =1590
-                    Height =285
-                    TabIndex =3
-                    Name ="Text32"
-                    ControlSource ="CheckDate"
-                    GroupTable =2
-                    ShowDatePicker =1
-
-                    LayoutCachedLeft =12998
-                    LayoutCachedTop =1785
-                    LayoutCachedWidth =14588
-                    LayoutCachedHeight =2070
-                    RowStart =4
-                    RowEnd =4
-                    ColumnStart =1
-                    ColumnEnd =1
-                    LayoutGroup =1
-                    GroupTable =2
-                    Begin
-                        Begin Label
-                            TextAlign =1
-                            Left =11393
-                            Top =1785
-                            Width =1538
-                            Height =285
-                            Name ="Label33"
-                            Caption ="Pay Date:"
-                            GroupTable =2
-                            LayoutCachedLeft =11393
-                            LayoutCachedTop =1785
-                            LayoutCachedWidth =12931
-                            LayoutCachedHeight =2070
-                            RowStart =4
-                            RowEnd =4
-                            LayoutGroup =1
-                            GroupTable =2
-                        End
-                    End
-                End
-                Begin Label
                     BackStyle =1
                     OldBorderStyle =1
+                    OverlapFlags =81
                     TextAlign =1
-                    Left =338
-                    Top =1418
+                    Left =345
+                    Top =1425
                     Width =1440
                     Height =285
                     FontWeight =700
@@ -1099,10 +1198,10 @@ Begin Report
                     Name ="Label34"
                     Caption ="Earnings"
                     GroupTable =8
-                    LayoutCachedLeft =338
-                    LayoutCachedTop =1418
-                    LayoutCachedWidth =1778
-                    LayoutCachedHeight =1703
+                    LayoutCachedLeft =345
+                    LayoutCachedTop =1425
+                    LayoutCachedWidth =1785
+                    LayoutCachedHeight =1710
                     LayoutGroup =3
                     BackShade =95.0
                     BorderTint =100.0
@@ -1111,9 +1210,10 @@ Begin Report
                 Begin Label
                     BackStyle =1
                     OldBorderStyle =1
+                    OverlapFlags =81
                     TextAlign =2
                     Left =1845
-                    Top =1418
+                    Top =1425
                     Width =1440
                     Height =285
                     FontWeight =700
@@ -1123,9 +1223,9 @@ Begin Report
                     Caption ="Rate"
                     GroupTable =8
                     LayoutCachedLeft =1845
-                    LayoutCachedTop =1418
+                    LayoutCachedTop =1425
                     LayoutCachedWidth =3285
-                    LayoutCachedHeight =1703
+                    LayoutCachedHeight =1710
                     ColumnStart =1
                     ColumnEnd =1
                     LayoutGroup =3
@@ -1136,9 +1236,10 @@ Begin Report
                 Begin Label
                     BackStyle =1
                     OldBorderStyle =1
+                    OverlapFlags =81
                     TextAlign =2
-                    Left =3353
-                    Top =1418
+                    Left =3345
+                    Top =1425
                     Width =1440
                     Height =285
                     FontWeight =700
@@ -1147,10 +1248,10 @@ Begin Report
                     Name ="Label36"
                     Caption ="Hours/Units"
                     GroupTable =8
-                    LayoutCachedLeft =3353
-                    LayoutCachedTop =1418
-                    LayoutCachedWidth =4793
-                    LayoutCachedHeight =1703
+                    LayoutCachedLeft =3345
+                    LayoutCachedTop =1425
+                    LayoutCachedWidth =4785
+                    LayoutCachedHeight =1710
                     ColumnStart =2
                     ColumnEnd =2
                     LayoutGroup =3
@@ -1161,9 +1262,10 @@ Begin Report
                 Begin Label
                     BackStyle =1
                     OldBorderStyle =1
+                    OverlapFlags =81
                     TextAlign =2
-                    Left =4860
-                    Top =1418
+                    Left =4845
+                    Top =1425
                     Width =1440
                     Height =285
                     FontWeight =700
@@ -1172,10 +1274,10 @@ Begin Report
                     Name ="Label37"
                     Caption ="This Period"
                     GroupTable =8
-                    LayoutCachedLeft =4860
-                    LayoutCachedTop =1418
-                    LayoutCachedWidth =6300
-                    LayoutCachedHeight =1703
+                    LayoutCachedLeft =4845
+                    LayoutCachedTop =1425
+                    LayoutCachedWidth =6285
+                    LayoutCachedHeight =1710
                     ColumnStart =3
                     ColumnEnd =3
                     LayoutGroup =3
@@ -1186,9 +1288,10 @@ Begin Report
                 Begin Label
                     BackStyle =1
                     OldBorderStyle =1
+                    OverlapFlags =81
                     TextAlign =2
-                    Left =6368
-                    Top =1418
+                    Left =6345
+                    Top =1425
                     Width =1440
                     Height =285
                     FontWeight =700
@@ -1197,10 +1300,10 @@ Begin Report
                     Name ="Label38"
                     Caption ="Year To Date"
                     GroupTable =8
-                    LayoutCachedLeft =6368
-                    LayoutCachedTop =1418
-                    LayoutCachedWidth =7808
-                    LayoutCachedHeight =1703
+                    LayoutCachedLeft =6345
+                    LayoutCachedTop =1425
+                    LayoutCachedWidth =7785
+                    LayoutCachedHeight =1710
                     ColumnStart =4
                     ColumnEnd =4
                     LayoutGroup =3
@@ -1208,102 +1311,156 @@ Begin Report
                     BorderTint =100.0
                     GroupTable =8
                 End
+                Begin Label
+                    OverlapFlags =81
+                    TextAlign =1
+                    Left =345
+                    Top =1770
+                    Width =1440
+                    Height =285
+                    Name ="Label65"
+                    Caption ="Regular"
+                    GroupTable =8
+                    LayoutCachedLeft =345
+                    LayoutCachedTop =1770
+                    LayoutCachedWidth =1785
+                    LayoutCachedHeight =2055
+                    RowStart =1
+                    RowEnd =1
+                    LayoutGroup =3
+                    GroupTable =8
+                End
+                Begin EmptyCell
+                    Left =1845
+                    Top =1770
+                    Height =285
+                    Name ="EmptyCell170"
+                    GroupTable =8
+                    LayoutCachedLeft =1845
+                    LayoutCachedTop =1770
+                    LayoutCachedWidth =3285
+                    LayoutCachedHeight =2055
+                    RowStart =1
+                    RowEnd =1
+                    ColumnStart =1
+                    ColumnEnd =1
+                    LayoutGroup =3
+                    GroupTable =8
+                End
+                Begin EmptyCell
+                    Left =3345
+                    Top =1770
+                    Height =285
+                    Name ="EmptyCell82"
+                    GroupTable =8
+                    LayoutCachedLeft =3345
+                    LayoutCachedTop =1770
+                    LayoutCachedWidth =4785
+                    LayoutCachedHeight =2055
+                    RowStart =1
+                    RowEnd =1
+                    ColumnStart =2
+                    ColumnEnd =2
+                    LayoutGroup =3
+                    GroupTable =8
+                End
                 Begin TextBox
-                    TextAlign =2
+                    OldBorderStyle =0
+                    OverlapFlags =81
+                    TextAlign =3
                     IMESentenceMode =3
-                    Left =12998
-                    Top =1080
-                    Width =1590
-                    Height =293
-                    TabIndex =1
-                    Name ="PayPeriodStart"
-                    ControlSource ="PayPeriodStart"
-                    GroupTable =2
-                    ShowDatePicker =1
+                    Left =4845
+                    Top =1770
+                    Width =1440
+                    Height =285
+                    TabIndex =4
+                    Name ="Text64"
+                    ControlSource ="GrossPay"
+                    Format ="$#,##0.00;-$#,##0.00"
+                    StatusBarText ="Regular"
+                    GroupTable =8
 
-                    LayoutCachedLeft =12998
-                    LayoutCachedTop =1080
-                    LayoutCachedWidth =14588
-                    LayoutCachedHeight =1373
+                    LayoutCachedLeft =4845
+                    LayoutCachedTop =1770
+                    LayoutCachedWidth =6285
+                    LayoutCachedHeight =2055
+                    RowStart =1
+                    RowEnd =1
+                    ColumnStart =3
+                    ColumnEnd =3
+                    LayoutGroup =3
+                    GroupTable =8
+                    CurrencySymbol ="$"
+                    ColLCID =4105
+                End
+                Begin TextBox
+                    OldBorderStyle =0
+                    OverlapFlags =81
+                    TextAlign =3
+                    IMESentenceMode =3
+                    Left =6345
+                    Top =1770
+                    Width =1440
+                    Height =285
+                    TabIndex =5
+                    Name ="txtYTDGrossPay"
+                    ControlSource ="=GetYTDValue([EmployeeId],[CheckDate],\"GrossPay\")"
+                    Format ="$#,##0.00;-$#,##0.00"
+                    GroupTable =8
+
+                    LayoutCachedLeft =6345
+                    LayoutCachedTop =1770
+                    LayoutCachedWidth =7785
+                    LayoutCachedHeight =2055
+                    RowStart =1
+                    RowEnd =1
+                    ColumnStart =4
+                    ColumnEnd =4
+                    LayoutGroup =3
+                    GroupTable =8
+                    CurrencySymbol ="$"
+                End
+                Begin EmptyCell
+                    Left =345
+                    Top =2115
+                    Height =285
+                    Name ="EmptyCell104"
+                    GroupTable =8
+                    LayoutCachedLeft =345
+                    LayoutCachedTop =2115
+                    LayoutCachedWidth =1785
+                    LayoutCachedHeight =2400
+                    RowStart =2
+                    RowEnd =2
+                    LayoutGroup =3
+                    GroupTable =8
+                End
+                Begin EmptyCell
+                    Left =1845
+                    Top =2115
+                    Height =285
+                    Name ="EmptyCell103"
+                    GroupTable =8
+                    LayoutCachedLeft =1845
+                    LayoutCachedTop =2115
+                    LayoutCachedWidth =3285
+                    LayoutCachedHeight =2400
                     RowStart =2
                     RowEnd =2
                     ColumnStart =1
                     ColumnEnd =1
-                    LayoutGroup =1
-                    GroupTable =2
-                    Begin
-                        Begin Label
-                            TextAlign =1
-                            Left =11393
-                            Top =1080
-                            Width =1538
-                            Height =293
-                            Name ="Label39"
-                            Caption ="Period Starting:"
-                            GroupTable =2
-                            LayoutCachedLeft =11393
-                            LayoutCachedTop =1080
-                            LayoutCachedWidth =12931
-                            LayoutCachedHeight =1373
-                            RowStart =2
-                            RowEnd =2
-                            LayoutGroup =1
-                            GroupTable =2
-                        End
-                    End
-                End
-                Begin TextBox
-                    TextAlign =2
-                    IMESentenceMode =3
-                    Left =12998
-                    Top =1440
-                    Width =1590
-                    Height =278
-                    TabIndex =2
-                    Name ="PayPeriodEnd"
-                    ControlSource ="PayPeriodEnd"
-                    GroupTable =2
-                    ShowDatePicker =1
-
-                    LayoutCachedLeft =12998
-                    LayoutCachedTop =1440
-                    LayoutCachedWidth =14588
-                    LayoutCachedHeight =1718
-                    RowStart =3
-                    RowEnd =3
-                    ColumnStart =1
-                    ColumnEnd =1
-                    LayoutGroup =1
-                    GroupTable =2
-                    Begin
-                        Begin Label
-                            TextAlign =1
-                            Left =11393
-                            Top =1440
-                            Width =1538
-                            Height =278
-                            Name ="Label40"
-                            Caption ="Period Ending:"
-                            GroupTable =2
-                            LayoutCachedLeft =11393
-                            LayoutCachedTop =1440
-                            LayoutCachedWidth =12931
-                            LayoutCachedHeight =1718
-                            RowStart =3
-                            RowEnd =3
-                            LayoutGroup =1
-                            GroupTable =2
-                        End
-                    End
+                    LayoutGroup =3
+                    GroupTable =8
                 End
                 Begin TextBox
                     OldBorderStyle =0
+                    OverlapFlags =81
                     TextAlign =3
                     IMESentenceMode =3
-                    Left =4860
-                    Top =2100
+                    Left =4845
+                    Top =2115
                     Width =1440
-                    Height =278
+                    Height =285
                     TabIndex =6
                     Name ="GrossPay"
                     ControlSource ="GrossPay"
@@ -1311,10 +1468,10 @@ Begin Report
                     StatusBarText ="Regular"
                     GroupTable =8
 
-                    LayoutCachedLeft =4860
-                    LayoutCachedTop =2100
-                    LayoutCachedWidth =6300
-                    LayoutCachedHeight =2378
+                    LayoutCachedLeft =4845
+                    LayoutCachedTop =2115
+                    LayoutCachedWidth =6285
+                    LayoutCachedHeight =2400
                     RowStart =2
                     RowEnd =2
                     ColumnStart =3
@@ -1325,18 +1482,19 @@ Begin Report
                     ColLCID =4105
                     Begin
                         Begin Label
-                            Left =3353
-                            Top =2100
+                            OverlapFlags =81
+                            Left =3345
+                            Top =2115
                             Width =1440
-                            Height =278
+                            Height =285
                             FontWeight =700
                             Name ="Label63"
                             Caption ="Gross Pay"
                             GroupTable =8
-                            LayoutCachedLeft =3353
-                            LayoutCachedTop =2100
-                            LayoutCachedWidth =4793
-                            LayoutCachedHeight =2378
+                            LayoutCachedLeft =3345
+                            LayoutCachedTop =2115
+                            LayoutCachedWidth =4785
+                            LayoutCachedHeight =2400
                             RowStart =2
                             RowEnd =2
                             ColumnStart =2
@@ -1346,61 +1504,16 @@ Begin Report
                         End
                     End
                 End
-                Begin TextBox
-                    OldBorderStyle =0
-                    TextAlign =3
-                    IMESentenceMode =3
-                    Left =4860
-                    Top =1763
-                    Width =1440
-                    Height =278
-                    TabIndex =4
-                    Name ="Text64"
-                    ControlSource ="GrossPay"
-                    Format ="$#,##0.00;-$#,##0.00"
-                    StatusBarText ="Regular"
-                    GroupTable =8
-
-                    LayoutCachedLeft =4860
-                    LayoutCachedTop =1763
-                    LayoutCachedWidth =6300
-                    LayoutCachedHeight =2041
-                    RowStart =1
-                    RowEnd =1
-                    ColumnStart =3
-                    ColumnEnd =3
-                    LayoutGroup =3
-                    GroupTable =8
-                    CurrencySymbol ="$"
-                    ColLCID =4105
-                End
                 Begin EmptyCell
-                    Left =3353
-                    Top =1763
-                    Height =278
-                    Name ="EmptyCell82"
-                    GroupTable =8
-                    LayoutCachedLeft =3353
-                    LayoutCachedTop =1763
-                    LayoutCachedWidth =4793
-                    LayoutCachedHeight =2041
-                    RowStart =1
-                    RowEnd =1
-                    ColumnStart =2
-                    ColumnEnd =2
-                    LayoutGroup =3
-                    GroupTable =8
-                End
-                Begin EmptyCell
-                    Left =6368
-                    Top =2100
-                    Height =278
+                    Left =6345
+                    Top =2115
+                    Height =285
                     Name ="EmptyCell102"
                     GroupTable =8
-                    LayoutCachedLeft =6368
-                    LayoutCachedTop =2100
-                    LayoutCachedWidth =7808
-                    LayoutCachedHeight =2378
+                    LayoutCachedLeft =6345
+                    LayoutCachedTop =2115
+                    LayoutCachedWidth =7785
+                    LayoutCachedHeight =2400
                     RowStart =2
                     RowEnd =2
                     ColumnStart =4
@@ -1408,81 +1521,91 @@ Begin Report
                     LayoutGroup =3
                     GroupTable =8
                 End
-                Begin EmptyCell
-                    Left =1845
-                    Top =2100
-                    Height =278
-                    Name ="EmptyCell103"
-                    GroupTable =8
-                    LayoutCachedLeft =1845
-                    LayoutCachedTop =2100
-                    LayoutCachedWidth =3285
-                    LayoutCachedHeight =2378
-                    RowStart =2
-                    RowEnd =2
-                    ColumnStart =1
-                    ColumnEnd =1
-                    LayoutGroup =3
-                    GroupTable =8
-                End
-                Begin EmptyCell
-                    Left =338
-                    Top =2100
-                    Height =278
-                    Name ="EmptyCell104"
-                    GroupTable =8
-                    LayoutCachedLeft =338
-                    LayoutCachedTop =2100
-                    LayoutCachedWidth =1778
-                    LayoutCachedHeight =2378
-                    RowStart =2
-                    RowEnd =2
-                    LayoutGroup =3
-                    GroupTable =8
+                Begin Label
+                    BackStyle =1
+                    OldBorderStyle =1
+                    OverlapFlags =81
+                    TextAlign =1
+                    Left =4545
+                    Top =2670
+                    Width =3180
+                    Height =300
+                    FontWeight =700
+                    BackColor =15921906
+                    BorderColor =0
+                    Name ="Label144"
+                    Caption ="Staturory Dedactions"
+                    GroupTable =9
+                    LayoutCachedLeft =4545
+                    LayoutCachedTop =2670
+                    LayoutCachedWidth =7725
+                    LayoutCachedHeight =2970
+                    LayoutGroup =2
+                    BackShade =95.0
+                    BorderTint =100.0
+                    GroupTable =9
                 End
                 Begin Label
-                    TextAlign =1
-                    Left =338
-                    Top =1763
-                    Width =1440
-                    Height =278
-                    Name ="Label65"
-                    Caption ="Regular"
-                    GroupTable =8
-                    LayoutCachedLeft =338
-                    LayoutCachedTop =1763
-                    LayoutCachedWidth =1778
-                    LayoutCachedHeight =2041
-                    RowStart =1
-                    RowEnd =1
-                    LayoutGroup =3
-                    GroupTable =8
-                End
-                Begin EmptyCell
-                    Left =1845
-                    Top =1763
-                    Height =278
-                    Name ="EmptyCell170"
-                    GroupTable =8
-                    LayoutCachedLeft =1845
-                    LayoutCachedTop =1763
-                    LayoutCachedWidth =3285
-                    LayoutCachedHeight =2041
-                    RowStart =1
-                    RowEnd =1
+                    BackStyle =1
+                    OldBorderStyle =1
+                    OverlapFlags =81
+                    TextAlign =2
+                    Left =7785
+                    Top =2670
+                    Width =1710
+                    Height =300
+                    FontWeight =700
+                    BackColor =15921906
+                    BorderColor =0
+                    Name ="Label149"
+                    Caption ="This Period"
+                    GroupTable =9
+                    LayoutCachedLeft =7785
+                    LayoutCachedTop =2670
+                    LayoutCachedWidth =9495
+                    LayoutCachedHeight =2970
                     ColumnStart =1
                     ColumnEnd =1
-                    LayoutGroup =3
-                    GroupTable =8
+                    LayoutGroup =2
+                    BackShade =95.0
+                    BorderTint =100.0
+                    GroupTable =9
+                End
+                Begin Label
+                    BackStyle =1
+                    OldBorderStyle =1
+                    OverlapFlags =81
+                    TextAlign =2
+                    Left =9555
+                    Top =2670
+                    Width =1680
+                    Height =300
+                    FontWeight =700
+                    BackColor =15921906
+                    BorderColor =0
+                    Name ="Label152"
+                    Caption ="Year To Date"
+                    GroupTable =9
+                    LayoutCachedLeft =9555
+                    LayoutCachedTop =2670
+                    LayoutCachedWidth =11235
+                    LayoutCachedHeight =2970
+                    ColumnStart =2
+                    ColumnEnd =2
+                    LayoutGroup =2
+                    BackShade =95.0
+                    BorderTint =100.0
+                    GroupTable =9
                 End
                 Begin TextBox
                     OldBorderStyle =0
+                    OverlapFlags =81
                     TextAlign =3
                     IMESentenceMode =3
-                    Left =7778
-                    Top =3015
-                    Width =1703
-                    Height =293
+                    Left =7785
+                    Top =3030
+                    Width =1710
+                    Height =300
                     TabIndex =7
                     Name ="FWT"
                     ControlSource ="FWT"
@@ -1490,10 +1613,10 @@ Begin Report
                     StatusBarText ="FED FIT"
                     GroupTable =9
 
-                    LayoutCachedLeft =7778
-                    LayoutCachedTop =3015
-                    LayoutCachedWidth =9481
-                    LayoutCachedHeight =3308
+                    LayoutCachedLeft =7785
+                    LayoutCachedTop =3030
+                    LayoutCachedWidth =9495
+                    LayoutCachedHeight =3330
                     RowStart =1
                     RowEnd =1
                     ColumnStart =1
@@ -1504,18 +1627,19 @@ Begin Report
                     ColLCID =4105
                     Begin
                         Begin Label
+                            OverlapFlags =81
                             TextAlign =1
-                            Left =4538
-                            Top =3015
-                            Width =3173
-                            Height =293
+                            Left =4545
+                            Top =3030
+                            Width =3180
+                            Height =300
                             Name ="Label106"
                             Caption ="Federal Income"
                             GroupTable =9
-                            LayoutCachedLeft =4538
-                            LayoutCachedTop =3015
-                            LayoutCachedWidth =7711
-                            LayoutCachedHeight =3308
+                            LayoutCachedLeft =4545
+                            LayoutCachedTop =3030
+                            LayoutCachedWidth =7725
+                            LayoutCachedHeight =3330
                             RowStart =1
                             RowEnd =1
                             LayoutGroup =2
@@ -1525,12 +1649,40 @@ Begin Report
                 End
                 Begin TextBox
                     OldBorderStyle =0
+                    OverlapFlags =81
+                    TextFontFamily =34
+                    IMESentenceMode =3
+                    Left =9555
+                    Top =3030
+                    Width =1680
+                    Height =300
+                    TabIndex =8
+                    Name ="txtFWT"
+                    ControlSource ="=GetYTDValue([EmployeeId],[CheckDate],\"FWT\")"
+                    Format ="$#,##0.00;-$#,##0.00"
+                    GroupTable =9
+
+                    LayoutCachedLeft =9555
+                    LayoutCachedTop =3030
+                    LayoutCachedWidth =11235
+                    LayoutCachedHeight =3330
+                    RowStart =1
+                    RowEnd =1
+                    ColumnStart =2
+                    ColumnEnd =2
+                    LayoutGroup =2
+                    GroupTable =9
+                    CurrencySymbol ="$"
+                End
+                Begin TextBox
+                    OldBorderStyle =0
+                    OverlapFlags =81
                     TextAlign =3
                     IMESentenceMode =3
-                    Left =7778
-                    Top =3368
-                    Width =1703
-                    Height =293
+                    Left =7785
+                    Top =3390
+                    Width =1710
+                    Height =300
                     TabIndex =9
                     Name ="SocSec"
                     ControlSource ="SocSec"
@@ -1538,10 +1690,10 @@ Begin Report
                     StatusBarText ="FED SOCSEC"
                     GroupTable =9
 
-                    LayoutCachedLeft =7778
-                    LayoutCachedTop =3368
-                    LayoutCachedWidth =9481
-                    LayoutCachedHeight =3661
+                    LayoutCachedLeft =7785
+                    LayoutCachedTop =3390
+                    LayoutCachedWidth =9495
+                    LayoutCachedHeight =3690
                     RowStart =2
                     RowEnd =2
                     ColumnStart =1
@@ -1552,18 +1704,19 @@ Begin Report
                     ColLCID =4105
                     Begin
                         Begin Label
+                            OverlapFlags =81
                             TextAlign =1
-                            Left =4538
-                            Top =3368
-                            Width =3173
-                            Height =293
+                            Left =4545
+                            Top =3390
+                            Width =3180
+                            Height =300
                             Name ="Label107"
                             Caption ="Social Security"
                             GroupTable =9
-                            LayoutCachedLeft =4538
-                            LayoutCachedTop =3368
-                            LayoutCachedWidth =7711
-                            LayoutCachedHeight =3661
+                            LayoutCachedLeft =4545
+                            LayoutCachedTop =3390
+                            LayoutCachedWidth =7725
+                            LayoutCachedHeight =3690
                             RowStart =2
                             RowEnd =2
                             LayoutGroup =2
@@ -1573,335 +1726,23 @@ Begin Report
                 End
                 Begin TextBox
                     OldBorderStyle =0
-                    TextAlign =3
-                    IMESentenceMode =3
-                    Left =7778
-                    Top =3720
-                    Width =1703
-                    Height =293
-                    TabIndex =11
-                    Name ="Medicaid"
-                    ControlSource ="Medicaid"
-                    Format ="$#,##0.00;-$#,##0.00"
-                    StatusBarText ="FED\015\012MEDCARE"
-                    GroupTable =9
-
-                    LayoutCachedLeft =7778
-                    LayoutCachedTop =3720
-                    LayoutCachedWidth =9481
-                    LayoutCachedHeight =4013
-                    RowStart =3
-                    RowEnd =3
-                    ColumnStart =1
-                    ColumnEnd =1
-                    LayoutGroup =2
-                    GroupTable =9
-                    CurrencySymbol ="$"
-                    ColLCID =4105
-                    Begin
-                        Begin Label
-                            TextAlign =1
-                            Left =4538
-                            Top =3720
-                            Width =3173
-                            Height =293
-                            Name ="Label108"
-                            Caption ="Medicare"
-                            GroupTable =9
-                            LayoutCachedLeft =4538
-                            LayoutCachedTop =3720
-                            LayoutCachedWidth =7711
-                            LayoutCachedHeight =4013
-                            RowStart =3
-                            RowEnd =3
-                            LayoutGroup =2
-                            GroupTable =9
-                        End
-                    End
-                End
-                Begin TextBox
-                    OldBorderStyle =0
-                    TextAlign =3
-                    IMESentenceMode =3
-                    Left =7778
-                    Top =4073
-                    Width =1703
-                    Height =293
-                    TabIndex =13
-                    Name ="Ohio"
-                    ControlSource ="Ohio"
-                    Format ="$#,##0.00;-$#,##0.00"
-                    StatusBarText ="OH3603 + OH SIT"
-                    GroupTable =9
-
-                    LayoutCachedLeft =7778
-                    LayoutCachedTop =4073
-                    LayoutCachedWidth =9481
-                    LayoutCachedHeight =4366
-                    RowStart =4
-                    RowEnd =4
-                    ColumnStart =1
-                    ColumnEnd =1
-                    LayoutGroup =2
-                    GroupTable =9
-                    CurrencySymbol ="$"
-                    ColLCID =4105
-                    Begin
-                        Begin Label
-                            TextAlign =1
-                            Left =4538
-                            Top =4073
-                            Width =3173
-                            Height =293
-                            Name ="Label109"
-                            Caption ="OhioState Income"
-                            GroupTable =9
-                            LayoutCachedLeft =4538
-                            LayoutCachedTop =4073
-                            LayoutCachedWidth =7711
-                            LayoutCachedHeight =4366
-                            RowStart =4
-                            RowEnd =4
-                            LayoutGroup =2
-                            GroupTable =9
-                        End
-                    End
-                End
-                Begin TextBox
-                    OldBorderStyle =0
-                    TextAlign =3
-                    IMESentenceMode =3
-                    Left =7778
-                    Top =4425
-                    Width =1703
-                    Height =293
-                    TabIndex =15
-                    Name ="Cleveland"
-                    ControlSource ="Cleveland"
-                    Format ="$#,##0.00;-$#,##0.00"
-                    StatusBarText ="OH3603 -\015\012Cleveland LIT"
-                    GroupTable =9
-
-                    LayoutCachedLeft =7778
-                    LayoutCachedTop =4425
-                    LayoutCachedWidth =9481
-                    LayoutCachedHeight =4718
-                    RowStart =5
-                    RowEnd =5
-                    ColumnStart =1
-                    ColumnEnd =1
-                    LayoutGroup =2
-                    GroupTable =9
-                    CurrencySymbol ="$"
-                    ColLCID =4105
-                    Begin
-                        Begin Label
-                            TextAlign =1
-                            Left =4538
-                            Top =4425
-                            Width =3173
-                            Height =293
-                            Name ="Label110"
-                            Caption ="ClevelandLocal Income"
-                            GroupTable =9
-                            LayoutCachedLeft =4538
-                            LayoutCachedTop =4425
-                            LayoutCachedWidth =7711
-                            LayoutCachedHeight =4718
-                            RowStart =5
-                            RowEnd =5
-                            LayoutGroup =2
-                            GroupTable =9
-                        End
-                    End
-                End
-                Begin TextBox
-                    OldBorderStyle =0
-                    TextAlign =3
-                    IMESentenceMode =3
-                    Left =7778
-                    Top =4778
-                    Width =1703
-                    Height =293
-                    TabIndex =17
-                    Name ="NetPay"
-                    ControlSource ="NetPay"
-                    GroupTable =9
-
-                    LayoutCachedLeft =7778
-                    LayoutCachedTop =4778
-                    LayoutCachedWidth =9481
-                    LayoutCachedHeight =5071
-                    RowStart =6
-                    RowEnd =6
-                    ColumnStart =1
-                    ColumnEnd =1
-                    LayoutGroup =2
-                    GroupTable =9
-                    Begin
-                        Begin Label
-                            TextAlign =1
-                            Left =4538
-                            Top =4778
-                            Width =3173
-                            Height =293
-                            Name ="Label137"
-                            Caption ="Net Pay"
-                            GroupTable =9
-                            LayoutCachedLeft =4538
-                            LayoutCachedTop =4778
-                            LayoutCachedWidth =7711
-                            LayoutCachedHeight =5071
-                            RowStart =6
-                            RowEnd =6
-                            LayoutGroup =2
-                            GroupTable =9
-                        End
-                    End
-                End
-                Begin Label
-                    BackStyle =1
-                    OldBorderStyle =1
-                    TextAlign =1
-                    Left =4538
-                    Top =2663
-                    Width =3173
-                    Height =293
-                    FontWeight =700
-                    BackColor =15921906
-                    BorderColor =0
-                    Name ="Label144"
-                    Caption ="Staturory Dedactions"
-                    GroupTable =9
-                    LayoutCachedLeft =4538
-                    LayoutCachedTop =2663
-                    LayoutCachedWidth =7711
-                    LayoutCachedHeight =2956
-                    LayoutGroup =2
-                    BackShade =95.0
-                    BorderTint =100.0
-                    GroupTable =9
-                End
-                Begin Label
-                    BackStyle =1
-                    OldBorderStyle =1
-                    TextAlign =2
-                    Left =7778
-                    Top =2663
-                    Width =1703
-                    Height =293
-                    FontWeight =700
-                    BackColor =15921906
-                    BorderColor =0
-                    Name ="Label149"
-                    Caption ="This Period"
-                    GroupTable =9
-                    LayoutCachedLeft =7778
-                    LayoutCachedTop =2663
-                    LayoutCachedWidth =9481
-                    LayoutCachedHeight =2956
-                    ColumnStart =1
-                    ColumnEnd =1
-                    LayoutGroup =2
-                    BackShade =95.0
-                    BorderTint =100.0
-                    GroupTable =9
-                End
-                Begin Label
-                    BackStyle =1
-                    OldBorderStyle =1
-                    TextAlign =2
-                    Left =9548
-                    Top =2663
-                    Width =1335
-                    Height =293
-                    FontWeight =700
-                    BackColor =15921906
-                    BorderColor =0
-                    Name ="Label152"
-                    Caption ="Year To Date"
-                    GroupTable =9
-                    LayoutCachedLeft =9548
-                    LayoutCachedTop =2663
-                    LayoutCachedWidth =10883
-                    LayoutCachedHeight =2956
-                    ColumnStart =2
-                    ColumnEnd =2
-                    LayoutGroup =2
-                    BackShade =95.0
-                    BorderTint =100.0
-                    GroupTable =9
-                End
-                Begin TextBox
-                    OldBorderStyle =0
-                    TextAlign =3
-                    IMESentenceMode =3
-                    Left =6368
-                    Top =1763
-                    Width =1440
-                    Height =278
-                    TabIndex =5
-                    Name ="txtYTDGrossPay"
-                    ControlSource ="=GetYTDValue([EmployeeId],[CheckDate],\"GrossPay\")"
-                    Format ="$#,##0.00;-$#,##0.00"
-                    GroupTable =8
-
-                    LayoutCachedLeft =6368
-                    LayoutCachedTop =1763
-                    LayoutCachedWidth =7808
-                    LayoutCachedHeight =2041
-                    RowStart =1
-                    RowEnd =1
-                    ColumnStart =4
-                    ColumnEnd =4
-                    LayoutGroup =3
-                    GroupTable =8
-                    CurrencySymbol ="$"
-                End
-                Begin TextBox
-                    OldBorderStyle =0
+                    OverlapFlags =81
                     TextFontFamily =34
                     IMESentenceMode =3
-                    Left =9548
-                    Top =3015
-                    Width =1335
-                    Height =293
-                    TabIndex =8
-                    Name ="txtFWT"
-                    ControlSource ="=GetYTDValue([EmployeeId],[CheckDate],\"FWT\")"
-                    Format ="$#,##0.00;-$#,##0.00"
-                    GroupTable =9
-
-                    LayoutCachedLeft =9548
-                    LayoutCachedTop =3015
-                    LayoutCachedWidth =10883
-                    LayoutCachedHeight =3308
-                    RowStart =1
-                    RowEnd =1
-                    ColumnStart =2
-                    ColumnEnd =2
-                    LayoutGroup =2
-                    GroupTable =9
-                    CurrencySymbol ="$"
-                End
-                Begin TextBox
-                    OldBorderStyle =0
-                    TextFontFamily =34
-                    IMESentenceMode =3
-                    Left =9548
-                    Top =3368
-                    Width =1335
-                    Height =293
+                    Left =9555
+                    Top =3390
+                    Width =1680
+                    Height =300
                     TabIndex =10
                     Name ="txtSocSec"
                     ControlSource ="=GetYTDValue([EmployeeId],[CheckDate],\"SocSec\")"
                     Format ="$#,##0.00;-$#,##0.00"
                     GroupTable =9
 
-                    LayoutCachedLeft =9548
-                    LayoutCachedTop =3368
-                    LayoutCachedWidth =10883
-                    LayoutCachedHeight =3661
+                    LayoutCachedLeft =9555
+                    LayoutCachedTop =3390
+                    LayoutCachedWidth =11235
+                    LayoutCachedHeight =3690
                     RowStart =2
                     RowEnd =2
                     ColumnStart =2
@@ -1912,22 +1753,73 @@ Begin Report
                 End
                 Begin TextBox
                     OldBorderStyle =0
+                    OverlapFlags =81
+                    TextAlign =3
+                    IMESentenceMode =3
+                    Left =7785
+                    Top =3750
+                    Width =1710
+                    Height =300
+                    TabIndex =11
+                    Name ="Medicaid"
+                    ControlSource ="Medicaid"
+                    Format ="$#,##0.00;-$#,##0.00"
+                    StatusBarText ="FED\015\012MEDCARE"
+                    GroupTable =9
+
+                    LayoutCachedLeft =7785
+                    LayoutCachedTop =3750
+                    LayoutCachedWidth =9495
+                    LayoutCachedHeight =4050
+                    RowStart =3
+                    RowEnd =3
+                    ColumnStart =1
+                    ColumnEnd =1
+                    LayoutGroup =2
+                    GroupTable =9
+                    CurrencySymbol ="$"
+                    ColLCID =4105
+                    Begin
+                        Begin Label
+                            OverlapFlags =81
+                            TextAlign =1
+                            Left =4545
+                            Top =3750
+                            Width =3180
+                            Height =300
+                            Name ="Label108"
+                            Caption ="Medicare"
+                            GroupTable =9
+                            LayoutCachedLeft =4545
+                            LayoutCachedTop =3750
+                            LayoutCachedWidth =7725
+                            LayoutCachedHeight =4050
+                            RowStart =3
+                            RowEnd =3
+                            LayoutGroup =2
+                            GroupTable =9
+                        End
+                    End
+                End
+                Begin TextBox
+                    OldBorderStyle =0
+                    OverlapFlags =81
                     TextFontFamily =34
                     IMESentenceMode =3
-                    Left =9548
-                    Top =3720
-                    Width =1335
-                    Height =293
+                    Left =9555
+                    Top =3750
+                    Width =1680
+                    Height =300
                     TabIndex =12
                     Name ="txtMedicaid"
                     ControlSource ="=GetYTDValue([EmployeeId],[CheckDate],\"Medicaid\")"
                     Format ="$#,##0.00;-$#,##0.00"
                     GroupTable =9
 
-                    LayoutCachedLeft =9548
-                    LayoutCachedTop =3720
-                    LayoutCachedWidth =10883
-                    LayoutCachedHeight =4013
+                    LayoutCachedLeft =9555
+                    LayoutCachedTop =3750
+                    LayoutCachedWidth =11235
+                    LayoutCachedHeight =4050
                     RowStart =3
                     RowEnd =3
                     ColumnStart =2
@@ -1938,22 +1830,73 @@ Begin Report
                 End
                 Begin TextBox
                     OldBorderStyle =0
+                    OverlapFlags =81
+                    TextAlign =3
+                    IMESentenceMode =3
+                    Left =7785
+                    Top =4110
+                    Width =1710
+                    Height =300
+                    TabIndex =13
+                    Name ="Ohio"
+                    ControlSource ="Ohio"
+                    Format ="$#,##0.00;-$#,##0.00"
+                    StatusBarText ="OH3603 + OH SIT"
+                    GroupTable =9
+
+                    LayoutCachedLeft =7785
+                    LayoutCachedTop =4110
+                    LayoutCachedWidth =9495
+                    LayoutCachedHeight =4410
+                    RowStart =4
+                    RowEnd =4
+                    ColumnStart =1
+                    ColumnEnd =1
+                    LayoutGroup =2
+                    GroupTable =9
+                    CurrencySymbol ="$"
+                    ColLCID =4105
+                    Begin
+                        Begin Label
+                            OverlapFlags =81
+                            TextAlign =1
+                            Left =4545
+                            Top =4110
+                            Width =3180
+                            Height =300
+                            Name ="Label109"
+                            Caption ="Ohio State Income"
+                            GroupTable =9
+                            LayoutCachedLeft =4545
+                            LayoutCachedTop =4110
+                            LayoutCachedWidth =7725
+                            LayoutCachedHeight =4410
+                            RowStart =4
+                            RowEnd =4
+                            LayoutGroup =2
+                            GroupTable =9
+                        End
+                    End
+                End
+                Begin TextBox
+                    OldBorderStyle =0
+                    OverlapFlags =81
                     TextFontFamily =34
                     IMESentenceMode =3
-                    Left =9548
-                    Top =4073
-                    Width =1335
-                    Height =293
+                    Left =9555
+                    Top =4110
+                    Width =1680
+                    Height =300
                     TabIndex =14
                     Name ="txtOhio"
                     ControlSource ="=GetYTDValue([EmployeeId],[CheckDate],\"Ohio\")"
                     Format ="$#,##0.00;-$#,##0.00"
                     GroupTable =9
 
-                    LayoutCachedLeft =9548
-                    LayoutCachedTop =4073
-                    LayoutCachedWidth =10883
-                    LayoutCachedHeight =4366
+                    LayoutCachedLeft =9555
+                    LayoutCachedTop =4110
+                    LayoutCachedWidth =11235
+                    LayoutCachedHeight =4410
                     RowStart =4
                     RowEnd =4
                     ColumnStart =2
@@ -1964,22 +1907,73 @@ Begin Report
                 End
                 Begin TextBox
                     OldBorderStyle =0
+                    OverlapFlags =81
+                    TextAlign =3
+                    IMESentenceMode =3
+                    Left =7785
+                    Top =4470
+                    Width =1710
+                    Height =300
+                    TabIndex =15
+                    Name ="Cleveland"
+                    ControlSource ="Cleveland"
+                    Format ="$#,##0.00;-$#,##0.00"
+                    StatusBarText ="OH3603 -\015\012Cleveland LIT"
+                    GroupTable =9
+
+                    LayoutCachedLeft =7785
+                    LayoutCachedTop =4470
+                    LayoutCachedWidth =9495
+                    LayoutCachedHeight =4770
+                    RowStart =5
+                    RowEnd =5
+                    ColumnStart =1
+                    ColumnEnd =1
+                    LayoutGroup =2
+                    GroupTable =9
+                    CurrencySymbol ="$"
+                    ColLCID =4105
+                    Begin
+                        Begin Label
+                            OverlapFlags =81
+                            TextAlign =1
+                            Left =4545
+                            Top =4470
+                            Width =3180
+                            Height =300
+                            Name ="Label110"
+                            Caption ="Cleveland Local Income"
+                            GroupTable =9
+                            LayoutCachedLeft =4545
+                            LayoutCachedTop =4470
+                            LayoutCachedWidth =7725
+                            LayoutCachedHeight =4770
+                            RowStart =5
+                            RowEnd =5
+                            LayoutGroup =2
+                            GroupTable =9
+                        End
+                    End
+                End
+                Begin TextBox
+                    OldBorderStyle =0
+                    OverlapFlags =81
                     TextFontFamily =34
                     IMESentenceMode =3
-                    Left =9548
-                    Top =4425
-                    Width =1335
-                    Height =293
+                    Left =9555
+                    Top =4470
+                    Width =1680
+                    Height =300
                     TabIndex =16
                     Name ="txtCleveland"
                     ControlSource ="=GetYTDValue([EmployeeId],[CheckDate],\"Cleveland\")"
                     Format ="$#,##0.00;-$#,##0.00"
                     GroupTable =9
 
-                    LayoutCachedLeft =9548
-                    LayoutCachedTop =4425
-                    LayoutCachedWidth =10883
-                    LayoutCachedHeight =4718
+                    LayoutCachedLeft =9555
+                    LayoutCachedTop =4470
+                    LayoutCachedWidth =11235
+                    LayoutCachedHeight =4770
                     RowStart =5
                     RowEnd =5
                     ColumnStart =2
@@ -1990,22 +1984,72 @@ Begin Report
                 End
                 Begin TextBox
                     OldBorderStyle =0
+                    OverlapFlags =85
+                    TextAlign =3
                     TextFontFamily =34
                     IMESentenceMode =3
-                    Left =9548
-                    Top =4778
-                    Width =1335
-                    Height =293
+                    Left =7785
+                    Top =4830
+                    Width =1710
+                    Height =300
+                    TabIndex =17
+                    Name ="NetPay"
+                    ControlSource ="NetPay"
+                    Format ="$#,##0.00;-$#,##0.00"
+                    GroupTable =9
+
+                    LayoutCachedLeft =7785
+                    LayoutCachedTop =4830
+                    LayoutCachedWidth =9495
+                    LayoutCachedHeight =5130
+                    RowStart =6
+                    RowEnd =6
+                    ColumnStart =1
+                    ColumnEnd =1
+                    LayoutGroup =2
+                    GroupTable =9
+                    Begin
+                        Begin Label
+                            OverlapFlags =81
+                            TextAlign =1
+                            TextFontFamily =34
+                            Left =4545
+                            Top =4830
+                            Width =3180
+                            Height =300
+                            Name ="Label248"
+                            Caption ="Net Pay"
+                            GroupTable =9
+                            LayoutCachedLeft =4545
+                            LayoutCachedTop =4830
+                            LayoutCachedWidth =7725
+                            LayoutCachedHeight =5130
+                            RowStart =6
+                            RowEnd =6
+                            LayoutGroup =2
+                            GroupTable =9
+                        End
+                    End
+                End
+                Begin TextBox
+                    OldBorderStyle =0
+                    OverlapFlags =81
+                    TextFontFamily =34
+                    IMESentenceMode =3
+                    Left =9555
+                    Top =4830
+                    Width =1680
+                    Height =300
                     TabIndex =18
                     Name ="txtNetPay"
                     ControlSource ="=GetYTDValue([EmployeeId],[CheckDate],\"NetPay\")"
                     Format ="$#,##0.00;-$#,##0.00"
                     GroupTable =9
 
-                    LayoutCachedLeft =9548
-                    LayoutCachedTop =4778
-                    LayoutCachedWidth =10883
-                    LayoutCachedHeight =5071
+                    LayoutCachedLeft =9555
+                    LayoutCachedTop =4830
+                    LayoutCachedWidth =11235
+                    LayoutCachedHeight =5130
                     RowStart =6
                     RowEnd =6
                     ColumnStart =2
@@ -2090,12 +2134,4 @@ Option Compare Database
 Private Sub Report_Close()
     On Error Resume Next
     Forms("00-Report-Center").Visible = True
-End Sub
-
-Private Sub Report_Open(Cancel As Integer)
-
-On Error Resume Next
-    
-    cLogger.LogIt "Entering [" & Me.Name & "]", EventType.Info
-    
 End Sub

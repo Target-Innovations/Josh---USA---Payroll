@@ -16,7 +16,7 @@ Private Const DB_UPDATE As String = "UPDATE"
 
 Private oDistribution As New cDistribution
 
-Public ID As Long
+Public Id As Long
 Public AcquiredDate As Date
 Public DistributedDate As Date
 Public SameMonthSold As Boolean
@@ -104,7 +104,7 @@ End Property
 
 Public Sub ClearFields()
 
-    ID = 0
+    Id = 0
     AcquiredDate = vbNull
     DistributedDate = vbNull
     SameMonthSold = 0
@@ -274,7 +274,7 @@ On Error GoTo ErrorHandler
             
             rs.MoveFirst
             
-            ID = Nz(rs("Id"))
+            Id = Nz(rs("Id"))
             
             AcquiredDate = Nz(rs("AcquiredDate"))
             DistributedDate = Nz(rs("DistributedDate"))
@@ -334,7 +334,7 @@ Public Function Add() As Boolean
 
 On Error GoTo ErrorHandler
 
-    Dim sql As String
+    Dim Sql As String
     Dim rs As DAO.Recordset
     
     Set rs = CurrentDb.OpenRecordset("BoxInventory")
@@ -407,13 +407,13 @@ Public Function Search(WhereClause As String) As Recordset
     Err.Raise "50001", CLASS_NAME & ".Search", "Method Not Implemented."
 End Function
 
-Public Function GetInfoById(ID As Long) As Recordset
+Public Function GetInfoById(Id As Long) As Recordset
 
 On Error GoTo ErrorHandler
 
     Dim rs As DAO.Recordset
 
-    Set rs = CurrentDb().OpenRecordset("Select * From [BoxInventory] Where ID = " & ID, dbOpenDynaset)
+    Set rs = CurrentDb().OpenRecordset("Select * From [BoxInventory] Where ID = " & Id, dbOpenDynaset)
     
     Set GetInfoById = rs
 
@@ -453,13 +453,13 @@ Public Function GetGameInfo(OrderFormId As Integer) As DAO.Recordset
 On Error GoTo ErrorHandler
 
     Dim rs As DAO.Recordset
-    Dim sql As String
+    Dim Sql As String
     
-    sql = sql & "SELECT OrderForms.Id AS OrderFormID, OrderForms.GameName, GameStyles.* "
-    sql = sql & "  FROM GameStyles INNER JOIN OrderForms ON GameStyles.Id = OrderForms.GameStyleId"
-    sql = sql & " Where OrderForms.Id = " & OrderFormId
+    Sql = Sql & "SELECT OrderForms.Id AS OrderFormID, OrderForms.GameName, GameStyles.* "
+    Sql = Sql & "  FROM GameStyles INNER JOIN OrderForms ON GameStyles.Id = OrderForms.GameStyleId"
+    Sql = Sql & " Where OrderForms.Id = " & OrderFormId
 
-    Set rs = CurrentDb().OpenRecordset(sql, dbOpenDynaset)
+    Set rs = CurrentDb().OpenRecordset(Sql, dbOpenDynaset)
 
     Set GetGameInfo = rs
 
@@ -499,9 +499,9 @@ ErrorHandler:
      Err.Raise Err.Number, CLASS_NAME & ".GetGameInfo", Err.Description
     
 End Function
-Function GetTotalOwed(ID As Long) As Double
+Function GetTotalOwed(Id As Long) As Double
 
-    GetTotalOwed = Nz(DSum("IdealProfit", "TicketDeliveryOrderItems", "DistributionOrderId = " & ID & ""), 0)
+    GetTotalOwed = Nz(DSum("IdealProfit", "TicketDeliveryOrderItems", "DistributionOrderId = " & Id & ""), 0)
     
 End Function
 

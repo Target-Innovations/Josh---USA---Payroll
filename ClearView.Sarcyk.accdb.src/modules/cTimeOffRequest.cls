@@ -14,7 +14,7 @@ Private Const CLASS_NAME = "cTimeOffRequest"
 Private Const WO_INSERT As String = "INSERT"
 Private Const WO_UPDATE As String = "UPDATE"
 
-Public ID As Integer
+Public Id As Integer
 Public EmployeeID As String
 Public NumberOfDays As String
 Public Reason As Integer
@@ -61,7 +61,7 @@ End Property
 
 Public Sub ClearFields()
 
-    ID = vbNull
+    Id = vbNull
     EmployeeID = vbNull
     NumberOfDays = vbNull
     Reason = vbNull
@@ -133,7 +133,7 @@ On Error GoTo ErrorHandler
             
             rs.MoveFirst
             
-            ID = Nz(rs("Id"))
+            Id = Nz(rs("Id"))
             
             EmployeeID = Nz(rs("EmployeeID"))
             NumberOfDays = Nz(rs("NumberOfDays"))
@@ -182,13 +182,13 @@ Public Function Search(WhereClause As String) As Recordset
     Err.Raise "50001", CLASS_NAME & ".Search", "Method Not Implemented."
 End Function
 
-Public Function GetTimeOffLeft(ID As String) As Integer
+Public Function GetTimeOffLeft(Id As String) As Integer
 
 On Error GoTo ErrorHandler
 
     Dim DrDaysLeft As Integer
     
-    DrDaysLeft = Nz(DLookup("TimeOffLeft", "Employees", "Id = " & ID))
+    DrDaysLeft = Nz(DLookup("TimeOffLeft", "Employees", "Id = " & Id))
     
     GetTimeOffLeft = DrDaysLeft
 
@@ -236,13 +236,13 @@ Public Function NotifyTimeOff() As Boolean
     Err.Raise "50001", CLASS_NAME & ".NotifyTimeOff", "Method Not Implemented."
 End Function
 
-Public Function GetTimeOffById(ID As String) As DAO.Recordset
+Public Function GetTimeOffById(Id As String) As DAO.Recordset
 
 On Error GoTo ErrorHandler
 
     Dim rs As DAO.Recordset
 
-    Set rs = CurrentDb().OpenRecordset("Select * From [TimeOffRequests] Where Id = " & ID, dbOpenDynaset)
+    Set rs = CurrentDb().OpenRecordset("Select * From [TimeOffRequests] Where Id = " & Id, dbOpenDynaset)
     Me.PopulateFields rs
     
     Set GetTimeOffById = rs

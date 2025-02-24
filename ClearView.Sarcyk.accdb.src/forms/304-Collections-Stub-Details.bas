@@ -18,9 +18,10 @@ Begin Form
     Width =16459
     DatasheetFontHeight =11
     ItemSuffix =611
-    Right =14843
+    Right =16335
     Bottom =10515
     TimerInterval =125
+    Filter ="[ID]=144"
     RecSrcDt = Begin
         0xa44b12c6294ee640
     End
@@ -530,7 +531,7 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =215
-                    AccessKey =83
+                    AccessKey =86
                     TextFontFamily =34
                     Left =3233
                     Top =1748
@@ -540,12 +541,12 @@ Begin Form
                     TabIndex =8
                     ForeColor =0
                     Name ="cmdSave"
-                    Caption =" &Save"
+                    Caption =" Sa&ve"
                     OnClick ="[Event Procedure]"
                     FontName ="Segoe UI"
                     Tag ="SaveAndNew~DefaultControl=First Name"
                     ControlTipText ="Save record"
-                    UnicodeAccessKey =83
+                    UnicodeAccessKey =118
 
                     CursorOnHover =1
                     LayoutCachedLeft =3233
@@ -560,7 +561,7 @@ Begin Form
                     BackColor =16777215
                     BackThemeColorIndex =-1
                     BackTint =100.0
-                    BorderColor =3259885
+                    BorderColor =8544277
                     BorderTint =100.0
                     ThemeFontIndex =-1
                     HoverColor =16777215
@@ -653,7 +654,7 @@ Begin Form
                     BackColor =16777215
                     BackThemeColorIndex =-1
                     BackTint =100.0
-                    BorderColor =3259885
+                    BorderColor =8544277
                     BorderTint =100.0
                     ThemeFontIndex =-1
                     HoverColor =16777215
@@ -704,7 +705,7 @@ Begin Form
                     BackColor =16777215
                     BackThemeColorIndex =-1
                     BackTint =100.0
-                    BorderColor =3259885
+                    BorderColor =8544277
                     BorderTint =100.0
                     ThemeFontIndex =-1
                     HoverColor =16777215
@@ -787,7 +788,7 @@ Begin Form
                     BackColor =16777215
                     BackThemeColorIndex =-1
                     BackTint =100.0
-                    BorderColor =3259885
+                    BorderColor =8544277
                     BorderTint =100.0
                     ThemeFontIndex =-1
                     HoverColor =16777215
@@ -1075,7 +1076,7 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =215
-                    AccessKey =80
+                    AccessKey =73
                     TextFontFamily =34
                     Left =7766
                     Top =1748
@@ -1084,11 +1085,11 @@ Begin Form
                     TabIndex =11
                     ForeColor =0
                     Name ="cmdSplitIt"
-                    Caption ="S&plit It"
+                    Caption ="Spl&it It"
                     OnClick ="[Event Procedure]"
                     FontName ="Segoe UI"
                     Tag ="Close"
-                    UnicodeAccessKey =112
+                    UnicodeAccessKey =105
 
                     CursorOnHover =1
                     LayoutCachedLeft =7766
@@ -1105,7 +1106,7 @@ Begin Form
                     BackColor =16777215
                     BackThemeColorIndex =-1
                     BackTint =100.0
-                    BorderColor =3259885
+                    BorderColor =8544277
                     BorderTint =100.0
                     ThemeFontIndex =-1
                     HoverColor =16777215
@@ -2506,7 +2507,7 @@ Begin Form
                     BackColor =16777215
                     BackThemeColorIndex =-1
                     BackTint =100.0
-                    BorderColor =3259885
+                    BorderColor =8544277
                     BorderTint =100.0
                     ThemeFontIndex =-1
                     HoverColor =16777215
@@ -2639,7 +2640,7 @@ Begin Form
                 Begin Tab
                     OverlapFlags =85
                     TextFontFamily =34
-                    Left =188
+                    Left =300
                     Width =15940
                     Height =8448
                     FontSize =10
@@ -2647,8 +2648,8 @@ Begin Form
                     FontName ="Segoe UI"
                     GridlineColor =0
 
-                    LayoutCachedLeft =188
-                    LayoutCachedWidth =16128
+                    LayoutCachedLeft =300
+                    LayoutCachedWidth =16240
                     LayoutCachedHeight =8448
                     ThemeFontIndex =-1
                     GridlineThemeColorIndex =-1
@@ -2674,15 +2675,15 @@ Begin Form
                     Begin
                         Begin Page
                             OverlapFlags =87
-                            Left =225
+                            Left =337
                             Top =383
                             Width =15863
                             Height =8025
                             Name ="Collections_Page"
                             Caption ="|  Collection Stub   |"
-                            LayoutCachedLeft =225
+                            LayoutCachedLeft =337
                             LayoutCachedTop =383
-                            LayoutCachedWidth =16088
+                            LayoutCachedWidth =16200
                             LayoutCachedHeight =8408
                             WebImagePaddingLeft =4
                             WebImagePaddingTop =4
@@ -2693,16 +2694,16 @@ Begin Form
                                     SpecialEffect =0
                                     BackStyle =1
                                     OverlapFlags =223
-                                    Left =398
+                                    Left =510
                                     Top =638
                                     Width =15665
                                     Height =661
                                     BorderColor =8355711
                                     Name ="Box911"
                                     GridlineColor =0
-                                    LayoutCachedLeft =398
+                                    LayoutCachedLeft =510
                                     LayoutCachedTop =638
-                                    LayoutCachedWidth =16063
+                                    LayoutCachedWidth =16175
                                     LayoutCachedHeight =1299
                                     BackThemeColorIndex =8
                                     BackTint =20.0
@@ -2714,7 +2715,7 @@ Begin Form
                                     OverlapFlags =215
                                     TextAlign =2
                                     IMESentenceMode =3
-                                    Left =893
+                                    Left =1005
                                     Top =803
                                     Width =765
                                     Height =285
@@ -2723,9 +2724,9 @@ Begin Form
                                     GroupTable =2
                                     BottomPadding =150
 
-                                    LayoutCachedLeft =893
+                                    LayoutCachedLeft =1005
                                     LayoutCachedTop =803
-                                    LayoutCachedWidth =1658
+                                    LayoutCachedWidth =1770
                                     LayoutCachedHeight =1088
                                     ColumnStart =1
                                     ColumnEnd =1
@@ -2735,7 +2736,7 @@ Begin Form
                                         Begin Label
                                             OverlapFlags =215
                                             TextAlign =1
-                                            Left =540
+                                            Left =653
                                             Top =803
                                             Width =285
                                             Height =285
@@ -2743,9 +2744,9 @@ Begin Form
                                             Caption ="Id"
                                             GroupTable =2
                                             BottomPadding =150
-                                            LayoutCachedLeft =540
+                                            LayoutCachedLeft =653
                                             LayoutCachedTop =803
-                                            LayoutCachedWidth =825
+                                            LayoutCachedWidth =938
                                             LayoutCachedHeight =1088
                                             LayoutGroup =1
                                             GroupTable =2
@@ -2757,7 +2758,7 @@ Begin Form
                                     OverlapFlags =215
                                     TextAlign =2
                                     IMESentenceMode =3
-                                    Left =2505
+                                    Left =2618
                                     Top =803
                                     Width =1478
                                     Height =285
@@ -2768,9 +2769,9 @@ Begin Form
                                     GroupTable =2
                                     BottomPadding =150
 
-                                    LayoutCachedLeft =2505
+                                    LayoutCachedLeft =2618
                                     LayoutCachedTop =803
-                                    LayoutCachedWidth =3983
+                                    LayoutCachedWidth =4096
                                     LayoutCachedHeight =1088
                                     ColumnStart =3
                                     ColumnEnd =3
@@ -2780,7 +2781,7 @@ Begin Form
                                         Begin Label
                                             OverlapFlags =215
                                             TextAlign =1
-                                            Left =1718
+                                            Left =1830
                                             Top =803
                                             Width =720
                                             Height =285
@@ -2788,9 +2789,9 @@ Begin Form
                                             Caption ="Date:"
                                             GroupTable =2
                                             BottomPadding =150
-                                            LayoutCachedLeft =1718
+                                            LayoutCachedLeft =1830
                                             LayoutCachedTop =803
-                                            LayoutCachedWidth =2438
+                                            LayoutCachedWidth =2550
                                             LayoutCachedHeight =1088
                                             ColumnStart =2
                                             ColumnEnd =2
@@ -2806,7 +2807,7 @@ Begin Form
                                     TextAlign =1
                                     IMESentenceMode =3
                                     ColumnCount =2
-                                    Left =6045
+                                    Left =6158
                                     Top =803
                                     Width =4095
                                     Height =285
@@ -2823,9 +2824,9 @@ Begin Form
                                     BottomPadding =150
                                     AllowValueListEdits =0
 
-                                    LayoutCachedLeft =6045
+                                    LayoutCachedLeft =6158
                                     LayoutCachedTop =803
-                                    LayoutCachedWidth =10140
+                                    LayoutCachedWidth =10253
                                     LayoutCachedHeight =1088
                                     ColumnStart =5
                                     ColumnEnd =5
@@ -2835,7 +2836,7 @@ Begin Form
                                         Begin Label
                                             OverlapFlags =215
                                             TextAlign =3
-                                            Left =4043
+                                            Left =4155
                                             Top =803
                                             Width =1935
                                             Height =285
@@ -2843,9 +2844,9 @@ Begin Form
                                             Caption ="Employee:"
                                             GroupTable =2
                                             BottomPadding =150
-                                            LayoutCachedLeft =4043
+                                            LayoutCachedLeft =4155
                                             LayoutCachedTop =803
-                                            LayoutCachedWidth =5978
+                                            LayoutCachedWidth =6090
                                             LayoutCachedHeight =1088
                                             ColumnStart =4
                                             ColumnEnd =4
@@ -2862,7 +2863,7 @@ Begin Form
                                     IMESentenceMode =3
                                     ColumnCount =4
                                     ListWidth =4536
-                                    Left =12203
+                                    Left =12315
                                     Top =803
                                     Width =3720
                                     Height =285
@@ -2882,9 +2883,9 @@ Begin Form
                                     BottomPadding =150
                                     AllowValueListEdits =0
 
-                                    LayoutCachedLeft =12203
+                                    LayoutCachedLeft =12315
                                     LayoutCachedTop =803
-                                    LayoutCachedWidth =15923
+                                    LayoutCachedWidth =16035
                                     LayoutCachedHeight =1088
                                     ColumnStart =7
                                     ColumnEnd =7
@@ -2894,7 +2895,7 @@ Begin Form
                                         Begin Label
                                             OverlapFlags =215
                                             TextAlign =3
-                                            Left =10200
+                                            Left =10313
                                             Top =803
                                             Width =1935
                                             Height =285
@@ -2902,9 +2903,9 @@ Begin Form
                                             Caption ="Location:"
                                             GroupTable =2
                                             BottomPadding =150
-                                            LayoutCachedLeft =10200
+                                            LayoutCachedLeft =10313
                                             LayoutCachedTop =803
-                                            LayoutCachedWidth =12135
+                                            LayoutCachedWidth =12248
                                             LayoutCachedHeight =1088
                                             ColumnStart =6
                                             ColumnEnd =6
@@ -2915,7 +2916,7 @@ Begin Form
                                 End
                                 Begin Subform
                                     OverlapFlags =247
-                                    Left =540
+                                    Left =652
                                     Top =1635
                                     Width =15204
                                     Height =5837
@@ -2925,23 +2926,23 @@ Begin Form
                                     LinkChildFields ="CollectionStubId"
                                     LinkMasterFields ="Id"
 
-                                    LayoutCachedLeft =540
+                                    LayoutCachedLeft =652
                                     LayoutCachedTop =1635
-                                    LayoutCachedWidth =15744
+                                    LayoutCachedWidth =15856
                                     LayoutCachedHeight =7472
                                     Begin
                                         Begin Label
                                             OverlapFlags =223
                                             TextAlign =2
-                                            Left =540
+                                            Left =652
                                             Top =1350
                                             Width =15173
                                             Height =323
                                             Name ="Label390"
                                             Caption ="Income Collected"
-                                            LayoutCachedLeft =540
+                                            LayoutCachedLeft =652
                                             LayoutCachedTop =1350
-                                            LayoutCachedWidth =15713
+                                            LayoutCachedWidth =15825
                                             LayoutCachedHeight =1673
                                             ForeThemeColorIndex =2
                                             ForeTint =75.0
@@ -2952,7 +2953,7 @@ Begin Form
                                     OverlapFlags =215
                                     AccessKey =79
                                     TextFontFamily =34
-                                    Left =13914
+                                    Left =14026
                                     Top =7559
                                     Width =1770
                                     Height =405
@@ -2967,9 +2968,9 @@ Begin Form
                                     UnicodeAccessKey =111
 
                                     CursorOnHover =1
-                                    LayoutCachedLeft =13914
+                                    LayoutCachedLeft =14026
                                     LayoutCachedTop =7559
-                                    LayoutCachedWidth =15684
+                                    LayoutCachedWidth =15796
                                     LayoutCachedHeight =7964
                                     PictureCaptionArrangement =1
                                     ColumnStart =2
@@ -2981,7 +2982,7 @@ Begin Form
                                     BackColor =13816815
                                     BackThemeColorIndex =-1
                                     BackTint =100.0
-                                    BorderColor =3259885
+                                    BorderColor =8544277
                                     BorderTint =100.0
                                     ThemeFontIndex =-1
                                     HoverColor =13816815
@@ -3005,15 +3006,15 @@ Begin Form
                         End
                         Begin Page
                             OverlapFlags =247
-                            Left =225
+                            Left =337
                             Top =383
                             Width =15863
                             Height =8025
                             Name ="Executive_page"
                             Caption ="|  Executive Summary  |"
-                            LayoutCachedLeft =225
+                            LayoutCachedLeft =337
                             LayoutCachedTop =383
-                            LayoutCachedWidth =16088
+                            LayoutCachedWidth =16200
                             LayoutCachedHeight =8408
                             WebImagePaddingLeft =4
                             WebImagePaddingTop =4
@@ -3024,7 +3025,7 @@ Begin Form
                                     OverlapFlags =247
                                     AccessKey =83
                                     TextFontFamily =34
-                                    Left =9705
+                                    Left =9817
                                     Top =1365
                                     Height =405
                                     FontSize =10
@@ -3037,9 +3038,9 @@ Begin Form
                                     UnicodeAccessKey =83
 
                                     CursorOnHover =1
-                                    LayoutCachedLeft =9705
+                                    LayoutCachedLeft =9817
                                     LayoutCachedTop =1365
-                                    LayoutCachedWidth =11145
+                                    LayoutCachedWidth =11257
                                     LayoutCachedHeight =1770
                                     PictureCaptionArrangement =1
                                     ColumnStart =2
@@ -3051,7 +3052,7 @@ Begin Form
                                     BackColor =16777215
                                     BackThemeColorIndex =-1
                                     BackTint =100.0
-                                    BorderColor =3259885
+                                    BorderColor =8544277
                                     BorderTint =100.0
                                     ThemeFontIndex =-1
                                     HoverColor =16777215
@@ -3072,7 +3073,7 @@ Begin Form
                                 Begin Subform
                                     OverlapFlags =247
                                     OldBorderStyle =0
-                                    Left =2503
+                                    Left =2615
                                     Top =1937
                                     Width =10277
                                     Height =3123
@@ -3083,9 +3084,9 @@ Begin Form
                                     LinkMasterFields ="Id"
                                     EventProcPrefix ="Ctl308_Receipt"
 
-                                    LayoutCachedLeft =2503
+                                    LayoutCachedLeft =2615
                                     LayoutCachedTop =1937
-                                    LayoutCachedWidth =12780
+                                    LayoutCachedWidth =12892
                                     LayoutCachedHeight =5060
                                     BorderThemeColorIndex =0
                                     BorderTint =50.0
@@ -3095,7 +3096,7 @@ Begin Form
                                     OverlapFlags =247
                                     AccessKey =80
                                     TextFontFamily =34
-                                    Left =11264
+                                    Left =11376
                                     Top =1365
                                     Height =405
                                     FontSize =10
@@ -3109,9 +3110,9 @@ Begin Form
                                     UnicodeAccessKey =80
 
                                     CursorOnHover =1
-                                    LayoutCachedLeft =11264
+                                    LayoutCachedLeft =11376
                                     LayoutCachedTop =1365
-                                    LayoutCachedWidth =12704
+                                    LayoutCachedWidth =12816
                                     LayoutCachedHeight =1770
                                     PictureCaptionArrangement =1
                                     ColumnStart =2
@@ -3123,7 +3124,7 @@ Begin Form
                                     BackColor =16777215
                                     BackThemeColorIndex =-1
                                     BackTint =100.0
-                                    BorderColor =3259885
+                                    BorderColor =8544277
                                     BorderTint =100.0
                                     ThemeFontIndex =-1
                                     HoverColor =16777215
@@ -3145,15 +3146,15 @@ Begin Form
                         End
                         Begin Page
                             OverlapFlags =247
-                            Left =225
+                            Left =337
                             Top =383
                             Width =15863
                             Height =8025
                             Name ="Split_Page"
                             Caption ="|   Splits   |"
-                            LayoutCachedLeft =225
+                            LayoutCachedLeft =337
                             LayoutCachedTop =383
-                            LayoutCachedWidth =16088
+                            LayoutCachedWidth =16200
                             LayoutCachedHeight =8408
                             WebImagePaddingLeft =4
                             WebImagePaddingTop =4
@@ -3164,16 +3165,16 @@ Begin Form
                                     SpecialEffect =0
                                     BackStyle =1
                                     OverlapFlags =255
-                                    Left =305
+                                    Left =417
                                     Top =628
                                     Width =15665
                                     Height =7141
                                     BorderColor =8355711
                                     Name ="Box391"
                                     GridlineColor =0
-                                    LayoutCachedLeft =305
+                                    LayoutCachedLeft =417
                                     LayoutCachedTop =628
-                                    LayoutCachedWidth =15970
+                                    LayoutCachedWidth =16082
                                     LayoutCachedHeight =7769
                                     BackThemeColorIndex =4
                                     BackTint =40.0
@@ -3183,7 +3184,7 @@ Begin Form
                                 End
                                 Begin Subform
                                     OverlapFlags =247
-                                    Left =447
+                                    Left =559
                                     Top =988
                                     Width =15241
                                     Height =6099
@@ -3192,23 +3193,23 @@ Begin Form
                                     LinkChildFields ="CollectionStubId"
                                     LinkMasterFields ="Id"
 
-                                    LayoutCachedLeft =447
+                                    LayoutCachedLeft =559
                                     LayoutCachedTop =988
-                                    LayoutCachedWidth =15688
+                                    LayoutCachedWidth =15800
                                     LayoutCachedHeight =7087
                                     Begin
                                         Begin Label
                                             OverlapFlags =255
                                             TextAlign =2
-                                            Left =447
+                                            Left =559
                                             Top =704
                                             Width =15203
                                             Height =337
                                             Name ="Label392"
                                             Caption ="Splitted Collections"
-                                            LayoutCachedLeft =447
+                                            LayoutCachedLeft =559
                                             LayoutCachedTop =704
-                                            LayoutCachedWidth =15650
+                                            LayoutCachedWidth =15762
                                             LayoutCachedHeight =1041
                                             ForeThemeColorIndex =2
                                             ForeTint =75.0
@@ -3219,7 +3220,7 @@ Begin Form
                                     OverlapFlags =247
                                     AccessKey =69
                                     TextFontFamily =34
-                                    Left =14145
+                                    Left =14257
                                     Top =7253
                                     Height =405
                                     FontSize =10
@@ -3233,9 +3234,9 @@ Begin Form
                                     UnicodeAccessKey =101
 
                                     CursorOnHover =1
-                                    LayoutCachedLeft =14145
+                                    LayoutCachedLeft =14257
                                     LayoutCachedTop =7253
-                                    LayoutCachedWidth =15585
+                                    LayoutCachedWidth =15697
                                     LayoutCachedHeight =7658
                                     PictureCaptionArrangement =1
                                     ColumnStart =2
@@ -3247,7 +3248,7 @@ Begin Form
                                     BackColor =13816815
                                     BackThemeColorIndex =-1
                                     BackTint =100.0
-                                    BorderColor =3259885
+                                    BorderColor =8544277
                                     BorderTint =100.0
                                     ThemeFontIndex =-1
                                     HoverColor =13816815
@@ -3271,15 +3272,15 @@ Begin Form
                         End
                         Begin Page
                             OverlapFlags =247
-                            Left =225
+                            Left =337
                             Top =383
                             Width =15863
                             Height =8025
                             Name ="Executive2_page"
                             Caption ="|   More...   |"
-                            LayoutCachedLeft =225
+                            LayoutCachedLeft =337
                             LayoutCachedTop =383
-                            LayoutCachedWidth =16088
+                            LayoutCachedWidth =16200
                             LayoutCachedHeight =8408
                             WebImagePaddingLeft =4
                             WebImagePaddingTop =4
@@ -3289,7 +3290,7 @@ Begin Form
                                 Begin Subform
                                     OverlapFlags =247
                                     OldBorderStyle =0
-                                    Left =2550
+                                    Left =2662
                                     Top =781
                                     Width =10478
                                     Height =7420
@@ -3299,9 +3300,9 @@ Begin Form
                                     LinkMasterFields ="Id"
                                     EventProcPrefix ="Ctl308_Receipt_v1"
 
-                                    LayoutCachedLeft =2550
+                                    LayoutCachedLeft =2662
                                     LayoutCachedTop =781
-                                    LayoutCachedWidth =13028
+                                    LayoutCachedWidth =13140
                                     LayoutCachedHeight =8201
                                 End
                             End
@@ -3310,10 +3311,10 @@ Begin Form
                 End
                 Begin ComboBox
                     RowSourceTypeInt =1
-                    OverlapFlags =247
+                    OverlapFlags =215
                     IMESentenceMode =3
-                    Left =11520
-                    Top =120
+                    Left =14640
+                    Top =60
                     Height =285
                     TabIndex =1
                     Name ="Status"
@@ -3321,10 +3322,10 @@ Begin Form
                     RowSourceType ="Value List"
                     RowSource ="Collected;Splitted;Approved;Denied"
 
-                    LayoutCachedLeft =11520
-                    LayoutCachedTop =120
-                    LayoutCachedWidth =12960
-                    LayoutCachedHeight =405
+                    LayoutCachedLeft =14640
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =16080
+                    LayoutCachedHeight =345
                 End
             End
         End
@@ -3358,7 +3359,7 @@ Private Sub cboLocationId_Click()
         Exit Sub
     End If
     
-    If Not oStub.HasCollections(Me.ID) Then
+    If Not oStub.HasCollections(Me.Id) Then
         oStub.GetMachineListForCollection Me.txtID, Me.cboLocationId
         Me.Status = "Collected"
         Me.CollectionsSb.Requery
@@ -3375,7 +3376,7 @@ Private Sub cmdApprove_Click()
         Exit Sub
     End If
 
-    oCollection.Approve Me.ID
+    oCollection.Approve Me.Id
     Me.Status = "Approved"
     
     MsgBox "This Collection has been approve and locked.", vbInformation
@@ -3418,7 +3419,7 @@ Private Sub cmdClearSplit_Click()
     If MsgBox("Are you sure you want to clear the split for this collection?", vbExclamation + vbYesNo) = vbYes Then
         
         If oStub.ClearSplit(Me.txtID) Then
-            oCollection.UpdatePettyCash Me.EmployeeID, Me.LocationId, Me.CollectionDate, Me.ID
+            oCollection.UpdatePettyCash Me.EmployeeID, Me.LocationId, Me.CollectionDate, Me.Id
             Me.Status = "Collected"
         End If
         
@@ -3429,22 +3430,24 @@ Private Sub cmdClearSplit_Click()
 End Sub
 
 Private Sub cmdPrint_Click()
+    
+    DoCmd.OpenReport "306-Detailed-Receipt", acViewPreview, , "CollectionStubId = " & Me.Id, acDialog
+    ' DoCmd.OpenReport "306-Detailed-Receipt", acViewPreview, , "CollectionStubId In (" & Me.Id & ", 123, 139, 144)", acDialog
 
-    DoCmd.OpenReport "306-Detailed-Receipt", acViewReport, , "CollectionStubId = " & Me.ID, acDialog
 
 End Sub
 
 Private Sub cmdSendReceipt_Click()
-    oStub.SendReceipt Me.ID, Nz(Me.cboLocationId.Column(4))
+    oStub.SendReceipt Me.Id, Nz(Me.cboLocationId.Column(4))
 End Sub
 
 Private Sub Form_Close()
 
  On Error GoTo ErrorHandler
     
-    If Not IsNullOrEmpty(Me.ID) And IsNullOrEmpty(Me.cboLocationId) Then
+    If Not IsNullOrEmpty(Me.Id) And IsNullOrEmpty(Me.cboLocationId) Then
         Me.Undo
-        CurrentDb.Execute "Delete * from [Collection-Stub] where id = " & Me.ID
+        CurrentDb.Execute "Delete * from [Collection-Stub] where id = " & Me.Id
     End If
     
      ' The Dirty property is True if the record has been changed.
@@ -3488,10 +3491,10 @@ Private Sub cmdSplitIt_Click()
 '        Exit Sub
 '    End If
     
-    If Not oStub.HasSplits(Me.ID) Then
+    If Not oStub.HasSplits(Me.Id) Then
     
-        oCollection.SplitIt Me.ID
-        oCollection.UpdatePettyCash Me.EmployeeID, Me.LocationId, Me.CollectionDate, Me.ID
+        oCollection.SplitIt Me.Id
+        oCollection.UpdatePettyCash Me.EmployeeID, Me.LocationId, Me.CollectionDate, Me.Id
         
         Me.Status = "Splitted"
         
@@ -3523,13 +3526,13 @@ Sub SetFormState()
     Me.txtDisplayLocation = Nz(Me.cboLocationId.Column(1))
     'Me.txtLocationLabel = IIf(Me.cboEmployeeId.ListIndex <> -1, Nz(Me.cboLocationId.Column(1)), "To Location ($):")
     
-    If IsNull(Me.ID) Then
+    If IsNull(Me.Id) Then
         
         Me.txtCashToLocation = vbNullString
         Me.txtCashToUnionVending = 0
         ' Me.txtTotalServiceFee = 0
         Me.txtCollectionDate = Date
-        Me.cboEmployeeId = cSysSettings.oUser.ID
+        Me.cboEmployeeId = cSysSettings.oUser.Id
     
         Me.Form![308-Receipt].Form.FilterOn = False
         Me.Form![308-Receipt].Form.Filter = "1=0"
@@ -3539,25 +3542,25 @@ Sub SetFormState()
     Else
     
         Me.Form![308-Receipt].Form.FilterOn = False
-        Me.Form![308-Receipt].Form.Filter = "Id = " & Me.ID
+        Me.Form![308-Receipt].Form.Filter = "Id = " & Me.Id
         Me.Form![308-Receipt].Form.FilterOn = True
         Me.Form![308-Receipt].Form.Requery
         
         
         Me.Form![308-Receipt-v1].Form.FilterOn = False
-        Me.Form![308-Receipt-v1].Form.Filter = "Id = " & Me.ID
+        Me.Form![308-Receipt-v1].Form.Filter = "Id = " & Me.Id
         Me.Form![308-Receipt-v1].Form.FilterOn = True
         Me.Form![308-Receipt-v1].Form.Requery
         
         
-        oStub.GetStubInfoById Me.ID
+        oStub.GetStubInfoById Me.Id
 '
         Me.txtCashToLocation = oStub.CashToLocation
         Me.txtCashToUnionVending = oStub.CashToUnionVending
     
     End If
     
-    Me.cboLocationId.Enabled = Not oStub.HasCollections(Me.ID)
+    Me.cboLocationId.Enabled = Not oStub.HasCollections(Me.Id)
     
     Me.cmdSendReceipt.Enabled = (Me.Status = "Splitted") Or (Me.Status = "Approved")
 
@@ -3591,7 +3594,7 @@ Private Sub cmdDelete_Click()
         
         oCollection.ResetPettyCash Nz(Me.EmployeeID), Nz(Me.LocationId), Nz(Me.CollectionDate)
 
-        DoCmd.RunSQL "Delete * from [Collection-Stub] Where Id = " & Nz(Me.ID, 0)
+        DoCmd.RunSQL "Delete * from [Collection-Stub] Where Id = " & Nz(Me.Id, 0)
         
         DoCmd.SetWarnings True
         

@@ -16,11 +16,11 @@ Begin Form
     GridY =10
     Width =9405
     DatasheetFontHeight =11
-    ItemSuffix =111
-    Left =615
+    ItemSuffix =118
+    Left =3570
     Top =1530
-    Right =16013
-    Bottom =12045
+    Right =13230
+    Bottom =8723
     Filter ="CollectionId = 214"
     RecSrcDt = Begin
         0x20fbd0beeb3ce640
@@ -148,17 +148,17 @@ Begin Form
                     OldBorderStyle =1
                     OverlapFlags =85
                     TextAlign =2
-                    Left =338
+                    Left =226
                     Top =510
-                    Width =3540
+                    Width =4193
                     Height =488
                     FontSize =20
                     ForeColor =-2147483616
                     Name ="Label10"
                     Caption ="Custom Fee Details"
-                    LayoutCachedLeft =338
+                    LayoutCachedLeft =226
                     LayoutCachedTop =510
-                    LayoutCachedWidth =3878
+                    LayoutCachedWidth =4419
                     LayoutCachedHeight =998
                     BorderThemeColorIndex =1
                     BorderTint =100.0
@@ -188,7 +188,7 @@ Begin Form
                     TextAlign =2
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =6668
+                    Left =6780
                     Top =398
                     Width =2295
                     Height =315
@@ -198,9 +198,9 @@ Begin Form
                     ControlSource ="OperatorRemits"
                     GroupTable =4
 
-                    LayoutCachedLeft =6668
+                    LayoutCachedLeft =6780
                     LayoutCachedTop =398
-                    LayoutCachedWidth =8963
+                    LayoutCachedWidth =9075
                     LayoutCachedHeight =713
                     ColumnStart =1
                     ColumnEnd =1
@@ -214,7 +214,7 @@ Begin Form
                         Begin Label
                             OverlapFlags =215
                             TextAlign =3
-                            Left =4763
+                            Left =4875
                             Top =398
                             Width =1845
                             Height =315
@@ -223,9 +223,9 @@ Begin Form
                             Name ="Label51"
                             Caption ="Operator Remits:"
                             GroupTable =4
-                            LayoutCachedLeft =4763
+                            LayoutCachedLeft =4875
                             LayoutCachedTop =398
-                            LayoutCachedWidth =6608
+                            LayoutCachedWidth =6720
                             LayoutCachedHeight =713
                             LayoutGroup =2
                             ForeThemeColorIndex =-1
@@ -243,7 +243,7 @@ Begin Form
                     TextAlign =2
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =6668
+                    Left =6780
                     Top =773
                     Width =2295
                     Height =315
@@ -254,9 +254,9 @@ Begin Form
                     ControlSource ="=0"
                     GroupTable =4
 
-                    LayoutCachedLeft =6668
+                    LayoutCachedLeft =6780
                     LayoutCachedTop =773
-                    LayoutCachedWidth =8963
+                    LayoutCachedWidth =9075
                     LayoutCachedHeight =1088
                     RowStart =1
                     RowEnd =1
@@ -273,7 +273,7 @@ Begin Form
                         Begin Label
                             OverlapFlags =215
                             TextAlign =3
-                            Left =4763
+                            Left =4875
                             Top =773
                             Width =1845
                             Height =315
@@ -282,9 +282,9 @@ Begin Form
                             Name ="Label389"
                             Caption ="Location Remits:"
                             GroupTable =4
-                            LayoutCachedLeft =4763
+                            LayoutCachedLeft =4875
                             LayoutCachedTop =773
-                            LayoutCachedWidth =6608
+                            LayoutCachedWidth =6720
                             LayoutCachedHeight =1088
                             RowStart =1
                             RowEnd =1
@@ -366,7 +366,7 @@ Begin Form
                     BackColor =16777215
                     BackThemeColorIndex =-1
                     BackTint =100.0
-                    BorderColor =3259885
+                    BorderColor =8544277
                     BorderTint =100.0
                     ThemeFontIndex =-1
                     HoverColor =16777215
@@ -401,14 +401,14 @@ Begin Form
                     Left =113
                     Top =56
                     Width =9064
-                    Height =4816
+                    Height =4869
                     BorderColor =16777215
                     Name ="Box911"
                     GridlineColor =0
                     LayoutCachedLeft =113
                     LayoutCachedTop =56
                     LayoutCachedWidth =9177
-                    LayoutCachedHeight =4872
+                    LayoutCachedHeight =4925
                     BackThemeColorIndex =8
                     BackTint =20.0
                     BorderTint =50.0
@@ -471,21 +471,21 @@ Begin Form
                     TextAlign =1
                     IMESentenceMode =3
                     Left =2865
-                    Top =3555
+                    Top =3908
                     Width =6165
-                    Height =1134
+                    Height =851
                     ColumnWidth =3000
-                    TabIndex =9
+                    TabIndex =10
                     Name ="Description"
                     ControlSource ="Description"
                     GroupTable =1
 
                     LayoutCachedLeft =2865
-                    LayoutCachedTop =3555
+                    LayoutCachedTop =3908
                     LayoutCachedWidth =9030
-                    LayoutCachedHeight =4689
-                    RowStart =9
-                    RowEnd =9
+                    LayoutCachedHeight =4759
+                    RowStart =10
+                    RowEnd =10
                     ColumnStart =1
                     ColumnEnd =1
                     LayoutGroup =1
@@ -495,19 +495,19 @@ Begin Form
                             OverlapFlags =215
                             TextAlign =1
                             Left =503
-                            Top =3555
+                            Top =3908
                             Width =2296
-                            Height =1134
+                            Height =851
                             ForeColor =0
                             Name ="Description_Label"
                             Caption ="Description"
                             GroupTable =1
                             LayoutCachedLeft =503
-                            LayoutCachedTop =3555
+                            LayoutCachedTop =3908
                             LayoutCachedWidth =2799
-                            LayoutCachedHeight =4689
-                            RowStart =9
-                            RowEnd =9
+                            LayoutCachedHeight =4759
+                            RowStart =10
+                            RowEnd =10
                             LayoutGroup =1
                             ForeTint =100.0
                             GroupTable =1
@@ -907,12 +907,62 @@ Begin Form
                         End
                     End
                 End
+                Begin TextBox
+                    OverlapFlags =215
+                    TextAlign =3
+                    IMESentenceMode =3
+                    Left =2865
+                    Top =3555
+                    Width =6165
+                    Height =285
+                    TabIndex =9
+                    Name ="RoundingAdjustment"
+                    ControlSource ="RoundingAdjustment"
+                    Format ="$#,##0.00;-$#,##0.00"
+                    DefaultValue ="0"
+                    GroupTable =1
+
+                    LayoutCachedLeft =2865
+                    LayoutCachedTop =3555
+                    LayoutCachedWidth =9030
+                    LayoutCachedHeight =3840
+                    RowStart =9
+                    RowEnd =9
+                    ColumnStart =1
+                    ColumnEnd =1
+                    LayoutGroup =1
+                    GroupTable =1
+                    CurrencySymbol ="$"
+                    ColLCID =4105
+                    Begin
+                        Begin Label
+                            OverlapFlags =215
+                            TextAlign =1
+                            Left =503
+                            Top =3555
+                            Width =2296
+                            Height =285
+                            ForeColor =0
+                            Name ="Label111"
+                            Caption ="Rounding Adjustment"
+                            GroupTable =1
+                            LayoutCachedLeft =503
+                            LayoutCachedTop =3555
+                            LayoutCachedWidth =2799
+                            LayoutCachedHeight =3840
+                            RowStart =9
+                            RowEnd =9
+                            LayoutGroup =1
+                            ForeTint =100.0
+                            GroupTable =1
+                        End
+                    End
+                End
             End
         End
         Begin FormFooter
             Height =0
             Name ="FormFooter"
-            AutoHeight =1
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
             BackThemeColorIndex =1

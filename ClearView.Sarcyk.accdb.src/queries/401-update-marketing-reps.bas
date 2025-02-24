@@ -1,24 +1,16 @@
-﻿Operation =4
-Option =0
-Begin InputTables
-    Name ="BingoLocations"
-    Name ="MarketingReps"
-End
-Begin OutputColumns
-    Name ="BingoLocations.MarketingRepId"
-    Expression ="[MarketingReps].[ID]"
-End
-Begin Joins
-    LeftTable ="BingoLocations"
-    RightTable ="MarketingReps"
-    Expression ="BingoLocations.MarketingRep = MarketingReps.RepName"
-    Flag =1
-End
+﻿dbMemo "SQL" ="UPDATE BingoLocations INNER JOIN MarketingReps ON BingoLocations.MarketingRep = "
+    "MarketingReps.RepName SET BingoLocations.MarketingRepId = [MarketingReps].[ID];\015"
+    "\012"
+dbMemo "Connect" =""
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbBoolean "UseTransaction" ="-1"
 dbBoolean "FailOnError" ="0"
 dbByte "Orientation" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "DefaultView" ="2"
+dbBoolean "FilterOnLoad" ="0"
+dbBoolean "OrderByOnLoad" ="-1"
 Begin
     Begin
         dbText "Name" ="MarketingReps.RepName"
@@ -35,37 +27,5 @@ Begin
     Begin
         dbText "Name" ="BingoLocations.MarketingRepId"
         dbLong "AggregateType" ="-1"
-    End
-End
-Begin
-    State =0
-    Left =0
-    Top =0
-    Right =1136
-    Bottom =1436
-    Left =-1
-    Top =-1
-    Right =1103
-    Bottom =927
-    Left =0
-    Top =0
-    ColumnsShown =579
-    Begin
-        Left =96
-        Top =24
-        Right =384
-        Bottom =312
-        Top =0
-        Name ="BingoLocations"
-        Name =""
-    End
-    Begin
-        Left =661
-        Top =80
-        Right =949
-        Bottom =368
-        Top =0
-        Name ="MarketingReps"
-        Name =""
     End
 End

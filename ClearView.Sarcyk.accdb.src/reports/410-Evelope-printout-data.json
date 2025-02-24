@@ -6,7 +6,7 @@
   "Items": {
     "Printer": {
       "Orientation": "Landscape",
-      "PaperSize": "Envelope #10"
+      "PaperSize": "Letter"
     },
     "Margins": {
       "LeftMargin": 1.1417,

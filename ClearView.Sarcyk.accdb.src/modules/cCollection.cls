@@ -15,7 +15,7 @@ Private Const CLASS_NAME = "cCollection"
 Private Const WO_INSERT As String = "INSERT"
 Private Const WO_UPDATE As String = "UPDATE"
 
-Public ID As Integer
+Public Id As Integer
 
 Public CollectionStubId As Integer
 Public EquipmentId As Integer
@@ -105,7 +105,7 @@ On Error GoTo ErrorHandler
             
             rs.MoveFirst
             
-            ID = Nz(rs("Id"))
+            Id = Nz(rs("Id"))
             CollectionStubId = rs("CollectionStubId")
             TransactionType = Nz(rs("TransactionType"))
             EquipmentId = Nz(rs("EquipmentId"))
@@ -177,7 +177,7 @@ Public Function AddSplit(SplitSetupId As Integer, Amount As Double) As Boolean
 
 On Error GoTo ErrorHandler
 
-    Dim sql As String
+    Dim Sql As String
     Dim rs As DAO.Recordset
     Dim rsAdd As DAO.Recordset
     
@@ -204,7 +204,7 @@ On Error GoTo ErrorHandler
        
                 ' ID = Nz(rs(Id))
                 !CollectionStubId = Me.CollectionStubId
-                !CollectionId = Me.ID
+                !CollectionId = Me.Id
                 !CollectionDate = CollecDate
                 !EmployeeID = Employee
                 !LocationId = Location
@@ -246,7 +246,7 @@ On Error GoTo ErrorHandler
            
                     ' ID = Nz(rs(Id))
                     !CollectionStubId = Me.CollectionStubId
-                    !CollectionId = Me.ID
+                    !CollectionId = Me.Id
                     !CollectionDate = CollecDate
                     !EmployeeID = Employee
                     !LocationId = cSysSettings.UnionVendingId
@@ -298,7 +298,7 @@ Public Function Add() As Boolean
 
 On Error GoTo ErrorHandler
 
-    Dim sql As String
+    Dim Sql As String
     Dim rs As DAO.Recordset
     
     Set rs = CurrentDb.OpenRecordset("Collections")
@@ -356,7 +356,7 @@ On Error GoTo ErrorHandler
 
     DoCmd.SetWarnings False
     
-    DoCmd.RunSQL "Delete * from [Collection-Stub] Where Id = " & Nz(Me.ID, 0)
+    DoCmd.RunSQL "Delete * from [Collection-Stub] Where Id = " & Nz(Me.Id, 0)
     
     DoCmd.SetWarnings True
         
@@ -378,13 +378,13 @@ Public Function Search(WhereClause As String) As Recordset
     Err.Raise "50001", CLASS_NAME & ".Search", "Method Not Implemented."
 End Function
 
-Public Function GetCollectionInfoById(ID As Long) As Recordset
+Public Function GetCollectionInfoById(Id As Long) As Recordset
 
 On Error GoTo ErrorHandler
 
     Dim rs As DAO.Recordset
         
-    Set rs = CurrentDb().OpenRecordset("Select * From [Collections] Where Id = " & ID, dbOpenDynaset)
+    Set rs = CurrentDb().OpenRecordset("Select * From [Collections] Where Id = " & Id, dbOpenDynaset)
     
     PopulateFields rs
     Set GetCollectionInfoById = rs
@@ -556,3 +556,20 @@ On Error GoTo ErrorHandler
 ErrorHandler:
      Err.Raise Err.Number, CLASS_NAME & ".Approve", Err.Description
 End Function
+
+Public Function UpdateCollectionDate(CollectionId As Integer, CollectionDate As Date) As Boolean
+
+On Error GoTo ErrorHandler
+
+    Dim rs As DAO.Recordset
+    
+    CurrentDb.Execute "Update [Collections-Splitted] Set CollectionDate = '" & CollectionDate & "' Where CollectionStubId = " & CollectionId
+        
+    UpdateCollectionDate = True
+    
+    Exit Function
+
+ErrorHandler:
+     Err.Raise Err.Number, CLASS_NAME & ".UpdateCollectionDate", Err.Description
+End Function
+

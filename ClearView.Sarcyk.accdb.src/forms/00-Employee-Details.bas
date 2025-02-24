@@ -21,18 +21,16 @@ Begin Form
     Width =13067
     DatasheetFontHeight =11
     ItemSuffix =769
-    Left =4170
-    Top =698
-    Right =17235
-    Bottom =10740
+    Left =4688
+    Top =1530
+    Right =21345
+    Bottom =12045
     DatasheetGridlinesColor =-1
     OnUnload ="[Event Procedure]"
     Tag ="EditDetails~Extensions=OnLoad_DefaultFirstAndLastName~FirstName=First Name~LastN"
         "ame=Last Name"
-    Filter ="Id = 3661"
-    OrderBy ="[Employees].[FullName]"
     RecSrcDt = Begin
-        0x32fea4fc3543e640
+        0x9b9a05bfae51e640
     End
     RecordSource ="Employees Extended"
     Caption ="Employee Details"
@@ -3237,7 +3235,7 @@ Private Sub Form_Current()
     Me.cmdDelete.Enabled = (cSysSettings.oUser.UserType = User_Type.Admin)
 
     Me.txtComments = ""
-    ShowColumnHistoryDesc "Employees", "Comments", "[ID]=" & Nz([ID], 0), Me.txtComments
+    ShowColumnHistoryDesc "Employees", "Comments", "[ID]=" & Nz([Id], 0), Me.txtComments
 
 
 End Sub
@@ -3295,23 +3293,23 @@ On Error Resume Next
 
     If cSysSettings.oUser.UserType <> User_Type.Admin Then
 
-        sql = ""
+        Sql = ""
 
-        sql = sql & " SELECT ID, FullName AS Name, PassNumber"
-        sql = sql & "   FROM [Employees Extended]"
-        sql = sql & "  WHERE  ID = " & cSysSettings.oUser.ID
-        sql = sql & "  ORDER BY FullName;"
+        Sql = Sql & " SELECT ID, FullName AS Name, PassNumber"
+        Sql = Sql & "   FROM [Employees Extended]"
+        Sql = Sql & "  WHERE  ID = " & cSysSettings.oUser.Id
+        Sql = Sql & "  ORDER BY FullName;"
 
-        Me.cboGoTo.RowSource = sql
+        Me.cboGoTo.RowSource = Sql
 
-        sql = ""
+        Sql = ""
         
-        sql = sql & " SELECT *"
-        sql = sql & "   FROM [Employees Extended]"
-        sql = sql & "  WHERE  ID = " & LoggedUserId
-        sql = sql & "  ORDER BY FullName;"
+        Sql = Sql & " SELECT *"
+        Sql = Sql & "   FROM [Employees Extended]"
+        Sql = Sql & "  WHERE  ID = " & LoggedUserId
+        Sql = Sql & "  ORDER BY FullName;"
 
-        Me.RecordSource = sql
+        Me.RecordSource = Sql
         Me.AllowAdditions = False
         
     End If
@@ -3334,7 +3332,7 @@ Private Sub cmdDelete_Click()
         
         DoCmd.SetWarnings False
         
-        DoCmd.RunSQL "Delete * from Employees Where id = " & Me.ID
+        DoCmd.RunSQL "Delete * from Employees Where id = " & Me.Id
         
         DoCmd.SetWarnings True
         
@@ -3345,7 +3343,7 @@ End Sub
 
 Private Sub Form_AfterUpdate()
     Me.txtComments = ""
-    ShowColumnHistoryDesc "Employees", "Comments", "[ID]=" & Nz([ID], 0), Me.txtComments
+    ShowColumnHistoryDesc "Employees", "Comments", "[ID]=" & Nz([Id], 0), Me.txtComments
 End Sub
 
 Private Sub Form_BeforeUpdate(Cancel As Integer)

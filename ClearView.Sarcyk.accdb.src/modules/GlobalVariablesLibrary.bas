@@ -35,3 +35,11 @@ Sub ValidateString()
         MsgBox "Invalid"
     End If
 End Sub
+
+ Function GetTempVar(VarName As String) As Variant
+
+    ' GetTempVar("StartDate") And GetTempVar("EndDate")
+    
+    GetTempVar = cUtil.GetTempVar(VarName)
+    
+ End Function

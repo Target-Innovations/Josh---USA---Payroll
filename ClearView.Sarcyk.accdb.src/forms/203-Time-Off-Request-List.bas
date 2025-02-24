@@ -15,8 +15,8 @@ Begin Form
     GridY =24
     Width =14760
     DatasheetFontHeight =11
-    ItemSuffix =658
-    Right =9668
+    ItemSuffix =564
+    Right =11715
     Bottom =10515
     DatasheetGridlinesColor =-1
     Tag ="SplitList"
@@ -1499,7 +1499,6 @@ Begin Form
                     Overlaps =1
                 End
                 Begin CommandButton
-                    Enabled = NotDefault
                     OverlapFlags =215
                     AccessKey =65
                     TextFontCharSet =0
@@ -1539,7 +1538,7 @@ Begin Form
         End
         Begin Section
             CanGrow = NotDefault
-            Height =3360
+            Height =3218
             BackColor =-2147483613
             Name ="Detail"
             Begin
@@ -2223,17 +2222,17 @@ Private Sub Form_Load()
         Me.chkApproved.Locked = True
         Me.BalanceBeforeApproval.Locked = True
         
-        Me.Filter = "EmployeeId = " & cSysSettings.oUser.ID
+        Me.Filter = "EmployeeId = " & cSysSettings.oUser.Id
         Me.FilterOn = True
         
-        sql = ""
+        Sql = ""
 
-        sql = sql & " SELECT ID, FullName AS Name"
-        sql = sql & "   FROM [Employees Extended]"
-        sql = sql & "  WHERE  ID = " & cSysSettings.oUser.ID
-        sql = sql & "  ORDER BY FullName;"
+        Sql = Sql & " SELECT ID, FullName AS Name"
+        Sql = Sql & "   FROM [Employees Extended]"
+        Sql = Sql & "  WHERE  ID = " & cSysSettings.oUser.Id
+        Sql = Sql & "  ORDER BY FullName;"
 
-        Me.cboEmployeeId.RowSource = sql
+        Me.cboEmployeeId.RowSource = Sql
         
     End If
     
@@ -2278,12 +2277,12 @@ Private Sub Form_BeforeUpdate(Cancel As Integer)
             
             If IsNull(Me.cboApprovedBy) Then
 
-                oTimeOff.GetTimeOffById Me.ID
+                oTimeOff.GetTimeOffById Me.Id
                 Me.BalanceBeforeApproval = oTimeOff.GetTimeOffLeft(Me.EmployeeID)
                 
                 If oTimeOff.ApplyTimeOff Then
                 
-                  Me.cboApprovedBy = cSysSettings.oUser.ID
+                  Me.cboApprovedBy = cSysSettings.oUser.Id
             
                   If Len(oTimeOff.Message) > 0 Then
                       MsgBox oTimeOff.Message, vbInformation
@@ -2316,7 +2315,7 @@ End Sub
 
 Private Sub UpdateModel()
     
-    oTimeOff.ID = Nz(Me.txtID)
+    oTimeOff.Id = Nz(Me.txtID)
     oTimeOff.EmployeeID = Nz(Me.cboEmployeeId)
     oTimeOff.NumberOfDays = Nz(Me.txtNumberOfDays)
     oTimeOff.Reason = Nz(Me.Reason)

@@ -15,8 +15,8 @@ Begin Form
     Width =14760
     DatasheetFontHeight =11
     ItemSuffix =477
-    Right =14505
-    Bottom =10515
+    Right =15578
+    Bottom =11348
     DatasheetGridlinesColor =-1
     Tag ="SplitList"
     RecSrcDt = Begin
@@ -150,8 +150,8 @@ Begin Form
         Begin FormHeader
             Height =1621
             Name ="FormHeader"
-            BackThemeColorIndex =2
-            BackTint =50.0
+            BackThemeColorIndex =6
+            BackShade =75.0
             Begin
                 Begin Rectangle
                     BackStyle =1

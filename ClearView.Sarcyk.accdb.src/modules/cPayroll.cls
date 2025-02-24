@@ -14,7 +14,7 @@ Private Const CLASS_NAME = "cPayroll"
 Private Const WO_INSERT As String = "INSERT"
 Private Const WO_UPDATE As String = "UPDATE"
 
-Public ID As Integer
+Public Id As Integer
 
 Public EmployeeID As Integer
 Public SSN As String
@@ -93,7 +93,7 @@ End Property
 
 Public Sub ClearFields()
 
-    ID = 0
+    Id = 0
     PayPeriodStart = 0
     PayPeriodEnd = 0
     EmployeeID = 0
@@ -145,7 +145,7 @@ On Error GoTo ErrorHandler
             
             rs.MoveFirst
             
-            ID = Nz(rs("Id"))
+            Id = Nz(rs("Id"))
             
             EmployeeID = Nz(rs("EmployeeID"))
             
@@ -324,7 +324,7 @@ Public Function Add() As Boolean
 
 On Error GoTo ErrorHandler
 
-    Dim sql As String
+    Dim Sql As String
     Dim rs As DAO.Recordset
     
     If IsNullOrEmpty(Me.EmployeeID) Or Me.EmployeeID = 1 Then Exit Function

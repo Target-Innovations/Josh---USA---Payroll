@@ -15,8 +15,8 @@ Begin Form
     Width =14760
     DatasheetFontHeight =11
     ItemSuffix =1024
-    Right =20985
-    Bottom =10770
+    Right =14700
+    Bottom =10515
     DatasheetGridlinesColor =-1
     Tag ="SplitList"
     RecSrcDt = Begin
@@ -723,7 +723,7 @@ Begin Form
                     OldBorderStyle =0
                     OverlapFlags =95
                     TextFontCharSet =0
-                    TextAlign =1
+                    TextAlign =2
                     IMESentenceMode =3
                     Left =2363
                     Top =885

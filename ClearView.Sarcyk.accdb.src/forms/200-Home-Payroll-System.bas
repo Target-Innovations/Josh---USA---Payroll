@@ -15,7 +15,7 @@ Begin Form
     Width =18166
     DatasheetFontHeight =11
     ItemSuffix =416
-    Right =11693
+    Right =16073
     Bottom =10515
     Tag ="Home"
     Picture ="HD-Gray-Backgrounds-2.jpg"
@@ -14805,7 +14805,7 @@ Begin Form
                         Begin
                             Action ="Close"
                             Argument ="2"
-                            Argument ="00-Employee-List"
+                            Argument ="200-Home-Payroll-System"
                             Argument ="0"
                         End
                         Begin
@@ -14816,8 +14816,8 @@ Begin Form
                         End
                         Begin
                             Comment ="_AXL:00-Home-Sarcyk</Argument></Action><Action Name=\"CloseWindow\"><Argument Na"
-                                "me=\"ObjectType\">Form</Argument><Argument Name=\"ObjectName\">00-Employee-List<"
-                                "/Argument></Action></Statements></UserInterfaceMacro>"
+                                "me=\"ObjectType\">Form</Argument><Argument Name=\"ObjectName\">200-Home-Payroll-"
+                                "System</Argument></Action></Statements></UserInterfaceMacro>"
                         End
                     End
                     BackStyle =0
@@ -14992,7 +14992,7 @@ Begin Form
                         ColumnsShown =0
                         Begin
                             Action ="OpenForm"
-                            Argument ="208-Payroll-Reconciliation-x"
+                            Argument ="208-Payroll-Reconciliation"
                             Argument ="0"
                             Argument =""
                             Argument =""
@@ -15006,8 +15006,8 @@ Begin Form
                                 "ame=\"OpenForm\"><Argument Name=\""
                         End
                         Begin
-                            Comment ="_AXL:FormName\">208-Payroll-Reconciliation-x</Argument></Action></Statements></U"
-                                "serInterfaceMacro>"
+                            Comment ="_AXL:FormName\">208-Payroll-Reconciliation</Argument></Action></Statements></Use"
+                                "rInterfaceMacro>"
                         End
                     End
 
@@ -15513,7 +15513,7 @@ On Error Resume Next
 End Sub
 
 Private Sub imgAvatar_DblClick(Cancel As Integer)
-    DoCmd.OpenForm "00-Employee-Details", acNormal, , "Id = " & cSysSettings.oUser.ID
+    DoCmd.OpenForm "00-Employee-Details", acNormal, , "Id = " & cSysSettings.oUser.Id
 End Sub
 
 Private Sub Form_Activate()

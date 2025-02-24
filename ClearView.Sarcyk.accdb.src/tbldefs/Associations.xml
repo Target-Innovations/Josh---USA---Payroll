@@ -10,8 +10,10 @@
   <xsd:element name="Associations">
     <xsd:annotation>
       <xsd:appinfo>
-        <od:index index-name="CharitiesAssociations1" index-key="CharityId " primary="no" unique="no" clustered="no" order="asc"/>
+        <od:index index-name="CharityId" index-key="CharityId " primary="no" unique="no" clustered="no" order="asc"/>
+        <od:index index-name="LocationId" index-key="LocationId " primary="no" unique="no" clustered="no" order="asc"/>
         <od:index index-name="PrimaryKey" index-key="Id " primary="yes" unique="yes" clustered="no" order="asc"/>
+        <od:index index-name="xxxCharityId" index-key="xxxCharityId " primary="no" unique="no" clustered="no" order="asc"/>
         <od:tableProperty name="Orientation" type="2" value="0"/>
         <od:tableProperty name="OrderByOn" type="1" value="0"/>
         <od:tableProperty name="DefaultView" type="2" value="2"/>

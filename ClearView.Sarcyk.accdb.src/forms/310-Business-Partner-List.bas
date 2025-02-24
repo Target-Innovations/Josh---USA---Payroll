@@ -4,6 +4,7 @@ Begin Form
     RecordSelectors = NotDefault
     AutoCenter = NotDefault
     DividingLines = NotDefault
+    OrderByOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =5
     ScrollBars =0
@@ -15,15 +16,16 @@ Begin Form
     Width =14760
     DatasheetFontHeight =11
     ItemSuffix =902
-    Right =10170
-    Bottom =9570
+    Right =28170
+    Bottom =12240
     DatasheetGridlinesColor =-1
     Tag ="SplitList"
+    OrderBy ="[BusinessPartners].[Company]"
     RecSrcDt = Begin
         0x9c87ffd47342e640
     End
     RecordSource ="BusinessPartners"
-    Caption ="Location List"
+    Caption ="Business Partner List"
     BeforeUpdate ="[Event Procedure]"
     DatasheetFontName ="Calibri"
     OnLoad ="[Event Procedure]"
@@ -251,10 +253,10 @@ Begin Form
                     PressedThemeColorIndex =0
                     HoverForeThemeColorIndex =0
                     PressedForeThemeColorIndex =0
-                    WebImagePaddingLeft =4
-                    WebImagePaddingTop =4
-                    WebImagePaddingRight =4
-                    WebImagePaddingBottom =4
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =2
+                    WebImagePaddingBottom =2
                     Overlaps =1
                 End
                 Begin Label
@@ -629,7 +631,7 @@ Begin Form
                         Begin
                             Action ="Close"
                             Argument ="2"
-                            Argument ="302-Location-List"
+                            Argument ="310-Business-Partner-List"
                             Argument ="0"
                         End
                         Begin
@@ -640,8 +642,8 @@ Begin Form
                         End
                         Begin
                             Comment ="_AXL:300-Home-Union-Vending</Argument></Action><Action Name=\"CloseWindow\"><Arg"
-                                "ument Name=\"ObjectType\">Form</Argument><Argument Name=\"ObjectName\">302-Locat"
-                                "ion-List</Argument></Action></Statements></UserInterfaceMacro>"
+                                "ument Name=\"ObjectType\">Form</Argument><Argument Name=\"ObjectName\">310-Busin"
+                                "ess-Partner-List</Argument></Action></Statements></UserInterfaceMacro>"
                         End
                     End
                     BackStyle =0
@@ -664,24 +666,23 @@ Begin Form
                     PressedThemeColorIndex =0
                     HoverForeThemeColorIndex =0
                     PressedForeThemeColorIndex =0
-                    WebImagePaddingLeft =4
-                    WebImagePaddingRight =5
-                    WebImagePaddingBottom =1
+                    WebImagePaddingLeft =2
+                    WebImagePaddingRight =2
                     Overlaps =1
                 End
             End
         End
         Begin Section
             CanGrow = NotDefault
-            Height =7906
+            Height =8168
             BackColor =-2147483613
             Name ="Detail"
             Begin
                 Begin TextBox
-                    OverlapFlags =93
+                    OverlapFlags =85
                     TextAlign =2
                     IMESentenceMode =3
-                    Left =2228
+                    Left =2235
                     Top =180
                     Width =3300
                     Height =293
@@ -693,9 +694,9 @@ Begin Form
                     RightPadding =0
                     BottomPadding =0
 
-                    LayoutCachedLeft =2228
+                    LayoutCachedLeft =2235
                     LayoutCachedTop =180
-                    LayoutCachedWidth =5528
+                    LayoutCachedWidth =5535
                     LayoutCachedHeight =473
                     ColumnStart =1
                     ColumnEnd =1
@@ -707,9 +708,9 @@ Begin Form
                         Begin Label
                             OverlapFlags =85
                             TextAlign =1
-                            Left =563
+                            Left =570
                             Top =180
-                            Width =1658
+                            Width =1665
                             Height =293
                             Name ="Label450"
                             Caption ="ID"
@@ -718,9 +719,9 @@ Begin Form
                             TopPadding =0
                             RightPadding =0
                             BottomPadding =0
-                            LayoutCachedLeft =563
+                            LayoutCachedLeft =570
                             LayoutCachedTop =180
-                            LayoutCachedWidth =2221
+                            LayoutCachedWidth =2235
                             LayoutCachedHeight =473
                             LayoutGroup =1
                             GridlineThemeColorIndex =1
@@ -734,10 +735,10 @@ Begin Form
                     OverlapFlags =85
                     TextFontCharSet =0
                     IMESentenceMode =3
-                    Left =2228
-                    Top =7313
+                    Left =2235
+                    Top =7440
                     Width =3300
-                    Height =293
+                    Height =300
                     ColumnWidth =2340
                     TabIndex =18
                     Name ="UpdatedAt"
@@ -748,10 +749,10 @@ Begin Form
                     RightPadding =0
                     BottomPadding =0
 
-                    LayoutCachedLeft =2228
-                    LayoutCachedTop =7313
-                    LayoutCachedWidth =5528
-                    LayoutCachedHeight =7606
+                    LayoutCachedLeft =2235
+                    LayoutCachedTop =7440
+                    LayoutCachedWidth =5535
+                    LayoutCachedHeight =7740
                     RowStart =18
                     RowEnd =18
                     ColumnStart =1
@@ -765,10 +766,10 @@ Begin Form
                             OverlapFlags =85
                             TextAlign =1
                             TextFontFamily =34
-                            Left =563
-                            Top =7313
-                            Width =1658
-                            Height =293
+                            Left =570
+                            Top =7440
+                            Width =1665
+                            Height =300
                             Name ="Label722"
                             Caption ="UpdatedAt"
                             GroupTable =31
@@ -776,10 +777,10 @@ Begin Form
                             TopPadding =0
                             RightPadding =0
                             BottomPadding =0
-                            LayoutCachedLeft =563
-                            LayoutCachedTop =7313
-                            LayoutCachedWidth =2221
-                            LayoutCachedHeight =7606
+                            LayoutCachedLeft =570
+                            LayoutCachedTop =7440
+                            LayoutCachedWidth =2235
+                            LayoutCachedHeight =7740
                             RowStart =18
                             RowEnd =18
                             LayoutGroup =1
@@ -794,10 +795,10 @@ Begin Form
                     OverlapFlags =85
                     TextFontCharSet =0
                     IMESentenceMode =3
-                    Left =2228
-                    Top =7613
+                    Left =2235
+                    Top =7740
                     Width =3300
-                    Height =293
+                    Height =300
                     TabIndex =19
                     Name ="UpdatedBy"
                     ControlSource ="UpdatedBy"
@@ -807,10 +808,10 @@ Begin Form
                     RightPadding =0
                     BottomPadding =0
 
-                    LayoutCachedLeft =2228
-                    LayoutCachedTop =7613
-                    LayoutCachedWidth =5528
-                    LayoutCachedHeight =7906
+                    LayoutCachedLeft =2235
+                    LayoutCachedTop =7740
+                    LayoutCachedWidth =5535
+                    LayoutCachedHeight =8040
                     RowStart =19
                     RowEnd =19
                     ColumnStart =1
@@ -824,10 +825,10 @@ Begin Form
                             OverlapFlags =85
                             TextAlign =1
                             TextFontFamily =34
-                            Left =563
-                            Top =7613
-                            Width =1658
-                            Height =293
+                            Left =570
+                            Top =7740
+                            Width =1665
+                            Height =300
                             Name ="Label723"
                             Caption ="UpdatedBy"
                             GroupTable =31
@@ -835,10 +836,10 @@ Begin Form
                             TopPadding =0
                             RightPadding =0
                             BottomPadding =0
-                            LayoutCachedLeft =563
-                            LayoutCachedTop =7613
-                            LayoutCachedWidth =2221
-                            LayoutCachedHeight =7906
+                            LayoutCachedLeft =570
+                            LayoutCachedTop =7740
+                            LayoutCachedWidth =2235
+                            LayoutCachedHeight =8040
                             RowStart =19
                             RowEnd =19
                             LayoutGroup =1
@@ -849,13 +850,13 @@ Begin Form
                     End
                 End
                 Begin TextBox
-                    OverlapFlags =95
+                    OverlapFlags =85
                     TextFontCharSet =0
-                    Left =2228
-                    Top =473
+                    Left =2235
+                    Top =480
                     Width =3300
-                    Height =293
-                    ColumnWidth =3653
+                    Height =300
+                    ColumnWidth =4635
                     TabIndex =1
                     Name ="Company"
                     ControlSource ="Company"
@@ -865,10 +866,10 @@ Begin Form
                     RightPadding =0
                     BottomPadding =0
 
-                    LayoutCachedLeft =2228
-                    LayoutCachedTop =473
-                    LayoutCachedWidth =5528
-                    LayoutCachedHeight =766
+                    LayoutCachedLeft =2235
+                    LayoutCachedTop =480
+                    LayoutCachedWidth =5535
+                    LayoutCachedHeight =780
                     RowStart =1
                     RowEnd =1
                     ColumnStart =1
@@ -882,10 +883,10 @@ Begin Form
                             OverlapFlags =85
                             TextAlign =1
                             TextFontFamily =34
-                            Left =563
-                            Top =473
-                            Width =1658
-                            Height =293
+                            Left =570
+                            Top =480
+                            Width =1665
+                            Height =300
                             Name ="Label783"
                             Caption ="Company"
                             GroupTable =31
@@ -893,10 +894,10 @@ Begin Form
                             TopPadding =0
                             RightPadding =0
                             BottomPadding =0
-                            LayoutCachedLeft =563
-                            LayoutCachedTop =473
-                            LayoutCachedWidth =2221
-                            LayoutCachedHeight =766
+                            LayoutCachedLeft =570
+                            LayoutCachedTop =480
+                            LayoutCachedWidth =2235
+                            LayoutCachedHeight =780
                             RowStart =1
                             RowEnd =1
                             LayoutGroup =1
@@ -907,12 +908,12 @@ Begin Form
                     End
                 End
                 Begin TextBox
-                    OverlapFlags =95
+                    OverlapFlags =85
                     TextFontCharSet =0
-                    Left =2228
-                    Top =765
+                    Left =2235
+                    Top =780
                     Width =3300
-                    Height =293
+                    Height =300
                     TabIndex =2
                     Name ="Last Name"
                     ControlSource ="Last Name"
@@ -923,10 +924,10 @@ Begin Form
                     RightPadding =0
                     BottomPadding =0
 
-                    LayoutCachedLeft =2228
-                    LayoutCachedTop =765
-                    LayoutCachedWidth =5528
-                    LayoutCachedHeight =1058
+                    LayoutCachedLeft =2235
+                    LayoutCachedTop =780
+                    LayoutCachedWidth =5535
+                    LayoutCachedHeight =1080
                     RowStart =2
                     RowEnd =2
                     ColumnStart =1
@@ -940,10 +941,10 @@ Begin Form
                             OverlapFlags =85
                             TextAlign =1
                             TextFontFamily =34
-                            Left =563
-                            Top =765
-                            Width =1658
-                            Height =293
+                            Left =570
+                            Top =780
+                            Width =1665
+                            Height =300
                             Name ="Label784"
                             Caption ="Last Name"
                             GroupTable =31
@@ -951,10 +952,10 @@ Begin Form
                             TopPadding =0
                             RightPadding =0
                             BottomPadding =0
-                            LayoutCachedLeft =563
-                            LayoutCachedTop =765
-                            LayoutCachedWidth =2221
-                            LayoutCachedHeight =1058
+                            LayoutCachedLeft =570
+                            LayoutCachedTop =780
+                            LayoutCachedWidth =2235
+                            LayoutCachedHeight =1080
                             RowStart =2
                             RowEnd =2
                             LayoutGroup =1
@@ -965,12 +966,12 @@ Begin Form
                     End
                 End
                 Begin TextBox
-                    OverlapFlags =95
+                    OverlapFlags =85
                     TextFontCharSet =0
-                    Left =2228
-                    Top =1058
+                    Left =2235
+                    Top =1080
                     Width =3300
-                    Height =293
+                    Height =300
                     TabIndex =3
                     Name ="First Name"
                     ControlSource ="First Name"
@@ -981,10 +982,10 @@ Begin Form
                     RightPadding =0
                     BottomPadding =0
 
-                    LayoutCachedLeft =2228
-                    LayoutCachedTop =1058
-                    LayoutCachedWidth =5528
-                    LayoutCachedHeight =1351
+                    LayoutCachedLeft =2235
+                    LayoutCachedTop =1080
+                    LayoutCachedWidth =5535
+                    LayoutCachedHeight =1380
                     RowStart =3
                     RowEnd =3
                     ColumnStart =1
@@ -998,10 +999,10 @@ Begin Form
                             OverlapFlags =85
                             TextAlign =1
                             TextFontFamily =34
-                            Left =563
-                            Top =1058
-                            Width =1658
-                            Height =293
+                            Left =570
+                            Top =1080
+                            Width =1665
+                            Height =300
                             Name ="Label785"
                             Caption ="First Name"
                             GroupTable =31
@@ -1009,10 +1010,10 @@ Begin Form
                             TopPadding =0
                             RightPadding =0
                             BottomPadding =0
-                            LayoutCachedLeft =563
-                            LayoutCachedTop =1058
-                            LayoutCachedWidth =2221
-                            LayoutCachedHeight =1351
+                            LayoutCachedLeft =570
+                            LayoutCachedTop =1080
+                            LayoutCachedWidth =2235
+                            LayoutCachedHeight =1380
                             RowStart =3
                             RowEnd =3
                             LayoutGroup =1
@@ -1023,13 +1024,13 @@ Begin Form
                     End
                 End
                 Begin TextBox
-                    OverlapFlags =95
+                    OverlapFlags =85
                     TextFontCharSet =0
                     IMEMode =2
-                    Left =2228
-                    Top =1350
+                    Left =2235
+                    Top =1380
                     Width =3300
-                    Height =293
+                    Height =300
                     ColumnWidth =2400
                     TabIndex =4
                     Name ="E-mail Address"
@@ -1041,10 +1042,10 @@ Begin Form
                     RightPadding =0
                     BottomPadding =0
 
-                    LayoutCachedLeft =2228
-                    LayoutCachedTop =1350
-                    LayoutCachedWidth =5528
-                    LayoutCachedHeight =1643
+                    LayoutCachedLeft =2235
+                    LayoutCachedTop =1380
+                    LayoutCachedWidth =5535
+                    LayoutCachedHeight =1680
                     RowStart =4
                     RowEnd =4
                     ColumnStart =1
@@ -1058,10 +1059,10 @@ Begin Form
                             OverlapFlags =85
                             TextAlign =1
                             TextFontFamily =34
-                            Left =563
-                            Top =1350
-                            Width =1658
-                            Height =293
+                            Left =570
+                            Top =1380
+                            Width =1665
+                            Height =300
                             Name ="Label786"
                             Caption ="E-mail Address"
                             GroupTable =31
@@ -1069,10 +1070,10 @@ Begin Form
                             TopPadding =0
                             RightPadding =0
                             BottomPadding =0
-                            LayoutCachedLeft =563
-                            LayoutCachedTop =1350
-                            LayoutCachedWidth =2221
-                            LayoutCachedHeight =1643
+                            LayoutCachedLeft =570
+                            LayoutCachedTop =1380
+                            LayoutCachedWidth =2235
+                            LayoutCachedHeight =1680
                             RowStart =4
                             RowEnd =4
                             LayoutGroup =1
@@ -1083,12 +1084,12 @@ Begin Form
                     End
                 End
                 Begin TextBox
-                    OverlapFlags =95
+                    OverlapFlags =85
                     TextFontCharSet =0
-                    Left =2228
-                    Top =1643
+                    Left =2235
+                    Top =1680
                     Width =3300
-                    Height =293
+                    Height =300
                     ColumnWidth =2295
                     TabIndex =5
                     Name ="Job Title"
@@ -1100,10 +1101,10 @@ Begin Form
                     RightPadding =0
                     BottomPadding =0
 
-                    LayoutCachedLeft =2228
-                    LayoutCachedTop =1643
-                    LayoutCachedWidth =5528
-                    LayoutCachedHeight =1936
+                    LayoutCachedLeft =2235
+                    LayoutCachedTop =1680
+                    LayoutCachedWidth =5535
+                    LayoutCachedHeight =1980
                     RowStart =5
                     RowEnd =5
                     ColumnStart =1
@@ -1117,10 +1118,10 @@ Begin Form
                             OverlapFlags =85
                             TextAlign =1
                             TextFontFamily =34
-                            Left =563
-                            Top =1643
-                            Width =1658
-                            Height =293
+                            Left =570
+                            Top =1680
+                            Width =1665
+                            Height =300
                             Name ="Label787"
                             Caption ="Job Title"
                             GroupTable =31
@@ -1128,10 +1129,10 @@ Begin Form
                             TopPadding =0
                             RightPadding =0
                             BottomPadding =0
-                            LayoutCachedLeft =563
-                            LayoutCachedTop =1643
-                            LayoutCachedWidth =2221
-                            LayoutCachedHeight =1936
+                            LayoutCachedLeft =570
+                            LayoutCachedTop =1680
+                            LayoutCachedWidth =2235
+                            LayoutCachedHeight =1980
                             RowStart =5
                             RowEnd =5
                             LayoutGroup =1
@@ -1142,13 +1143,13 @@ Begin Form
                     End
                 End
                 Begin TextBox
-                    OverlapFlags =95
+                    OverlapFlags =85
                     TextFontCharSet =0
                     IMEMode =2
-                    Left =2228
-                    Top =1935
+                    Left =2235
+                    Top =1980
                     Width =3300
-                    Height =293
+                    Height =300
                     TabIndex =6
                     Name ="Business Phone"
                     ControlSource ="Business Phone"
@@ -1159,10 +1160,10 @@ Begin Form
                     RightPadding =0
                     BottomPadding =0
 
-                    LayoutCachedLeft =2228
-                    LayoutCachedTop =1935
-                    LayoutCachedWidth =5528
-                    LayoutCachedHeight =2228
+                    LayoutCachedLeft =2235
+                    LayoutCachedTop =1980
+                    LayoutCachedWidth =5535
+                    LayoutCachedHeight =2280
                     RowStart =6
                     RowEnd =6
                     ColumnStart =1
@@ -1176,10 +1177,10 @@ Begin Form
                             OverlapFlags =85
                             TextAlign =1
                             TextFontFamily =34
-                            Left =563
-                            Top =1935
-                            Width =1658
-                            Height =293
+                            Left =570
+                            Top =1980
+                            Width =1665
+                            Height =300
                             Name ="Label788"
                             Caption ="Business Phone"
                             GroupTable =31
@@ -1187,10 +1188,10 @@ Begin Form
                             TopPadding =0
                             RightPadding =0
                             BottomPadding =0
-                            LayoutCachedLeft =563
-                            LayoutCachedTop =1935
-                            LayoutCachedWidth =2221
-                            LayoutCachedHeight =2228
+                            LayoutCachedLeft =570
+                            LayoutCachedTop =1980
+                            LayoutCachedWidth =2235
+                            LayoutCachedHeight =2280
                             RowStart =6
                             RowEnd =6
                             LayoutGroup =1
@@ -1201,13 +1202,13 @@ Begin Form
                     End
                 End
                 Begin TextBox
-                    OverlapFlags =95
+                    OverlapFlags =85
                     TextFontCharSet =0
                     IMEMode =2
-                    Left =2228
-                    Top =2228
+                    Left =2235
+                    Top =2280
                     Width =3300
-                    Height =293
+                    Height =300
                     TabIndex =7
                     Name ="Home Phone"
                     ControlSource ="Home Phone"
@@ -1218,10 +1219,10 @@ Begin Form
                     RightPadding =0
                     BottomPadding =0
 
-                    LayoutCachedLeft =2228
-                    LayoutCachedTop =2228
-                    LayoutCachedWidth =5528
-                    LayoutCachedHeight =2521
+                    LayoutCachedLeft =2235
+                    LayoutCachedTop =2280
+                    LayoutCachedWidth =5535
+                    LayoutCachedHeight =2580
                     RowStart =7
                     RowEnd =7
                     ColumnStart =1
@@ -1235,10 +1236,10 @@ Begin Form
                             OverlapFlags =85
                             TextAlign =1
                             TextFontFamily =34
-                            Left =563
-                            Top =2228
-                            Width =1658
-                            Height =293
+                            Left =570
+                            Top =2280
+                            Width =1665
+                            Height =300
                             Name ="Label789"
                             Caption ="Home Phone"
                             GroupTable =31
@@ -1246,10 +1247,10 @@ Begin Form
                             TopPadding =0
                             RightPadding =0
                             BottomPadding =0
-                            LayoutCachedLeft =563
-                            LayoutCachedTop =2228
-                            LayoutCachedWidth =2221
-                            LayoutCachedHeight =2521
+                            LayoutCachedLeft =570
+                            LayoutCachedTop =2280
+                            LayoutCachedWidth =2235
+                            LayoutCachedHeight =2580
                             RowStart =7
                             RowEnd =7
                             LayoutGroup =1
@@ -1260,13 +1261,13 @@ Begin Form
                     End
                 End
                 Begin TextBox
-                    OverlapFlags =95
+                    OverlapFlags =85
                     TextFontCharSet =0
                     IMEMode =2
-                    Left =2228
-                    Top =2520
+                    Left =2235
+                    Top =2580
                     Width =3300
-                    Height =293
+                    Height =300
                     TabIndex =8
                     Name ="Mobile Phone"
                     ControlSource ="Mobile Phone"
@@ -1277,10 +1278,10 @@ Begin Form
                     RightPadding =0
                     BottomPadding =0
 
-                    LayoutCachedLeft =2228
-                    LayoutCachedTop =2520
-                    LayoutCachedWidth =5528
-                    LayoutCachedHeight =2813
+                    LayoutCachedLeft =2235
+                    LayoutCachedTop =2580
+                    LayoutCachedWidth =5535
+                    LayoutCachedHeight =2880
                     RowStart =8
                     RowEnd =8
                     ColumnStart =1
@@ -1294,10 +1295,10 @@ Begin Form
                             OverlapFlags =85
                             TextAlign =1
                             TextFontFamily =34
-                            Left =563
-                            Top =2520
-                            Width =1658
-                            Height =293
+                            Left =570
+                            Top =2580
+                            Width =1665
+                            Height =300
                             Name ="Label790"
                             Caption ="Mobile Phone"
                             GroupTable =31
@@ -1305,10 +1306,10 @@ Begin Form
                             TopPadding =0
                             RightPadding =0
                             BottomPadding =0
-                            LayoutCachedLeft =563
-                            LayoutCachedTop =2520
-                            LayoutCachedWidth =2221
-                            LayoutCachedHeight =2813
+                            LayoutCachedLeft =570
+                            LayoutCachedTop =2580
+                            LayoutCachedWidth =2235
+                            LayoutCachedHeight =2880
                             RowStart =8
                             RowEnd =8
                             LayoutGroup =1
@@ -1319,13 +1320,13 @@ Begin Form
                     End
                 End
                 Begin TextBox
-                    OverlapFlags =95
+                    OverlapFlags =85
                     TextFontCharSet =0
                     IMEMode =2
-                    Left =2228
-                    Top =2813
+                    Left =2235
+                    Top =2880
                     Width =3300
-                    Height =293
+                    Height =300
                     TabIndex =9
                     Name ="Fax Number"
                     ControlSource ="Fax Number"
@@ -1336,10 +1337,10 @@ Begin Form
                     RightPadding =0
                     BottomPadding =0
 
-                    LayoutCachedLeft =2228
-                    LayoutCachedTop =2813
-                    LayoutCachedWidth =5528
-                    LayoutCachedHeight =3106
+                    LayoutCachedLeft =2235
+                    LayoutCachedTop =2880
+                    LayoutCachedWidth =5535
+                    LayoutCachedHeight =3180
                     RowStart =9
                     RowEnd =9
                     ColumnStart =1
@@ -1353,10 +1354,10 @@ Begin Form
                             OverlapFlags =85
                             TextAlign =1
                             TextFontFamily =34
-                            Left =563
-                            Top =2813
-                            Width =1658
-                            Height =293
+                            Left =570
+                            Top =2880
+                            Width =1665
+                            Height =300
                             Name ="Label791"
                             Caption ="Fax Number"
                             GroupTable =31
@@ -1364,10 +1365,10 @@ Begin Form
                             TopPadding =0
                             RightPadding =0
                             BottomPadding =0
-                            LayoutCachedLeft =563
-                            LayoutCachedTop =2813
-                            LayoutCachedWidth =2221
-                            LayoutCachedHeight =3106
+                            LayoutCachedLeft =570
+                            LayoutCachedTop =2880
+                            LayoutCachedWidth =2235
+                            LayoutCachedHeight =3180
                             RowStart =9
                             RowEnd =9
                             LayoutGroup =1
@@ -1380,12 +1381,12 @@ Begin Form
                 Begin TextBox
                     EnterKeyBehavior = NotDefault
                     ScrollBars =2
-                    OverlapFlags =95
+                    OverlapFlags =85
                     TextFontCharSet =0
-                    Left =2228
-                    Top =3105
+                    Left =2235
+                    Top =3180
                     Width =3300
-                    Height =938
+                    Height =945
                     TabIndex =10
                     Name ="Address"
                     ControlSource ="Address"
@@ -1395,10 +1396,10 @@ Begin Form
                     RightPadding =0
                     BottomPadding =0
 
-                    LayoutCachedLeft =2228
-                    LayoutCachedTop =3105
-                    LayoutCachedWidth =5528
-                    LayoutCachedHeight =4043
+                    LayoutCachedLeft =2235
+                    LayoutCachedTop =3180
+                    LayoutCachedWidth =5535
+                    LayoutCachedHeight =4125
                     RowStart =10
                     RowEnd =10
                     ColumnStart =1
@@ -1412,10 +1413,10 @@ Begin Form
                             OverlapFlags =85
                             TextAlign =1
                             TextFontFamily =34
-                            Left =563
-                            Top =3105
-                            Width =1658
-                            Height =938
+                            Left =570
+                            Top =3180
+                            Width =1665
+                            Height =945
                             Name ="Label792"
                             Caption ="Address"
                             GroupTable =31
@@ -1423,10 +1424,10 @@ Begin Form
                             TopPadding =0
                             RightPadding =0
                             BottomPadding =0
-                            LayoutCachedLeft =563
-                            LayoutCachedTop =3105
-                            LayoutCachedWidth =2221
-                            LayoutCachedHeight =4043
+                            LayoutCachedLeft =570
+                            LayoutCachedTop =3180
+                            LayoutCachedWidth =2235
+                            LayoutCachedHeight =4125
                             RowStart =10
                             RowEnd =10
                             LayoutGroup =1
@@ -1437,12 +1438,12 @@ Begin Form
                     End
                 End
                 Begin TextBox
-                    OverlapFlags =95
+                    OverlapFlags =85
                     TextFontCharSet =0
-                    Left =2228
-                    Top =4043
+                    Left =2235
+                    Top =4125
                     Width =3300
-                    Height =293
+                    Height =300
                     TabIndex =11
                     Name ="City"
                     ControlSource ="City"
@@ -1452,10 +1453,10 @@ Begin Form
                     RightPadding =0
                     BottomPadding =0
 
-                    LayoutCachedLeft =2228
-                    LayoutCachedTop =4043
-                    LayoutCachedWidth =5528
-                    LayoutCachedHeight =4336
+                    LayoutCachedLeft =2235
+                    LayoutCachedTop =4125
+                    LayoutCachedWidth =5535
+                    LayoutCachedHeight =4425
                     RowStart =11
                     RowEnd =11
                     ColumnStart =1
@@ -1469,10 +1470,10 @@ Begin Form
                             OverlapFlags =85
                             TextAlign =1
                             TextFontFamily =34
-                            Left =563
-                            Top =4043
-                            Width =1658
-                            Height =293
+                            Left =570
+                            Top =4125
+                            Width =1665
+                            Height =300
                             Name ="Label793"
                             Caption ="City"
                             GroupTable =31
@@ -1480,10 +1481,10 @@ Begin Form
                             TopPadding =0
                             RightPadding =0
                             BottomPadding =0
-                            LayoutCachedLeft =563
-                            LayoutCachedTop =4043
-                            LayoutCachedWidth =2221
-                            LayoutCachedHeight =4336
+                            LayoutCachedLeft =570
+                            LayoutCachedTop =4125
+                            LayoutCachedWidth =2235
+                            LayoutCachedHeight =4425
                             RowStart =11
                             RowEnd =11
                             LayoutGroup =1
@@ -1494,12 +1495,12 @@ Begin Form
                     End
                 End
                 Begin TextBox
-                    OverlapFlags =95
+                    OverlapFlags =85
                     TextFontCharSet =0
-                    Left =2228
-                    Top =4335
+                    Left =2235
+                    Top =4425
                     Width =3300
-                    Height =293
+                    Height =300
                     TabIndex =12
                     Name ="State/Province"
                     ControlSource ="State/Province"
@@ -1510,10 +1511,10 @@ Begin Form
                     RightPadding =0
                     BottomPadding =0
 
-                    LayoutCachedLeft =2228
-                    LayoutCachedTop =4335
-                    LayoutCachedWidth =5528
-                    LayoutCachedHeight =4628
+                    LayoutCachedLeft =2235
+                    LayoutCachedTop =4425
+                    LayoutCachedWidth =5535
+                    LayoutCachedHeight =4725
                     RowStart =12
                     RowEnd =12
                     ColumnStart =1
@@ -1527,10 +1528,10 @@ Begin Form
                             OverlapFlags =85
                             TextAlign =1
                             TextFontFamily =34
-                            Left =563
-                            Top =4335
-                            Width =1658
-                            Height =293
+                            Left =570
+                            Top =4425
+                            Width =1665
+                            Height =300
                             Name ="Label794"
                             Caption ="State/Province"
                             GroupTable =31
@@ -1538,10 +1539,10 @@ Begin Form
                             TopPadding =0
                             RightPadding =0
                             BottomPadding =0
-                            LayoutCachedLeft =563
-                            LayoutCachedTop =4335
-                            LayoutCachedWidth =2221
-                            LayoutCachedHeight =4628
+                            LayoutCachedLeft =570
+                            LayoutCachedTop =4425
+                            LayoutCachedWidth =2235
+                            LayoutCachedHeight =4725
                             RowStart =12
                             RowEnd =12
                             LayoutGroup =1
@@ -1552,13 +1553,13 @@ Begin Form
                     End
                 End
                 Begin TextBox
-                    OverlapFlags =95
+                    OverlapFlags =85
                     TextFontCharSet =0
                     IMEMode =2
-                    Left =2228
-                    Top =4628
+                    Left =2235
+                    Top =4725
                     Width =3300
-                    Height =293
+                    Height =300
                     TabIndex =13
                     Name ="ZIP/Postal Code"
                     ControlSource ="ZIP/Postal Code"
@@ -1569,10 +1570,10 @@ Begin Form
                     RightPadding =0
                     BottomPadding =0
 
-                    LayoutCachedLeft =2228
-                    LayoutCachedTop =4628
-                    LayoutCachedWidth =5528
-                    LayoutCachedHeight =4921
+                    LayoutCachedLeft =2235
+                    LayoutCachedTop =4725
+                    LayoutCachedWidth =5535
+                    LayoutCachedHeight =5025
                     RowStart =13
                     RowEnd =13
                     ColumnStart =1
@@ -1586,10 +1587,10 @@ Begin Form
                             OverlapFlags =85
                             TextAlign =1
                             TextFontFamily =34
-                            Left =563
-                            Top =4628
-                            Width =1658
-                            Height =293
+                            Left =570
+                            Top =4725
+                            Width =1665
+                            Height =300
                             Name ="Label795"
                             Caption ="ZIP/Postal Code"
                             GroupTable =31
@@ -1597,10 +1598,10 @@ Begin Form
                             TopPadding =0
                             RightPadding =0
                             BottomPadding =0
-                            LayoutCachedLeft =563
-                            LayoutCachedTop =4628
-                            LayoutCachedWidth =2221
-                            LayoutCachedHeight =4921
+                            LayoutCachedLeft =570
+                            LayoutCachedTop =4725
+                            LayoutCachedWidth =2235
+                            LayoutCachedHeight =5025
                             RowStart =13
                             RowEnd =13
                             LayoutGroup =1
@@ -1611,12 +1612,12 @@ Begin Form
                     End
                 End
                 Begin TextBox
-                    OverlapFlags =95
+                    OverlapFlags =85
                     TextFontCharSet =0
-                    Left =2228
-                    Top =4920
+                    Left =2235
+                    Top =5025
                     Width =3300
-                    Height =293
+                    Height =300
                     TabIndex =14
                     Name ="Country/Region"
                     ControlSource ="Country/Region"
@@ -1627,10 +1628,10 @@ Begin Form
                     RightPadding =0
                     BottomPadding =0
 
-                    LayoutCachedLeft =2228
-                    LayoutCachedTop =4920
-                    LayoutCachedWidth =5528
-                    LayoutCachedHeight =5213
+                    LayoutCachedLeft =2235
+                    LayoutCachedTop =5025
+                    LayoutCachedWidth =5535
+                    LayoutCachedHeight =5325
                     RowStart =14
                     RowEnd =14
                     ColumnStart =1
@@ -1644,10 +1645,10 @@ Begin Form
                             OverlapFlags =85
                             TextAlign =1
                             TextFontFamily =34
-                            Left =563
-                            Top =4920
-                            Width =1658
-                            Height =293
+                            Left =570
+                            Top =5025
+                            Width =1665
+                            Height =300
                             Name ="Label796"
                             Caption ="Country/Region"
                             GroupTable =31
@@ -1655,10 +1656,10 @@ Begin Form
                             TopPadding =0
                             RightPadding =0
                             BottomPadding =0
-                            LayoutCachedLeft =563
-                            LayoutCachedTop =4920
-                            LayoutCachedWidth =2221
-                            LayoutCachedHeight =5213
+                            LayoutCachedLeft =570
+                            LayoutCachedTop =5025
+                            LayoutCachedWidth =2235
+                            LayoutCachedHeight =5325
                             RowStart =14
                             RowEnd =14
                             LayoutGroup =1
@@ -1671,13 +1672,13 @@ Begin Form
                 Begin TextBox
                     FontUnderline = NotDefault
                     IsHyperlink = NotDefault
-                    OverlapFlags =95
+                    OverlapFlags =85
                     TextFontCharSet =0
                     IMEMode =2
-                    Left =2228
-                    Top =5213
+                    Left =2235
+                    Top =5325
                     Width =3300
-                    Height =293
+                    Height =300
                     TabIndex =15
                     Name ="Web Page"
                     ControlSource ="Web Page"
@@ -1688,10 +1689,10 @@ Begin Form
                     RightPadding =0
                     BottomPadding =0
 
-                    LayoutCachedLeft =2228
-                    LayoutCachedTop =5213
-                    LayoutCachedWidth =5528
-                    LayoutCachedHeight =5506
+                    LayoutCachedLeft =2235
+                    LayoutCachedTop =5325
+                    LayoutCachedWidth =5535
+                    LayoutCachedHeight =5625
                     RowStart =15
                     RowEnd =15
                     ColumnStart =1
@@ -1706,10 +1707,10 @@ Begin Form
                             OverlapFlags =85
                             TextAlign =1
                             TextFontFamily =34
-                            Left =563
-                            Top =5213
-                            Width =1658
-                            Height =293
+                            Left =570
+                            Top =5325
+                            Width =1665
+                            Height =300
                             Name ="Label797"
                             Caption ="Web Page"
                             GroupTable =31
@@ -1717,10 +1718,10 @@ Begin Form
                             TopPadding =0
                             RightPadding =0
                             BottomPadding =0
-                            LayoutCachedLeft =563
-                            LayoutCachedTop =5213
-                            LayoutCachedWidth =2221
-                            LayoutCachedHeight =5506
+                            LayoutCachedLeft =570
+                            LayoutCachedTop =5325
+                            LayoutCachedWidth =2235
+                            LayoutCachedHeight =5625
                             RowStart =15
                             RowEnd =15
                             LayoutGroup =1
@@ -1733,12 +1734,12 @@ Begin Form
                 Begin TextBox
                     EnterKeyBehavior = NotDefault
                     ScrollBars =2
-                    OverlapFlags =95
+                    OverlapFlags =93
                     TextFontCharSet =0
-                    Left =2228
-                    Top =5505
+                    Left =2235
+                    Top =5625
                     Width =3300
-                    Height =938
+                    Height =945
                     TabIndex =16
                     Name ="Notes"
                     ControlSource ="Notes"
@@ -1749,10 +1750,10 @@ Begin Form
                     BottomPadding =0
                     TextFormat =1
 
-                    LayoutCachedLeft =2228
-                    LayoutCachedTop =5505
-                    LayoutCachedWidth =5528
-                    LayoutCachedHeight =6443
+                    LayoutCachedLeft =2235
+                    LayoutCachedTop =5625
+                    LayoutCachedWidth =5535
+                    LayoutCachedHeight =6570
                     RowStart =16
                     RowEnd =16
                     ColumnStart =1
@@ -1766,10 +1767,10 @@ Begin Form
                             OverlapFlags =85
                             TextAlign =1
                             TextFontFamily =34
-                            Left =563
-                            Top =5505
-                            Width =1658
-                            Height =938
+                            Left =570
+                            Top =5625
+                            Width =1665
+                            Height =945
                             Name ="Label798"
                             Caption ="Notes"
                             GroupTable =31
@@ -1777,10 +1778,10 @@ Begin Form
                             TopPadding =0
                             RightPadding =0
                             BottomPadding =0
-                            LayoutCachedLeft =563
-                            LayoutCachedTop =5505
-                            LayoutCachedWidth =2221
-                            LayoutCachedHeight =6443
+                            LayoutCachedLeft =570
+                            LayoutCachedTop =5625
+                            LayoutCachedWidth =2235
+                            LayoutCachedHeight =6570
                             RowStart =16
                             RowEnd =16
                             LayoutGroup =1
@@ -1792,10 +1793,10 @@ Begin Form
                 End
                 Begin Attachment
                     PictureAlignment =0
-                    Left =2228
-                    Top =6443
+                    Left =2235
+                    Top =6570
                     Width =3300
-                    Height =863
+                    Height =870
                     Name ="Attachments"
                     ControlSource ="Attachments"
                     GroupTable =31
@@ -1805,10 +1806,10 @@ Begin Form
                     BottomPadding =0
                     TabIndex =17
 
-                    LayoutCachedLeft =2228
-                    LayoutCachedTop =6443
-                    LayoutCachedWidth =5528
-                    LayoutCachedHeight =7306
+                    LayoutCachedLeft =2235
+                    LayoutCachedTop =6570
+                    LayoutCachedWidth =5535
+                    LayoutCachedHeight =7440
                     RowStart =17
                     RowEnd =17
                     ColumnStart =1
@@ -1822,10 +1823,10 @@ Begin Form
                             OverlapFlags =85
                             TextAlign =1
                             TextFontFamily =34
-                            Left =563
-                            Top =6443
-                            Width =1658
-                            Height =863
+                            Left =570
+                            Top =6570
+                            Width =1665
+                            Height =870
                             Name ="Label799"
                             Caption ="Attachments"
                             GroupTable =31
@@ -1833,10 +1834,10 @@ Begin Form
                             TopPadding =0
                             RightPadding =0
                             BottomPadding =0
-                            LayoutCachedLeft =563
-                            LayoutCachedTop =6443
-                            LayoutCachedWidth =2221
-                            LayoutCachedHeight =7306
+                            LayoutCachedLeft =570
+                            LayoutCachedTop =6570
+                            LayoutCachedWidth =2235
+                            LayoutCachedHeight =7440
                             RowStart =17
                             RowEnd =17
                             LayoutGroup =1

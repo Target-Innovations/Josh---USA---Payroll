@@ -26,6 +26,7 @@
   [ReimbursementCheckNumber] DOUBLE ,
   [EnvelopeNumber] DOUBLE ,
   [ReimbursementSent] DATETIME ,
+  [CharityInvoiceNumber] VARCHAR (255),
   [UpdatedAt] DATETIME ,
   [UpdatedBy] VARCHAR (255)
 )

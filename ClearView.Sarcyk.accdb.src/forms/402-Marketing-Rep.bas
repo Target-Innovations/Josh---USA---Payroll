@@ -898,7 +898,7 @@ Begin Form
                     Height =293
                     ColumnWidth =3758
                     TabIndex =5
-                    ColumnInfo ="\"\";\"\";\"\";\"@\";\"10\";\"510\""
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
                     Name ="CharityPayingId"
                     ControlSource ="CharityPayingId"
                     RowSourceType ="Table/Query"

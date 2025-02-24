@@ -1,0 +1,13 @@
+﻿{
+  "Info": {
+    "Class": "clsDbTableDef",
+    "Description": "Linked Table"
+  },
+  "Items": {
+    "Name": "Manufacturer-Linked",
+    "Connect": ";DATABASE=rel:Videos\\20250221\\Clearview_v0.0.29_be.accdb",
+    "SourceTableName": "Manufacturer",
+    "Attributes": 1073741824,
+    "PrimaryKey": "[ID1]"
+  }
+}

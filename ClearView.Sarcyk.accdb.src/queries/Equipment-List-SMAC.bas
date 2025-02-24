@@ -10,6 +10,7 @@ Begin OutputColumns
     Expression ="Equipments.SerialNumber"
     Expression ="Equipments.EquipmentTypeId"
     Expression ="Equipments.Location"
+    Expression ="EquipmentType.DivisionId"
     Expression ="Equipments.IsAvaialble"
     Expression ="Equipments.DateDown"
     Expression ="Equipments.Reason"
@@ -22,7 +23,6 @@ Begin OutputColumns
     Expression ="Equipments.CreatedAt"
     Expression ="Equipments.SupplierId"
     Expression ="Equipments.Make"
-    Expression ="EquipmentType.DivisionId"
     Expression ="Equipments.PurchaseDate"
     Expression ="Equipments.InvoiceNumber"
     Expression ="Equipments.Price"
@@ -30,6 +30,7 @@ Begin OutputColumns
     Expression ="Equipments.ManufactureId"
     Expression ="Equipments.OwnerId"
     Expression ="Equipments.RentToOwn"
+    Expression ="Equipments.[MonthlyRentalCost]"
 End
 Begin Joins
     LeftTable ="EquipmentType"
@@ -112,15 +113,47 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="Equipments.OwnerId"
+        dbText "Name" ="Expr1"
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="Equipments.BasePrice"
+        dbText "Name" ="Expr2"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Expr3"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Expr4"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Expr5"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Expr6"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Expr7"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Expr8"
         dbLong "AggregateType" ="-1"
     End
     Begin
         dbText "Name" ="Equipments.ManufactureId"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Equipments.OwnerId"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Equipments.RentToOwn"
         dbLong "AggregateType" ="-1"
     End
     Begin
@@ -140,7 +173,11 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="Equipments.RentToOwn"
+        dbText "Name" ="Equipments.BasePrice"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Equipments.MonthRentalCost"
         dbLong "AggregateType" ="-1"
     End
 End
@@ -148,29 +185,29 @@ Begin
     State =0
     Left =0
     Top =0
-    Right =1486
+    Right =2093
     Bottom =1436
     Left =-1
     Top =-1
-    Right =1453
-    Bottom =477
+    Right =1412
+    Bottom =635
     Left =0
     Top =0
     ColumnsShown =539
     Begin
-        Left =480
-        Top =24
-        Right =768
-        Bottom =312
+        Left =578
+        Top =87
+        Right =866
+        Bottom =375
         Top =0
         Name ="EquipmentType"
         Name =""
     End
     Begin
-        Left =96
-        Top =24
-        Right =384
-        Bottom =421
+        Left =140
+        Top =44
+        Right =428
+        Bottom =441
         Top =0
         Name ="Equipments"
         Name =""

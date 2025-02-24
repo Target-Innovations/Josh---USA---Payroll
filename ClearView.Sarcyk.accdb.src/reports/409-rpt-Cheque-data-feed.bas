@@ -127,7 +127,6 @@ Begin Report
             BackTint =20.0
             Begin
                 Begin Label
-                    OverlapFlags =81
                     Left =360
                     Top =300
                     Width =4673
@@ -141,7 +140,6 @@ Begin Report
                     LayoutCachedHeight =788
                 End
                 Begin CommandButton
-                    OverlapFlags =81
                     AccessKey =69
                     TextFontFamily =34
                     Left =11100
@@ -202,7 +200,6 @@ Begin Report
             BackThemeColorIndex =1
             Begin
                 Begin Label
-                    OverlapFlags =81
                     Left =120
                     Top =60
                     Width =1440
@@ -218,7 +215,6 @@ Begin Report
                     GroupTable =2
                 End
                 Begin Label
-                    OverlapFlags =81
                     Left =1628
                     Top =60
                     Width =1440
@@ -236,7 +232,6 @@ Begin Report
                     GroupTable =2
                 End
                 Begin Label
-                    OverlapFlags =81
                     Left =3135
                     Top =60
                     Width =3225
@@ -254,7 +249,6 @@ Begin Report
                     GroupTable =2
                 End
                 Begin Label
-                    OverlapFlags =81
                     Left =6428
                     Top =60
                     Width =1440
@@ -272,7 +266,6 @@ Begin Report
                     GroupTable =2
                 End
                 Begin Label
-                    OverlapFlags =81
                     Left =7935
                     Top =60
                     Width =885
@@ -290,7 +283,6 @@ Begin Report
                     GroupTable =2
                 End
                 Begin Label
-                    OverlapFlags =81
                     Left =8888
                     Top =60
                     Width =1583
@@ -308,7 +300,6 @@ Begin Report
                     GroupTable =2
                 End
                 Begin Label
-                    OverlapFlags =81
                     Left =10538
                     Top =60
                     Width =2880
@@ -326,7 +317,6 @@ Begin Report
                     GroupTable =2
                 End
                 Begin Label
-                    OverlapFlags =81
                     Left =13485
                     Top =60
                     Width =2356
@@ -355,7 +345,6 @@ Begin Report
             BackThemeColorIndex =1
             Begin
                 Begin TextBox
-                    OverlapFlags =81
                     IMESentenceMode =3
                     Left =120
                     Top =120
@@ -375,7 +364,6 @@ Begin Report
                     GroupTable =2
                 End
                 Begin TextBox
-                    OverlapFlags =81
                     IMESentenceMode =3
                     Left =1628
                     Top =120
@@ -399,7 +387,6 @@ Begin Report
                     GroupTable =2
                 End
                 Begin TextBox
-                    OverlapFlags =81
                     IMESentenceMode =3
                     Left =3135
                     Top =120
@@ -422,7 +409,6 @@ Begin Report
                     GroupTable =2
                 End
                 Begin TextBox
-                    OverlapFlags =81
                     IMESentenceMode =3
                     Left =6428
                     Top =120
@@ -444,7 +430,6 @@ Begin Report
                     GroupTable =2
                 End
                 Begin TextBox
-                    OverlapFlags =81
                     IMESentenceMode =3
                     Left =7935
                     Top =120
@@ -467,7 +452,6 @@ Begin Report
                     GroupTable =2
                 End
                 Begin TextBox
-                    OverlapFlags =81
                     IMESentenceMode =3
                     Left =8888
                     Top =120
@@ -493,7 +477,6 @@ Begin Report
                 Begin TextBox
                     CanGrow = NotDefault
                     CanShrink = NotDefault
-                    OverlapFlags =81
                     Left =10538
                     Top =120
                     Width =2880
@@ -516,7 +499,6 @@ Begin Report
                     GroupTable =2
                 End
                 Begin TextBox
-                    OverlapFlags =81
                     IMESentenceMode =3
                     Left =13485
                     Top =120
@@ -551,7 +533,6 @@ Begin Report
             Begin
                 Begin TextBox
                     OldBorderStyle =0
-                    OverlapFlags =81
                     TextAlign =1
                     IMESentenceMode =3
                     Left =60
@@ -569,7 +550,6 @@ Begin Report
                 End
                 Begin TextBox
                     OldBorderStyle =0
-                    OverlapFlags =81
                     TextAlign =3
                     IMESentenceMode =3
                     Left =11018

@@ -14,7 +14,7 @@ Private Const CLASS_NAME = "cAdpEngine"
 Private Const WO_INSERT As String = "INSERT"
 Private Const WO_UPDATE As String = "UPDATE"
 
-Public ID As Integer
+Public Id As Integer
 Public FilePath As String
 
 Public UpdatedAt As Date
@@ -51,7 +51,7 @@ End Property
 
 Public Sub ClearFields()
 
-    ID = vbNull
+    Id = vbNull
     FilePath = vbNull
     
     RunTimeMode = "DEV"
@@ -83,7 +83,7 @@ On Error GoTo ErrorHandler
             
             rs.MoveFirst
             
-            ID = Nz(rs("Id"))
+            Id = Nz(rs("Id"))
             FilePath = Nz(rs("FilePath"))
 
     
@@ -130,13 +130,13 @@ Public Function NotifyTimeOff() As Boolean
     Err.Raise "50001", CLASS_NAME & ".NotifyTimeOff", "Method Not Implemented."
 End Function
 
-Public Function GetADPFileById(ID As String) As DAO.Recordset
+Public Function GetADPFileById(Id As String) As DAO.Recordset
 
 On Error GoTo ErrorHandler
 
     Dim rs As DAO.Recordset
 
-    Set rs = CurrentDb().OpenRecordset("Select * From [xxxxxxx] Where Id = " & ID, dbOpenDynaset)
+    Set rs = CurrentDb().OpenRecordset("Select * From [xxxxxxx] Where Id = " & Id, dbOpenDynaset)
     Me.PopulateFields rs
     
     Set GetADPFileById = rs

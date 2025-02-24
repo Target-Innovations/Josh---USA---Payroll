@@ -19,7 +19,7 @@ Begin Form
     Width =13620
     DatasheetFontHeight =11
     ItemSuffix =34
-    Right =11295
+    Right =12975
     Bottom =10515
     OnUnload ="[Event Procedure]"
     Tag ="LoggedUser: Josh"
@@ -496,13 +496,13 @@ Begin Form
                     BackThemeColorIndex =6
                     BackTint =100.0
                     BackShade =50.0
-                    BorderColor =3259885
+                    BorderColor =8544277
                     BorderTint =100.0
                     ThemeFontIndex =-1
                     HoverThemeColorIndex =5
                     HoverTint =100.0
                     HoverShade =75.0
-                    PressedColor =1221074
+                    PressedColor =6835473
                     PressedShade =80.0
                     HoverForeThemeColorIndex =1
                     HoverForeTint =100.0
@@ -544,13 +544,13 @@ Begin Form
                     BackThemeColorIndex =6
                     BackTint =100.0
                     BackShade =50.0
-                    BorderColor =3259885
+                    BorderColor =8544277
                     BorderTint =100.0
                     ThemeFontIndex =-1
                     HoverThemeColorIndex =5
                     HoverTint =100.0
                     HoverShade =75.0
-                    PressedColor =1221074
+                    PressedColor =6835473
                     PressedShade =80.0
                     HoverForeThemeColorIndex =1
                     HoverForeTint =100.0
@@ -3834,13 +3834,13 @@ Begin Form
                     BackThemeColorIndex =6
                     BackTint =100.0
                     BackShade =50.0
-                    BorderColor =3259885
+                    BorderColor =8544277
                     BorderTint =100.0
                     ThemeFontIndex =-1
                     HoverThemeColorIndex =5
                     HoverTint =100.0
                     HoverShade =75.0
-                    PressedColor =1221074
+                    PressedColor =6835473
                     PressedShade =80.0
                     HoverForeThemeColorIndex =1
                     HoverForeTint =100.0
@@ -3881,13 +3881,13 @@ Begin Form
                     BackThemeColorIndex =6
                     BackTint =100.0
                     BackShade =50.0
-                    BorderColor =3259885
+                    BorderColor =8544277
                     BorderTint =100.0
                     ThemeFontIndex =-1
                     HoverThemeColorIndex =5
                     HoverTint =100.0
                     HoverShade =75.0
-                    PressedColor =1221074
+                    PressedColor =6835473
                     PressedShade =80.0
                     HoverForeThemeColorIndex =1
                     HoverForeTint =100.0
@@ -3926,13 +3926,13 @@ Begin Form
                     BackThemeColorIndex =6
                     BackTint =100.0
                     BackShade =50.0
-                    BorderColor =3259885
+                    BorderColor =8544277
                     BorderTint =100.0
                     ThemeFontIndex =-1
                     HoverThemeColorIndex =5
                     HoverTint =100.0
                     HoverShade =75.0
-                    PressedColor =1221074
+                    PressedColor =6835473
                     PressedShade =80.0
                     HoverForeThemeColorIndex =1
                     HoverForeTint =100.0
@@ -3970,13 +3970,13 @@ Begin Form
                     BackThemeColorIndex =6
                     BackTint =100.0
                     BackShade =50.0
-                    BorderColor =3259885
+                    BorderColor =8544277
                     BorderTint =100.0
                     ThemeFontIndex =-1
                     HoverThemeColorIndex =5
                     HoverTint =100.0
                     HoverShade =75.0
-                    PressedColor =1221074
+                    PressedColor =6835473
                     PressedShade =80.0
                     HoverForeThemeColorIndex =1
                     HoverForeTint =100.0
@@ -4281,7 +4281,7 @@ End Sub
 Private Sub NewLoginBTN_Click()
 
     Dim TempPass As String
-    Dim ID As Integer
+    Dim Id As Integer
     Dim UserEmail As String
 
     Me.Tag = vbNullString

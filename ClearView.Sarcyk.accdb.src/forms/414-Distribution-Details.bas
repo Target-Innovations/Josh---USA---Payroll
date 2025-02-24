@@ -523,7 +523,7 @@ Begin Form
                     BackColor =16777215
                     BackThemeColorIndex =-1
                     BackTint =100.0
-                    BorderColor =3259885
+                    BorderColor =8544277
                     BorderTint =100.0
                     ThemeFontIndex =-1
                     HoverColor =16777215
@@ -1424,7 +1424,7 @@ Begin Form
                     BackColor =16777215
                     BackThemeColorIndex =-1
                     BackTint =100.0
-                    BorderColor =3259885
+                    BorderColor =8544277
                     BorderTint =100.0
                     ThemeFontIndex =-1
                     HoverColor =16777215
@@ -1475,7 +1475,7 @@ Begin Form
                     BackColor =16777215
                     BackThemeColorIndex =-1
                     BackTint =100.0
-                    BorderColor =3259885
+                    BorderColor =8544277
                     BorderTint =100.0
                     ThemeFontIndex =-1
                     HoverColor =16777215
@@ -1855,7 +1855,7 @@ Begin Form
                                     Width =1920
                                     Height =285
                                     TabIndex =1
-                                    ColumnInfo ="\"\";\"\";\"\";\"@\";\"10\";\"510\""
+                                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
                                     Name ="GameName"
                                     ControlSource ="GameName"
                                     RowSourceType ="Table/Query"
@@ -2357,7 +2357,7 @@ Begin Form
                                     Width =1920
                                     Height =278
                                     TabIndex =12
-                                    ColumnInfo ="\"\";\"\";\"\";\"@\";\"10\";\"510\""
+                                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
                                     Name ="CharityAssociation"
                                     ControlSource ="CharityId"
                                     RowSourceType ="Table/Query"
@@ -2742,7 +2742,7 @@ Begin Form
                                     Width =1920
                                     Height =278
                                     TabIndex =18
-                                    ColumnInfo ="\"\";\"\";\"\";\"@\";\"10\";\"510\""
+                                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
                                     Name ="MarketingRep"
                                     ControlSource ="MarketingRepId"
                                     RowSourceType ="Table/Query"
@@ -3765,7 +3765,7 @@ Private Sub cmdDelete_Click()
         
         DoCmd.SetWarnings False
         
-        DoCmd.RunSQL "Delete * from [TicketDistribution] Where Id = " & Nz(Me.ID, 0)
+        DoCmd.RunSQL "Delete * from [TicketDistribution] Where Id = " & Nz(Me.Id, 0)
         
         DoCmd.SetWarnings True
         
@@ -3831,7 +3831,7 @@ End Sub
 
 Sub UpdateModel()
 
-    oDistribution.ID = Nz(ID)
+    oDistribution.Id = Nz(Id)
     oDistribution.Status = Nz(Status)
     oDistribution.DeliveryNumber = Nz(DeliveryNumber)
     oDistribution.DistributionDate = Nz(DistributionDate)

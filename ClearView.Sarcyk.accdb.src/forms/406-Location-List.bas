@@ -4,7 +4,6 @@ Begin Form
     RecordSelectors = NotDefault
     AutoCenter = NotDefault
     DividingLines = NotDefault
-    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =5
     ScrollBars =0
@@ -1804,7 +1803,7 @@ Begin Form
                     Height =285
                     ColumnWidth =2333
                     TabIndex =5
-                    ColumnInfo ="\"\";\"\";\"\";\"@\";\"10\";\"510\""
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
                     Name ="MarketingRepId"
                     ControlSource ="MarketingRepId"
                     RowSourceType ="Table/Query"

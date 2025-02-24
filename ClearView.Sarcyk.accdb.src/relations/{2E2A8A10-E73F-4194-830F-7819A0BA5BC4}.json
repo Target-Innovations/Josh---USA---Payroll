@@ -1,0 +1,18 @@
+﻿{
+  "Info": {
+    "Class": "clsDbRelation",
+    "Description": "Database relationship"
+  },
+  "Items": {
+    "Name": "{2E2A8A10-E73F-4194-830F-7819A0BA5BC4}",
+    "Attributes": 0,
+    "Table": "TicketDeliveryOrders",
+    "ForeignTable": "TicketDeliveryOrderItems",
+    "Fields": [
+      {
+        "Name": "Id",
+        "ForeignName": "DistributionOrderId"
+      }
+    ]
+  }
+}

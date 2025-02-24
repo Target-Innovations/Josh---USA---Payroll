@@ -4,7 +4,6 @@ Begin Form
     RecordSelectors = NotDefault
     AutoCenter = NotDefault
     DividingLines = NotDefault
-    FilterOn = NotDefault
     OrderByOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =5
@@ -17,11 +16,11 @@ Begin Form
     Width =14760
     DatasheetFontHeight =11
     ItemSuffix =894
-    Right =17438
+    Right =17415
     Bottom =10770
     DatasheetGridlinesColor =-1
     Tag ="SplitList"
-    Filter ="([OrderForms].[FormNumber] Like \"*yf38*\")"
+    Filter ="([OrderForms].[FormNumber] Like \"*AR-210LS*\")"
     OrderBy ="[OrderForms].[GameName], [OrderForms].[Id]"
     RecSrcDt = Begin
         0x7be57bf35242e640
@@ -808,7 +807,7 @@ Begin Form
                     Top =1478
                     Width =3870
                     Height =293
-                    ColumnWidth =1883
+                    ColumnWidth =2258
                     FontSize =10
                     TabIndex =4
                     Name ="UpdatedAt"

@@ -15,7 +15,7 @@ Private Const C1 As String = "C1"
 
 Private Type TDbOperations
 
-    ID As Long
+    Id As Long
     Message As String
     
 End Type
@@ -482,7 +482,7 @@ Public Function FixQuotes(Val As Variant) As String
     FixQuotes = Replace(Val, "'", "''")
 End Function
 
-Function FieldWritter()
+Function FieldWritter(TableName As String, PrintType As String)
 
 ' Procedure Calls Types
 '
@@ -493,10 +493,10 @@ Function FieldWritter()
 ' cDbOperations.FieldWritter "Branch", "Add" or "Update"
 
 
-Dim TableName As String, PrintType As String
+' Dim TableName As String, PrintType As String
 
- TableName = "TicketDistribution"
- PrintType = "Add"
+' TableName = "TicketDistribution"
+' PrintType = "Add"
   
 On Error GoTo ErrorHandler
 

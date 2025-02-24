@@ -11,12 +11,13 @@ Begin Report
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
     GridY =10
-    Width =11520
+    Width =11339
     DatasheetFontHeight =11
-    ItemSuffix =33
-    Filter ="1=1 And LocationId  = 25 And  DateRange  Between #2024-09-01# And #2024-09-30#"
+    ItemSuffix =37
+    Filter ="CollectionStubId = 123"
+    OrderBy ="LocationId Desc"
     RecSrcDt = Begin
-        0x4f8224710145e640
+        0x936ba7ecd850e640
     End
     RecordSource ="306-Detailed-Receipt"
     Caption ="306-Detailed-Receipt"
@@ -116,17 +117,20 @@ Begin Report
             Begin
                 Begin Label
                     TextAlign =2
-                    Left =3120
-                    Top =173
+                    Left =3165
                     Width =5723
                     Height =1193
                     FontSize =16
+                    ForeColor =4210752
                     Name ="Etiqueta8"
                     Caption ="Union Vending\015\01213730 Enterprise Ave\015\012Cleveland, OH 44135"
-                    LayoutCachedLeft =3120
-                    LayoutCachedTop =173
-                    LayoutCachedWidth =8843
-                    LayoutCachedHeight =1366
+                    LayoutCachedLeft =3165
+                    LayoutCachedWidth =8888
+                    LayoutCachedHeight =1193
+                    BorderThemeColorIndex =1
+                    BorderTint =100.0
+                    BorderShade =65.0
+                    ForeTint =75.0
                 End
                 Begin ComboBox
                     LimitToList = NotDefault
@@ -136,10 +140,10 @@ Begin Report
                     BackStyle =0
                     IMESentenceMode =3
                     ColumnCount =3
-                    Left =6030
-                    Top =1418
-                    Width =3719
-                    Height =330
+                    Left =6060
+                    Top =1298
+                    Width =5279
+                    Height =398
                     ColumnWidth =2303
                     FontSize =16
                     TabIndex =2
@@ -153,10 +157,10 @@ Begin Report
                     ColumnWidths ="0;1701;1701"
                     AllowValueListEdits =0
 
-                    LayoutCachedLeft =6030
-                    LayoutCachedTop =1418
-                    LayoutCachedWidth =9749
-                    LayoutCachedHeight =1748
+                    LayoutCachedLeft =6060
+                    LayoutCachedTop =1298
+                    LayoutCachedWidth =11339
+                    LayoutCachedHeight =1696
                     ForeThemeColorIndex =0
                     ForeTint =75.0
                     ForeShade =100.0
@@ -164,18 +168,18 @@ Begin Report
                         Begin Label
                             TextAlign =3
                             TextFontFamily =34
-                            Left =4290
-                            Top =1418
+                            Left =4320
+                            Top =1298
                             Width =1695
-                            Height =330
+                            Height =398
                             FontSize =16
                             ForeColor =4210752
                             Name ="Label32"
                             Caption ="Location:"
-                            LayoutCachedLeft =4290
-                            LayoutCachedTop =1418
-                            LayoutCachedWidth =5985
-                            LayoutCachedHeight =1748
+                            LayoutCachedLeft =4320
+                            LayoutCachedTop =1298
+                            LayoutCachedWidth =6015
+                            LayoutCachedHeight =1696
                             BorderThemeColorIndex =1
                             BorderTint =100.0
                             BorderShade =65.0
@@ -190,7 +194,7 @@ Begin Report
                     IMESentenceMode =3
                     Left =53
                     Top =1815
-                    Width =11460
+                    Width =11183
                     Height =398
                     FontSize =16
                     Name ="Text13"
@@ -199,7 +203,7 @@ Begin Report
 
                     LayoutCachedLeft =53
                     LayoutCachedTop =1815
-                    LayoutCachedWidth =11513
+                    LayoutCachedWidth =11236
                     LayoutCachedHeight =2213
                 End
                 Begin Subform
@@ -211,7 +215,7 @@ Begin Report
                     Height =3090
                     TabIndex =1
                     Name ="308-Receipt-v1"
-                    SourceObject ="Form.308-Receipt-v1"
+                    SourceObject ="Report.306-Executive-Summary"
                     LinkChildFields ="Id"
                     LinkMasterFields ="CollectionStubId"
                     EventProcPrefix ="Ctl308_Receipt_v1"
@@ -253,7 +257,7 @@ Begin Report
             KeepTogether = NotDefault
             CanGrow = NotDefault
             CanShrink = NotDefault
-            Height =396
+            Height =437
             Name ="GroupHeader0"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
@@ -270,7 +274,7 @@ Begin Report
                     Height =293
                     FontWeight =700
                     ForeColor =0
-                    Name ="Text15"
+                    Name ="txtTransactionTypeTotal"
                     ControlSource ="=Sum([Amount])/2"
                     Format ="$#,##0.00;-$#,##0.00"
                     StatusBarText ="[Amount]*[Split]"
@@ -539,7 +543,7 @@ Begin Report
                     ColumnWidth =1710
                     FontWeight =700
                     Name ="CashToLocation"
-                    ControlSource ="=Sum([Amount])/2"
+                    ControlSource ="=Sum([Amount]/2)"
                     Format ="$#,##0.00;-$#,##0.00"
 
                     LayoutCachedLeft =7321
@@ -571,8 +575,7 @@ Begin Report
                     ColumnWidth =1913
                     FontWeight =700
                     TabIndex =1
-                    Name ="CashToUnionVending"
-                    ControlSource ="GrossCashSplit"
+                    Name ="txtTotalGrossCashSplit"
                     Format ="$#,##0.00;-$#,##0.00"
 
                     LayoutCachedLeft =7321
@@ -604,8 +607,7 @@ Begin Report
                     ColumnWidth =2138
                     FontWeight =700
                     TabIndex =2
-                    Name ="TotalEletronicCollections"
-                    ControlSource ="TotalFeesToBeSplit"
+                    Name ="TotalFeesBeSplitted"
                     Format ="$#,##0.00;-$#,##0.00"
 
                     LayoutCachedLeft =7321
@@ -689,11 +691,63 @@ Option Compare Database
 
 Private Sub Report_Load()
 
-On Error Resume Next
+' On Error Resume Next
 
-    Me![308-Receipt-v1].Form.FilterOn = False
-    Me![308-Receipt-v1].Form.Filter = "Id = " & Me.CollectionStubId
-    Me![308-Receipt-v1].Form.FilterOn = True
-    Me![308-Receipt-v1].Form.Requery
+    Dim GrossSplitAmount As Double
+    Dim TotalFeesToBeSplitted As Double
+    
+    Dim rs As Recordset
+    '
+    Set rs = CurrentDb().OpenRecordset("SELECT CollectionStubId, Max(GrossCashSplit) AS TotalCashSplit FROM [306-Detailed-Receipt] Where " & Me.Filter & " GROUP BY CollectionStubId", dbOpenDynaset)
+    
+    GrossSplitAmount = 0
+    TotalFeesToBeSplitted = 0
+            
+    TempVars!txtGrossCashSplitUV = 0
+    TempVars!txtGrossCashSplitLocal = 0
+    
+    TempVars!txtEletronicCollectionsUV = 0
+    TempVars!txtEletronicCollectionsLocal = 0
+    
+    TempVars!txtFeeReembursementUV = 0
+    TempVars!txtFeeReembursementLocal = 0
+    
+    TempVars!txtUnionVendingFeesUV = 0
+    TempVars!txtUnionVendingFeesLocal = 0
+    
+    TempVars!txtAdjustedCashSplitUV = 0
+    TempVars!txtAdjustedCashSplitLocal = 0
+    
+    While Not rs.EOF
+        
+        oStub.GetStubInfoById rs("CollectionStubId")
+
+    
+        GrossSplitAmount = GrossSplitAmount + oStub.TotalCash
+        TotalFeesToBeSplitted = TotalFeesToBeSplitted + oStub.SplitedServiceFee
+                
+        TempVars!txtGrossCashSplitUV = TempVars!txtGrossCashSplitUV + oStub.GrossCashSplit(cSysSettings.UnionVendingId)
+        TempVars!txtGrossCashSplitLocal = TempVars!txtGrossCashSplitLocal + oStub.GrossCashSplit(Nz(Me.LocationId))
+        
+        TempVars!txtEletronicCollectionsUV = TempVars!txtEletronicCollectionsUV + oStub.SplitElectronicPayments(Nz(Me.LocationId))
+        TempVars!txtEletronicCollectionsLocal = TempVars!txtEletronicCollectionsLocal + oStub.SplitElectronicPayments(Nz(Me.LocationId)) * -1
+        
+        TempVars!txtFeeReembursementUV = TempVars!txtFeeReembursementUV + oStub.FeeReimbursement(Nz(Me.LocationId)) * -1
+        TempVars!txtFeeReembursementLocal = TempVars!txtFeeReembursementLocal + oStub.FeeReimbursement(Nz(Me.LocationId))
+        
+        TempVars!txtUnionVendingFeesUV = TempVars!txtUnionVendingFeesUV + oStub.FeeChargedToLocation * -1
+        TempVars!txtUnionVendingFeesLocal = TempVars!txtUnionVendingFeesLocal + oStub.FeeChargedToLocation
+        
+        TempVars!txtAdjustedCashSplitUV = TempVars!txtAdjustedCashSplitUV + oStub.CashToLocation
+        TempVars!txtAdjustedCashSplitLocal = TempVars!txtAdjustedCashSplitLocal + oStub.CashToUnionVending
+
+        rs.MoveNext
+        
+    Wend
+    
+    Debug.Print GrossSplitAmount, TotalFeesToBeSplitted
+    
+    Me.txtTotalGrossCashSplit = GrossSplitAmount
+    Me.TotalFeesBeSplitted = TotalFeesToBeSplitted
     
 End Sub

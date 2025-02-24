@@ -1,16 +1,16 @@
 ﻿Operation =1
 Option =0
 Begin InputTables
+    Name ="EquipmentType"
     Name ="Collections-Splitted"
     Name ="Equipments"
-    Name ="EquipmentType"
 End
 Begin OutputColumns
     Expression ="[Collections-Splitted].CollectionStubId"
     Expression ="[Collections-Splitted].CollectionId"
     Expression ="[Collections-Splitted].LocationId"
-    Alias ="DateRange"
     Expression ="[Collections-Splitted].CollectionDate"
+    Alias ="DateRange"
     Expression ="[Collections-Splitted].CollectionDate"
     Expression ="[Collections-Splitted].EmployeeId"
     Expression ="EquipmentType.EquipmentTypeName"
@@ -51,14 +51,16 @@ Begin Joins
     Expression ="EquipmentType.Id = Equipments.EquipmentTypeId"
     Flag =1
 End
+Begin OrderBy
+    Expression ="[Collections-Splitted].LocationId"
+    Flag =1
+End
 Begin Groups
     Expression ="[Collections-Splitted].CollectionStubId"
     GroupLevel =0
     Expression ="[Collections-Splitted].CollectionId"
     GroupLevel =0
     Expression ="[Collections-Splitted].LocationId"
-    GroupLevel =0
-    Expression ="[Collections-Splitted].CollectionDate"
     GroupLevel =0
     Expression ="[Collections-Splitted].CollectionDate"
     GroupLevel =0
@@ -99,6 +101,8 @@ Begin Groups
     Expression ="TotalFeesToBeSplit([CollectionStubId])"
     GroupLevel =0
     Expression ="BackGrounMusic([CollectionStubId])"
+    GroupLevel =0
+    Expression ="[Collections-Splitted].CollectionDate"
     GroupLevel =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -228,10 +232,6 @@ Begin
         dbBoolean "ColumnHidden" ="0"
     End
     Begin
-        dbText "Name" ="Period"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
         dbText "Name" ="DateRange"
         dbLong "AggregateType" ="-1"
     End
@@ -240,15 +240,24 @@ Begin
     State =0
     Left =0
     Top =0
-    Right =2798
+    Right =2128
     Bottom =1206
     Left =-1
     Top =-1
-    Right =1996
-    Bottom =807
+    Right =2095
+    Bottom =330
     Left =0
     Top =0
     ColumnsShown =543
+    Begin
+        Left =1151
+        Top =109
+        Right =1439
+        Bottom =397
+        Top =0
+        Name ="EquipmentType"
+        Name =""
+    End
     Begin
         Left =96
         Top =24
@@ -265,15 +274,6 @@ Begin
         Bottom =343
         Top =0
         Name ="Equipments"
-        Name =""
-    End
-    Begin
-        Left =1151
-        Top =109
-        Right =1439
-        Bottom =397
-        Top =0
-        Name ="EquipmentType"
         Name =""
     End
 End

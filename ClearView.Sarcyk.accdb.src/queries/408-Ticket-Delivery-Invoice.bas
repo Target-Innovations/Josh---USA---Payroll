@@ -271,33 +271,17 @@ Begin
         dbText "Name" ="OrderForms.Revenue"
         dbLong "AggregateType" ="-1"
     End
-    Begin
-        dbText "Name" ="TicketDeliveryOrderItems.DeliveryPersonsName"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="TicketDeliveryOrderItems.ReceiverName"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Expr1"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Rent"
-        dbLong "AggregateType" ="-1"
-    End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =2013
-    Bottom =1206
+    Right =1365
+    Bottom =1133
     Left =-1
     Top =-1
-    Right =1980
-    Bottom =786
+    Right =1332
+    Bottom =718
     Left =0
     Top =0
     ColumnsShown =539

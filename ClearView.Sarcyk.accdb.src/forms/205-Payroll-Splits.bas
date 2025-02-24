@@ -16,12 +16,13 @@ Begin Form
     Width =14760
     DatasheetFontHeight =11
     ItemSuffix =655
-    Right =14505
-    Bottom =10515
+    Right =21600
+    Bottom =11603
     DatasheetGridlinesColor =-1
     Tag ="SplitList"
     Filter ="([Lookup_EmployeeId].[FullName]=\"Neil Sarczyk\")"
-    OrderBy ="[Lookup_EmployeeId].[FullName], [PayrollSplittedEntries].[PayPeriodEnd]"
+    OrderBy ="[PayrollSplittedEntries].[PayPeriodStart], [PayrollSplittedEntries].[id], [Looku"
+        "p_EmployeeId].[FullName], [PayrollSplittedEntries].[PayPeriodEnd]"
     RecSrcDt = Begin
         0x7379d56f7c35e640
     End
@@ -153,8 +154,8 @@ Begin Form
         Begin FormHeader
             Height =1621
             Name ="FormHeader"
-            BackThemeColorIndex =2
-            BackTint =50.0
+            BackThemeColorIndex =6
+            BackShade =75.0
             Begin
                 Begin Rectangle
                     BackStyle =1
@@ -2531,6 +2532,13 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
 
+Private Sub Form_BeforeUpdate(Cancel As Integer)
+
+    Me.UpdatedAt = Now()
+    Me.UpdatedBy = cSysSettings.oUser.Username
+        
+End Sub
+
 Private Sub Form_Load()
 
     On Error Resume Next
@@ -2540,15 +2548,8 @@ Private Sub Form_Load()
     If cSysSettings.oUser.UserType = User_Type.Admin Then
         Me.FilterOn = False
     Else
-        Me.Filter = "EmployeeId = " & cSysSettings.oUser.ID
+        Me.Filter = "EmployeeId = " & cSysSettings.oUser.Id
         Me.FilterOn = True
     End If
     
-End Sub
-
-Private Sub Form_BeforeUpdate(Cancel As Integer)
-
-    Me.UpdatedAt = Now()
-    Me.UpdatedBy = cSysSettings.oUser.Username
-        
 End Sub

@@ -16,16 +16,16 @@ Begin OutputColumns
 End
 Begin Joins
     LeftTable ="TicketDeliveryOrders"
-    RightTable ="TicketDeliveryOrderItems"
-    Expression ="TicketDeliveryOrders.Id = TicketDeliveryOrderItems.DistributionOrderId"
-    Flag =1
-    LeftTable ="TicketDeliveryOrders"
     RightTable ="Charities"
     Expression ="TicketDeliveryOrders.CharityId = Charities.Id"
     Flag =1
     LeftTable ="TicketDeliveryOrders"
     RightTable ="Locations"
     Expression ="TicketDeliveryOrders.LocationId = Locations.id"
+    Flag =1
+    LeftTable ="TicketDeliveryOrders"
+    RightTable ="TicketDeliveryOrderItems"
+    Expression ="TicketDeliveryOrders.Id = TicketDeliveryOrderItems.DistributionOrderId"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -111,14 +111,6 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="TicketDeliveryOrderItems.ReceiverName"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="TicketDeliveryOrderItems.DeliveryPersonsName"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
         dbText "Name" ="TicketDeliveryOrderItems.UpdatedAt"
         dbLong "AggregateType" ="-1"
     End
@@ -144,17 +136,181 @@ Begin
         dbText "Name" ="TicketDeliveryOrders.OpenTime"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="Locations.id"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Locations.BusinessPartnerId"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Charities.UpdatedBy"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Charities.BillingStyle"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Charities.UpdatedAt"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="TicketDeliveryOrders.ReceiverName"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Locations.BusinessPhone"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="TicketDeliveryOrders.DeliveryPersonsName"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Charities.CharityName"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Charities.Id"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Charities.Code"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Locations.FaxNumber"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Locations.Status"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Charities.County"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Charities.Address"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Locations.ContractExpirationDate"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Charities.City"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Charities.State"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Charities.ZipCode"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Charities.Status"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Locations.LocationName"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Locations.LastName"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Locations.FirstName"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Locations.E-mail"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Locations.JobTitle"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Locations.HomePhone"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Locations.MobilePhone"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Locations.Address"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Locations.City"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Locations.State"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Locations.ZIP"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Locations.Country"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Locations.WebPage"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Locations.Notes"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Locations.Attachments"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Locations.IsActive"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Locations.PayeeName"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Locations.SalesRepId"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Locations.MarketingRepId"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Locations.UpdatedAt"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Locations.UpdatedBy"
+        dbLong "AggregateType" ="-1"
+    End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =1876
-    Bottom =1436
+    Right =1365
+    Bottom =1133
     Left =-1
     Top =-1
-    Right =1843
-    Bottom =956
+    Right =1332
+    Bottom =854
     Left =0
     Top =0
     ColumnsShown =539

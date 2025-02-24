@@ -15,7 +15,7 @@ Private Const C1 As String = "C1"
 
 Private Type TAuth
 
-    ID As Long
+    Id As Long
     Message As String
     
 End Type

@@ -16,11 +16,11 @@ Begin Form
     Width =14760
     DatasheetFontHeight =11
     ItemSuffix =766
-    Right =20985
-    Bottom =10770
+    Right =20310
+    Bottom =9345
     DatasheetGridlinesColor =-1
     Tag ="SplitList"
-    OrderBy ="[Lookup_Location].[LocationName] DESC"
+    OrderBy ="[Equipment-List-SMAC].[RentToOwn] DESC, [Lookup_Location].[LocationName] DESC"
     RecSrcDt = Begin
         0x764a2e597147e640
     End
@@ -2274,7 +2274,7 @@ Begin Form
                     Width =3300
                     Height =293
                     TabIndex =10
-                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
+                    ColumnInfo ="\"\";\"\";\"\";\"@\";\"10\";\"510\""
                     Name ="OwnerId"
                     ControlSource ="OwnerId"
                     RowSourceType ="Table/Query"

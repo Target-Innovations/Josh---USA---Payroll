@@ -25,7 +25,7 @@ Private Const C1 As String = "C1"
 
 Private Type TUtil
 
-    ID As Long
+    Id As Long
     Message As String
     
 End Type
@@ -129,7 +129,7 @@ Public Function SetHistoryFieldDate() As Boolean
 
 On Error GoTo ErrorHandler
 
-    Dim sql As String
+    Dim Sql As String
     Dim rs As DAO.Recordset
         
     Exit Function ' ****** This procedure is for production migration only  ******
@@ -303,3 +303,20 @@ Sub CheckAsciiCodes(s As String)
     Next i
     
 End Sub
+
+' ----------------------------------------------------------------
+' Procedure : GetTempVar
+' Date      : 9/21/2022
+' Author    : Mike Wolfe
+' Source    : https://nolongerset.com/gettempvar/
+' Purpose   : A public function to return the value of a TempVar object
+'               that can be called from a query or form/report control
+' Notes     - Returns Null if the TempVar does not exist (rather than raise an error).
+'           - This function provides no type safety or compile-time checking.
+'           - Use the TV class module to get these benefits when
+'               interacting with TempVars from VBA; for more info,
+'               see: https://nolongerset.com/tv-class/
+' ----------------------------------------------------------------
+Public Function GetTempVar(VarName As String) As Variant
+    GetTempVar = TempVars(VarName).Value
+End Function

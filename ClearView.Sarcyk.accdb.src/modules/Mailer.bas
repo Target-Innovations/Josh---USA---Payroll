@@ -69,7 +69,7 @@ Sub SendEmailAlert(strRecepient As String, strSubject As String, strHTMLBody As 
     'Create an instance of Outlook
     Dim oOutlookApp As Variant
     Dim oOutlookMessage As Variant
-    Dim objRecip As Recipient
+    Dim objRecip As Variant
     
     Set oOutlookApp = CreateObject("Outlook.Application")
     
@@ -84,13 +84,13 @@ Sub SendEmailAlert(strRecepient As String, strSubject As String, strHTMLBody As 
     
     If Len(Cc) <> 0 Then
         Set objRecip = oOutlookMessage.Recipients.Add(Cc)
-        objRecip.Type = olCC
+        objRecip.Type = 2 'olCC
         ' objRecip.Resolve
     End If
     ' oOutlookMessage.Bcc.Add (Cc)
 
     If Nz(AttachmentPath) <> "" Then
-        Dim att As Outlook.Attachment
+        Dim att As Variant ' Outlook.Attachment
         Set att = oOutlookMessage.Attachments.Add(AttachmentPath)
     End If
     

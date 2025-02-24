@@ -15,7 +15,7 @@ Begin Form
     Width =18166
     DatasheetFontHeight =11
     ItemSuffix =424
-    Right =20985
+    Right =10305
     Bottom =10515
     Tag ="Home"
     Picture ="HD-Gray-Backgrounds-2.jpg"
@@ -10014,7 +10014,7 @@ Begin Form
                             Argument =""
                             Argument ="1=0"
                             Argument ="-1"
-                            Argument ="3"
+                            Argument ="0"
                         End
                         Begin
                             Comment ="_AXL:<?xml version=\"1.0\" encoding=\"UTF-16\" standalone=\"no\"?>\015\012<UserI"
@@ -10024,8 +10024,7 @@ Begin Form
                         End
                         Begin
                             Comment ="_AXL:ame\">304-Collections-Stub-Details</Argument><Argument Name=\"WhereConditio"
-                                "n\">1=0</Argument><Argument Name=\"WindowMode\">Dialog</Argument></Action></Stat"
-                                "ements></UserInterfaceMacro>"
+                                "n\">1=0</Argument></Action></Statements></UserInterfaceMacro>"
                         End
                     End
                     BackStyle =0
@@ -10082,6 +10081,7 @@ Begin Form
                     FontSize =24
                     BackColor =-2147483607
                     BorderColor =-2147483602
+                    ForeColor =16777215
                     Name ="lblClearViewBillingSystemTitle"
                     Caption ="ClearView - Union Vending System"
                     FontName ="Segoe UI"
@@ -10090,7 +10090,6 @@ Begin Form
                     LayoutCachedTop =285
                     LayoutCachedWidth =12046
                     LayoutCachedHeight =1028
-                    ForeThemeColorIndex =0
                 End
                 Begin TextBox
                     Enabled = NotDefault
@@ -10420,7 +10419,7 @@ Begin Form
                     RowStart =1
                     RowEnd =1
                     LayoutGroup =1
-                    ForeThemeColorIndex =0
+                    ForeThemeColorIndex =1
                     UseTheme =1
                     BackThemeColorIndex =4
                     HoverThemeColorIndex =4
@@ -10477,7 +10476,7 @@ Begin Form
                     RowStart =2
                     RowEnd =2
                     LayoutGroup =1
-                    ForeThemeColorIndex =0
+                    ForeThemeColorIndex =1
                     UseTheme =1
                     BackThemeColorIndex =4
                     HoverThemeColorIndex =4
@@ -10534,7 +10533,7 @@ Begin Form
                     RowStart =6
                     RowEnd =6
                     LayoutGroup =1
-                    ForeThemeColorIndex =0
+                    ForeThemeColorIndex =1
                     UseTheme =1
                     BackThemeColorIndex =4
                     HoverThemeColorIndex =4
@@ -10591,7 +10590,7 @@ Begin Form
                     RowStart =4
                     RowEnd =4
                     LayoutGroup =1
-                    ForeThemeColorIndex =0
+                    ForeThemeColorIndex =1
                     UseTheme =1
                     BackThemeColorIndex =4
                     HoverThemeColorIndex =4
@@ -10648,7 +10647,7 @@ Begin Form
                     RowStart =5
                     RowEnd =5
                     LayoutGroup =1
-                    ForeThemeColorIndex =0
+                    ForeThemeColorIndex =1
                     UseTheme =1
                     BackThemeColorIndex =4
                     HoverThemeColorIndex =4
@@ -10705,7 +10704,7 @@ Begin Form
                     RowStart =3
                     RowEnd =3
                     LayoutGroup =1
-                    ForeThemeColorIndex =0
+                    ForeThemeColorIndex =1
                     UseTheme =1
                     BackThemeColorIndex =4
                     HoverThemeColorIndex =4
@@ -10762,7 +10761,7 @@ Begin Form
                     RowStart =7
                     RowEnd =7
                     LayoutGroup =1
-                    ForeThemeColorIndex =0
+                    ForeThemeColorIndex =1
                     UseTheme =1
                     BackThemeColorIndex =4
                     HoverThemeColorIndex =4
@@ -10793,6 +10792,8 @@ Begin Form
                     GridlineShade =65.0
                 End
                 Begin CommandButton
+                    Visible = NotDefault
+                    Enabled = NotDefault
                     OverlapFlags =85
                     Left =915
                     Top =4245
@@ -10839,7 +10840,7 @@ Begin Form
                     RowStart =8
                     RowEnd =8
                     LayoutGroup =1
-                    ForeThemeColorIndex =0
+                    ForeThemeColorIndex =1
                     UseTheme =1
                     BackThemeColorIndex =4
                     HoverThemeColorIndex =4
@@ -10933,7 +10934,7 @@ Begin Form
                     LayoutCachedHeight =1080
                     Alignment =1
                     LayoutGroup =1
-                    ForeThemeColorIndex =0
+                    ForeThemeColorIndex =1
                     UseTheme =1
                     BackThemeColorIndex =4
                     HoverThemeColorIndex =4
@@ -10978,7 +10979,7 @@ On Error Resume Next
 End Sub
 
 Private Sub imgAvatar_DblClick(Cancel As Integer)
-    DoCmd.OpenForm "00-Employee-Details", acNormal, , "Id = " & cSysSettings.oUser.ID
+    DoCmd.OpenForm "00-Employee-Details", acNormal, , "Id = " & cSysSettings.oUser.Id
 End Sub
 
 Private Sub Form_Activate()

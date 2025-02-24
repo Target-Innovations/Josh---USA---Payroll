@@ -544,7 +544,7 @@ Begin Form
                     BackColor =16777215
                     BackThemeColorIndex =-1
                     BackTint =100.0
-                    BorderColor =3259885
+                    BorderColor =8544277
                     BorderTint =100.0
                     ThemeFontIndex =-1
                     HoverColor =16777215
@@ -1445,7 +1445,7 @@ Begin Form
                     BackColor =16777215
                     BackThemeColorIndex =-1
                     BackTint =100.0
-                    BorderColor =3259885
+                    BorderColor =8544277
                     BorderTint =100.0
                     ThemeFontIndex =-1
                     HoverColor =16777215
@@ -1497,7 +1497,7 @@ Begin Form
                     BackColor =16777215
                     BackThemeColorIndex =-1
                     BackTint =100.0
-                    BorderColor =3259885
+                    BorderColor =8544277
                     BorderTint =100.0
                     ThemeFontIndex =-1
                     HoverColor =16777215
@@ -1548,7 +1548,7 @@ Begin Form
                     BackColor =16777215
                     BackThemeColorIndex =-1
                     BackTint =100.0
-                    BorderColor =3259885
+                    BorderColor =8544277
                     BorderTint =100.0
                     ThemeFontIndex =-1
                     HoverColor =16777215
@@ -2230,7 +2230,7 @@ Private Sub cmdDelete_Click()
         
         DoCmd.SetWarnings False
         
-        DoCmd.RunSQL "Delete * from [Locations] Where Id = " & Nz(Me.ID, 0)
+        DoCmd.RunSQL "Delete * from [Locations] Where Id = " & Nz(Me.Id, 0)
         
         DoCmd.SetWarnings True
         

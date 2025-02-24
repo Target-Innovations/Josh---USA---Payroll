@@ -12,6 +12,8 @@
       <xsd:appinfo>
         <od:index index-name="BoxInvetoryId" index-key="BoxInvetoryId " primary="no" unique="no" clustered="no" order="asc"/>
         <od:index index-name="Id" index-key="Id " primary="no" unique="no" clustered="no" order="asc"/>
+        <od:index index-name="InitialSupplyStockOwnerID" index-key="InitialSupplyStockOwnerID " primary="no" unique="no" clustered="no" order="asc"/>
+        <od:index index-name="NewSupplyStockOwnerID" index-key="NewSupplyStockOwnerID " primary="no" unique="no" clustered="no" order="asc"/>
         <od:index index-name="PrimaryKey" index-key="Id " primary="yes" unique="yes" clustered="no" order="asc"/>
         <od:tableProperty name="Orientation" type="2" value="0"/>
         <od:tableProperty name="OrderByOn" type="1" value="0"/>

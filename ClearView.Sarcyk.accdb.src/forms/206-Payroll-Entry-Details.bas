@@ -18,7 +18,7 @@ Begin Form
     Width =12919
     DatasheetFontHeight =11
     ItemSuffix =313
-    Right =12038
+    Right =20985
     Bottom =10515
     TimerInterval =125
     Filter ="[ID]=65"
@@ -533,7 +533,7 @@ Begin Form
                     BackColor =16777215
                     BackThemeColorIndex =-1
                     BackTint =100.0
-                    BorderColor =3259885
+                    BorderColor =8544277
                     BorderTint =100.0
                     ThemeFontIndex =-1
                     HoverColor =16777215
@@ -627,7 +627,7 @@ Begin Form
                     BackColor =16777215
                     BackThemeColorIndex =-1
                     BackTint =100.0
-                    BorderColor =3259885
+                    BorderColor =8544277
                     BorderTint =100.0
                     ThemeFontIndex =-1
                     HoverColor =16777215
@@ -678,7 +678,7 @@ Begin Form
                     BackColor =16777215
                     BackThemeColorIndex =-1
                     BackTint =100.0
-                    BorderColor =3259885
+                    BorderColor =8544277
                     BorderTint =100.0
                     ThemeFontIndex =-1
                     HoverColor =16777215
@@ -760,7 +760,7 @@ Begin Form
                     BackColor =16777215
                     BackThemeColorIndex =-1
                     BackTint =100.0
-                    BorderColor =3259885
+                    BorderColor =8544277
                     BorderTint =100.0
                     ThemeFontIndex =-1
                     HoverColor =16777215
@@ -1164,7 +1164,7 @@ Begin Form
                     BackColor =16777215
                     BackThemeColorIndex =-1
                     BackTint =100.0
-                    BorderColor =3259885
+                    BorderColor =8544277
                     BorderTint =100.0
                     ThemeFontIndex =-1
                     HoverColor =16777215
@@ -2526,17 +2526,6 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
 
-Private Sub Form_Load()
-
-On Error Resume Next
-    
-    cLogger.LogIt "Entering [" & Me.Name & "]", EventType.Info
-    
-    Set oPayroll = New cPayroll
-    Set oUser = cSysSettings.oUser
-
-End Sub
-
 Private Sub cmdSplitIt_Click()
 
     UpdateModel
@@ -2565,7 +2554,7 @@ End Sub
 
 Sub UpdateModel()
 
-    oPayroll.ID = Nz(Me.ID)
+    oPayroll.Id = Nz(Me.Id)
     oPayroll.PayPeriodStart = Nz(Me.txtPayPeriodStart)
     oPayroll.PayPeriodEnd = Nz(Me.txtPayPeriodEnd)
     oPayroll.EmployeeID = Nz(Me.cboEmployeeId)
@@ -2588,13 +2577,24 @@ Private Sub Form_Current()
     
 End Sub
 
+Private Sub Form_Load()
+
+    On Error Resume Next
+    
+    cLogger.LogIt "Entering [" & Me.Name & "]", EventType.Info
+    
+    Set oPayroll = New cPayroll
+    Set oUser = cSysSettings.oUser
+
+End Sub
+
 Private Sub cmdDelete_Click()
 
     If MsgBox("Are you sure you want to delete this ADP Pay Stub and all its splits?", vbExclamation + vbYesNo) = vbYes Then
         
         DoCmd.SetWarnings False
         
-        DoCmd.RunSQL "Delete * from PayrollEntries Where Id = " & Nz(Me.ID, 0)
+        DoCmd.RunSQL "Delete * from PayrollEntries Where Id = " & Nz(Me.Id, 0)
         
         DoCmd.SetWarnings True
         

@@ -230,13 +230,13 @@ Begin Form
                     BackThemeColorIndex =6
                     BackTint =100.0
                     BackShade =50.0
-                    BorderColor =3259885
+                    BorderColor =8544277
                     BorderTint =100.0
                     ThemeFontIndex =-1
                     HoverThemeColorIndex =5
                     HoverTint =100.0
                     HoverShade =75.0
-                    PressedColor =1221074
+                    PressedColor =6835473
                     PressedShade =80.0
                     HoverForeThemeColorIndex =1
                     HoverForeTint =100.0
@@ -955,13 +955,13 @@ Begin Form
                     BackThemeColorIndex =6
                     BackTint =100.0
                     BackShade =50.0
-                    BorderColor =3259885
+                    BorderColor =8544277
                     BorderTint =100.0
                     ThemeFontIndex =-1
                     HoverThemeColorIndex =5
                     HoverTint =100.0
                     HoverShade =75.0
-                    PressedColor =1221074
+                    PressedColor =6835473
                     PressedShade =80.0
                     HoverForeThemeColorIndex =1
                     HoverForeTint =100.0
@@ -1423,6 +1423,9 @@ Dim WhereClause As String
     End If
     
     Me.Visible = False
+    
+    TempVars!StartDate = Me.StartDate.Value
+    TempVars!EndDate = Me.EndDate.Value
     
     DoCmd.OpenReport Me.cboReports, acViewPreview, , WhereClause, acDialog
         

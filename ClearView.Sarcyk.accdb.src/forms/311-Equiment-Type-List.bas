@@ -14,16 +14,16 @@ Begin Form
     GridY =24
     Width =14760
     DatasheetFontHeight =11
-    ItemSuffix =961
-    Right =15923
-    Bottom =10515
+    ItemSuffix =975
+    Right =20985
+    Bottom =10770
     DatasheetGridlinesColor =-1
     Tag ="SplitList"
     RecSrcDt = Begin
         0x49b4bcf37342e640
     End
     RecordSource ="EquipmentType"
-    Caption ="Equipment Type List"
+    Caption ="Equipment Type"
     BeforeUpdate ="[Event Procedure]"
     DatasheetFontName ="Calibri"
     OnLoad ="[Event Procedure]"
@@ -629,7 +629,7 @@ Begin Form
                         Begin
                             Action ="Close"
                             Argument ="2"
-                            Argument ="302-Location-List"
+                            Argument ="311-Equiment-Type-List"
                             Argument ="0"
                         End
                         Begin
@@ -640,8 +640,8 @@ Begin Form
                         End
                         Begin
                             Comment ="_AXL:300-Home-Union-Vending</Argument></Action><Action Name=\"CloseWindow\"><Arg"
-                                "ument Name=\"ObjectType\">Form</Argument><Argument Name=\"ObjectName\">302-Locat"
-                                "ion-List</Argument></Action></Statements></UserInterfaceMacro>"
+                                "ument Name=\"ObjectType\">Form</Argument><Argument Name=\"ObjectName\">311-Equim"
+                                "ent-Type-List</Argument></Action></Statements></UserInterfaceMacro>"
                         End
                     End
                     BackStyle =0
@@ -673,7 +673,7 @@ Begin Form
         End
         Begin Section
             CanGrow = NotDefault
-            Height =1464
+            Height =1966
             BackColor =-2147483613
             Name ="Detail"
             Begin
@@ -681,7 +681,7 @@ Begin Form
                     OverlapFlags =85
                     TextAlign =2
                     IMESentenceMode =3
-                    Left =2453
+                    Left =2468
                     Top =180
                     Width =3300
                     Height =293
@@ -693,9 +693,9 @@ Begin Form
                     RightPadding =0
                     BottomPadding =0
 
-                    LayoutCachedLeft =2453
+                    LayoutCachedLeft =2468
                     LayoutCachedTop =180
-                    LayoutCachedWidth =5753
+                    LayoutCachedWidth =5768
                     LayoutCachedHeight =473
                     ColumnStart =1
                     ColumnEnd =1
@@ -707,9 +707,9 @@ Begin Form
                         Begin Label
                             OverlapFlags =85
                             TextAlign =1
-                            Left =563
+                            Left =570
                             Top =180
-                            Width =1883
+                            Width =1890
                             Height =293
                             Name ="Label450"
                             Caption ="ID"
@@ -718,9 +718,9 @@ Begin Form
                             TopPadding =0
                             RightPadding =0
                             BottomPadding =0
-                            LayoutCachedLeft =563
+                            LayoutCachedLeft =570
                             LayoutCachedTop =180
-                            LayoutCachedWidth =2446
+                            LayoutCachedWidth =2460
                             LayoutCachedHeight =473
                             LayoutGroup =1
                             GridlineThemeColorIndex =1
@@ -734,7 +734,7 @@ Begin Form
                     TextFontCharSet =0
                     TextAlign =1
                     IMESentenceMode =3
-                    Left =2453
+                    Left =2468
                     Top =480
                     Width =3300
                     Height =270
@@ -748,9 +748,9 @@ Begin Form
                     RightPadding =0
                     BottomPadding =0
 
-                    LayoutCachedLeft =2453
+                    LayoutCachedLeft =2468
                     LayoutCachedTop =480
-                    LayoutCachedWidth =5753
+                    LayoutCachedWidth =5768
                     LayoutCachedHeight =750
                     RowStart =1
                     RowEnd =1
@@ -765,9 +765,9 @@ Begin Form
                             OverlapFlags =85
                             TextAlign =1
                             TextFontFamily =34
-                            Left =563
+                            Left =570
                             Top =480
-                            Width =1883
+                            Width =1890
                             Height =270
                             Name ="Label940"
                             Caption ="Equipment Type Name"
@@ -776,9 +776,9 @@ Begin Form
                             TopPadding =0
                             RightPadding =0
                             BottomPadding =0
-                            LayoutCachedLeft =563
+                            LayoutCachedLeft =570
                             LayoutCachedTop =480
-                            LayoutCachedWidth =2446
+                            LayoutCachedWidth =2460
                             LayoutCachedHeight =750
                             RowStart =1
                             RowEnd =1
@@ -794,10 +794,10 @@ Begin Form
                     TextFontCharSet =0
                     TextAlign =1
                     IMESentenceMode =3
-                    Left =2453
+                    Left =2468
                     Top =758
                     Width =3300
-                    Height =293
+                    Height =300
                     ColumnWidth =2520
                     TabIndex =2
                     Name ="Description"
@@ -808,10 +808,10 @@ Begin Form
                     RightPadding =0
                     BottomPadding =0
 
-                    LayoutCachedLeft =2453
+                    LayoutCachedLeft =2468
                     LayoutCachedTop =758
-                    LayoutCachedWidth =5753
-                    LayoutCachedHeight =1051
+                    LayoutCachedWidth =5768
+                    LayoutCachedHeight =1058
                     RowStart =2
                     RowEnd =2
                     ColumnStart =1
@@ -825,10 +825,10 @@ Begin Form
                             OverlapFlags =85
                             TextAlign =1
                             TextFontFamily =34
-                            Left =563
+                            Left =570
                             Top =758
-                            Width =1883
-                            Height =293
+                            Width =1890
+                            Height =300
                             Name ="Label941"
                             Caption ="Description"
                             GroupTable =31
@@ -836,10 +836,10 @@ Begin Form
                             TopPadding =0
                             RightPadding =0
                             BottomPadding =0
-                            LayoutCachedLeft =563
+                            LayoutCachedLeft =570
                             LayoutCachedTop =758
-                            LayoutCachedWidth =2446
-                            LayoutCachedHeight =1051
+                            LayoutCachedWidth =2460
+                            LayoutCachedHeight =1058
                             RowStart =2
                             RowEnd =2
                             LayoutGroup =1
@@ -856,10 +856,10 @@ Begin Form
                     TextAlign =1
                     IMESentenceMode =3
                     ColumnCount =2
-                    Left =2453
-                    Top =1058
+                    Left =2468
+                    Top =1065
                     Width =3300
-                    Height =293
+                    Height =300
                     ColumnWidth =2100
                     TabIndex =3
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
@@ -876,10 +876,10 @@ Begin Form
                     BottomPadding =0
                     AllowValueListEdits =1
 
-                    LayoutCachedLeft =2453
-                    LayoutCachedTop =1058
-                    LayoutCachedWidth =5753
-                    LayoutCachedHeight =1351
+                    LayoutCachedLeft =2468
+                    LayoutCachedTop =1065
+                    LayoutCachedWidth =5768
+                    LayoutCachedHeight =1365
                     RowStart =3
                     RowEnd =3
                     ColumnStart =1
@@ -893,10 +893,10 @@ Begin Form
                             OverlapFlags =85
                             TextAlign =1
                             TextFontFamily =34
-                            Left =563
-                            Top =1058
-                            Width =1883
-                            Height =293
+                            Left =570
+                            Top =1065
+                            Width =1890
+                            Height =300
                             Name ="Label942"
                             Caption ="Division"
                             GroupTable =31
@@ -904,12 +904,130 @@ Begin Form
                             TopPadding =0
                             RightPadding =0
                             BottomPadding =0
-                            LayoutCachedLeft =563
-                            LayoutCachedTop =1058
-                            LayoutCachedWidth =2446
-                            LayoutCachedHeight =1351
+                            LayoutCachedLeft =570
+                            LayoutCachedTop =1065
+                            LayoutCachedWidth =2460
+                            LayoutCachedHeight =1365
                             RowStart =3
                             RowEnd =3
+                            LayoutGroup =1
+                            GridlineThemeColorIndex =1
+                            GridlineShade =65.0
+                            GroupTable =31
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    TextFontCharSet =0
+                    TextAlign =1
+                    IMESentenceMode =3
+                    Left =2468
+                    Top =1373
+                    Width =3300
+                    Height =293
+                    TabIndex =4
+                    Name ="UpdatedAt"
+                    ControlSource ="UpdatedAt"
+                    GroupTable =31
+                    LeftPadding =0
+                    TopPadding =0
+                    RightPadding =0
+                    BottomPadding =0
+
+                    LayoutCachedLeft =2468
+                    LayoutCachedTop =1373
+                    LayoutCachedWidth =5768
+                    LayoutCachedHeight =1666
+                    RowStart =4
+                    RowEnd =4
+                    ColumnStart =1
+                    ColumnEnd =1
+                    LayoutGroup =1
+                    GridlineThemeColorIndex =1
+                    GridlineShade =65.0
+                    GroupTable =31
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =1
+                            TextFontFamily =34
+                            Left =570
+                            Top =1373
+                            Width =1890
+                            Height =293
+                            Name ="Label961"
+                            Caption ="Updated At"
+                            GroupTable =31
+                            LeftPadding =0
+                            TopPadding =0
+                            RightPadding =0
+                            BottomPadding =0
+                            LayoutCachedLeft =570
+                            LayoutCachedTop =1373
+                            LayoutCachedWidth =2460
+                            LayoutCachedHeight =1666
+                            RowStart =4
+                            RowEnd =4
+                            LayoutGroup =1
+                            GridlineThemeColorIndex =1
+                            GridlineShade =65.0
+                            GroupTable =31
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    TextFontCharSet =0
+                    TextAlign =1
+                    IMESentenceMode =3
+                    Left =2468
+                    Top =1673
+                    Width =3300
+                    Height =293
+                    TabIndex =5
+                    Name ="UpdatedBy"
+                    ControlSource ="UpdatedBy"
+                    GroupTable =31
+                    LeftPadding =0
+                    TopPadding =0
+                    RightPadding =0
+                    BottomPadding =0
+
+                    LayoutCachedLeft =2468
+                    LayoutCachedTop =1673
+                    LayoutCachedWidth =5768
+                    LayoutCachedHeight =1966
+                    RowStart =5
+                    RowEnd =5
+                    ColumnStart =1
+                    ColumnEnd =1
+                    LayoutGroup =1
+                    GridlineThemeColorIndex =1
+                    GridlineShade =65.0
+                    GroupTable =31
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =1
+                            TextFontFamily =34
+                            Left =570
+                            Top =1673
+                            Width =1890
+                            Height =293
+                            Name ="Label962"
+                            Caption ="Updated By"
+                            GroupTable =31
+                            LeftPadding =0
+                            TopPadding =0
+                            RightPadding =0
+                            BottomPadding =0
+                            LayoutCachedLeft =570
+                            LayoutCachedTop =1673
+                            LayoutCachedWidth =2460
+                            LayoutCachedHeight =1966
+                            RowStart =5
+                            RowEnd =5
                             LayoutGroup =1
                             GridlineThemeColorIndex =1
                             GridlineShade =65.0
@@ -937,8 +1055,8 @@ Private Sub Form_BeforeUpdate(Cancel As Integer)
 
     On Error Resume Next
     
-'    Me.UpdatedAt = Now()
-'    Me.UpdatedBy = cSysSettings.oUser.Username
+    Me.UpdatedAt = Now()
+    Me.UpdatedBy = cSysSettings.oUser.Username
         
 End Sub
 

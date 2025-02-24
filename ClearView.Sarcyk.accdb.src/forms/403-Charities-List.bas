@@ -14,9 +14,9 @@ Begin Form
     GridY =24
     Width =18212
     DatasheetFontHeight =11
-    ItemSuffix =555
-    Right =22065
-    Bottom =9720
+    ItemSuffix =576
+    Right =16920
+    Bottom =10770
     DatasheetGridlinesColor =-1
     Tag ="SplitList"
     RecSrcDt = Begin
@@ -520,7 +520,7 @@ Begin Form
         End
         Begin Section
             CanGrow = NotDefault
-            Height =3473
+            Height =3773
             BackColor =-2147483613
             Name ="Detail"
             Begin
@@ -1074,73 +1074,13 @@ Begin Form
                     TextAlign =2
                     IMESentenceMode =3
                     Left =2228
-                    Top =2880
-                    Width =3300
-                    Height =293
-                    ColumnWidth =2325
-                    TabIndex =9
-                    Name ="UpdatedAt"
-                    ControlSource ="UpdatedAt"
-                    GroupTable =31
-                    LeftPadding =0
-                    TopPadding =0
-                    RightPadding =0
-                    BottomPadding =0
-
-                    LayoutCachedLeft =2228
-                    LayoutCachedTop =2880
-                    LayoutCachedWidth =5528
-                    LayoutCachedHeight =3173
-                    RowStart =9
-                    RowEnd =9
-                    ColumnStart =1
-                    ColumnEnd =1
-                    LayoutGroup =1
-                    GridlineThemeColorIndex =1
-                    GridlineShade =65.0
-                    GroupTable =31
-                    Begin
-                        Begin Label
-                            OverlapFlags =85
-                            TextAlign =1
-                            TextFontFamily =34
-                            Left =563
-                            Top =2880
-                            Width =1658
-                            Height =293
-                            Name ="Label541"
-                            Caption ="UpdatedAt"
-                            GroupTable =31
-                            LeftPadding =0
-                            TopPadding =0
-                            RightPadding =0
-                            BottomPadding =0
-                            LayoutCachedLeft =563
-                            LayoutCachedTop =2880
-                            LayoutCachedWidth =2221
-                            LayoutCachedHeight =3173
-                            RowStart =9
-                            RowEnd =9
-                            LayoutGroup =1
-                            GridlineThemeColorIndex =1
-                            GridlineShade =65.0
-                            GroupTable =31
-                        End
-                    End
-                End
-                Begin TextBox
-                    Locked = NotDefault
-                    OverlapFlags =85
-                    TextFontCharSet =0
-                    TextAlign =2
-                    IMESentenceMode =3
-                    Left =2228
                     Top =3180
                     Width =3300
                     Height =293
+                    ColumnWidth =2325
                     TabIndex =10
-                    Name ="UpdatedBy"
-                    ControlSource ="UpdatedBy"
+                    Name ="UpdatedAt"
+                    ControlSource ="UpdatedAt"
                     GroupTable =31
                     LeftPadding =0
                     TopPadding =0
@@ -1168,8 +1108,8 @@ Begin Form
                             Top =3180
                             Width =1658
                             Height =293
-                            Name ="Label542"
-                            Caption ="UpdatedBy"
+                            Name ="Label541"
+                            Caption ="UpdatedAt"
                             GroupTable =31
                             LeftPadding =0
                             TopPadding =0
@@ -1181,6 +1121,129 @@ Begin Form
                             LayoutCachedHeight =3473
                             RowStart =10
                             RowEnd =10
+                            LayoutGroup =1
+                            GridlineThemeColorIndex =1
+                            GridlineShade =65.0
+                            GroupTable =31
+                        End
+                    End
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    OverlapFlags =85
+                    TextFontCharSet =0
+                    TextAlign =2
+                    IMESentenceMode =3
+                    Left =2228
+                    Top =3480
+                    Width =3300
+                    Height =293
+                    TabIndex =11
+                    Name ="UpdatedBy"
+                    ControlSource ="UpdatedBy"
+                    GroupTable =31
+                    LeftPadding =0
+                    TopPadding =0
+                    RightPadding =0
+                    BottomPadding =0
+
+                    LayoutCachedLeft =2228
+                    LayoutCachedTop =3480
+                    LayoutCachedWidth =5528
+                    LayoutCachedHeight =3773
+                    RowStart =11
+                    RowEnd =11
+                    ColumnStart =1
+                    ColumnEnd =1
+                    LayoutGroup =1
+                    GridlineThemeColorIndex =1
+                    GridlineShade =65.0
+                    GroupTable =31
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =1
+                            TextFontFamily =34
+                            Left =563
+                            Top =3480
+                            Width =1658
+                            Height =293
+                            Name ="Label542"
+                            Caption ="UpdatedBy"
+                            GroupTable =31
+                            LeftPadding =0
+                            TopPadding =0
+                            RightPadding =0
+                            BottomPadding =0
+                            LayoutCachedLeft =563
+                            LayoutCachedTop =3480
+                            LayoutCachedWidth =2221
+                            LayoutCachedHeight =3773
+                            RowStart =11
+                            RowEnd =11
+                            LayoutGroup =1
+                            GridlineThemeColorIndex =1
+                            GridlineShade =65.0
+                            GroupTable =31
+                        End
+                    End
+                End
+                Begin ComboBox
+                    RowSourceTypeInt =1
+                    OverlapFlags =85
+                    TextFontCharSet =0
+                    TextAlign =2
+                    IMESentenceMode =3
+                    Left =2228
+                    Top =2880
+                    Width =3300
+                    Height =293
+                    ColumnWidth =2333
+                    TabIndex =9
+                    Name ="BillingStyle"
+                    ControlSource ="BillingStyle"
+                    RowSourceType ="Value List"
+                    RowSource ="Flat Per Ticket Rate;Percentage"
+                    GroupTable =31
+                    LeftPadding =0
+                    TopPadding =0
+                    RightPadding =0
+                    BottomPadding =0
+
+                    LayoutCachedLeft =2228
+                    LayoutCachedTop =2880
+                    LayoutCachedWidth =5528
+                    LayoutCachedHeight =3173
+                    RowStart =9
+                    RowEnd =9
+                    ColumnStart =1
+                    ColumnEnd =1
+                    LayoutGroup =1
+                    GridlineThemeColorIndex =1
+                    GridlineShade =65.0
+                    GroupTable =31
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =1
+                            TextFontFamily =34
+                            Left =563
+                            Top =2880
+                            Width =1658
+                            Height =293
+                            Name ="Label571"
+                            Caption ="BillingStyle"
+                            GroupTable =31
+                            LeftPadding =0
+                            TopPadding =0
+                            RightPadding =0
+                            BottomPadding =0
+                            LayoutCachedLeft =563
+                            LayoutCachedTop =2880
+                            LayoutCachedWidth =2221
+                            LayoutCachedHeight =3173
+                            RowStart =9
+                            RowEnd =9
                             LayoutGroup =1
                             GridlineThemeColorIndex =1
                             GridlineShade =65.0

@@ -9,12 +9,12 @@
       "PaperSize": "Letter"
     },
     "Margins": {
-      "LeftMargin": 0.25,
+      "LeftMargin": 0.2535,
       "TopMargin": 0.25,
       "RightMargin": 0.25,
       "BotMargin": 0.5,
       "DataOnly": false,
-      "Width": 8,
+      "Width": 7.9986,
       "Height": 0,
       "DefaultSize": true,
       "Columns": 1,
